@@ -1,0 +1,6259 @@
+[
+ {
+  "id": "ex-planche-sur-les-avant-bras",
+  "n": "Planche sur les avant-bras",
+  "cat": "Abdos",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Débutant",
+  "typ": "Gainage",
+  "mus": "Transverse, grand droit, obliques",
+  "dos": "3 × 30-60 s",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 30,
+   "max": 60,
+   "unit": "s",
+   "per": null,
+   "note": null
+  },
+  "cons": "Corps aligné tête-bassin-talons, fessiers serrés, ne pas creuser le dos",
+  "prio": [
+   "Cyclisme",
+   "Reprise / Débutant",
+   "Tonification"
+  ],
+  "compl": [
+   "Course à pied",
+   "Trail",
+   "Natation",
+   "Triathlon",
+   "Football",
+   "Tennis / Padel",
+   "Escalade",
+   "Dos & posture",
+   "Seniors & équilibre"
+  ]
+ },
+ {
+  "id": "ex-planche-laterale",
+  "n": "Planche latérale",
+  "cat": "Abdos",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Débutant",
+  "typ": "Gainage",
+  "mus": "Obliques, carré des lombes, moyen fessier",
+  "dos": "3 × 20-45 s / côté",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 20,
+   "max": 45,
+   "unit": "s",
+   "per": "côté",
+   "note": null
+  },
+  "cons": "Épaules et hanches empilées, bassin haut",
+  "prio": [
+   "Cyclisme",
+   "Course à pied",
+   "Trail",
+   "Triathlon",
+   "Football",
+   "Tennis / Padel",
+   "Reprise / Débutant",
+   "Dos & posture"
+  ],
+  "compl": [
+   "Natation",
+   "Escalade",
+   "Tonification"
+  ]
+ },
+ {
+  "id": "ex-planche-laterale-avec-elevation-de-jambe",
+  "n": "Planche latérale avec élévation de jambe",
+  "cat": "Abdos",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Avancé",
+  "typ": "Gainage",
+  "mus": "Obliques, moyen fessier",
+  "dos": "3 × 15-30 s / côté",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 15,
+   "max": 30,
+   "unit": "s",
+   "per": "côté",
+   "note": null
+  },
+  "cons": "Lever la jambe du dessus sans laisser tomber le bassin",
+  "prio": [],
+  "compl": [
+   "Course à pied",
+   "Trail",
+   "Football",
+   "Tennis / Padel"
+  ]
+ },
+ {
+  "id": "ex-planche-bras-tendus-avec-touches-d-epaules",
+  "n": "Planche bras tendus avec touches d'épaules",
+  "cat": "Abdos",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Intermédiaire",
+  "typ": "Gainage",
+  "mus": "Transverse, obliques, épaules",
+  "dos": "3 × 16-20 touches",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 16,
+   "max": 20,
+   "unit": "touches",
+   "per": null,
+   "note": null
+  },
+  "cons": "Pieds écartés, bassin immobile pendant la touche",
+  "prio": [
+   "Escalade"
+  ],
+  "compl": [
+   "Natation",
+   "Tennis / Padel"
+  ]
+ },
+ {
+  "id": "ex-planche-dynamique-coudes-mains",
+  "n": "Planche dynamique coudes-mains",
+  "cat": "Abdos",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Intermédiaire",
+  "typ": "Gainage",
+  "mus": "Transverse, triceps, épaules",
+  "dos": "3 × 8-12",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 8,
+   "max": 12,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Monter et descendre sans rotation du bassin",
+  "prio": [],
+  "compl": [
+   "Natation"
+  ]
+ },
+ {
+  "id": "ex-planche-avec-levee-bras-jambe-opposes",
+  "n": "Planche avec levée bras-jambe opposés",
+  "cat": "Abdos",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Intermédiaire",
+  "typ": "Gainage",
+  "mus": "Transverse, obliques, fessiers",
+  "dos": "3 × 8-10 / côté",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 8,
+   "max": 10,
+   "unit": "reps",
+   "per": "côté",
+   "note": null
+  },
+  "cons": "Lever lentement, tenir 2 s, bassin à plat",
+  "prio": [],
+  "compl": [
+   "Cyclisme",
+   "Course à pied",
+   "Trail",
+   "Natation"
+  ]
+ },
+ {
+  "id": "ex-dead-bug",
+  "n": "Dead bug",
+  "cat": "Abdos",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Débutant",
+  "typ": "Stabilité / Prévention",
+  "mus": "Transverse, grand droit",
+  "dos": "3 × 8-10 / côté",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 8,
+   "max": 10,
+   "unit": "reps",
+   "per": "côté",
+   "note": null
+  },
+  "cons": "Lombaires plaquées au sol, allonger bras et jambe opposés",
+  "prio": [
+   "Cyclisme",
+   "Course à pied",
+   "Natation",
+   "Triathlon",
+   "Reprise / Débutant",
+   "Dos & posture"
+  ],
+  "compl": [
+   "Trail",
+   "Football",
+   "Tennis / Padel",
+   "Escalade",
+   "Seniors & équilibre"
+  ]
+ },
+ {
+  "id": "ex-hollow-hold-gainage-creux",
+  "n": "Hollow hold (gainage creux)",
+  "cat": "Abdos",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Intermédiaire",
+  "typ": "Gainage",
+  "mus": "Grand droit, transverse",
+  "dos": "3 × 20-40 s",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 20,
+   "max": 40,
+   "unit": "s",
+   "per": null,
+   "note": null
+  },
+  "cons": "Lombaires au sol, épaules et jambes décollées",
+  "prio": [
+   "Natation",
+   "Triathlon",
+   "Escalade"
+  ],
+  "compl": []
+ },
+ {
+  "id": "ex-hollow-rock",
+  "n": "Hollow rock",
+  "cat": "Abdos",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Avancé",
+  "typ": "Gainage",
+  "mus": "Grand droit, transverse",
+  "dos": "3 × 10-15 balancements",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 10,
+   "max": 15,
+   "unit": "balancements",
+   "per": null,
+   "note": null
+  },
+  "cons": "Garder la forme de banane, sans casser aux hanches",
+  "prio": [],
+  "compl": [
+   "Natation",
+   "Escalade"
+  ]
+ },
+ {
+  "id": "ex-crunch",
+  "n": "Crunch",
+  "cat": "Abdos",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Débutant",
+  "typ": "Force",
+  "mus": "Grand droit",
+  "dos": "3 × 15-20",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 15,
+   "max": 20,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Enrouler le buste, menton décollé de la poitrine",
+  "prio": [],
+  "compl": [
+   "Football",
+   "Reprise / Débutant"
+  ]
+ },
+ {
+  "id": "ex-crunch-inverse",
+  "n": "Crunch inversé",
+  "cat": "Abdos",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Débutant",
+  "typ": "Force",
+  "mus": "Grand droit (portion basse)",
+  "dos": "3 × 12-15",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 12,
+   "max": 15,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Décoller le bassin sans élan",
+  "prio": [
+   "Tonification"
+  ],
+  "compl": [
+   "Football",
+   "Escalade",
+   "Reprise / Débutant"
+  ]
+ },
+ {
+  "id": "ex-releve-de-jambes-allonge",
+  "n": "Relevé de jambes allongé",
+  "cat": "Abdos",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Intermédiaire",
+  "typ": "Force",
+  "mus": "Grand droit, fléchisseurs de hanche",
+  "dos": "3 × 10-15",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 10,
+   "max": 15,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Descendre les jambes tant que les lombaires restent au sol",
+  "prio": [],
+  "compl": [
+   "Natation",
+   "Football",
+   "Escalade"
+  ]
+ },
+ {
+  "id": "ex-battements-de-jambes-ciseaux",
+  "n": "Battements de jambes (ciseaux)",
+  "cat": "Abdos",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Débutant",
+  "typ": "Gainage",
+  "mus": "Grand droit, fléchisseurs de hanche",
+  "dos": "3 × 20-30 s",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 20,
+   "max": 30,
+   "unit": "s",
+   "per": null,
+   "note": null
+  },
+  "cons": "Petits battements, lombaires plaquées",
+  "prio": [],
+  "compl": [
+   "Natation"
+  ]
+ },
+ {
+  "id": "ex-crunch-bicyclette",
+  "n": "Crunch bicyclette",
+  "cat": "Abdos",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Débutant",
+  "typ": "Force",
+  "mus": "Obliques, grand droit",
+  "dos": "3 × 20",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 20,
+   "max": 20,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Coude vers genou opposé, mouvement lent",
+  "prio": [],
+  "compl": [
+   "Cyclisme",
+   "Tennis / Padel",
+   "Tonification"
+  ]
+ },
+ {
+  "id": "ex-sit-up",
+  "n": "Sit-up",
+  "cat": "Abdos",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Débutant",
+  "typ": "Force",
+  "mus": "Grand droit, fléchisseurs de hanche",
+  "dos": "3 × 12-20",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 12,
+   "max": 20,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Monter en enroulant, sans tirer sur la nuque",
+  "prio": [],
+  "compl": []
+ },
+ {
+  "id": "ex-v-up-portefeuille",
+  "n": "V-up (portefeuille)",
+  "cat": "Abdos",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Avancé",
+  "typ": "Force",
+  "mus": "Grand droit, fléchisseurs de hanche",
+  "dos": "3 × 8-12",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 8,
+   "max": 12,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Mains et pieds se rejoignent au-dessus du bassin",
+  "prio": [],
+  "compl": [
+   "Natation",
+   "Escalade"
+  ]
+ },
+ {
+  "id": "ex-russian-twist",
+  "n": "Russian twist",
+  "cat": "Abdos",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Débutant",
+  "typ": "Force",
+  "mus": "Obliques",
+  "dos": "3 × 20",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 20,
+   "max": 20,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Buste incliné, rotation des épaules et non des bras",
+  "prio": [],
+  "compl": [
+   "Tennis / Padel",
+   "Tonification"
+  ]
+ },
+ {
+  "id": "ex-russian-twist-leste",
+  "n": "Russian twist lesté",
+  "cat": "Abdos",
+  "equip": [
+   "Haltères"
+  ],
+  "equipLabel": "Haltères",
+  "niv": "Intermédiaire",
+  "typ": "Force",
+  "mus": "Obliques",
+  "dos": "3 × 16-20",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 16,
+   "max": 20,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Haltère tenu près du buste, dos long",
+  "prio": [],
+  "compl": [
+   "Tennis / Padel"
+  ]
+ },
+ {
+  "id": "ex-mountain-climbers",
+  "n": "Mountain climbers",
+  "cat": "Abdos",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Débutant",
+  "typ": "Gainage",
+  "mus": "Grand droit, fléchisseurs de hanche, épaules",
+  "dos": "3 × 30 s",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 30,
+   "max": 30,
+   "unit": "s",
+   "per": null,
+   "note": null
+  },
+  "cons": "Épaules au-dessus des mains, bassin bas",
+  "prio": [
+   "Perte de poids"
+  ],
+  "compl": [
+   "Cyclisme",
+   "Course à pied",
+   "Trail",
+   "Football"
+  ]
+ },
+ {
+  "id": "ex-mountain-climbers-croises",
+  "n": "Mountain climbers croisés",
+  "cat": "Abdos",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Intermédiaire",
+  "typ": "Gainage",
+  "mus": "Obliques, fléchisseurs de hanche",
+  "dos": "3 × 30 s",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 30,
+   "max": 30,
+   "unit": "s",
+   "per": null,
+   "note": null
+  },
+  "cons": "Genou vers coude opposé",
+  "prio": [],
+  "compl": [
+   "Course à pied",
+   "Tennis / Padel",
+   "Perte de poids"
+  ]
+ },
+ {
+  "id": "ex-essuie-glaces-au-sol",
+  "n": "Essuie-glaces au sol",
+  "cat": "Abdos",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Avancé",
+  "typ": "Force",
+  "mus": "Obliques",
+  "dos": "3 × 8-10 / côté",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 8,
+   "max": 10,
+   "unit": "reps",
+   "per": "côté",
+   "note": null
+  },
+  "cons": "Épaules au sol, descendre les jambes sous contrôle",
+  "prio": [],
+  "compl": [
+   "Tennis / Padel"
+  ]
+ },
+ {
+  "id": "ex-rotation-thoracique-en-planche-laterale",
+  "n": "Rotation thoracique en planche latérale",
+  "cat": "Abdos",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Intermédiaire",
+  "typ": "Stabilité / Prévention",
+  "mus": "Obliques, dentelé antérieur",
+  "dos": "3 × 8-10 / côté",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 8,
+   "max": 10,
+   "unit": "reps",
+   "per": "côté",
+   "note": null
+  },
+  "cons": "Passer le bras sous le buste puis ouvrir vers le plafond",
+  "prio": [],
+  "compl": [
+   "Natation",
+   "Tennis / Padel"
+  ]
+ },
+ {
+  "id": "ex-marche-de-l-ours-statique-bear-hold",
+  "n": "Marche de l'ours statique (bear hold)",
+  "cat": "Abdos",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Intermédiaire",
+  "typ": "Gainage",
+  "mus": "Transverse, quadriceps, épaules",
+  "dos": "3 × 20-40 s",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 20,
+   "max": 40,
+   "unit": "s",
+   "per": null,
+   "note": null
+  },
+  "cons": "Genoux à 2 cm du sol, dos plat",
+  "prio": [],
+  "compl": [
+   "Escalade"
+  ]
+ },
+ {
+  "id": "ex-l-sit-sol-ou-deux-chaises",
+  "n": "L-sit (sol ou deux chaises)",
+  "cat": "Abdos",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Avancé",
+  "typ": "Gainage",
+  "mus": "Grand droit, fléchisseurs de hanche, triceps",
+  "dos": "4 × 10-20 s",
+  "dose": {
+   "sets": 4,
+   "setsMax": 4,
+   "min": 10,
+   "max": 20,
+   "unit": "s",
+   "per": null,
+   "note": null
+  },
+  "cons": "Épaules basses, jambes tendues à l'horizontale",
+  "prio": [],
+  "compl": [
+   "Escalade"
+  ]
+ },
+ {
+  "id": "ex-pallof-press-anti-rotation",
+  "n": "Pallof press (anti-rotation)",
+  "cat": "Abdos",
+  "equip": [
+   "Élastique"
+  ],
+  "equipLabel": "Élastique",
+  "niv": "Débutant",
+  "typ": "Stabilité / Prévention",
+  "mus": "Obliques, transverse",
+  "dos": "3 × 10 / côté",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 10,
+   "max": 10,
+   "unit": "reps",
+   "per": "côté",
+   "note": null
+  },
+  "cons": "Tendre les bras devant soi sans laisser tourner le buste",
+  "prio": [
+   "Tennis / Padel",
+   "Dos & posture"
+  ],
+  "compl": [
+   "Cyclisme",
+   "Course à pied",
+   "Trail",
+   "Natation",
+   "Football",
+   "Escalade"
+  ]
+ },
+ {
+  "id": "ex-rotation-de-buste-a-l-elastique-woodchop",
+  "n": "Rotation de buste à l'élastique (woodchop)",
+  "cat": "Abdos",
+  "equip": [
+   "Élastique"
+  ],
+  "equipLabel": "Élastique",
+  "niv": "Intermédiaire",
+  "typ": "Force",
+  "mus": "Obliques, fessiers",
+  "dos": "3 × 12 / côté",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 12,
+   "max": 12,
+   "unit": "reps",
+   "per": "côté",
+   "note": null
+  },
+  "cons": "Pivoter sur le pied arrière, bras presque tendus",
+  "prio": [
+   "Tennis / Padel"
+  ],
+  "compl": [
+   "Natation"
+  ]
+ },
+ {
+  "id": "ex-bucheron-avec-haltere",
+  "n": "Bûcheron avec haltère",
+  "cat": "Abdos",
+  "equip": [
+   "Haltères"
+  ],
+  "equipLabel": "Haltères",
+  "niv": "Intermédiaire",
+  "typ": "Force",
+  "mus": "Obliques, épaules, fessiers",
+  "dos": "3 × 10-12 / côté",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 10,
+   "max": 12,
+   "unit": "reps",
+   "per": "côté",
+   "note": null
+  },
+  "cons": "Diagonale hanche-épaule opposée, dos droit",
+  "prio": [],
+  "compl": [
+   "Tennis / Padel"
+  ]
+ },
+ {
+  "id": "ex-portage-unilateral-suitcase-carry",
+  "n": "Portage unilatéral (suitcase carry)",
+  "cat": "Abdos",
+  "equip": [
+   "Haltères"
+  ],
+  "equipLabel": "Haltères",
+  "niv": "Intermédiaire",
+  "typ": "Gainage",
+  "mus": "Obliques, carré des lombes, préhension",
+  "dos": "3 × 20-30 m / côté",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 20,
+   "max": 30,
+   "unit": "m",
+   "per": "côté",
+   "note": null
+  },
+  "cons": "Marcher sans pencher le buste côté charge",
+  "prio": [
+   "Trail",
+   "Dos & posture"
+  ],
+  "compl": [
+   "Course à pied",
+   "Escalade"
+  ]
+ },
+ {
+  "id": "ex-planche-avec-tirage-d-haltere-renegade-row",
+  "n": "Planche avec tirage d'haltère (renegade row)",
+  "cat": "Abdos",
+  "equip": [
+   "Haltères"
+  ],
+  "equipLabel": "Haltères",
+  "niv": "Avancé",
+  "typ": "Gainage",
+  "mus": "Transverse, obliques, grand dorsal",
+  "dos": "3 × 6-8 / bras",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 6,
+   "max": 8,
+   "unit": "reps",
+   "per": "bras",
+   "note": null
+  },
+  "cons": "Pieds larges, tirer sans rotation du bassin",
+  "prio": [],
+  "compl": [
+   "Natation",
+   "Escalade"
+  ]
+ },
+ {
+  "id": "ex-planche-pieds-sur-swiss-ball",
+  "n": "Planche pieds sur swiss ball",
+  "cat": "Abdos",
+  "equip": [
+   "Swiss ball"
+  ],
+  "equipLabel": "Swiss ball",
+  "niv": "Intermédiaire",
+  "typ": "Gainage",
+  "mus": "Transverse, grand droit",
+  "dos": "3 × 30-45 s",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 30,
+   "max": 45,
+   "unit": "s",
+   "per": null,
+   "note": null
+  },
+  "cons": "Tibias sur le ballon, corps aligné",
+  "prio": [],
+  "compl": [
+   "Cyclisme",
+   "Natation"
+  ]
+ },
+ {
+  "id": "ex-pike-sur-swiss-ball",
+  "n": "Pike sur swiss ball",
+  "cat": "Abdos",
+  "equip": [
+   "Swiss ball"
+  ],
+  "equipLabel": "Swiss ball",
+  "niv": "Avancé",
+  "typ": "Force",
+  "mus": "Grand droit, épaules",
+  "dos": "3 × 8-12",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 8,
+   "max": 12,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Monter le bassin jambes tendues",
+  "prio": [],
+  "compl": [
+   "Natation",
+   "Escalade"
+  ]
+ },
+ {
+  "id": "ex-stir-the-pot-planche-avant-bras-sur-ballon",
+  "n": "Stir the pot (planche avant-bras sur ballon)",
+  "cat": "Abdos",
+  "equip": [
+   "Swiss ball"
+  ],
+  "equipLabel": "Swiss ball",
+  "niv": "Avancé",
+  "typ": "Gainage",
+  "mus": "Transverse, obliques",
+  "dos": "3 × 8 cercles / sens",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 8,
+   "max": 8,
+   "unit": "cercles",
+   "per": "sens",
+   "note": null
+  },
+  "cons": "Petits cercles des avant-bras, bassin fixe",
+  "prio": [],
+  "compl": [
+   "Cyclisme",
+   "Natation"
+  ]
+ },
+ {
+  "id": "ex-crunch-sur-swiss-ball",
+  "n": "Crunch sur swiss ball",
+  "cat": "Abdos",
+  "equip": [
+   "Swiss ball"
+  ],
+  "equipLabel": "Swiss ball",
+  "niv": "Débutant",
+  "typ": "Force",
+  "mus": "Grand droit",
+  "dos": "3 × 15",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 15,
+   "max": 15,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Lombaires soutenues par le ballon, amplitude complète",
+  "prio": [],
+  "compl": [
+   "Tennis / Padel"
+  ]
+ },
+ {
+  "id": "ex-rollout-au-swiss-ball",
+  "n": "Rollout au swiss ball",
+  "cat": "Abdos",
+  "equip": [
+   "Swiss ball"
+  ],
+  "equipLabel": "Swiss ball",
+  "niv": "Intermédiaire",
+  "typ": "Force",
+  "mus": "Grand droit, transverse, grand dorsal",
+  "dos": "3 × 8-12",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 8,
+   "max": 12,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Avancer le ballon sans cambrer",
+  "prio": [],
+  "compl": [
+   "Cyclisme",
+   "Natation",
+   "Escalade"
+  ]
+ },
+ {
+  "id": "ex-roulette-abdominale-ab-wheel",
+  "n": "Roulette abdominale (ab wheel)",
+  "cat": "Abdos",
+  "equip": [
+   "Roue abdominale"
+  ],
+  "equipLabel": "Roue abdominale",
+  "niv": "Avancé",
+  "typ": "Force",
+  "mus": "Grand droit, transverse, grand dorsal",
+  "dos": "3 × 6-10",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 6,
+   "max": 10,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Départ à genoux, s'arrêter avant de cambrer",
+  "prio": [],
+  "compl": [
+   "Natation",
+   "Escalade"
+  ]
+ },
+ {
+  "id": "ex-releve-de-genoux-suspendu",
+  "n": "Relevé de genoux suspendu",
+  "cat": "Abdos",
+  "equip": [
+   "Barre de traction"
+  ],
+  "equipLabel": "Barre de traction",
+  "niv": "Intermédiaire",
+  "typ": "Force",
+  "mus": "Grand droit, fléchisseurs de hanche",
+  "dos": "3 × 8-12",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 8,
+   "max": 12,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Monter les genoux sans balancer",
+  "prio": [],
+  "compl": [
+   "Natation",
+   "Escalade"
+  ]
+ },
+ {
+  "id": "ex-releve-de-jambes-suspendu",
+  "n": "Relevé de jambes suspendu",
+  "cat": "Abdos",
+  "equip": [
+   "Barre de traction"
+  ],
+  "equipLabel": "Barre de traction",
+  "niv": "Avancé",
+  "typ": "Force",
+  "mus": "Grand droit, fléchisseurs de hanche",
+  "dos": "3 × 6-10",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 6,
+   "max": 10,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Jambes tendues à l'horizontale, descente lente",
+  "prio": [
+   "Escalade"
+  ],
+  "compl": []
+ },
+ {
+  "id": "ex-planche-pieds-dans-les-sangles",
+  "n": "Planche pieds dans les sangles",
+  "cat": "Abdos",
+  "equip": [
+   "Sangles de suspension"
+  ],
+  "equipLabel": "Sangles de suspension",
+  "niv": "Avancé",
+  "typ": "Gainage",
+  "mus": "Transverse, grand droit, épaules",
+  "dos": "3 × 20-40 s",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 20,
+   "max": 40,
+   "unit": "s",
+   "per": null,
+   "note": null
+  },
+  "cons": "Pieds suspendus, bassin gainé",
+  "prio": [],
+  "compl": [
+   "Cyclisme",
+   "Natation",
+   "Escalade"
+  ]
+ },
+ {
+  "id": "ex-dragon-flag",
+  "n": "Dragon flag",
+  "cat": "Abdos",
+  "equip": [
+   "Banc / chaise"
+  ],
+  "equipLabel": "Banc / chaise",
+  "niv": "Avancé",
+  "typ": "Force",
+  "mus": "Grand droit, transverse",
+  "dos": "3 × 3-6",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 3,
+   "max": 6,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Corps rigide depuis les épaules, descente très lente",
+  "prio": [],
+  "compl": [
+   "Escalade"
+  ]
+ },
+ {
+  "id": "ex-squat-au-poids-du-corps",
+  "n": "Squat au poids du corps",
+  "cat": "Bas du Corps",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Débutant",
+  "typ": "Force",
+  "mus": "Quadriceps, fessiers",
+  "dos": "3 × 15-20",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 15,
+   "max": 20,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Genoux dans l'axe des pieds, talons au sol",
+  "prio": [
+   "Reprise / Débutant"
+  ],
+  "compl": [
+   "Cyclisme",
+   "Course à pied",
+   "Trail",
+   "Football",
+   "Tennis / Padel",
+   "Seniors & équilibre"
+  ]
+ },
+ {
+  "id": "ex-squat-goblet",
+  "n": "Squat goblet",
+  "cat": "Bas du Corps",
+  "equip": [
+   "Haltères"
+  ],
+  "equipLabel": "Haltères",
+  "niv": "Intermédiaire",
+  "typ": "Force",
+  "mus": "Quadriceps, fessiers, gainage",
+  "dos": "3-4 × 8-12",
+  "dose": {
+   "sets": 3,
+   "setsMax": 4,
+   "min": 8,
+   "max": 12,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Haltère contre la poitrine, buste droit",
+  "prio": [
+   "Cyclisme",
+   "Course à pied",
+   "Perte de poids",
+   "Tonification"
+  ],
+  "compl": [
+   "Trail",
+   "Triathlon",
+   "Football",
+   "Tennis / Padel"
+  ]
+ },
+ {
+  "id": "ex-squat-avec-elastique",
+  "n": "Squat avec élastique",
+  "cat": "Bas du Corps",
+  "equip": [
+   "Élastique"
+  ],
+  "equipLabel": "Élastique",
+  "niv": "Débutant",
+  "typ": "Force",
+  "mus": "Quadriceps, fessiers",
+  "dos": "3 × 12-15",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 12,
+   "max": 15,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Élastique sous les pieds et sur les épaules",
+  "prio": [
+   "Seniors & équilibre"
+  ],
+  "compl": [
+   "Cyclisme",
+   "Course à pied",
+   "Trail",
+   "Football",
+   "Tennis / Padel",
+   "Reprise / Débutant"
+  ]
+ },
+ {
+  "id": "ex-squat-sumo-avec-haltere",
+  "n": "Squat sumo avec haltère",
+  "cat": "Bas du Corps",
+  "equip": [
+   "Haltères"
+  ],
+  "equipLabel": "Haltères",
+  "niv": "Débutant",
+  "typ": "Force",
+  "mus": "Adducteurs, fessiers, quadriceps",
+  "dos": "3 × 10-15",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 10,
+   "max": 15,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Pieds larges ouverts, genoux poussés vers l'extérieur",
+  "prio": [],
+  "compl": [
+   "Football"
+  ]
+ },
+ {
+  "id": "ex-squat-saute",
+  "n": "Squat sauté",
+  "cat": "Bas du Corps",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Intermédiaire",
+  "typ": "Pliométrie / Explosivité",
+  "mus": "Quadriceps, fessiers, mollets",
+  "dos": "3 × 6-10",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 6,
+   "max": 10,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Réception souple et silencieuse",
+  "prio": [],
+  "compl": [
+   "Cyclisme",
+   "Course à pied",
+   "Trail",
+   "Football",
+   "Tennis / Padel",
+   "Perte de poids"
+  ]
+ },
+ {
+  "id": "ex-squat-bulgare",
+  "n": "Squat bulgare",
+  "cat": "Bas du Corps",
+  "equip": [
+   "Banc / chaise"
+  ],
+  "equipLabel": "Banc / chaise",
+  "niv": "Intermédiaire",
+  "typ": "Force",
+  "mus": "Quadriceps, fessiers",
+  "dos": "3 × 8-12 / jambe",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 8,
+   "max": 12,
+   "unit": "reps",
+   "per": "jambe",
+   "note": null
+  },
+  "cons": "Pied arrière sur le banc, poids sur la jambe avant",
+  "prio": [
+   "Cyclisme",
+   "Triathlon",
+   "Football"
+  ],
+  "compl": [
+   "Course à pied",
+   "Trail",
+   "Tennis / Padel",
+   "Tonification"
+  ]
+ },
+ {
+  "id": "ex-squat-bulgare-leste",
+  "n": "Squat bulgare lesté",
+  "cat": "Bas du Corps",
+  "equip": [
+   "Banc / chaise",
+   "Haltères"
+  ],
+  "equipLabel": "Banc + haltères",
+  "niv": "Avancé",
+  "typ": "Force",
+  "mus": "Quadriceps, fessiers",
+  "dos": "3-4 × 6-10 / jambe",
+  "dose": {
+   "sets": 3,
+   "setsMax": 4,
+   "min": 6,
+   "max": 10,
+   "unit": "reps",
+   "per": "jambe",
+   "note": null
+  },
+  "cons": "Haltères le long du corps, descente contrôlée",
+  "prio": [
+   "Course à pied",
+   "Trail"
+  ],
+  "compl": [
+   "Cyclisme",
+   "Triathlon",
+   "Football"
+  ]
+ },
+ {
+  "id": "ex-squat-sur-une-jambe-vers-une-chaise",
+  "n": "Squat sur une jambe vers une chaise",
+  "cat": "Bas du Corps",
+  "equip": [
+   "Banc / chaise"
+  ],
+  "equipLabel": "Banc / chaise",
+  "niv": "Intermédiaire",
+  "typ": "Force",
+  "mus": "Quadriceps, fessiers",
+  "dos": "3 × 6-10 / jambe",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 6,
+   "max": 10,
+   "unit": "reps",
+   "per": "jambe",
+   "note": null
+  },
+  "cons": "S'asseoir lentement sur une jambe, se relever sans élan",
+  "prio": [],
+  "compl": [
+   "Cyclisme",
+   "Course à pied",
+   "Trail"
+  ]
+ },
+ {
+  "id": "ex-pistol-squat",
+  "n": "Pistol squat",
+  "cat": "Bas du Corps",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Avancé",
+  "typ": "Force",
+  "mus": "Quadriceps, fessiers",
+  "dos": "3 × 4-8 / jambe",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 4,
+   "max": 8,
+   "unit": "reps",
+   "per": "jambe",
+   "note": null
+  },
+  "cons": "Talon au sol, jambe libre tendue devant",
+  "prio": [],
+  "compl": [
+   "Cyclisme",
+   "Trail",
+   "Escalade"
+  ]
+ },
+ {
+  "id": "ex-chaise-contre-le-mur",
+  "n": "Chaise contre le mur",
+  "cat": "Bas du Corps",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Débutant",
+  "typ": "Gainage",
+  "mus": "Quadriceps",
+  "dos": "3 × 30-60 s",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 30,
+   "max": 60,
+   "unit": "s",
+   "per": null,
+   "note": null
+  },
+  "cons": "Genoux et hanches à 90°, dos plaqué",
+  "prio": [
+   "Trail"
+  ],
+  "compl": [
+   "Cyclisme",
+   "Reprise / Débutant",
+   "Seniors & équilibre"
+  ]
+ },
+ {
+  "id": "ex-chaise-sur-une-jambe",
+  "n": "Chaise sur une jambe",
+  "cat": "Bas du Corps",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Avancé",
+  "typ": "Gainage",
+  "mus": "Quadriceps",
+  "dos": "3 × 15-30 s / jambe",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 15,
+   "max": 30,
+   "unit": "s",
+   "per": "jambe",
+   "note": null
+  },
+  "cons": "Même position, une jambe tendue devant",
+  "prio": [],
+  "compl": [
+   "Trail"
+  ]
+ },
+ {
+  "id": "ex-spanish-squat-isometrie-avec-elastique",
+  "n": "Spanish squat (isométrie avec élastique)",
+  "cat": "Bas du Corps",
+  "equip": [
+   "Élastique"
+  ],
+  "equipLabel": "Élastique",
+  "niv": "Intermédiaire",
+  "typ": "Stabilité / Prévention",
+  "mus": "Quadriceps, tendon rotulien",
+  "dos": "4 × 30-45 s",
+  "dose": {
+   "sets": 4,
+   "setsMax": 4,
+   "min": 30,
+   "max": 45,
+   "unit": "s",
+   "per": null,
+   "note": null
+  },
+  "cons": "Élastique derrière les genoux, tibias verticaux",
+  "prio": [],
+  "compl": [
+   "Cyclisme",
+   "Trail"
+  ]
+ },
+ {
+  "id": "ex-sissy-squat",
+  "n": "Sissy squat",
+  "cat": "Bas du Corps",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Avancé",
+  "typ": "Force",
+  "mus": "Quadriceps",
+  "dos": "3 × 6-10",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 6,
+   "max": 10,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Genoux vers l'avant, hanches en extension, se tenir si besoin",
+  "prio": [],
+  "compl": [
+   "Cyclisme"
+  ]
+ },
+ {
+  "id": "ex-reverse-nordic",
+  "n": "Reverse nordic",
+  "cat": "Bas du Corps",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Avancé",
+  "typ": "Stabilité / Prévention",
+  "mus": "Quadriceps (excentrique)",
+  "dos": "3 × 6-8",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 6,
+   "max": 8,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "À genoux, reculer le buste d'un bloc",
+  "prio": [
+   "Football"
+  ],
+  "compl": [
+   "Cyclisme"
+  ]
+ },
+ {
+  "id": "ex-extension-de-jambe-a-l-elastique",
+  "n": "Extension de jambe à l'élastique",
+  "cat": "Bas du Corps",
+  "equip": [
+   "Élastique"
+  ],
+  "equipLabel": "Élastique",
+  "niv": "Débutant",
+  "typ": "Force",
+  "mus": "Quadriceps",
+  "dos": "3 × 15 / jambe",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 15,
+   "max": 15,
+   "unit": "reps",
+   "per": "jambe",
+   "note": null
+  },
+  "cons": "Assis, tendre le genou et tenir 1 s",
+  "prio": [],
+  "compl": [
+   "Cyclisme"
+  ]
+ },
+ {
+  "id": "ex-fente-avant",
+  "n": "Fente avant",
+  "cat": "Bas du Corps",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Débutant",
+  "typ": "Force",
+  "mus": "Quadriceps, fessiers",
+  "dos": "3 × 10-12 / jambe",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 10,
+   "max": 12,
+   "unit": "reps",
+   "per": "jambe",
+   "note": null
+  },
+  "cons": "Grand pas, genou avant au-dessus de la cheville",
+  "prio": [],
+  "compl": [
+   "Cyclisme",
+   "Course à pied",
+   "Trail",
+   "Football",
+   "Tennis / Padel"
+  ]
+ },
+ {
+  "id": "ex-fente-arriere",
+  "n": "Fente arrière",
+  "cat": "Bas du Corps",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Débutant",
+  "typ": "Force",
+  "mus": "Fessiers, quadriceps",
+  "dos": "3 × 10-12 / jambe",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 10,
+   "max": 12,
+   "unit": "reps",
+   "per": "jambe",
+   "note": null
+  },
+  "cons": "Reculer, buste légèrement incliné vers l'avant",
+  "prio": [
+   "Reprise / Débutant"
+  ],
+  "compl": [
+   "Cyclisme",
+   "Course à pied",
+   "Trail",
+   "Football",
+   "Tennis / Padel",
+   "Seniors & équilibre"
+  ]
+ },
+ {
+  "id": "ex-fente-arriere-avec-halteres",
+  "n": "Fente arrière avec haltères",
+  "cat": "Bas du Corps",
+  "equip": [
+   "Haltères"
+  ],
+  "equipLabel": "Haltères",
+  "niv": "Intermédiaire",
+  "typ": "Force",
+  "mus": "Fessiers, quadriceps",
+  "dos": "3-4 × 8-10 / jambe",
+  "dose": {
+   "sets": 3,
+   "setsMax": 4,
+   "min": 8,
+   "max": 10,
+   "unit": "reps",
+   "per": "jambe",
+   "note": null
+  },
+  "cons": "Haltères le long du corps, pousser dans le talon avant",
+  "prio": [
+   "Cyclisme",
+   "Course à pied",
+   "Tonification"
+  ],
+  "compl": [
+   "Trail",
+   "Triathlon",
+   "Football",
+   "Tennis / Padel"
+  ]
+ },
+ {
+  "id": "ex-fente-marchee",
+  "n": "Fente marchée",
+  "cat": "Bas du Corps",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Intermédiaire",
+  "typ": "Force",
+  "mus": "Quadriceps, fessiers",
+  "dos": "3 × 20 pas",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 20,
+   "max": 20,
+   "unit": "pas",
+   "per": null,
+   "note": null
+  },
+  "cons": "Enchaîner sans reposer le pied arrière",
+  "prio": [
+   "Trail",
+   "Perte de poids"
+  ],
+  "compl": [
+   "Cyclisme",
+   "Course à pied",
+   "Football"
+  ]
+ },
+ {
+  "id": "ex-fente-laterale",
+  "n": "Fente latérale",
+  "cat": "Bas du Corps",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Débutant",
+  "typ": "Force",
+  "mus": "Adducteurs, fessiers, quadriceps",
+  "dos": "3 × 10 / côté",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 10,
+   "max": 10,
+   "unit": "reps",
+   "per": "côté",
+   "note": null
+  },
+  "cons": "Hanches en arrière, jambe opposée tendue",
+  "prio": [
+   "Football",
+   "Tennis / Padel",
+   "Tonification"
+  ],
+  "compl": []
+ },
+ {
+  "id": "ex-fente-laterale-avec-haltere",
+  "n": "Fente latérale avec haltère",
+  "cat": "Bas du Corps",
+  "equip": [
+   "Haltères"
+  ],
+  "equipLabel": "Haltères",
+  "niv": "Intermédiaire",
+  "typ": "Force",
+  "mus": "Adducteurs, fessiers, quadriceps",
+  "dos": "3 × 8-10 / côté",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 8,
+   "max": 10,
+   "unit": "reps",
+   "per": "côté",
+   "note": null
+  },
+  "cons": "Haltère en goblet, pied d'appui à plat",
+  "prio": [],
+  "compl": [
+   "Football",
+   "Tennis / Padel"
+  ]
+ },
+ {
+  "id": "ex-fente-croisee-curtsy",
+  "n": "Fente croisée (curtsy)",
+  "cat": "Bas du Corps",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Intermédiaire",
+  "typ": "Force",
+  "mus": "Moyen fessier, quadriceps",
+  "dos": "3 × 10 / jambe",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 10,
+   "max": 10,
+   "unit": "reps",
+   "per": "jambe",
+   "note": null
+  },
+  "cons": "Pied arrière croisé derrière, bassin de face",
+  "prio": [],
+  "compl": [
+   "Tennis / Padel"
+  ]
+ },
+ {
+  "id": "ex-fente-sautee",
+  "n": "Fente sautée",
+  "cat": "Bas du Corps",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Avancé",
+  "typ": "Pliométrie / Explosivité",
+  "mus": "Quadriceps, fessiers, mollets",
+  "dos": "3 × 8-10 / jambe",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 8,
+   "max": 10,
+   "unit": "reps",
+   "per": "jambe",
+   "note": null
+  },
+  "cons": "Changer de jambe en l'air, réception amortie",
+  "prio": [],
+  "compl": [
+   "Course à pied",
+   "Trail",
+   "Football",
+   "Tennis / Padel",
+   "Perte de poids"
+  ]
+ },
+ {
+  "id": "ex-step-up",
+  "n": "Step-up",
+  "cat": "Bas du Corps",
+  "equip": [
+   "Banc / chaise"
+  ],
+  "equipLabel": "Banc / chaise",
+  "niv": "Débutant",
+  "typ": "Force",
+  "mus": "Quadriceps, fessiers",
+  "dos": "3 × 10-12 / jambe",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 10,
+   "max": 12,
+   "unit": "reps",
+   "per": "jambe",
+   "note": null
+  },
+  "cons": "Monter sans pousser avec la jambe au sol",
+  "prio": [
+   "Seniors & équilibre"
+  ],
+  "compl": [
+   "Cyclisme",
+   "Course à pied",
+   "Trail",
+   "Reprise / Débutant"
+  ]
+ },
+ {
+  "id": "ex-step-up-leste",
+  "n": "Step-up lesté",
+  "cat": "Bas du Corps",
+  "equip": [
+   "Banc / chaise",
+   "Haltères"
+  ],
+  "equipLabel": "Banc + haltères",
+  "niv": "Intermédiaire",
+  "typ": "Force",
+  "mus": "Quadriceps, fessiers",
+  "dos": "3-4 × 8-10 / jambe",
+  "dose": {
+   "sets": 3,
+   "setsMax": 4,
+   "min": 8,
+   "max": 10,
+   "unit": "reps",
+   "per": "jambe",
+   "note": null
+  },
+  "cons": "Haltères en mains, descente lente",
+  "prio": [
+   "Cyclisme",
+   "Course à pied",
+   "Trail",
+   "Triathlon"
+  ],
+  "compl": [
+   "Perte de poids"
+  ]
+ },
+ {
+  "id": "ex-step-down-excentrique",
+  "n": "Step-down excentrique",
+  "cat": "Bas du Corps",
+  "equip": [
+   "Banc / chaise"
+  ],
+  "equipLabel": "Banc / chaise",
+  "niv": "Intermédiaire",
+  "typ": "Stabilité / Prévention",
+  "mus": "Quadriceps, moyen fessier",
+  "dos": "3 × 8-10 / jambe, descente 3-4 s",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 8,
+   "max": 10,
+   "unit": "reps",
+   "per": "jambe",
+   "note": "descente 3-4 s"
+  },
+  "cons": "Genou aligné sur le 2e orteil, bassin horizontal",
+  "prio": [
+   "Trail"
+  ],
+  "compl": [
+   "Cyclisme",
+   "Course à pied"
+  ]
+ },
+ {
+  "id": "ex-pont-fessier",
+  "n": "Pont fessier",
+  "cat": "Bas du Corps",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Débutant",
+  "typ": "Force",
+  "mus": "Fessiers, ischio-jambiers",
+  "dos": "3 × 15",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 15,
+   "max": 15,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Pousser dans les talons, serrer les fessiers en haut",
+  "prio": [
+   "Reprise / Débutant",
+   "Dos & posture",
+   "Seniors & équilibre"
+  ],
+  "compl": [
+   "Cyclisme",
+   "Course à pied",
+   "Trail",
+   "Natation",
+   "Football",
+   "Tennis / Padel"
+  ]
+ },
+ {
+  "id": "ex-pont-fessier-une-jambe",
+  "n": "Pont fessier une jambe",
+  "cat": "Bas du Corps",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Intermédiaire",
+  "typ": "Force",
+  "mus": "Fessiers, ischio-jambiers",
+  "dos": "3 × 10-12 / jambe",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 10,
+   "max": 12,
+   "unit": "reps",
+   "per": "jambe",
+   "note": null
+  },
+  "cons": "Bassin horizontal, pas de rotation",
+  "prio": [
+   "Cyclisme"
+  ],
+  "compl": [
+   "Course à pied",
+   "Trail",
+   "Triathlon",
+   "Football",
+   "Tennis / Padel",
+   "Tonification"
+  ]
+ },
+ {
+  "id": "ex-pont-fessier-avec-elastique-aux-genoux",
+  "n": "Pont fessier avec élastique aux genoux",
+  "cat": "Bas du Corps",
+  "equip": [
+   "Élastique"
+  ],
+  "equipLabel": "Élastique",
+  "niv": "Débutant",
+  "typ": "Force",
+  "mus": "Fessiers, moyen fessier",
+  "dos": "3 × 15",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 15,
+   "max": 15,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Écarter les genoux contre l'élastique en montant",
+  "prio": [
+   "Tonification"
+  ],
+  "compl": [
+   "Cyclisme",
+   "Course à pied",
+   "Trail",
+   "Football",
+   "Reprise / Débutant"
+  ]
+ },
+ {
+  "id": "ex-hip-thrust",
+  "n": "Hip thrust",
+  "cat": "Bas du Corps",
+  "equip": [
+   "Banc / chaise"
+  ],
+  "equipLabel": "Banc / chaise",
+  "niv": "Intermédiaire",
+  "typ": "Force",
+  "mus": "Grand fessier, ischio-jambiers",
+  "dos": "3 × 10-15",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 10,
+   "max": 15,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Haut du dos sur le banc, menton rentré",
+  "prio": [
+   "Cyclisme",
+   "Triathlon",
+   "Football"
+  ],
+  "compl": [
+   "Course à pied",
+   "Trail",
+   "Dos & posture"
+  ]
+ },
+ {
+  "id": "ex-hip-thrust-leste",
+  "n": "Hip thrust lesté",
+  "cat": "Bas du Corps",
+  "equip": [
+   "Banc / chaise",
+   "Haltères"
+  ],
+  "equipLabel": "Banc + haltères",
+  "niv": "Intermédiaire",
+  "typ": "Force",
+  "mus": "Grand fessier, ischio-jambiers",
+  "dos": "3-4 × 8-12",
+  "dose": {
+   "sets": 3,
+   "setsMax": 4,
+   "min": 8,
+   "max": 12,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Haltère posé sur le pli des hanches",
+  "prio": [
+   "Course à pied",
+   "Tonification"
+  ],
+  "compl": [
+   "Cyclisme",
+   "Triathlon",
+   "Football"
+  ]
+ },
+ {
+  "id": "ex-hip-thrust-une-jambe",
+  "n": "Hip thrust une jambe",
+  "cat": "Bas du Corps",
+  "equip": [
+   "Banc / chaise"
+  ],
+  "equipLabel": "Banc / chaise",
+  "niv": "Avancé",
+  "typ": "Force",
+  "mus": "Grand fessier",
+  "dos": "3 × 8-10 / jambe",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 8,
+   "max": 10,
+   "unit": "reps",
+   "per": "jambe",
+   "note": null
+  },
+  "cons": "Extension complète sans cambrer",
+  "prio": [],
+  "compl": [
+   "Course à pied",
+   "Trail",
+   "Football"
+  ]
+ },
+ {
+  "id": "ex-souleve-de-terre-roumain",
+  "n": "Soulevé de terre roumain",
+  "cat": "Bas du Corps",
+  "equip": [
+   "Haltères"
+  ],
+  "equipLabel": "Haltères",
+  "niv": "Intermédiaire",
+  "typ": "Force",
+  "mus": "Ischio-jambiers, fessiers, lombaires",
+  "dos": "3-4 × 8-12",
+  "dose": {
+   "sets": 3,
+   "setsMax": 4,
+   "min": 8,
+   "max": 12,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Dos plat, hanches en arrière, haltères près des jambes",
+  "prio": [
+   "Cyclisme",
+   "Triathlon",
+   "Tonification"
+  ],
+  "compl": [
+   "Course à pied",
+   "Trail",
+   "Football",
+   "Tennis / Padel",
+   "Dos & posture"
+  ]
+ },
+ {
+  "id": "ex-souleve-de-terre-roumain-une-jambe",
+  "n": "Soulevé de terre roumain une jambe",
+  "cat": "Bas du Corps",
+  "equip": [
+   "Haltères"
+  ],
+  "equipLabel": "Haltères",
+  "niv": "Avancé",
+  "typ": "Force",
+  "mus": "Ischio-jambiers, fessiers, stabilisateurs",
+  "dos": "3 × 8-10 / jambe",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 8,
+   "max": 10,
+   "unit": "reps",
+   "per": "jambe",
+   "note": null
+  },
+  "cons": "Bassin parallèle au sol, jambe arrière dans l'axe",
+  "prio": [
+   "Cyclisme",
+   "Course à pied",
+   "Trail",
+   "Football"
+  ],
+  "compl": [
+   "Triathlon",
+   "Tennis / Padel"
+  ]
+ },
+ {
+  "id": "ex-souleve-de-terre-une-jambe-au-poids-du-corps",
+  "n": "Soulevé de terre une jambe au poids du corps",
+  "cat": "Bas du Corps",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Intermédiaire",
+  "typ": "Stabilité / Prévention",
+  "mus": "Ischio-jambiers, fessiers, équilibre",
+  "dos": "3 × 8-10 / jambe",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 8,
+   "max": 10,
+   "unit": "reps",
+   "per": "jambe",
+   "note": null
+  },
+  "cons": "Basculer d'un bloc buste-jambe arrière",
+  "prio": [
+   "Seniors & équilibre"
+  ],
+  "compl": [
+   "Cyclisme",
+   "Course à pied",
+   "Trail",
+   "Football",
+   "Tennis / Padel"
+  ]
+ },
+ {
+  "id": "ex-good-morning-a-l-elastique",
+  "n": "Good morning à l'élastique",
+  "cat": "Bas du Corps",
+  "equip": [
+   "Élastique"
+  ],
+  "equipLabel": "Élastique",
+  "niv": "Intermédiaire",
+  "typ": "Force",
+  "mus": "Ischio-jambiers, fessiers, lombaires",
+  "dos": "3 × 12-15",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 12,
+   "max": 15,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Élastique sous les pieds et derrière la nuque, dos plat",
+  "prio": [],
+  "compl": [
+   "Cyclisme",
+   "Course à pied"
+  ]
+ },
+ {
+  "id": "ex-souleve-de-terre-kettlebell",
+  "n": "Soulevé de terre kettlebell",
+  "cat": "Bas du Corps",
+  "equip": [
+   "Kettlebell"
+  ],
+  "equipLabel": "Kettlebell",
+  "niv": "Débutant",
+  "typ": "Force",
+  "mus": "Fessiers, ischio-jambiers, lombaires",
+  "dos": "3 × 8-12",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 8,
+   "max": 12,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Charge entre les pieds, pousser le sol",
+  "prio": [],
+  "compl": [
+   "Cyclisme",
+   "Course à pied",
+   "Perte de poids"
+  ]
+ },
+ {
+  "id": "ex-swing-kettlebell",
+  "n": "Swing kettlebell",
+  "cat": "Bas du Corps",
+  "equip": [
+   "Kettlebell"
+  ],
+  "equipLabel": "Kettlebell",
+  "niv": "Intermédiaire",
+  "typ": "Pliométrie / Explosivité",
+  "mus": "Fessiers, ischio-jambiers, lombaires",
+  "dos": "4 × 12-15",
+  "dose": {
+   "sets": 4,
+   "setsMax": 4,
+   "min": 12,
+   "max": 15,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Charnière de hanche explosive, bras relâchés",
+  "prio": [
+   "Perte de poids"
+  ],
+  "compl": [
+   "Cyclisme",
+   "Course à pied",
+   "Football"
+  ]
+ },
+ {
+  "id": "ex-nordic-hamstring-curl",
+  "n": "Nordic hamstring curl",
+  "cat": "Bas du Corps",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Avancé",
+  "typ": "Stabilité / Prévention",
+  "mus": "Ischio-jambiers (excentrique)",
+  "dos": "3 × 4-8, descente lente",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 4,
+   "max": 8,
+   "unit": "reps",
+   "per": null,
+   "note": "descente lente"
+  },
+  "cons": "Pieds bloqués, corps d'un bloc des genoux aux épaules",
+  "prio": [
+   "Course à pied",
+   "Football"
+  ],
+  "compl": [
+   "Trail",
+   "Triathlon",
+   "Tennis / Padel"
+  ]
+ },
+ {
+  "id": "ex-leg-curl-glisse-serviette-ou-chaussettes",
+  "n": "Leg curl glissé (serviette ou chaussettes)",
+  "cat": "Bas du Corps",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Intermédiaire",
+  "typ": "Force",
+  "mus": "Ischio-jambiers, fessiers",
+  "dos": "3 × 8-12",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 8,
+   "max": 12,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Bassin haut pendant tout le mouvement",
+  "prio": [],
+  "compl": [
+   "Cyclisme",
+   "Course à pied",
+   "Trail",
+   "Football"
+  ]
+ },
+ {
+  "id": "ex-leg-curl-au-swiss-ball",
+  "n": "Leg curl au swiss ball",
+  "cat": "Bas du Corps",
+  "equip": [
+   "Swiss ball"
+  ],
+  "equipLabel": "Swiss ball",
+  "niv": "Intermédiaire",
+  "typ": "Force",
+  "mus": "Ischio-jambiers, fessiers",
+  "dos": "3 × 10-12",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 10,
+   "max": 12,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Ramener le ballon sans laisser tomber les hanches",
+  "prio": [],
+  "compl": [
+   "Cyclisme",
+   "Course à pied",
+   "Trail",
+   "Football"
+  ]
+ },
+ {
+  "id": "ex-leg-curl-a-l-elastique",
+  "n": "Leg curl à l'élastique",
+  "cat": "Bas du Corps",
+  "equip": [
+   "Élastique"
+  ],
+  "equipLabel": "Élastique",
+  "niv": "Débutant",
+  "typ": "Force",
+  "mus": "Ischio-jambiers",
+  "dos": "3 × 15 / jambe",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 15,
+   "max": 15,
+   "unit": "reps",
+   "per": "jambe",
+   "note": null
+  },
+  "cons": "Allongé sur le ventre, retour freiné",
+  "prio": [],
+  "compl": [
+   "Cyclisme",
+   "Course à pied",
+   "Football"
+  ]
+ },
+ {
+  "id": "ex-leg-curl-en-suspension",
+  "n": "Leg curl en suspension",
+  "cat": "Bas du Corps",
+  "equip": [
+   "Sangles de suspension"
+  ],
+  "equipLabel": "Sangles de suspension",
+  "niv": "Intermédiaire",
+  "typ": "Force",
+  "mus": "Ischio-jambiers, fessiers",
+  "dos": "3 × 10-12",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 10,
+   "max": 12,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Talons dans les sangles, bassin haut",
+  "prio": [],
+  "compl": [
+   "Cyclisme",
+   "Course à pied",
+   "Football"
+  ]
+ },
+ {
+  "id": "ex-copenhagen-plank",
+  "n": "Copenhagen plank",
+  "cat": "Bas du Corps",
+  "equip": [
+   "Banc / chaise"
+  ],
+  "equipLabel": "Banc / chaise",
+  "niv": "Avancé",
+  "typ": "Stabilité / Prévention",
+  "mus": "Adducteurs, obliques",
+  "dos": "3 × 15-30 s / côté",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 15,
+   "max": 30,
+   "unit": "s",
+   "per": "côté",
+   "note": null
+  },
+  "cons": "Jambe du dessus sur le banc, corps aligné",
+  "prio": [
+   "Football"
+  ],
+  "compl": [
+   "Tennis / Padel"
+  ]
+ },
+ {
+  "id": "ex-adduction-de-hanche-a-l-elastique",
+  "n": "Adduction de hanche à l'élastique",
+  "cat": "Bas du Corps",
+  "equip": [
+   "Élastique"
+  ],
+  "equipLabel": "Élastique",
+  "niv": "Débutant",
+  "typ": "Force",
+  "mus": "Adducteurs",
+  "dos": "3 × 15 / jambe",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 15,
+   "max": 15,
+   "unit": "reps",
+   "per": "jambe",
+   "note": null
+  },
+  "cons": "Debout, ramener la jambe vers l'intérieur sans pencher",
+  "prio": [
+   "Football"
+  ],
+  "compl": []
+ },
+ {
+  "id": "ex-serrage-de-ballon-entre-les-genoux",
+  "n": "Serrage de ballon entre les genoux",
+  "cat": "Bas du Corps",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Débutant",
+  "typ": "Stabilité / Prévention",
+  "mus": "Adducteurs (isométrie)",
+  "dos": "5 × 10 s",
+  "dose": {
+   "sets": 5,
+   "setsMax": 5,
+   "min": 10,
+   "max": 10,
+   "unit": "s",
+   "per": null,
+   "note": null
+  },
+  "cons": "Allongé genoux fléchis, serrer progressivement",
+  "prio": [],
+  "compl": [
+   "Football"
+  ]
+ },
+ {
+  "id": "ex-clamshell-avec-elastique",
+  "n": "Clamshell avec élastique",
+  "cat": "Bas du Corps",
+  "equip": [
+   "Élastique"
+  ],
+  "equipLabel": "Élastique",
+  "niv": "Débutant",
+  "typ": "Stabilité / Prévention",
+  "mus": "Moyen fessier, rotateurs de hanche",
+  "dos": "3 × 15 / côté",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 15,
+   "max": 15,
+   "unit": "reps",
+   "per": "côté",
+   "note": null
+  },
+  "cons": "Pieds joints, bassin immobile",
+  "prio": [],
+  "compl": [
+   "Cyclisme",
+   "Course à pied",
+   "Trail",
+   "Football",
+   "Tennis / Padel",
+   "Reprise / Débutant",
+   "Dos & posture"
+  ]
+ },
+ {
+  "id": "ex-marche-laterale-avec-elastique-monster-walk",
+  "n": "Marche latérale avec élastique (monster walk)",
+  "cat": "Bas du Corps",
+  "equip": [
+   "Élastique"
+  ],
+  "equipLabel": "Élastique",
+  "niv": "Débutant",
+  "typ": "Stabilité / Prévention",
+  "mus": "Moyen fessier",
+  "dos": "3 × 10-15 pas / côté",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 10,
+   "max": 15,
+   "unit": "pas",
+   "per": "côté",
+   "note": null
+  },
+  "cons": "Demi-squat, pieds parallèles, tension constante",
+  "prio": [
+   "Course à pied",
+   "Triathlon",
+   "Reprise / Débutant",
+   "Seniors & équilibre"
+  ],
+  "compl": [
+   "Cyclisme",
+   "Trail",
+   "Football",
+   "Tennis / Padel"
+  ]
+ },
+ {
+  "id": "ex-abduction-de-hanche-couche-sur-le-cote",
+  "n": "Abduction de hanche couché sur le côté",
+  "cat": "Bas du Corps",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Débutant",
+  "typ": "Force",
+  "mus": "Moyen fessier",
+  "dos": "3 × 15 / côté",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 15,
+   "max": 15,
+   "unit": "reps",
+   "per": "côté",
+   "note": null
+  },
+  "cons": "Jambe légèrement en arrière, pointe vers le bas",
+  "prio": [],
+  "compl": [
+   "Cyclisme",
+   "Course à pied",
+   "Trail",
+   "Seniors & équilibre"
+  ]
+ },
+ {
+  "id": "ex-fire-hydrant",
+  "n": "Fire hydrant",
+  "cat": "Bas du Corps",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Débutant",
+  "typ": "Force",
+  "mus": "Moyen et petit fessier",
+  "dos": "3 × 12-15 / côté",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 12,
+   "max": 15,
+   "unit": "reps",
+   "per": "côté",
+   "note": null
+  },
+  "cons": "À quatre pattes, lever le genou sur le côté",
+  "prio": [],
+  "compl": [
+   "Course à pied",
+   "Trail"
+  ]
+ },
+ {
+  "id": "ex-donkey-kick",
+  "n": "Donkey kick",
+  "cat": "Bas du Corps",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Débutant",
+  "typ": "Force",
+  "mus": "Grand fessier",
+  "dos": "3 × 15 / jambe",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 15,
+   "max": 15,
+   "unit": "reps",
+   "per": "jambe",
+   "note": null
+  },
+  "cons": "Pousser le talon vers le plafond sans cambrer",
+  "prio": [],
+  "compl": [
+   "Cyclisme",
+   "Course à pied"
+  ]
+ },
+ {
+  "id": "ex-kickback-fessier-a-l-elastique",
+  "n": "Kickback fessier à l'élastique",
+  "cat": "Bas du Corps",
+  "equip": [
+   "Élastique"
+  ],
+  "equipLabel": "Élastique",
+  "niv": "Débutant",
+  "typ": "Force",
+  "mus": "Grand fessier",
+  "dos": "3 × 15 / jambe",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 15,
+   "max": 15,
+   "unit": "reps",
+   "per": "jambe",
+   "note": null
+  },
+  "cons": "Extension de hanche contrôlée, buste fixe",
+  "prio": [],
+  "compl": [
+   "Cyclisme",
+   "Course à pied",
+   "Football",
+   "Tonification"
+  ]
+ },
+ {
+  "id": "ex-flexion-de-hanche-a-l-elastique",
+  "n": "Flexion de hanche à l'élastique",
+  "cat": "Bas du Corps",
+  "equip": [
+   "Élastique"
+  ],
+  "equipLabel": "Élastique",
+  "niv": "Intermédiaire",
+  "typ": "Force",
+  "mus": "Psoas-iliaque, droit fémoral",
+  "dos": "3 × 10-12 / jambe",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 10,
+   "max": 12,
+   "unit": "reps",
+   "per": "jambe",
+   "note": null
+  },
+  "cons": "Debout, monter le genou à hauteur de hanche",
+  "prio": [],
+  "compl": [
+   "Cyclisme",
+   "Course à pied",
+   "Trail",
+   "Football"
+  ]
+ },
+ {
+  "id": "ex-mollets-debout",
+  "n": "Mollets debout",
+  "cat": "Bas du Corps",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Débutant",
+  "typ": "Force",
+  "mus": "Triceps sural",
+  "dos": "3 × 15-20",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 15,
+   "max": 20,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Amplitude complète, pause en haut",
+  "prio": [
+   "Tennis / Padel",
+   "Reprise / Débutant",
+   "Seniors & équilibre"
+  ],
+  "compl": [
+   "Cyclisme",
+   "Course à pied",
+   "Trail",
+   "Football",
+   "Tonification"
+  ]
+ },
+ {
+  "id": "ex-mollets-une-jambe-sur-marche-excentrique",
+  "n": "Mollets une jambe sur marche (excentrique)",
+  "cat": "Bas du Corps",
+  "equip": [
+   "Banc / chaise"
+  ],
+  "equipLabel": "Banc / chaise",
+  "niv": "Intermédiaire",
+  "typ": "Stabilité / Prévention",
+  "mus": "Triceps sural, tendon d'Achille",
+  "dos": "3 × 12-15 / jambe, descente 3 s",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 12,
+   "max": 15,
+   "unit": "reps",
+   "per": "jambe",
+   "note": "descente 3 s"
+  },
+  "cons": "Monter à deux pieds, descendre sur un seul",
+  "prio": [
+   "Course à pied",
+   "Trail",
+   "Triathlon",
+   "Football"
+  ],
+  "compl": [
+   "Tennis / Padel"
+  ]
+ },
+ {
+  "id": "ex-mollets-lestes",
+  "n": "Mollets lestés",
+  "cat": "Bas du Corps",
+  "equip": [
+   "Haltères"
+  ],
+  "equipLabel": "Haltères",
+  "niv": "Intermédiaire",
+  "typ": "Force",
+  "mus": "Triceps sural",
+  "dos": "3-4 × 10-15",
+  "dose": {
+   "sets": 3,
+   "setsMax": 4,
+   "min": 10,
+   "max": 15,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Haltères en mains, genoux tendus",
+  "prio": [
+   "Course à pied"
+  ],
+  "compl": [
+   "Trail",
+   "Triathlon"
+  ]
+ },
+ {
+  "id": "ex-mollets-assis-genoux-flechis",
+  "n": "Mollets assis genoux fléchis",
+  "cat": "Bas du Corps",
+  "equip": [
+   "Banc / chaise",
+   "Haltères"
+  ],
+  "equipLabel": "Banc + haltères",
+  "niv": "Intermédiaire",
+  "typ": "Force",
+  "mus": "Soléaire",
+  "dos": "3 × 12-15",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 12,
+   "max": 15,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Haltères posés sur les genoux",
+  "prio": [
+   "Course à pied"
+  ],
+  "compl": [
+   "Cyclisme",
+   "Trail",
+   "Triathlon"
+  ]
+ },
+ {
+  "id": "ex-releves-de-pointes-de-pied",
+  "n": "Relevés de pointes de pied",
+  "cat": "Bas du Corps",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Débutant",
+  "typ": "Stabilité / Prévention",
+  "mus": "Tibial antérieur",
+  "dos": "3 × 15-20",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 15,
+   "max": 20,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Dos au mur, talons au sol, lever les pointes",
+  "prio": [
+   "Seniors & équilibre"
+  ],
+  "compl": [
+   "Course à pied",
+   "Trail"
+  ]
+ },
+ {
+  "id": "ex-inversion-eversion-de-cheville-a-l-elastique",
+  "n": "Inversion-éversion de cheville à l'élastique",
+  "cat": "Bas du Corps",
+  "equip": [
+   "Élastique"
+  ],
+  "equipLabel": "Élastique",
+  "niv": "Débutant",
+  "typ": "Stabilité / Prévention",
+  "mus": "Fibulaires, tibial postérieur",
+  "dos": "3 × 15 / sens",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 15,
+   "max": 15,
+   "unit": "reps",
+   "per": "sens",
+   "note": null
+  },
+  "cons": "Mouvement lent, seule la cheville bouge",
+  "prio": [
+   "Trail",
+   "Football"
+  ],
+  "compl": [
+   "Tennis / Padel"
+  ]
+ },
+ {
+  "id": "ex-equilibre-sur-une-jambe",
+  "n": "Équilibre sur une jambe",
+  "cat": "Bas du Corps",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Débutant",
+  "typ": "Stabilité / Prévention",
+  "mus": "Stabilisateurs de cheville et de hanche",
+  "dos": "3 × 30-45 s / jambe",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 30,
+   "max": 45,
+   "unit": "s",
+   "per": "jambe",
+   "note": null
+  },
+  "cons": "Yeux fermés ou sur coussin pour progresser",
+  "prio": [
+   "Trail",
+   "Football",
+   "Seniors & équilibre"
+  ],
+  "compl": [
+   "Course à pied",
+   "Tennis / Padel"
+  ]
+ },
+ {
+  "id": "ex-sautillements-pogo-jumps",
+  "n": "Sautillements (pogo jumps)",
+  "cat": "Bas du Corps",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Intermédiaire",
+  "typ": "Pliométrie / Explosivité",
+  "mus": "Mollets, raideur de cheville",
+  "dos": "3 × 20 contacts",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 20,
+   "max": 20,
+   "unit": "contacts",
+   "per": null,
+   "note": null
+  },
+  "cons": "Genoux presque tendus, contact au sol bref",
+  "prio": [
+   "Course à pied",
+   "Triathlon"
+  ],
+  "compl": [
+   "Trail",
+   "Football",
+   "Tennis / Padel"
+  ]
+ },
+ {
+  "id": "ex-montees-de-genoux",
+  "n": "Montées de genoux",
+  "cat": "Bas du Corps",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Débutant",
+  "typ": "Pliométrie / Explosivité",
+  "mus": "Fléchisseurs de hanche, mollets",
+  "dos": "3 × 20-30 s",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 20,
+   "max": 30,
+   "unit": "s",
+   "per": null,
+   "note": null
+  },
+  "cons": "Buste droit, appuis sur l'avant-pied",
+  "prio": [],
+  "compl": [
+   "Course à pied",
+   "Trail",
+   "Football",
+   "Perte de poids"
+  ]
+ },
+ {
+  "id": "ex-saut-en-longueur-sans-elan",
+  "n": "Saut en longueur sans élan",
+  "cat": "Bas du Corps",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Intermédiaire",
+  "typ": "Pliométrie / Explosivité",
+  "mus": "Fessiers, quadriceps",
+  "dos": "4 × 5",
+  "dose": {
+   "sets": 4,
+   "setsMax": 4,
+   "min": 5,
+   "max": 5,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Balancer les bras, réception stabilisée 2 s",
+  "prio": [],
+  "compl": [
+   "Football",
+   "Perte de poids"
+  ]
+ },
+ {
+  "id": "ex-saut-sur-banc-box-jump",
+  "n": "Saut sur banc (box jump)",
+  "cat": "Bas du Corps",
+  "equip": [
+   "Banc / chaise"
+  ],
+  "equipLabel": "Banc / chaise",
+  "niv": "Intermédiaire",
+  "typ": "Pliométrie / Explosivité",
+  "mus": "Fessiers, quadriceps, mollets",
+  "dos": "4 × 5",
+  "dose": {
+   "sets": 4,
+   "setsMax": 4,
+   "min": 5,
+   "max": 5,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Support stable, redescendre en marchant",
+  "prio": [
+   "Course à pied",
+   "Football"
+  ],
+  "compl": [
+   "Triathlon",
+   "Tennis / Padel"
+  ]
+ },
+ {
+  "id": "ex-sauts-lateraux-skater-jumps",
+  "n": "Sauts latéraux (skater jumps)",
+  "cat": "Bas du Corps",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Intermédiaire",
+  "typ": "Pliométrie / Explosivité",
+  "mus": "Moyen fessier, quadriceps, adducteurs",
+  "dos": "3 × 8-10 / côté",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 8,
+   "max": 10,
+   "unit": "reps",
+   "per": "côté",
+   "note": null
+  },
+  "cons": "Réception sur une jambe, genou dans l'axe",
+  "prio": [
+   "Trail",
+   "Football",
+   "Tennis / Padel"
+  ],
+  "compl": [
+   "Perte de poids"
+  ]
+ },
+ {
+  "id": "ex-saut-une-jambe-avec-reception-stabilisee",
+  "n": "Saut une jambe avec réception stabilisée",
+  "cat": "Bas du Corps",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Intermédiaire",
+  "typ": "Stabilité / Prévention",
+  "mus": "Quadriceps, fessiers, stabilisateurs",
+  "dos": "3 × 6 / jambe",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 6,
+   "max": 6,
+   "unit": "reps",
+   "per": "jambe",
+   "note": null
+  },
+  "cons": "Tenir la réception 2-3 s sans vaciller",
+  "prio": [
+   "Trail",
+   "Football"
+  ],
+  "compl": [
+   "Course à pied",
+   "Tennis / Padel"
+  ]
+ },
+ {
+  "id": "ex-drop-jump-saut-en-contrebas",
+  "n": "Drop jump (saut en contrebas)",
+  "cat": "Bas du Corps",
+  "equip": [
+   "Banc / chaise"
+  ],
+  "equipLabel": "Banc / chaise",
+  "niv": "Avancé",
+  "typ": "Pliométrie / Explosivité",
+  "mus": "Mollets, quadriceps (réactivité)",
+  "dos": "3 × 5",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 5,
+   "max": 5,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Se laisser tomber, rebondir le plus vite possible",
+  "prio": [],
+  "compl": [
+   "Course à pied",
+   "Football"
+  ]
+ },
+ {
+  "id": "ex-squat-assiste-aux-sangles",
+  "n": "Squat assisté aux sangles",
+  "cat": "Bas du Corps",
+  "equip": [
+   "Sangles de suspension"
+  ],
+  "equipLabel": "Sangles de suspension",
+  "niv": "Débutant",
+  "typ": "Force",
+  "mus": "Quadriceps, fessiers",
+  "dos": "3 × 12-15",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 12,
+   "max": 15,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "S'aider des sangles pour descendre plus bas",
+  "prio": [],
+  "compl": [
+   "Cyclisme"
+  ]
+ },
+ {
+  "id": "ex-fente-arriere-pied-dans-la-sangle",
+  "n": "Fente arrière pied dans la sangle",
+  "cat": "Bas du Corps",
+  "equip": [
+   "Sangles de suspension"
+  ],
+  "equipLabel": "Sangles de suspension",
+  "niv": "Avancé",
+  "typ": "Force",
+  "mus": "Quadriceps, fessiers, stabilisateurs",
+  "dos": "3 × 8-10 / jambe",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 8,
+   "max": 10,
+   "unit": "reps",
+   "per": "jambe",
+   "note": null
+  },
+  "cons": "Pied arrière suspendu, bassin de face",
+  "prio": [],
+  "compl": [
+   "Course à pied",
+   "Trail"
+  ]
+ },
+ {
+  "id": "ex-squat-au-mur-avec-swiss-ball",
+  "n": "Squat au mur avec swiss ball",
+  "cat": "Bas du Corps",
+  "equip": [
+   "Swiss ball"
+  ],
+  "equipLabel": "Swiss ball",
+  "niv": "Débutant",
+  "typ": "Force",
+  "mus": "Quadriceps, fessiers",
+  "dos": "3 × 15",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 15,
+   "max": 15,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Ballon entre le dos et le mur",
+  "prio": [],
+  "compl": [
+   "Cyclisme"
+  ]
+ },
+ {
+  "id": "ex-pompes-classiques",
+  "n": "Pompes classiques",
+  "cat": "Haut du Corps",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Débutant",
+  "typ": "Force",
+  "mus": "Pectoraux, triceps, deltoïdes antérieurs",
+  "dos": "3 × 8-15",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 8,
+   "max": 15,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Corps gainé, coudes à 45° du buste",
+  "prio": [
+   "Escalade",
+   "Perte de poids"
+  ],
+  "compl": [
+   "Cyclisme",
+   "Natation",
+   "Tennis / Padel",
+   "Tonification"
+  ]
+ },
+ {
+  "id": "ex-pompes-sur-les-genoux",
+  "n": "Pompes sur les genoux",
+  "cat": "Haut du Corps",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Débutant",
+  "typ": "Force",
+  "mus": "Pectoraux, triceps",
+  "dos": "3 × 10-15",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 10,
+   "max": 15,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Alignement genoux-bassin-épaules",
+  "prio": [
+   "Reprise / Débutant"
+  ],
+  "compl": [
+   "Cyclisme",
+   "Natation",
+   "Tennis / Padel"
+  ]
+ },
+ {
+  "id": "ex-pompes-mains-surelevees",
+  "n": "Pompes mains surélevées",
+  "cat": "Haut du Corps",
+  "equip": [
+   "Banc / chaise"
+  ],
+  "equipLabel": "Banc / chaise",
+  "niv": "Débutant",
+  "typ": "Force",
+  "mus": "Pectoraux (bas), triceps",
+  "dos": "3 × 10-15",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 10,
+   "max": 15,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Mains sur le banc, poitrine vers le bord",
+  "prio": [],
+  "compl": [
+   "Cyclisme",
+   "Natation",
+   "Tennis / Padel",
+   "Seniors & équilibre"
+  ]
+ },
+ {
+  "id": "ex-pompes-pieds-sureleves",
+  "n": "Pompes pieds surélevés",
+  "cat": "Haut du Corps",
+  "equip": [
+   "Banc / chaise"
+  ],
+  "equipLabel": "Banc / chaise",
+  "niv": "Intermédiaire",
+  "typ": "Force",
+  "mus": "Pectoraux (haut), deltoïdes",
+  "dos": "3 × 8-12",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 8,
+   "max": 12,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Pieds sur le banc, bassin gainé",
+  "prio": [],
+  "compl": [
+   "Natation",
+   "Escalade"
+  ]
+ },
+ {
+  "id": "ex-pompes-diamant",
+  "n": "Pompes diamant",
+  "cat": "Haut du Corps",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Intermédiaire",
+  "typ": "Force",
+  "mus": "Triceps, pectoraux",
+  "dos": "3 × 6-12",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 6,
+   "max": 12,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Mains jointes sous le sternum",
+  "prio": [],
+  "compl": [
+   "Natation",
+   "Escalade"
+  ]
+ },
+ {
+  "id": "ex-pompes-larges",
+  "n": "Pompes larges",
+  "cat": "Haut du Corps",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Débutant",
+  "typ": "Force",
+  "mus": "Pectoraux",
+  "dos": "3 × 8-15",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 8,
+   "max": 15,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Mains plus larges que les épaules",
+  "prio": [],
+  "compl": []
+ },
+ {
+  "id": "ex-pompes-archer",
+  "n": "Pompes archer",
+  "cat": "Haut du Corps",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Avancé",
+  "typ": "Force",
+  "mus": "Pectoraux, triceps (unilatéral)",
+  "dos": "3 × 4-6 / côté",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 4,
+   "max": 6,
+   "unit": "reps",
+   "per": "côté",
+   "note": null
+  },
+  "cons": "Charger un bras, l'autre reste tendu",
+  "prio": [],
+  "compl": [
+   "Escalade"
+  ]
+ },
+ {
+  "id": "ex-pompes-pike",
+  "n": "Pompes pike",
+  "cat": "Haut du Corps",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Intermédiaire",
+  "typ": "Force",
+  "mus": "Deltoïdes, triceps",
+  "dos": "3 × 6-10",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 6,
+   "max": 10,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Bassin haut, tête entre les mains",
+  "prio": [],
+  "compl": [
+   "Natation",
+   "Escalade"
+  ]
+ },
+ {
+  "id": "ex-pompes-claquees",
+  "n": "Pompes claquées",
+  "cat": "Haut du Corps",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Avancé",
+  "typ": "Pliométrie / Explosivité",
+  "mus": "Pectoraux, triceps (explosivité)",
+  "dos": "4 × 5-6",
+  "dose": {
+   "sets": 4,
+   "setsMax": 4,
+   "min": 5,
+   "max": 6,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Pousser fort, réception coudes fléchis",
+  "prio": [],
+  "compl": [
+   "Tennis / Padel"
+  ]
+ },
+ {
+  "id": "ex-pompes-avec-elastique",
+  "n": "Pompes avec élastique",
+  "cat": "Haut du Corps",
+  "equip": [
+   "Élastique"
+  ],
+  "equipLabel": "Élastique",
+  "niv": "Intermédiaire",
+  "typ": "Force",
+  "mus": "Pectoraux, triceps",
+  "dos": "3 × 8-12",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 8,
+   "max": 12,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Élastique dans le dos tenu sous les mains",
+  "prio": [],
+  "compl": [
+   "Natation"
+  ]
+ },
+ {
+  "id": "ex-pompes-en-suspension",
+  "n": "Pompes en suspension",
+  "cat": "Haut du Corps",
+  "equip": [
+   "Sangles de suspension"
+  ],
+  "equipLabel": "Sangles de suspension",
+  "niv": "Avancé",
+  "typ": "Force",
+  "mus": "Pectoraux, triceps, gainage",
+  "dos": "3 × 6-10",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 6,
+   "max": 10,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Mains dans les sangles, épaules stables",
+  "prio": [],
+  "compl": [
+   "Natation",
+   "Escalade"
+  ]
+ },
+ {
+  "id": "ex-pompes-scapulaires-push-up-plus",
+  "n": "Pompes scapulaires (push-up plus)",
+  "cat": "Haut du Corps",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Débutant",
+  "typ": "Stabilité / Prévention",
+  "mus": "Dentelé antérieur",
+  "dos": "3 × 12-15",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 12,
+   "max": 15,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Bras tendus, écarter puis rapprocher les omoplates",
+  "prio": [
+   "Natation",
+   "Tennis / Padel",
+   "Escalade"
+  ],
+  "compl": [
+   "Triathlon"
+  ]
+ },
+ {
+  "id": "ex-poirier-contre-le-mur",
+  "n": "Poirier contre le mur",
+  "cat": "Haut du Corps",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Avancé",
+  "typ": "Gainage",
+  "mus": "Deltoïdes, trapèzes, gainage",
+  "dos": "4 × 15-30 s",
+  "dose": {
+   "sets": 4,
+   "setsMax": 4,
+   "min": 15,
+   "max": 30,
+   "unit": "s",
+   "per": null,
+   "note": null
+  },
+  "cons": "Ventre face au mur, côtes rentrées",
+  "prio": [],
+  "compl": [
+   "Escalade"
+  ]
+ },
+ {
+  "id": "ex-dips-sur-banc",
+  "n": "Dips sur banc",
+  "cat": "Haut du Corps",
+  "equip": [
+   "Banc / chaise"
+  ],
+  "equipLabel": "Banc / chaise",
+  "niv": "Débutant",
+  "typ": "Force",
+  "mus": "Triceps, deltoïdes antérieurs",
+  "dos": "3 × 10-15",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 10,
+   "max": 15,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Épaules basses, ne pas descendre sous 90°",
+  "prio": [
+   "Escalade"
+  ],
+  "compl": [
+   "Natation",
+   "Tonification"
+  ]
+ },
+ {
+  "id": "ex-dips-entre-deux-chaises",
+  "n": "Dips entre deux chaises",
+  "cat": "Haut du Corps",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Avancé",
+  "typ": "Force",
+  "mus": "Triceps, pectoraux",
+  "dos": "3 × 6-10",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 6,
+   "max": 10,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Chaises stables, buste légèrement penché",
+  "prio": [],
+  "compl": [
+   "Escalade"
+  ]
+ },
+ {
+  "id": "ex-developpe-couche-halteres",
+  "n": "Développé couché haltères",
+  "cat": "Haut du Corps",
+  "equip": [
+   "Banc / chaise",
+   "Haltères"
+  ],
+  "equipLabel": "Banc + haltères",
+  "niv": "Intermédiaire",
+  "typ": "Force",
+  "mus": "Pectoraux, triceps, deltoïdes antérieurs",
+  "dos": "3-4 × 8-12",
+  "dose": {
+   "sets": 3,
+   "setsMax": 4,
+   "min": 8,
+   "max": 12,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Omoplates serrées, pieds au sol",
+  "prio": [
+   "Tonification"
+  ],
+  "compl": [
+   "Natation"
+  ]
+ },
+ {
+  "id": "ex-developpe-incline-halteres",
+  "n": "Développé incliné haltères",
+  "cat": "Haut du Corps",
+  "equip": [
+   "Banc / chaise",
+   "Haltères"
+  ],
+  "equipLabel": "Banc + haltères",
+  "niv": "Intermédiaire",
+  "typ": "Force",
+  "mus": "Pectoraux (haut), deltoïdes",
+  "dos": "3-4 × 8-12",
+  "dose": {
+   "sets": 3,
+   "setsMax": 4,
+   "min": 8,
+   "max": 12,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Banc à 30°, trajectoire verticale",
+  "prio": [],
+  "compl": [
+   "Tonification"
+  ]
+ },
+ {
+  "id": "ex-developpe-au-sol-halteres-floor-press",
+  "n": "Développé au sol haltères (floor press)",
+  "cat": "Haut du Corps",
+  "equip": [
+   "Haltères"
+  ],
+  "equipLabel": "Haltères",
+  "niv": "Débutant",
+  "typ": "Force",
+  "mus": "Pectoraux, triceps",
+  "dos": "3 × 10-12",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 10,
+   "max": 12,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Coudes posés au sol entre chaque répétition",
+  "prio": [],
+  "compl": [
+   "Natation"
+  ]
+ },
+ {
+  "id": "ex-ecarte-couche-halteres",
+  "n": "Écarté couché haltères",
+  "cat": "Haut du Corps",
+  "equip": [
+   "Banc / chaise",
+   "Haltères"
+  ],
+  "equipLabel": "Banc + haltères",
+  "niv": "Intermédiaire",
+  "typ": "Force",
+  "mus": "Pectoraux",
+  "dos": "3 × 10-12",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 10,
+   "max": 12,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Coudes légèrement fléchis, étirement contrôlé",
+  "prio": [],
+  "compl": []
+ },
+ {
+  "id": "ex-pull-over-haltere",
+  "n": "Pull-over haltère",
+  "cat": "Haut du Corps",
+  "equip": [
+   "Banc / chaise",
+   "Haltères"
+  ],
+  "equipLabel": "Banc + haltères",
+  "niv": "Intermédiaire",
+  "typ": "Force",
+  "mus": "Grand dorsal, pectoraux, dentelé",
+  "dos": "3 × 10-12",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 10,
+   "max": 12,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Bras quasi tendus, côtes basses",
+  "prio": [
+   "Natation"
+  ],
+  "compl": [
+   "Triathlon",
+   "Escalade"
+  ]
+ },
+ {
+  "id": "ex-developpe-pectoraux-a-l-elastique",
+  "n": "Développé pectoraux à l'élastique",
+  "cat": "Haut du Corps",
+  "equip": [
+   "Élastique"
+  ],
+  "equipLabel": "Élastique",
+  "niv": "Débutant",
+  "typ": "Force",
+  "mus": "Pectoraux, triceps",
+  "dos": "3 × 12-15",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 12,
+   "max": 15,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Élastique ancré derrière soi, pousser devant",
+  "prio": [],
+  "compl": [
+   "Natation",
+   "Tennis / Padel"
+  ]
+ },
+ {
+  "id": "ex-developpe-militaire-halteres",
+  "n": "Développé militaire haltères",
+  "cat": "Haut du Corps",
+  "equip": [
+   "Haltères"
+  ],
+  "equipLabel": "Haltères",
+  "niv": "Intermédiaire",
+  "typ": "Force",
+  "mus": "Deltoïdes, triceps",
+  "dos": "3-4 × 8-10",
+  "dose": {
+   "sets": 3,
+   "setsMax": 4,
+   "min": 8,
+   "max": 10,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Debout, abdos gainés, sans cambrer",
+  "prio": [
+   "Escalade",
+   "Tonification"
+  ],
+  "compl": [
+   "Natation",
+   "Tennis / Padel",
+   "Perte de poids"
+  ]
+ },
+ {
+  "id": "ex-developpe-epaules-assis",
+  "n": "Développé épaules assis",
+  "cat": "Haut du Corps",
+  "equip": [
+   "Banc / chaise",
+   "Haltères"
+  ],
+  "equipLabel": "Banc + haltères",
+  "niv": "Débutant",
+  "typ": "Force",
+  "mus": "Deltoïdes, triceps",
+  "dos": "3 × 10-12",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 10,
+   "max": 12,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Dos calé, coudes sous les poignets",
+  "prio": [],
+  "compl": [
+   "Natation"
+  ]
+ },
+ {
+  "id": "ex-developpe-epaules-a-l-elastique",
+  "n": "Développé épaules à l'élastique",
+  "cat": "Haut du Corps",
+  "equip": [
+   "Élastique"
+  ],
+  "equipLabel": "Élastique",
+  "niv": "Débutant",
+  "typ": "Force",
+  "mus": "Deltoïdes, triceps",
+  "dos": "3 × 12-15",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 12,
+   "max": 15,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Élastique sous les pieds, poussée verticale",
+  "prio": [
+   "Reprise / Débutant",
+   "Seniors & équilibre"
+  ],
+  "compl": [
+   "Natation",
+   "Tennis / Padel"
+  ]
+ },
+ {
+  "id": "ex-developpe-arnold",
+  "n": "Développé Arnold",
+  "cat": "Haut du Corps",
+  "equip": [
+   "Haltères"
+  ],
+  "equipLabel": "Haltères",
+  "niv": "Intermédiaire",
+  "typ": "Force",
+  "mus": "Deltoïdes (3 faisceaux)",
+  "dos": "3 × 8-12",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 8,
+   "max": 12,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Rotation des poignets pendant la poussée",
+  "prio": [],
+  "compl": []
+ },
+ {
+  "id": "ex-push-press-halteres",
+  "n": "Push press haltères",
+  "cat": "Haut du Corps",
+  "equip": [
+   "Haltères"
+  ],
+  "equipLabel": "Haltères",
+  "niv": "Avancé",
+  "typ": "Pliométrie / Explosivité",
+  "mus": "Deltoïdes, triceps, jambes",
+  "dos": "4 × 5-6",
+  "dose": {
+   "sets": 4,
+   "setsMax": 4,
+   "min": 5,
+   "max": 6,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Impulsion des jambes puis poussée des bras",
+  "prio": [],
+  "compl": []
+ },
+ {
+  "id": "ex-elevations-laterales-halteres",
+  "n": "Élévations latérales haltères",
+  "cat": "Haut du Corps",
+  "equip": [
+   "Haltères"
+  ],
+  "equipLabel": "Haltères",
+  "niv": "Débutant",
+  "typ": "Force",
+  "mus": "Deltoïde moyen",
+  "dos": "3 × 12-15",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 12,
+   "max": 15,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Coudes légèrement fléchis, monter à l'horizontale",
+  "prio": [
+   "Tonification"
+  ],
+  "compl": [
+   "Natation"
+  ]
+ },
+ {
+  "id": "ex-elevations-laterales-a-l-elastique",
+  "n": "Élévations latérales à l'élastique",
+  "cat": "Haut du Corps",
+  "equip": [
+   "Élastique"
+  ],
+  "equipLabel": "Élastique",
+  "niv": "Débutant",
+  "typ": "Force",
+  "mus": "Deltoïde moyen",
+  "dos": "3 × 15",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 15,
+   "max": 15,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Élastique sous le pied, descente freinée",
+  "prio": [],
+  "compl": [
+   "Natation",
+   "Reprise / Débutant"
+  ]
+ },
+ {
+  "id": "ex-elevations-frontales",
+  "n": "Élévations frontales",
+  "cat": "Haut du Corps",
+  "equip": [
+   "Haltères"
+  ],
+  "equipLabel": "Haltères",
+  "niv": "Débutant",
+  "typ": "Force",
+  "mus": "Deltoïde antérieur",
+  "dos": "3 × 12",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 12,
+   "max": 12,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Monter à hauteur d'yeux sans élan",
+  "prio": [],
+  "compl": [
+   "Natation",
+   "Tonification"
+  ]
+ },
+ {
+  "id": "ex-rotation-externe-d-epaule-a-l-elastique",
+  "n": "Rotation externe d'épaule à l'élastique",
+  "cat": "Haut du Corps",
+  "equip": [
+   "Élastique"
+  ],
+  "equipLabel": "Élastique",
+  "niv": "Débutant",
+  "typ": "Stabilité / Prévention",
+  "mus": "Coiffe des rotateurs (infra-épineux, petit rond)",
+  "dos": "3 × 12-15 / bras",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 12,
+   "max": 15,
+   "unit": "reps",
+   "per": "bras",
+   "note": null
+  },
+  "cons": "Coude collé au corps à 90°, mouvement lent",
+  "prio": [
+   "Natation",
+   "Triathlon",
+   "Tennis / Padel",
+   "Escalade"
+  ],
+  "compl": [
+   "Reprise / Débutant",
+   "Seniors & équilibre"
+  ]
+ },
+ {
+  "id": "ex-rotation-externe-a-90-d-abduction",
+  "n": "Rotation externe à 90° d'abduction",
+  "cat": "Haut du Corps",
+  "equip": [
+   "Élastique"
+  ],
+  "equipLabel": "Élastique",
+  "niv": "Intermédiaire",
+  "typ": "Stabilité / Prévention",
+  "mus": "Coiffe des rotateurs",
+  "dos": "3 × 10-12 / bras",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 10,
+   "max": 12,
+   "unit": "reps",
+   "per": "bras",
+   "note": null
+  },
+  "cons": "Coude à hauteur d'épaule, avant-bras pivote vers le haut",
+  "prio": [
+   "Natation",
+   "Tennis / Padel"
+  ],
+  "compl": [
+   "Triathlon"
+  ]
+ },
+ {
+  "id": "ex-rotation-interne-d-epaule-a-l-elastique",
+  "n": "Rotation interne d'épaule à l'élastique",
+  "cat": "Haut du Corps",
+  "equip": [
+   "Élastique"
+  ],
+  "equipLabel": "Élastique",
+  "niv": "Débutant",
+  "typ": "Stabilité / Prévention",
+  "mus": "Sub-scapulaire",
+  "dos": "3 × 12-15 / bras",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 12,
+   "max": 15,
+   "unit": "reps",
+   "per": "bras",
+   "note": null
+  },
+  "cons": "Coude au corps, ramener la main vers le ventre",
+  "prio": [
+   "Tennis / Padel"
+  ],
+  "compl": [
+   "Natation"
+  ]
+ },
+ {
+  "id": "ex-rotation-externe-couche-sur-le-cote",
+  "n": "Rotation externe couché sur le côté",
+  "cat": "Haut du Corps",
+  "equip": [
+   "Haltères"
+  ],
+  "equipLabel": "Haltères",
+  "niv": "Débutant",
+  "typ": "Stabilité / Prévention",
+  "mus": "Coiffe des rotateurs",
+  "dos": "3 × 12-15 / bras",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 12,
+   "max": 15,
+   "unit": "reps",
+   "per": "bras",
+   "note": null
+  },
+  "cons": "Haltère léger (1-3 kg), serviette sous le coude",
+  "prio": [],
+  "compl": [
+   "Natation",
+   "Tennis / Padel",
+   "Escalade"
+  ]
+ },
+ {
+  "id": "ex-cuban-press",
+  "n": "Cuban press",
+  "cat": "Haut du Corps",
+  "equip": [
+   "Haltères"
+  ],
+  "equipLabel": "Haltères",
+  "niv": "Intermédiaire",
+  "typ": "Stabilité / Prévention",
+  "mus": "Coiffe des rotateurs, deltoïdes",
+  "dos": "3 × 8-10",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 8,
+   "max": 10,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Charge légère : tirage, rotation, développé",
+  "prio": [],
+  "compl": [
+   "Natation",
+   "Tennis / Padel"
+  ]
+ },
+ {
+  "id": "ex-halo-kettlebell",
+  "n": "Halo kettlebell",
+  "cat": "Haut du Corps",
+  "equip": [
+   "Kettlebell"
+  ],
+  "equipLabel": "Kettlebell",
+  "niv": "Intermédiaire",
+  "typ": "Stabilité / Prévention",
+  "mus": "Deltoïdes, trapèzes, gainage",
+  "dos": "3 × 8 / sens",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 8,
+   "max": 8,
+   "unit": "reps",
+   "per": "sens",
+   "note": null
+  },
+  "cons": "Tourner la charge autour de la tête, côtes basses",
+  "prio": [],
+  "compl": [
+   "Natation"
+  ]
+ },
+ {
+  "id": "ex-curl-biceps-halteres",
+  "n": "Curl biceps haltères",
+  "cat": "Haut du Corps",
+  "equip": [
+   "Haltères"
+  ],
+  "equipLabel": "Haltères",
+  "niv": "Débutant",
+  "typ": "Force",
+  "mus": "Biceps",
+  "dos": "3 × 10-12",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 10,
+   "max": 12,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Coudes fixes le long du corps",
+  "prio": [
+   "Tonification"
+  ],
+  "compl": [
+   "Escalade"
+  ]
+ },
+ {
+  "id": "ex-curl-marteau",
+  "n": "Curl marteau",
+  "cat": "Haut du Corps",
+  "equip": [
+   "Haltères"
+  ],
+  "equipLabel": "Haltères",
+  "niv": "Débutant",
+  "typ": "Force",
+  "mus": "Brachial, brachio-radial",
+  "dos": "3 × 10-12",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 10,
+   "max": 12,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Prise neutre, pouces vers le haut",
+  "prio": [],
+  "compl": [
+   "Tennis / Padel",
+   "Escalade",
+   "Tonification"
+  ]
+ },
+ {
+  "id": "ex-curl-biceps-a-l-elastique",
+  "n": "Curl biceps à l'élastique",
+  "cat": "Haut du Corps",
+  "equip": [
+   "Élastique"
+  ],
+  "equipLabel": "Élastique",
+  "niv": "Débutant",
+  "typ": "Force",
+  "mus": "Biceps",
+  "dos": "3 × 15",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 15,
+   "max": 15,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Élastique sous les pieds, retour freiné",
+  "prio": [],
+  "compl": [
+   "Escalade",
+   "Reprise / Débutant",
+   "Seniors & équilibre"
+  ]
+ },
+ {
+  "id": "ex-curl-incline-sur-banc",
+  "n": "Curl incliné sur banc",
+  "cat": "Haut du Corps",
+  "equip": [
+   "Banc / chaise",
+   "Haltères"
+  ],
+  "equipLabel": "Banc + haltères",
+  "niv": "Intermédiaire",
+  "typ": "Force",
+  "mus": "Biceps (long chef)",
+  "dos": "3 × 10-12",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 10,
+   "max": 12,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Banc à 45°, bras à la verticale",
+  "prio": [],
+  "compl": [
+   "Escalade"
+  ]
+ },
+ {
+  "id": "ex-extension-triceps-au-dessus-de-la-tete",
+  "n": "Extension triceps au-dessus de la tête",
+  "cat": "Haut du Corps",
+  "equip": [
+   "Haltères"
+  ],
+  "equipLabel": "Haltères",
+  "niv": "Débutant",
+  "typ": "Force",
+  "mus": "Triceps (long chef)",
+  "dos": "3 × 10-12",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 10,
+   "max": 12,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Coudes serrés pointés vers le plafond",
+  "prio": [
+   "Natation",
+   "Tennis / Padel",
+   "Tonification"
+  ],
+  "compl": [
+   "Triathlon"
+  ]
+ },
+ {
+  "id": "ex-extension-triceps-a-l-elastique",
+  "n": "Extension triceps à l'élastique",
+  "cat": "Haut du Corps",
+  "equip": [
+   "Élastique"
+  ],
+  "equipLabel": "Élastique",
+  "niv": "Débutant",
+  "typ": "Force",
+  "mus": "Triceps",
+  "dos": "3 × 15",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 15,
+   "max": 15,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Élastique ancré en hauteur, coudes au corps",
+  "prio": [],
+  "compl": [
+   "Natation",
+   "Reprise / Débutant"
+  ]
+ },
+ {
+  "id": "ex-barre-au-front-avec-halteres",
+  "n": "Barre au front avec haltères",
+  "cat": "Haut du Corps",
+  "equip": [
+   "Banc / chaise",
+   "Haltères"
+  ],
+  "equipLabel": "Banc + haltères",
+  "niv": "Intermédiaire",
+  "typ": "Force",
+  "mus": "Triceps",
+  "dos": "3 × 10-12",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 10,
+   "max": 12,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Allongé, seuls les avant-bras bougent",
+  "prio": [],
+  "compl": []
+ },
+ {
+  "id": "ex-kickback-triceps",
+  "n": "Kickback triceps",
+  "cat": "Haut du Corps",
+  "equip": [
+   "Haltères"
+  ],
+  "equipLabel": "Haltères",
+  "niv": "Débutant",
+  "typ": "Force",
+  "mus": "Triceps",
+  "dos": "3 × 12-15",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 12,
+   "max": 15,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Buste penché, bras parallèle au sol",
+  "prio": [],
+  "compl": [
+   "Natation"
+  ]
+ },
+ {
+  "id": "ex-extension-des-poignets",
+  "n": "Extension des poignets",
+  "cat": "Haut du Corps",
+  "equip": [
+   "Haltères"
+  ],
+  "equipLabel": "Haltères",
+  "niv": "Débutant",
+  "typ": "Stabilité / Prévention",
+  "mus": "Extenseurs de l'avant-bras",
+  "dos": "3 × 15",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 15,
+   "max": 15,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Avant-bras posé sur la cuisse, descente lente",
+  "prio": [
+   "Tennis / Padel",
+   "Escalade"
+  ],
+  "compl": []
+ },
+ {
+  "id": "ex-flexion-des-poignets",
+  "n": "Flexion des poignets",
+  "cat": "Haut du Corps",
+  "equip": [
+   "Haltères"
+  ],
+  "equipLabel": "Haltères",
+  "niv": "Débutant",
+  "typ": "Force",
+  "mus": "Fléchisseurs de l'avant-bras",
+  "dos": "3 × 15",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 15,
+   "max": 15,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Avant-bras posé, paume vers le haut",
+  "prio": [
+   "Tennis / Padel"
+  ],
+  "compl": [
+   "Escalade"
+  ]
+ },
+ {
+  "id": "ex-pronation-supination-avec-haltere",
+  "n": "Pronation-supination avec haltère",
+  "cat": "Haut du Corps",
+  "equip": [
+   "Haltères"
+  ],
+  "equipLabel": "Haltères",
+  "niv": "Débutant",
+  "typ": "Stabilité / Prévention",
+  "mus": "Rond pronateur, supinateur",
+  "dos": "3 × 12 / sens",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 12,
+   "max": 12,
+   "unit": "reps",
+   "per": "sens",
+   "note": null
+  },
+  "cons": "Haltère tenu par une extrémité, coude à 90°",
+  "prio": [
+   "Tennis / Padel"
+  ],
+  "compl": [
+   "Escalade"
+  ]
+ },
+ {
+  "id": "ex-extension-des-doigts-a-l-elastique",
+  "n": "Extension des doigts à l'élastique",
+  "cat": "Haut du Corps",
+  "equip": [
+   "Élastique"
+  ],
+  "equipLabel": "Élastique",
+  "niv": "Débutant",
+  "typ": "Stabilité / Prévention",
+  "mus": "Extenseurs des doigts",
+  "dos": "3 × 20",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 20,
+   "max": 20,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Petit élastique autour des doigts, ouvrir la main",
+  "prio": [
+   "Escalade"
+  ],
+  "compl": [
+   "Tennis / Padel"
+  ]
+ },
+ {
+  "id": "ex-suspension-passive-a-la-barre",
+  "n": "Suspension passive à la barre",
+  "cat": "Haut du Corps",
+  "equip": [
+   "Barre de traction"
+  ],
+  "equipLabel": "Barre de traction",
+  "niv": "Débutant",
+  "typ": "Gainage",
+  "mus": "Préhension, épaules",
+  "dos": "3 × 20-40 s",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 20,
+   "max": 40,
+   "unit": "s",
+   "per": null,
+   "note": null
+  },
+  "cons": "Épaules engagées, corps immobile",
+  "prio": [
+   "Escalade"
+  ],
+  "compl": []
+ },
+ {
+  "id": "ex-superman",
+  "n": "Superman",
+  "cat": "Dos",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Débutant",
+  "typ": "Force",
+  "mus": "Érecteurs du rachis, fessiers",
+  "dos": "3 × 12-15",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 12,
+   "max": 15,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Décoller buste et jambes, regard au sol",
+  "prio": [
+   "Cyclisme",
+   "Reprise / Débutant"
+  ],
+  "compl": [
+   "Course à pied",
+   "Trail",
+   "Natation",
+   "Triathlon"
+  ]
+ },
+ {
+  "id": "ex-superman-alterne-nageur",
+  "n": "Superman alterné (nageur)",
+  "cat": "Dos",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Débutant",
+  "typ": "Force",
+  "mus": "Érecteurs du rachis, fessiers",
+  "dos": "3 × 10 / côté",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 10,
+   "max": 10,
+   "unit": "reps",
+   "per": "côté",
+   "note": null
+  },
+  "cons": "Bras et jambe opposés, tenir 2 s",
+  "prio": [
+   "Natation",
+   "Dos & posture"
+  ],
+  "compl": [
+   "Cyclisme",
+   "Course à pied",
+   "Triathlon"
+  ]
+ },
+ {
+  "id": "ex-bird-dog",
+  "n": "Bird dog",
+  "cat": "Dos",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Débutant",
+  "typ": "Stabilité / Prévention",
+  "mus": "Multifides, lombaires, fessiers",
+  "dos": "3 × 8-10 / côté",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 8,
+   "max": 10,
+   "unit": "reps",
+   "per": "côté",
+   "note": null
+  },
+  "cons": "Dos plat, allonger sans rotation du bassin",
+  "prio": [
+   "Cyclisme",
+   "Reprise / Débutant",
+   "Dos & posture"
+  ],
+  "compl": [
+   "Course à pied",
+   "Trail",
+   "Natation",
+   "Triathlon",
+   "Football",
+   "Tennis / Padel",
+   "Escalade",
+   "Seniors & équilibre"
+  ]
+ },
+ {
+  "id": "ex-cobra-tenu-au-sol",
+  "n": "Cobra tenu au sol",
+  "cat": "Dos",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Débutant",
+  "typ": "Stabilité / Prévention",
+  "mus": "Érecteurs du rachis, trapèzes inférieurs",
+  "dos": "3 × 20-30 s",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 20,
+   "max": 30,
+   "unit": "s",
+   "per": null,
+   "note": null
+  },
+  "cons": "Poitrine décollée, omoplates serrées vers le bas",
+  "prio": [],
+  "compl": [
+   "Cyclisme",
+   "Natation",
+   "Dos & posture"
+  ]
+ },
+ {
+  "id": "ex-anges-inverses-au-sol",
+  "n": "Anges inversés au sol",
+  "cat": "Dos",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Débutant",
+  "typ": "Stabilité / Prévention",
+  "mus": "Trapèzes, rhomboïdes, deltoïdes postérieurs",
+  "dos": "3 × 10",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 10,
+   "max": 10,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "À plat ventre, bras décollés du sol tout le long",
+  "prio": [],
+  "compl": [
+   "Cyclisme",
+   "Natation",
+   "Dos & posture"
+  ]
+ },
+ {
+  "id": "ex-y-t-w-allonge",
+  "n": "Y-T-W allongé",
+  "cat": "Dos",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Débutant",
+  "typ": "Stabilité / Prévention",
+  "mus": "Trapèzes inférieurs et moyens, rhomboïdes",
+  "dos": "2-3 × 8 par lettre",
+  "dose": {
+   "sets": 2,
+   "setsMax": 3,
+   "min": 8,
+   "max": 8,
+   "unit": "reps",
+   "per": "lettre",
+   "note": null
+  },
+  "cons": "Pouces vers le haut, sans hausser les épaules",
+  "prio": [
+   "Natation",
+   "Escalade",
+   "Dos & posture"
+  ],
+  "compl": [
+   "Cyclisme",
+   "Triathlon",
+   "Tennis / Padel"
+  ]
+ },
+ {
+  "id": "ex-good-morning-au-poids-du-corps",
+  "n": "Good morning au poids du corps",
+  "cat": "Dos",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Débutant",
+  "typ": "Force",
+  "mus": "Lombaires, ischio-jambiers",
+  "dos": "3 × 15",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 15,
+   "max": 15,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Mains derrière la tête, dos plat",
+  "prio": [],
+  "compl": [
+   "Cyclisme",
+   "Course à pied",
+   "Dos & posture"
+  ]
+ },
+ {
+  "id": "ex-planche-inversee",
+  "n": "Planche inversée",
+  "cat": "Dos",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Intermédiaire",
+  "typ": "Gainage",
+  "mus": "Chaîne postérieure, épaules",
+  "dos": "3 × 20-40 s",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 20,
+   "max": 40,
+   "unit": "s",
+   "per": null,
+   "note": null
+  },
+  "cons": "Mains sous les épaules, bassin haut",
+  "prio": [],
+  "compl": [
+   "Cyclisme",
+   "Natation"
+  ]
+ },
+ {
+  "id": "ex-rowing-inverse-sous-une-table",
+  "n": "Rowing inversé sous une table",
+  "cat": "Dos",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Intermédiaire",
+  "typ": "Force",
+  "mus": "Grand dorsal, rhomboïdes, biceps",
+  "dos": "3 × 8-12",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 8,
+   "max": 12,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Table solide, corps gainé, poitrine vers le bord",
+  "prio": [],
+  "compl": [
+   "Natation",
+   "Escalade"
+  ]
+ },
+ {
+  "id": "ex-extension-lombaire-sur-swiss-ball",
+  "n": "Extension lombaire sur swiss ball",
+  "cat": "Dos",
+  "equip": [
+   "Swiss ball"
+  ],
+  "equipLabel": "Swiss ball",
+  "niv": "Intermédiaire",
+  "typ": "Force",
+  "mus": "Érecteurs du rachis, fessiers",
+  "dos": "3 × 12-15",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 12,
+   "max": 15,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Bassin sur le ballon, pieds calés au mur",
+  "prio": [],
+  "compl": [
+   "Cyclisme",
+   "Natation"
+  ]
+ },
+ {
+  "id": "ex-rowing-haltere-un-bras",
+  "n": "Rowing haltère un bras",
+  "cat": "Dos",
+  "equip": [
+   "Banc / chaise",
+   "Haltères"
+  ],
+  "equipLabel": "Banc + haltères",
+  "niv": "Débutant",
+  "typ": "Force",
+  "mus": "Grand dorsal, rhomboïdes, biceps",
+  "dos": "3 × 8-12 / bras",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 8,
+   "max": 12,
+   "unit": "reps",
+   "per": "bras",
+   "note": null
+  },
+  "cons": "Main et genou sur le banc, coude vers la hanche",
+  "prio": [
+   "Cyclisme",
+   "Triathlon",
+   "Tonification"
+  ],
+  "compl": [
+   "Natation",
+   "Tennis / Padel",
+   "Escalade",
+   "Dos & posture"
+  ]
+ },
+ {
+  "id": "ex-rowing-buste-penche-deux-halteres",
+  "n": "Rowing buste penché deux haltères",
+  "cat": "Dos",
+  "equip": [
+   "Haltères"
+  ],
+  "equipLabel": "Haltères",
+  "niv": "Intermédiaire",
+  "typ": "Force",
+  "mus": "Grand dorsal, rhomboïdes, lombaires",
+  "dos": "3-4 × 8-12",
+  "dose": {
+   "sets": 3,
+   "setsMax": 4,
+   "min": 8,
+   "max": 12,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Buste à 45°, dos plat, serrer les omoplates",
+  "prio": [
+   "Perte de poids"
+  ],
+  "compl": [
+   "Cyclisme",
+   "Natation",
+   "Tonification"
+  ]
+ },
+ {
+  "id": "ex-rowing-sur-banc-incline",
+  "n": "Rowing sur banc incliné",
+  "cat": "Dos",
+  "equip": [
+   "Banc / chaise",
+   "Haltères"
+  ],
+  "equipLabel": "Banc + haltères",
+  "niv": "Débutant",
+  "typ": "Force",
+  "mus": "Rhomboïdes, trapèzes moyens, grand dorsal",
+  "dos": "3 × 10-12",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 10,
+   "max": 12,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Poitrine en appui sur le banc, zéro élan",
+  "prio": [],
+  "compl": [
+   "Cyclisme",
+   "Natation",
+   "Escalade",
+   "Dos & posture"
+  ]
+ },
+ {
+  "id": "ex-oiseau-halteres",
+  "n": "Oiseau haltères",
+  "cat": "Dos",
+  "equip": [
+   "Haltères"
+  ],
+  "equipLabel": "Haltères",
+  "niv": "Débutant",
+  "typ": "Force",
+  "mus": "Deltoïdes postérieurs, rhomboïdes",
+  "dos": "3 × 12-15",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 12,
+   "max": 15,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Buste penché, bras écartés sur les côtés",
+  "prio": [],
+  "compl": [
+   "Cyclisme",
+   "Natation",
+   "Tennis / Padel",
+   "Tonification",
+   "Dos & posture"
+  ]
+ },
+ {
+  "id": "ex-oiseau-sur-banc-incline",
+  "n": "Oiseau sur banc incliné",
+  "cat": "Dos",
+  "equip": [
+   "Banc / chaise",
+   "Haltères"
+  ],
+  "equipLabel": "Banc + haltères",
+  "niv": "Intermédiaire",
+  "typ": "Force",
+  "mus": "Deltoïdes postérieurs, trapèzes moyens",
+  "dos": "3 × 12-15",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 12,
+   "max": 15,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Poitrine sur le banc, charge légère",
+  "prio": [],
+  "compl": [
+   "Natation",
+   "Tennis / Padel"
+  ]
+ },
+ {
+  "id": "ex-y-sur-banc-incline",
+  "n": "Y sur banc incliné",
+  "cat": "Dos",
+  "equip": [
+   "Banc / chaise",
+   "Haltères"
+  ],
+  "equipLabel": "Banc + haltères",
+  "niv": "Intermédiaire",
+  "typ": "Stabilité / Prévention",
+  "mus": "Trapèzes inférieurs",
+  "dos": "3 × 10-12",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 10,
+   "max": 12,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Bras en Y, pouces vers le haut, 1-3 kg",
+  "prio": [],
+  "compl": [
+   "Natation",
+   "Tennis / Padel",
+   "Escalade"
+  ]
+ },
+ {
+  "id": "ex-shrugs-halteres",
+  "n": "Shrugs haltères",
+  "cat": "Dos",
+  "equip": [
+   "Haltères"
+  ],
+  "equipLabel": "Haltères",
+  "niv": "Débutant",
+  "typ": "Force",
+  "mus": "Trapèzes supérieurs",
+  "dos": "3 × 12-15",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 12,
+   "max": 15,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Hausser les épaules à la verticale, sans rouler",
+  "prio": [],
+  "compl": []
+ },
+ {
+  "id": "ex-souleve-de-terre-halteres",
+  "n": "Soulevé de terre haltères",
+  "cat": "Dos",
+  "equip": [
+   "Haltères"
+  ],
+  "equipLabel": "Haltères",
+  "niv": "Intermédiaire",
+  "typ": "Force",
+  "mus": "Lombaires, fessiers, ischio-jambiers, trapèzes",
+  "dos": "3-4 × 6-10",
+  "dose": {
+   "sets": 3,
+   "setsMax": 4,
+   "min": 6,
+   "max": 10,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Haltères le long des tibias, dos plat",
+  "prio": [],
+  "compl": [
+   "Cyclisme"
+  ]
+ },
+ {
+  "id": "ex-rowing-assis-a-l-elastique",
+  "n": "Rowing assis à l'élastique",
+  "cat": "Dos",
+  "equip": [
+   "Élastique"
+  ],
+  "equipLabel": "Élastique",
+  "niv": "Débutant",
+  "typ": "Force",
+  "mus": "Grand dorsal, rhomboïdes",
+  "dos": "3 × 12-15",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 12,
+   "max": 15,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Élastique autour des pieds, coudes le long du corps",
+  "prio": [
+   "Reprise / Débutant",
+   "Dos & posture",
+   "Seniors & équilibre"
+  ],
+  "compl": [
+   "Cyclisme",
+   "Natation",
+   "Tennis / Padel",
+   "Escalade"
+  ]
+ },
+ {
+  "id": "ex-rowing-un-bras-a-l-elastique-avec-rotation",
+  "n": "Rowing un bras à l'élastique avec rotation",
+  "cat": "Dos",
+  "equip": [
+   "Élastique"
+  ],
+  "equipLabel": "Élastique",
+  "niv": "Intermédiaire",
+  "typ": "Force",
+  "mus": "Grand dorsal, obliques",
+  "dos": "3 × 10-12 / bras",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 10,
+   "max": 12,
+   "unit": "reps",
+   "per": "bras",
+   "note": null
+  },
+  "cons": "Debout, tirer en tournant légèrement le buste",
+  "prio": [
+   "Tennis / Padel"
+  ],
+  "compl": []
+ },
+ {
+  "id": "ex-tirage-vertical-a-l-elastique",
+  "n": "Tirage vertical à l'élastique",
+  "cat": "Dos",
+  "equip": [
+   "Élastique"
+  ],
+  "equipLabel": "Élastique",
+  "niv": "Débutant",
+  "typ": "Force",
+  "mus": "Grand dorsal",
+  "dos": "3 × 12-15",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 12,
+   "max": 15,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Élastique ancré en hauteur, coudes vers les hanches",
+  "prio": [],
+  "compl": [
+   "Natation",
+   "Escalade",
+   "Reprise / Débutant",
+   "Dos & posture"
+  ]
+ },
+ {
+  "id": "ex-tirage-bras-tendus-a-l-elastique",
+  "n": "Tirage bras tendus à l'élastique",
+  "cat": "Dos",
+  "equip": [
+   "Élastique"
+  ],
+  "equipLabel": "Élastique",
+  "niv": "Débutant",
+  "typ": "Force",
+  "mus": "Grand dorsal, triceps (long chef)",
+  "dos": "3 × 12-15",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 12,
+   "max": 15,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Bras tendus, amener les mains aux cuisses",
+  "prio": [
+   "Natation",
+   "Triathlon"
+  ],
+  "compl": []
+ },
+ {
+  "id": "ex-simulation-de-crawl-a-l-elastique",
+  "n": "Simulation de crawl à l'élastique",
+  "cat": "Dos",
+  "equip": [
+   "Élastique"
+  ],
+  "equipLabel": "Élastique",
+  "niv": "Intermédiaire",
+  "typ": "Force",
+  "mus": "Grand dorsal, triceps, pectoraux",
+  "dos": "3 × 15-20",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 15,
+   "max": 20,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Buste penché, coude haut, pousser jusqu'à la cuisse",
+  "prio": [
+   "Natation"
+  ],
+  "compl": [
+   "Triathlon"
+  ]
+ },
+ {
+  "id": "ex-face-pull-a-l-elastique",
+  "n": "Face pull à l'élastique",
+  "cat": "Dos",
+  "equip": [
+   "Élastique"
+  ],
+  "equipLabel": "Élastique",
+  "niv": "Débutant",
+  "typ": "Stabilité / Prévention",
+  "mus": "Deltoïdes postérieurs, trapèzes moyens, coiffe",
+  "dos": "3 × 15",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 15,
+   "max": 15,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Tirer vers le visage, coudes hauts, rotation externe",
+  "prio": [
+   "Cyclisme",
+   "Natation",
+   "Triathlon",
+   "Tennis / Padel",
+   "Escalade",
+   "Dos & posture"
+  ],
+  "compl": [
+   "Reprise / Débutant",
+   "Seniors & équilibre"
+  ]
+ },
+ {
+  "id": "ex-ecartes-a-l-elastique-pull-apart",
+  "n": "Écartés à l'élastique (pull-apart)",
+  "cat": "Dos",
+  "equip": [
+   "Élastique"
+  ],
+  "equipLabel": "Élastique",
+  "niv": "Débutant",
+  "typ": "Stabilité / Prévention",
+  "mus": "Rhomboïdes, deltoïdes postérieurs",
+  "dos": "3 × 15-20",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 15,
+   "max": 20,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Bras tendus devant, écarter jusqu'à la poitrine",
+  "prio": [
+   "Dos & posture"
+  ],
+  "compl": [
+   "Cyclisme",
+   "Natation",
+   "Tennis / Padel",
+   "Escalade"
+  ]
+ },
+ {
+  "id": "ex-tractions-pronation",
+  "n": "Tractions pronation",
+  "cat": "Dos",
+  "equip": [
+   "Barre de traction"
+  ],
+  "equipLabel": "Barre de traction",
+  "niv": "Avancé",
+  "typ": "Force",
+  "mus": "Grand dorsal, biceps, trapèzes inférieurs",
+  "dos": "4 × 3-10",
+  "dose": {
+   "sets": 4,
+   "setsMax": 4,
+   "min": 3,
+   "max": 10,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Départ bras tendus, menton au-dessus de la barre",
+  "prio": [
+   "Escalade"
+  ],
+  "compl": [
+   "Natation"
+  ]
+ },
+ {
+  "id": "ex-tractions-supination",
+  "n": "Tractions supination",
+  "cat": "Dos",
+  "equip": [
+   "Barre de traction"
+  ],
+  "equipLabel": "Barre de traction",
+  "niv": "Intermédiaire",
+  "typ": "Force",
+  "mus": "Grand dorsal, biceps",
+  "dos": "4 × 3-10",
+  "dose": {
+   "sets": 4,
+   "setsMax": 4,
+   "min": 3,
+   "max": 10,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Paumes vers soi, poitrine vers la barre",
+  "prio": [
+   "Natation"
+  ],
+  "compl": [
+   "Triathlon",
+   "Escalade"
+  ]
+ },
+ {
+  "id": "ex-tractions-assistees-a-l-elastique",
+  "n": "Tractions assistées à l'élastique",
+  "cat": "Dos",
+  "equip": [
+   "Barre de traction"
+  ],
+  "equipLabel": "Barre de traction",
+  "niv": "Intermédiaire",
+  "typ": "Force",
+  "mus": "Grand dorsal, biceps",
+  "dos": "3 × 6-10",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 6,
+   "max": 10,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Élastique sous le pied ou le genou",
+  "prio": [
+   "Natation"
+  ],
+  "compl": [
+   "Triathlon",
+   "Escalade"
+  ]
+ },
+ {
+  "id": "ex-tractions-negatives",
+  "n": "Tractions négatives",
+  "cat": "Dos",
+  "equip": [
+   "Barre de traction"
+  ],
+  "equipLabel": "Barre de traction",
+  "niv": "Intermédiaire",
+  "typ": "Force",
+  "mus": "Grand dorsal, biceps (excentrique)",
+  "dos": "4 × 3-5, descente 5 s",
+  "dose": {
+   "sets": 4,
+   "setsMax": 4,
+   "min": 3,
+   "max": 5,
+   "unit": "reps",
+   "per": null,
+   "note": "descente 5 s"
+  },
+  "cons": "Monter en sautant, freiner la descente",
+  "prio": [],
+  "compl": [
+   "Natation",
+   "Escalade"
+  ]
+ },
+ {
+  "id": "ex-tractions-scapulaires",
+  "n": "Tractions scapulaires",
+  "cat": "Dos",
+  "equip": [
+   "Barre de traction"
+  ],
+  "equipLabel": "Barre de traction",
+  "niv": "Intermédiaire",
+  "typ": "Stabilité / Prévention",
+  "mus": "Trapèzes inférieurs, dentelé",
+  "dos": "3 × 8-10",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 8,
+   "max": 10,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Bras tendus, abaisser les omoplates",
+  "prio": [
+   "Escalade"
+  ],
+  "compl": [
+   "Natation"
+  ]
+ },
+ {
+  "id": "ex-rowing-en-suspension",
+  "n": "Rowing en suspension",
+  "cat": "Dos",
+  "equip": [
+   "Sangles de suspension"
+  ],
+  "equipLabel": "Sangles de suspension",
+  "niv": "Intermédiaire",
+  "typ": "Force",
+  "mus": "Grand dorsal, rhomboïdes, biceps",
+  "dos": "3 × 8-12",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 8,
+   "max": 12,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Corps gainé, plus on s'incline plus c'est dur",
+  "prio": [
+   "Natation"
+  ],
+  "compl": [
+   "Cyclisme",
+   "Triathlon",
+   "Escalade"
+  ]
+ },
+ {
+  "id": "ex-rowing-un-bras-en-suspension",
+  "n": "Rowing un bras en suspension",
+  "cat": "Dos",
+  "equip": [
+   "Sangles de suspension"
+  ],
+  "equipLabel": "Sangles de suspension",
+  "niv": "Avancé",
+  "typ": "Force",
+  "mus": "Grand dorsal, obliques",
+  "dos": "3 × 6-8 / bras",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 6,
+   "max": 8,
+   "unit": "reps",
+   "per": "bras",
+   "note": null
+  },
+  "cons": "Épaules de face, pas de rotation",
+  "prio": [],
+  "compl": [
+   "Escalade"
+  ]
+ },
+ {
+  "id": "ex-y-en-suspension",
+  "n": "Y en suspension",
+  "cat": "Dos",
+  "equip": [
+   "Sangles de suspension"
+  ],
+  "equipLabel": "Sangles de suspension",
+  "niv": "Intermédiaire",
+  "typ": "Stabilité / Prévention",
+  "mus": "Trapèzes inférieurs, deltoïdes postérieurs",
+  "dos": "3 × 8-12",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 8,
+   "max": 12,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Bras tendus en Y, corps peu incliné",
+  "prio": [],
+  "compl": [
+   "Natation",
+   "Tennis / Padel",
+   "Escalade"
+  ]
+ },
+ {
+  "id": "ex-burpees",
+  "n": "Burpees",
+  "cat": "Corps Entier",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Intermédiaire",
+  "typ": "Pliométrie / Explosivité",
+  "mus": "Jambes, pectoraux, gainage",
+  "dos": "3 × 8-12",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 8,
+   "max": 12,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Pompe complète puis saut, rythme régulier",
+  "prio": [
+   "Perte de poids"
+  ],
+  "compl": [
+   "Football"
+  ]
+ },
+ {
+  "id": "ex-sprawl",
+  "n": "Sprawl",
+  "cat": "Corps Entier",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Intermédiaire",
+  "typ": "Pliométrie / Explosivité",
+  "mus": "Jambes, gainage, épaules",
+  "dos": "3 × 10",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 10,
+   "max": 10,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Jeter les jambes en arrière, hanches au sol, remonter",
+  "prio": [],
+  "compl": [
+   "Perte de poids"
+  ]
+ },
+ {
+  "id": "ex-marche-de-l-ours-bear-crawl",
+  "n": "Marche de l'ours (bear crawl)",
+  "cat": "Corps Entier",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Intermédiaire",
+  "typ": "Gainage",
+  "mus": "Épaules, quadriceps, gainage",
+  "dos": "3 × 10-15 m",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 10,
+   "max": 15,
+   "unit": "m",
+   "per": null,
+   "note": null
+  },
+  "cons": "Genoux près du sol, dos plat, bras-jambe opposés",
+  "prio": [],
+  "compl": [
+   "Escalade",
+   "Perte de poids"
+  ]
+ },
+ {
+  "id": "ex-chenille-inchworm",
+  "n": "Chenille (inchworm)",
+  "cat": "Corps Entier",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Débutant",
+  "typ": "Stabilité / Prévention",
+  "mus": "Ischio-jambiers, épaules, gainage",
+  "dos": "3 × 6-8",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 6,
+   "max": 8,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Marcher sur les mains jusqu'à la planche puis revenir",
+  "prio": [],
+  "compl": [
+   "Course à pied",
+   "Natation",
+   "Football",
+   "Tennis / Padel"
+  ]
+ },
+ {
+  "id": "ex-jumping-jacks",
+  "n": "Jumping jacks",
+  "cat": "Corps Entier",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Débutant",
+  "typ": "Pliométrie / Explosivité",
+  "mus": "Mollets, épaules",
+  "dos": "3 × 30 s",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 30,
+   "max": 30,
+   "unit": "s",
+   "per": null,
+   "note": null
+  },
+  "cons": "Appuis sur l'avant-pied, rythme soutenu",
+  "prio": [
+   "Perte de poids"
+  ],
+  "compl": [
+   "Course à pied",
+   "Football"
+  ]
+ },
+ {
+  "id": "ex-thruster-halteres",
+  "n": "Thruster haltères",
+  "cat": "Corps Entier",
+  "equip": [
+   "Haltères"
+  ],
+  "equipLabel": "Haltères",
+  "niv": "Intermédiaire",
+  "typ": "Force",
+  "mus": "Quadriceps, fessiers, deltoïdes",
+  "dos": "3-4 × 8-10",
+  "dose": {
+   "sets": 3,
+   "setsMax": 4,
+   "min": 8,
+   "max": 10,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Squat puis développé dans la continuité",
+  "prio": [
+   "Perte de poids"
+  ],
+  "compl": []
+ },
+ {
+  "id": "ex-fente-avec-rotation-de-buste",
+  "n": "Fente avec rotation de buste",
+  "cat": "Corps Entier",
+  "equip": [
+   "Haltères"
+  ],
+  "equipLabel": "Haltères",
+  "niv": "Intermédiaire",
+  "typ": "Force",
+  "mus": "Quadriceps, fessiers, obliques",
+  "dos": "3 × 8-10 / côté",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 8,
+   "max": 10,
+   "unit": "reps",
+   "per": "côté",
+   "note": null
+  },
+  "cons": "Tourner le buste du côté de la jambe avant",
+  "prio": [],
+  "compl": [
+   "Tennis / Padel",
+   "Perte de poids"
+  ]
+ },
+ {
+  "id": "ex-marche-du-fermier-farmer-walk",
+  "n": "Marche du fermier (farmer walk)",
+  "cat": "Corps Entier",
+  "equip": [
+   "Haltères"
+  ],
+  "equipLabel": "Haltères",
+  "niv": "Débutant",
+  "typ": "Gainage",
+  "mus": "Préhension, trapèzes, gainage",
+  "dos": "4 × 20-30 m",
+  "dose": {
+   "sets": 4,
+   "setsMax": 4,
+   "min": 20,
+   "max": 30,
+   "unit": "m",
+   "per": null,
+   "note": null
+  },
+  "cons": "Épaules basses, petits pas, buste droit",
+  "prio": [
+   "Perte de poids",
+   "Seniors & équilibre"
+  ],
+  "compl": [
+   "Trail",
+   "Escalade",
+   "Dos & posture"
+  ]
+ },
+ {
+  "id": "ex-epaule-haltere-un-bras",
+  "n": "Épaulé haltère un bras",
+  "cat": "Corps Entier",
+  "equip": [
+   "Haltères"
+  ],
+  "equipLabel": "Haltères",
+  "niv": "Avancé",
+  "typ": "Pliométrie / Explosivité",
+  "mus": "Fessiers, trapèzes, deltoïdes",
+  "dos": "4 × 5 / bras",
+  "dose": {
+   "sets": 4,
+   "setsMax": 4,
+   "min": 5,
+   "max": 5,
+   "unit": "reps",
+   "per": "bras",
+   "note": null
+  },
+  "cons": "Extension de hanche explosive, coude sous la charge",
+  "prio": [],
+  "compl": []
+ },
+ {
+  "id": "ex-arrache-haltere-un-bras",
+  "n": "Arraché haltère un bras",
+  "cat": "Corps Entier",
+  "equip": [
+   "Haltères"
+  ],
+  "equipLabel": "Haltères",
+  "niv": "Avancé",
+  "typ": "Pliométrie / Explosivité",
+  "mus": "Chaîne postérieure, deltoïdes",
+  "dos": "4 × 4-5 / bras",
+  "dose": {
+   "sets": 4,
+   "setsMax": 4,
+   "min": 4,
+   "max": 5,
+   "unit": "reps",
+   "per": "bras",
+   "note": null
+  },
+  "cons": "Du sol au-dessus de la tête en un temps",
+  "prio": [],
+  "compl": []
+ },
+ {
+  "id": "ex-man-maker",
+  "n": "Man maker",
+  "cat": "Corps Entier",
+  "equip": [
+   "Haltères"
+  ],
+  "equipLabel": "Haltères",
+  "niv": "Avancé",
+  "typ": "Force",
+  "mus": "Corps entier",
+  "dos": "3 × 5-8",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 5,
+   "max": 8,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Pompe, tirage droit, tirage gauche, épaulé, développé",
+  "prio": [],
+  "compl": [
+   "Perte de poids"
+  ]
+ },
+ {
+  "id": "ex-squat-developpe-a-l-elastique",
+  "n": "Squat + développé à l'élastique",
+  "cat": "Corps Entier",
+  "equip": [
+   "Élastique"
+  ],
+  "equipLabel": "Élastique",
+  "niv": "Débutant",
+  "typ": "Force",
+  "mus": "Quadriceps, fessiers, deltoïdes",
+  "dos": "3 × 12-15",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 12,
+   "max": 15,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Élastique sous les pieds, pousser en se relevant",
+  "prio": [],
+  "compl": [
+   "Natation",
+   "Perte de poids"
+  ]
+ },
+ {
+  "id": "ex-releve-turc-turkish-get-up",
+  "n": "Relevé turc (Turkish get-up)",
+  "cat": "Corps Entier",
+  "equip": [
+   "Kettlebell"
+  ],
+  "equipLabel": "Kettlebell",
+  "niv": "Avancé",
+  "typ": "Stabilité / Prévention",
+  "mus": "Épaules, gainage, hanches",
+  "dos": "3 × 3 / côté",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 3,
+   "max": 3,
+   "unit": "reps",
+   "per": "côté",
+   "note": null
+  },
+  "cons": "Bras verrouillé, regard sur la charge",
+  "prio": [],
+  "compl": [
+   "Natation",
+   "Escalade"
+  ]
+ },
+ {
+  "id": "ex-epaule-jete-kettlebell",
+  "n": "Épaulé-jeté kettlebell",
+  "cat": "Corps Entier",
+  "equip": [
+   "Kettlebell"
+  ],
+  "equipLabel": "Kettlebell",
+  "niv": "Avancé",
+  "typ": "Pliométrie / Explosivité",
+  "mus": "Chaîne postérieure, deltoïdes",
+  "dos": "4 × 5-6 / bras",
+  "dose": {
+   "sets": 4,
+   "setsMax": 4,
+   "min": 5,
+   "max": 6,
+   "unit": "reps",
+   "per": "bras",
+   "note": null
+  },
+  "cons": "Impulsion des hanches, réception coude au corps",
+  "prio": [],
+  "compl": []
+ },
+ {
+  "id": "ex-assis-debout-de-chaise",
+  "n": "Assis-debout de chaise",
+  "cat": "Bas du Corps",
+  "equip": [
+   "Banc / chaise"
+  ],
+  "equipLabel": "Banc / chaise",
+  "niv": "Débutant",
+  "typ": "Force",
+  "mus": "Quadriceps, fessiers",
+  "dos": "3 × 10-15",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 10,
+   "max": 15,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Se lever sans les mains, se rasseoir lentement",
+  "prio": [
+   "Reprise / Débutant",
+   "Seniors & équilibre"
+  ],
+  "compl": [
+   "Course à pied",
+   "Trail"
+  ]
+ },
+ {
+  "id": "ex-pompes-contre-le-mur",
+  "n": "Pompes contre le mur",
+  "cat": "Haut du Corps",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Débutant",
+  "typ": "Force",
+  "mus": "Pectoraux, triceps",
+  "dos": "3 × 12-15",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 12,
+   "max": 15,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Corps gainé, poitrine vers le mur, coudes à 45°",
+  "prio": [
+   "Reprise / Débutant",
+   "Seniors & équilibre"
+  ],
+  "compl": [
+   "Natation",
+   "Escalade"
+  ]
+ },
+ {
+  "id": "ex-marche-talon-pointe",
+  "n": "Marche talon-pointe",
+  "cat": "Bas du Corps",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Débutant",
+  "typ": "Stabilité / Prévention",
+  "mus": "Stabilisateurs de cheville et de hanche",
+  "dos": "3 × 10-15 pas",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 10,
+   "max": 15,
+   "unit": "pas",
+   "per": null,
+   "note": null
+  },
+  "cons": "Talon collé aux orteils du pied arrière, regard devant",
+  "prio": [
+   "Seniors & équilibre"
+  ],
+  "compl": [
+   "Trail"
+  ]
+ },
+ {
+  "id": "ex-curl-up-de-mcgill",
+  "n": "Curl-up de McGill",
+  "cat": "Abdos",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Débutant",
+  "typ": "Stabilité / Prévention",
+  "mus": "Grand droit, transverse",
+  "dos": "3 × 6-8 tenues de 8-10 s",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 6,
+   "max": 8,
+   "unit": "reps",
+   "per": null,
+   "note": "tenues de 8-10 s"
+  },
+  "cons": "Une jambe fléchie, mains sous les lombaires, décoller à peine la tête et les épaules",
+  "prio": [
+   "Dos & posture"
+  ],
+  "compl": [
+   "Cyclisme",
+   "Course à pied"
+  ]
+ },
+ {
+  "id": "ex-retraction-cervicale-chin-tuck",
+  "n": "Rétraction cervicale (chin tuck)",
+  "cat": "Dos",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Débutant",
+  "typ": "Stabilité / Prévention",
+  "mus": "Fléchisseurs profonds du cou",
+  "dos": "3 × 10 tenues de 5 s",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 10,
+   "max": 10,
+   "unit": "reps",
+   "per": null,
+   "note": "tenues de 5 s"
+  },
+  "cons": "Rentrer le menton à l'horizontale, sans baisser la tête",
+  "prio": [
+   "Dos & posture"
+  ],
+  "compl": [
+   "Cyclisme",
+   "Escalade"
+  ]
+ },
+ {
+  "id": "ex-glissements-muraux-wall-slides",
+  "n": "Glissements muraux (wall slides)",
+  "cat": "Dos",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Débutant",
+  "typ": "Stabilité / Prévention",
+  "mus": "Trapèzes inférieurs, dentelé antérieur",
+  "dos": "3 × 10-12",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 10,
+   "max": 12,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Dos et avant-bras au mur, monter les bras sans décoller les lombaires",
+  "prio": [
+   "Dos & posture"
+  ],
+  "compl": [
+   "Cyclisme",
+   "Natation",
+   "Tennis / Padel",
+   "Escalade"
+  ]
+ },
+ {
+  "id": "ex-squat-jacks",
+  "n": "Squat jacks",
+  "cat": "Corps Entier",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Débutant",
+  "typ": "Pliométrie / Explosivité",
+  "mus": "Quadriceps, fessiers, mollets",
+  "dos": "3 × 30 s",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 30,
+   "max": 30,
+   "unit": "s",
+   "per": null,
+   "note": null
+  },
+  "cons": "Sauter pieds écartés en squat, puis pieds joints",
+  "prio": [
+   "Perte de poids"
+  ],
+  "compl": [
+   "Course à pied",
+   "Football"
+  ]
+ },
+ {
+  "id": "ex-burpee-sans-saut",
+  "n": "Burpee sans saut",
+  "cat": "Corps Entier",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Débutant",
+  "typ": "Force",
+  "mus": "Jambes, pectoraux, gainage",
+  "dos": "3 × 8-10",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 8,
+   "max": 10,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Reculer les pieds un par un, se relever sans sauter",
+  "prio": [
+   "Perte de poids"
+  ],
+  "compl": [
+   "Football"
+  ]
+ },
+ {
+  "id": "ex-planche-jacks",
+  "n": "Planche jacks",
+  "cat": "Abdos",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Intermédiaire",
+  "typ": "Gainage",
+  "mus": "Transverse, épaules, adducteurs",
+  "dos": "3 × 30 s",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 30,
+   "max": 30,
+   "unit": "s",
+   "per": null,
+   "note": null
+  },
+  "cons": "Écarter et rapprocher les pieds en sautant, bassin stable",
+  "prio": [
+   "Perte de poids"
+  ],
+  "compl": [
+   "Course à pied",
+   "Football"
+  ]
+ },
+ {
+  "id": "ex-pas-chasses-lateraux-en-squat",
+  "n": "Pas chassés latéraux en squat",
+  "cat": "Bas du Corps",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Débutant",
+  "typ": "Force",
+  "mus": "Moyen fessier, quadriceps",
+  "dos": "3 × 20 pas",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 20,
+   "max": 20,
+   "unit": "pas",
+   "per": null,
+   "note": null
+  },
+  "cons": "Rester bas, pieds jamais joints",
+  "prio": [
+   "Perte de poids"
+  ],
+  "compl": [
+   "Football",
+   "Tennis / Padel"
+  ]
+ },
+ {
+  "id": "ex-squat-goblet-excentrique-descente-4-s",
+  "n": "Squat goblet excentrique (descente 4 s)",
+  "cat": "Bas du Corps",
+  "equip": [
+   "Haltères"
+  ],
+  "equipLabel": "Haltères",
+  "niv": "Intermédiaire",
+  "typ": "Force",
+  "mus": "Quadriceps, fessiers",
+  "dos": "3 × 6-8",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 6,
+   "max": 8,
+   "unit": "reps",
+   "per": null,
+   "note": null
+  },
+  "cons": "Descendre en 4 s, remonter normalement",
+  "prio": [
+   "Trail"
+  ],
+  "compl": [
+   "Cyclisme",
+   "Course à pied"
+  ]
+ },
+ {
+  "id": "ex-corde-a-sauter",
+  "n": "Corde à sauter",
+  "cat": "Corps Entier",
+  "equip": [
+   "Corde à sauter"
+  ],
+  "equipLabel": "Corde à sauter",
+  "niv": "Débutant",
+  "typ": "Pliométrie / Explosivité",
+  "mus": "Mollets, épaules",
+  "dos": "5 × 1 min",
+  "dose": {
+   "sets": 5,
+   "setsMax": 5,
+   "min": 60,
+   "max": 60,
+   "unit": "s",
+   "per": null,
+   "note": null
+  },
+  "cons": "Petits rebonds sur l'avant-pied, coudes près du corps",
+  "prio": [
+   "Perte de poids"
+  ],
+  "compl": [
+   "Course à pied",
+   "Trail",
+   "Football",
+   "Tennis / Padel"
+  ]
+ },
+ {
+  "id": "ex-fente-arriere-avec-montee-de-genou",
+  "n": "Fente arrière avec montée de genou",
+  "cat": "Bas du Corps",
+  "equip": [],
+  "equipLabel": "Aucun",
+  "niv": "Intermédiaire",
+  "typ": "Force",
+  "mus": "Fessiers, quadriceps, équilibre",
+  "dos": "3 × 10 / jambe",
+  "dose": {
+   "sets": 3,
+   "setsMax": 3,
+   "min": 10,
+   "max": 10,
+   "unit": "reps",
+   "per": "jambe",
+   "note": null
+  },
+  "cons": "Remonter en amenant le genou à hauteur de hanche, tenir 1 s",
+  "prio": [
+   "Perte de poids"
+  ],
+  "compl": [
+   "Course à pied",
+   "Trail",
+   "Football"
+  ]
+ }
+]

@@ -1,0 +1,1575 @@
+{
+ "Cyclisme": [
+  {
+   "order": 1,
+   "id": "ex-squat-bulgare",
+   "dos": "3 × 8-12 / jambe",
+   "dose": {
+    "sets": 3,
+    "setsMax": 3,
+    "min": 8,
+    "max": 12,
+    "unit": "reps",
+    "per": "jambe",
+    "note": null
+   },
+   "rest": "90 s",
+   "restSec": 90,
+   "cons": "Pied arrière sur le banc, poids sur la jambe avant"
+  },
+  {
+   "order": 2,
+   "id": "ex-souleve-de-terre-roumain",
+   "dos": "3-4 × 8-12",
+   "dose": {
+    "sets": 3,
+    "setsMax": 4,
+    "min": 8,
+    "max": 12,
+    "unit": "reps",
+    "per": null,
+    "note": null
+   },
+   "rest": "90 s",
+   "restSec": 90,
+   "cons": "Dos plat, hanches en arrière, haltères près des jambes"
+  },
+  {
+   "order": 3,
+   "id": "ex-step-up-leste",
+   "dos": "3-4 × 8-10 / jambe",
+   "dose": {
+    "sets": 3,
+    "setsMax": 4,
+    "min": 8,
+    "max": 10,
+    "unit": "reps",
+    "per": "jambe",
+    "note": null
+   },
+   "rest": "90 s",
+   "restSec": 90,
+   "cons": "Haltères en mains, descente lente"
+  },
+  {
+   "order": 4,
+   "id": "ex-hip-thrust",
+   "dos": "3 × 10-15",
+   "dose": {
+    "sets": 3,
+    "setsMax": 3,
+    "min": 10,
+    "max": 15,
+    "unit": "reps",
+    "per": null,
+    "note": null
+   },
+   "rest": "90 s",
+   "restSec": 90,
+   "cons": "Haut du dos sur le banc, menton rentré"
+  },
+  {
+   "order": 5,
+   "id": "ex-planche-laterale",
+   "dos": "3 × 20-45 s / côté",
+   "dose": {
+    "sets": 3,
+    "setsMax": 3,
+    "min": 20,
+    "max": 45,
+    "unit": "s",
+    "per": "côté",
+    "note": null
+   },
+   "rest": "30-45 s",
+   "restSec": 45,
+   "cons": "Épaules et hanches empilées, bassin haut"
+  },
+  {
+   "order": 6,
+   "id": "ex-face-pull-a-l-elastique",
+   "dos": "3 × 15",
+   "dose": {
+    "sets": 3,
+    "setsMax": 3,
+    "min": 15,
+    "max": 15,
+    "unit": "reps",
+    "per": null,
+    "note": null
+   },
+   "rest": "30-45 s",
+   "restSec": 45,
+   "cons": "Tirer vers le visage, coudes hauts, rotation externe"
+  },
+  {
+   "order": 7,
+   "id": "ex-dead-bug",
+   "dos": "3 × 8-10 / côté",
+   "dose": {
+    "sets": 3,
+    "setsMax": 3,
+    "min": 8,
+    "max": 10,
+    "unit": "reps",
+    "per": "côté",
+    "note": null
+   },
+   "rest": "30-45 s",
+   "restSec": 45,
+   "cons": "Lombaires plaquées au sol, allonger bras et jambe opposés"
+  }
+ ],
+ "Course à pied": [
+  {
+   "order": 1,
+   "id": "ex-squat-bulgare-leste",
+   "dos": "3-4 × 6-10 / jambe",
+   "dose": {
+    "sets": 3,
+    "setsMax": 4,
+    "min": 6,
+    "max": 10,
+    "unit": "reps",
+    "per": "jambe",
+    "note": null
+   },
+   "rest": "90 s",
+   "restSec": 90,
+   "cons": "Haltères le long du corps, descente contrôlée"
+  },
+  {
+   "order": 2,
+   "id": "ex-souleve-de-terre-roumain-une-jambe",
+   "dos": "3 × 8-10 / jambe",
+   "dose": {
+    "sets": 3,
+    "setsMax": 3,
+    "min": 8,
+    "max": 10,
+    "unit": "reps",
+    "per": "jambe",
+    "note": null
+   },
+   "rest": "90 s",
+   "restSec": 90,
+   "cons": "Bassin parallèle au sol, jambe arrière dans l'axe"
+  },
+  {
+   "order": 3,
+   "id": "ex-mollets-une-jambe-sur-marche-excentrique",
+   "dos": "3 × 12-15 / jambe, descente 3 s",
+   "dose": {
+    "sets": 3,
+    "setsMax": 3,
+    "min": 12,
+    "max": 15,
+    "unit": "reps",
+    "per": "jambe",
+    "note": "descente 3 s"
+   },
+   "rest": "30-45 s",
+   "restSec": 45,
+   "cons": "Monter à deux pieds, descendre sur un seul"
+  },
+  {
+   "order": 4,
+   "id": "ex-hip-thrust-leste",
+   "dos": "3-4 × 8-12",
+   "dose": {
+    "sets": 3,
+    "setsMax": 4,
+    "min": 8,
+    "max": 12,
+    "unit": "reps",
+    "per": null,
+    "note": null
+   },
+   "rest": "90 s",
+   "restSec": 90,
+   "cons": "Haltère posé sur le pli des hanches"
+  },
+  {
+   "order": 5,
+   "id": "ex-marche-laterale-avec-elastique-monster-walk",
+   "dos": "3 × 10-15 pas / côté",
+   "dose": {
+    "sets": 3,
+    "setsMax": 3,
+    "min": 10,
+    "max": 15,
+    "unit": "pas",
+    "per": "côté",
+    "note": null
+   },
+   "rest": "30-45 s",
+   "restSec": 45,
+   "cons": "Demi-squat, pieds parallèles, tension constante"
+  },
+  {
+   "order": 6,
+   "id": "ex-planche-laterale",
+   "dos": "3 × 20-45 s / côté",
+   "dose": {
+    "sets": 3,
+    "setsMax": 3,
+    "min": 20,
+    "max": 45,
+    "unit": "s",
+    "per": "côté",
+    "note": null
+   },
+   "rest": "30-45 s",
+   "restSec": 45,
+   "cons": "Épaules et hanches empilées, bassin haut"
+  },
+  {
+   "order": 7,
+   "id": "ex-sautillements-pogo-jumps",
+   "dos": "3 × 20 contacts",
+   "dose": {
+    "sets": 3,
+    "setsMax": 3,
+    "min": 20,
+    "max": 20,
+    "unit": "contacts",
+    "per": null,
+    "note": null
+   },
+   "rest": "2 min",
+   "restSec": 120,
+   "cons": "Genoux presque tendus, contact au sol bref"
+  }
+ ],
+ "Trail": [
+  {
+   "order": 1,
+   "id": "ex-squat-goblet-excentrique-descente-4-s",
+   "dos": "3 × 6-8",
+   "dose": {
+    "sets": 3,
+    "setsMax": 3,
+    "min": 6,
+    "max": 8,
+    "unit": "reps",
+    "per": null,
+    "note": null
+   },
+   "rest": "90 s",
+   "restSec": 90,
+   "cons": "Descendre en 4 s, remonter normalement"
+  },
+  {
+   "order": 2,
+   "id": "ex-step-down-excentrique",
+   "dos": "3 × 8-10 / jambe, descente 3-4 s",
+   "dose": {
+    "sets": 3,
+    "setsMax": 3,
+    "min": 8,
+    "max": 10,
+    "unit": "reps",
+    "per": "jambe",
+    "note": "descente 3-4 s"
+   },
+   "rest": "30-45 s",
+   "restSec": 45,
+   "cons": "Genou aligné sur le 2e orteil, bassin horizontal"
+  },
+  {
+   "order": 3,
+   "id": "ex-step-up-leste",
+   "dos": "3-4 × 8-10 / jambe",
+   "dose": {
+    "sets": 3,
+    "setsMax": 4,
+    "min": 8,
+    "max": 10,
+    "unit": "reps",
+    "per": "jambe",
+    "note": null
+   },
+   "rest": "90 s",
+   "restSec": 90,
+   "cons": "Haltères en mains, descente lente"
+  },
+  {
+   "order": 4,
+   "id": "ex-souleve-de-terre-roumain-une-jambe",
+   "dos": "3 × 8-10 / jambe",
+   "dose": {
+    "sets": 3,
+    "setsMax": 3,
+    "min": 8,
+    "max": 10,
+    "unit": "reps",
+    "per": "jambe",
+    "note": null
+   },
+   "rest": "90 s",
+   "restSec": 90,
+   "cons": "Bassin parallèle au sol, jambe arrière dans l'axe"
+  },
+  {
+   "order": 5,
+   "id": "ex-mollets-une-jambe-sur-marche-excentrique",
+   "dos": "3 × 12-15 / jambe, descente 3 s",
+   "dose": {
+    "sets": 3,
+    "setsMax": 3,
+    "min": 12,
+    "max": 15,
+    "unit": "reps",
+    "per": "jambe",
+    "note": "descente 3 s"
+   },
+   "rest": "30-45 s",
+   "restSec": 45,
+   "cons": "Monter à deux pieds, descendre sur un seul"
+  },
+  {
+   "order": 6,
+   "id": "ex-inversion-eversion-de-cheville-a-l-elastique",
+   "dos": "3 × 15 / sens",
+   "dose": {
+    "sets": 3,
+    "setsMax": 3,
+    "min": 15,
+    "max": 15,
+    "unit": "reps",
+    "per": "sens",
+    "note": null
+   },
+   "rest": "30-45 s",
+   "restSec": 45,
+   "cons": "Mouvement lent, seule la cheville bouge"
+  },
+  {
+   "order": 7,
+   "id": "ex-portage-unilateral-suitcase-carry",
+   "dos": "3 × 20-30 m / côté",
+   "dose": {
+    "sets": 3,
+    "setsMax": 3,
+    "min": 20,
+    "max": 30,
+    "unit": "m",
+    "per": "côté",
+    "note": null
+   },
+   "rest": "30-45 s",
+   "restSec": 45,
+   "cons": "Marcher sans pencher le buste côté charge"
+  }
+ ],
+ "Natation": [
+  {
+   "order": 1,
+   "id": "ex-tractions-supination",
+   "dos": "4 × 3-10",
+   "dose": {
+    "sets": 4,
+    "setsMax": 4,
+    "min": 3,
+    "max": 10,
+    "unit": "reps",
+    "per": null,
+    "note": null
+   },
+   "rest": "90 s",
+   "restSec": 90,
+   "cons": "Paumes vers soi, poitrine vers la barre"
+  },
+  {
+   "order": 2,
+   "id": "ex-rotation-externe-d-epaule-a-l-elastique",
+   "dos": "3 × 12-15 / bras",
+   "dose": {
+    "sets": 3,
+    "setsMax": 3,
+    "min": 12,
+    "max": 15,
+    "unit": "reps",
+    "per": "bras",
+    "note": null
+   },
+   "rest": "30-45 s",
+   "restSec": 45,
+   "cons": "Coude collé au corps à 90°, mouvement lent"
+  },
+  {
+   "order": 3,
+   "id": "ex-tirage-bras-tendus-a-l-elastique",
+   "dos": "3 × 12-15",
+   "dose": {
+    "sets": 3,
+    "setsMax": 3,
+    "min": 12,
+    "max": 15,
+    "unit": "reps",
+    "per": null,
+    "note": null
+   },
+   "rest": "90 s",
+   "restSec": 90,
+   "cons": "Bras tendus, amener les mains aux cuisses"
+  },
+  {
+   "order": 4,
+   "id": "ex-pompes-scapulaires-push-up-plus",
+   "dos": "3 × 12-15",
+   "dose": {
+    "sets": 3,
+    "setsMax": 3,
+    "min": 12,
+    "max": 15,
+    "unit": "reps",
+    "per": null,
+    "note": null
+   },
+   "rest": "30-45 s",
+   "restSec": 45,
+   "cons": "Bras tendus, écarter puis rapprocher les omoplates"
+  },
+  {
+   "order": 5,
+   "id": "ex-y-t-w-allonge",
+   "dos": "2-3 × 8 par lettre",
+   "dose": {
+    "sets": 2,
+    "setsMax": 3,
+    "min": 8,
+    "max": 8,
+    "unit": "reps",
+    "per": "lettre",
+    "note": null
+   },
+   "rest": "30-45 s",
+   "restSec": 45,
+   "cons": "Pouces vers le haut, sans hausser les épaules"
+  },
+  {
+   "order": 6,
+   "id": "ex-hollow-hold-gainage-creux",
+   "dos": "3 × 20-40 s",
+   "dose": {
+    "sets": 3,
+    "setsMax": 3,
+    "min": 20,
+    "max": 40,
+    "unit": "s",
+    "per": null,
+    "note": null
+   },
+   "rest": "30-45 s",
+   "restSec": 45,
+   "cons": "Lombaires au sol, épaules et jambes décollées"
+  },
+  {
+   "order": 7,
+   "id": "ex-extension-triceps-au-dessus-de-la-tete",
+   "dos": "3 × 10-12",
+   "dose": {
+    "sets": 3,
+    "setsMax": 3,
+    "min": 10,
+    "max": 12,
+    "unit": "reps",
+    "per": null,
+    "note": null
+   },
+   "rest": "90 s",
+   "restSec": 90,
+   "cons": "Coudes serrés pointés vers le plafond"
+  }
+ ],
+ "Triathlon": [
+  {
+   "order": 1,
+   "id": "ex-squat-bulgare",
+   "dos": "3 × 8-12 / jambe",
+   "dose": {
+    "sets": 3,
+    "setsMax": 3,
+    "min": 8,
+    "max": 12,
+    "unit": "reps",
+    "per": "jambe",
+    "note": null
+   },
+   "rest": "90 s",
+   "restSec": 90,
+   "cons": "Pied arrière sur le banc, poids sur la jambe avant"
+  },
+  {
+   "order": 2,
+   "id": "ex-souleve-de-terre-roumain",
+   "dos": "3-4 × 8-12",
+   "dose": {
+    "sets": 3,
+    "setsMax": 4,
+    "min": 8,
+    "max": 12,
+    "unit": "reps",
+    "per": null,
+    "note": null
+   },
+   "rest": "90 s",
+   "restSec": 90,
+   "cons": "Dos plat, hanches en arrière, haltères près des jambes"
+  },
+  {
+   "order": 3,
+   "id": "ex-rowing-haltere-un-bras",
+   "dos": "3 × 8-12 / bras",
+   "dose": {
+    "sets": 3,
+    "setsMax": 3,
+    "min": 8,
+    "max": 12,
+    "unit": "reps",
+    "per": "bras",
+    "note": null
+   },
+   "rest": "90 s",
+   "restSec": 90,
+   "cons": "Main et genou sur le banc, coude vers la hanche"
+  },
+  {
+   "order": 4,
+   "id": "ex-rotation-externe-d-epaule-a-l-elastique",
+   "dos": "3 × 12-15 / bras",
+   "dose": {
+    "sets": 3,
+    "setsMax": 3,
+    "min": 12,
+    "max": 15,
+    "unit": "reps",
+    "per": "bras",
+    "note": null
+   },
+   "rest": "30-45 s",
+   "restSec": 45,
+   "cons": "Coude collé au corps à 90°, mouvement lent"
+  },
+  {
+   "order": 5,
+   "id": "ex-mollets-une-jambe-sur-marche-excentrique",
+   "dos": "3 × 12-15 / jambe, descente 3 s",
+   "dose": {
+    "sets": 3,
+    "setsMax": 3,
+    "min": 12,
+    "max": 15,
+    "unit": "reps",
+    "per": "jambe",
+    "note": "descente 3 s"
+   },
+   "rest": "30-45 s",
+   "restSec": 45,
+   "cons": "Monter à deux pieds, descendre sur un seul"
+  },
+  {
+   "order": 6,
+   "id": "ex-planche-laterale",
+   "dos": "3 × 20-45 s / côté",
+   "dose": {
+    "sets": 3,
+    "setsMax": 3,
+    "min": 20,
+    "max": 45,
+    "unit": "s",
+    "per": "côté",
+    "note": null
+   },
+   "rest": "30-45 s",
+   "restSec": 45,
+   "cons": "Épaules et hanches empilées, bassin haut"
+  },
+  {
+   "order": 7,
+   "id": "ex-face-pull-a-l-elastique",
+   "dos": "3 × 15",
+   "dose": {
+    "sets": 3,
+    "setsMax": 3,
+    "min": 15,
+    "max": 15,
+    "unit": "reps",
+    "per": null,
+    "note": null
+   },
+   "rest": "30-45 s",
+   "restSec": 45,
+   "cons": "Tirer vers le visage, coudes hauts, rotation externe"
+  }
+ ],
+ "Football": [
+  {
+   "order": 1,
+   "id": "ex-nordic-hamstring-curl",
+   "dos": "3 × 4-8, descente lente",
+   "dose": {
+    "sets": 3,
+    "setsMax": 3,
+    "min": 4,
+    "max": 8,
+    "unit": "reps",
+    "per": null,
+    "note": "descente lente"
+   },
+   "rest": "30-45 s",
+   "restSec": 45,
+   "cons": "Pieds bloqués, corps d'un bloc des genoux aux épaules"
+  },
+  {
+   "order": 2,
+   "id": "ex-copenhagen-plank",
+   "dos": "3 × 15-30 s / côté",
+   "dose": {
+    "sets": 3,
+    "setsMax": 3,
+    "min": 15,
+    "max": 30,
+    "unit": "s",
+    "per": "côté",
+    "note": null
+   },
+   "rest": "30-45 s",
+   "restSec": 45,
+   "cons": "Jambe du dessus sur le banc, corps aligné"
+  },
+  {
+   "order": 3,
+   "id": "ex-squat-bulgare",
+   "dos": "3 × 8-12 / jambe",
+   "dose": {
+    "sets": 3,
+    "setsMax": 3,
+    "min": 8,
+    "max": 12,
+    "unit": "reps",
+    "per": "jambe",
+    "note": null
+   },
+   "rest": "90 s",
+   "restSec": 90,
+   "cons": "Pied arrière sur le banc, poids sur la jambe avant"
+  },
+  {
+   "order": 4,
+   "id": "ex-saut-une-jambe-avec-reception-stabilisee",
+   "dos": "3 × 6 / jambe",
+   "dose": {
+    "sets": 3,
+    "setsMax": 3,
+    "min": 6,
+    "max": 6,
+    "unit": "reps",
+    "per": "jambe",
+    "note": null
+   },
+   "rest": "30-45 s",
+   "restSec": 45,
+   "cons": "Tenir la réception 2-3 s sans vaciller"
+  },
+  {
+   "order": 5,
+   "id": "ex-souleve-de-terre-roumain-une-jambe",
+   "dos": "3 × 8-10 / jambe",
+   "dose": {
+    "sets": 3,
+    "setsMax": 3,
+    "min": 8,
+    "max": 10,
+    "unit": "reps",
+    "per": "jambe",
+    "note": null
+   },
+   "rest": "90 s",
+   "restSec": 90,
+   "cons": "Bassin parallèle au sol, jambe arrière dans l'axe"
+  },
+  {
+   "order": 6,
+   "id": "ex-mollets-une-jambe-sur-marche-excentrique",
+   "dos": "3 × 12-15 / jambe, descente 3 s",
+   "dose": {
+    "sets": 3,
+    "setsMax": 3,
+    "min": 12,
+    "max": 15,
+    "unit": "reps",
+    "per": "jambe",
+    "note": "descente 3 s"
+   },
+   "rest": "30-45 s",
+   "restSec": 45,
+   "cons": "Monter à deux pieds, descendre sur un seul"
+  },
+  {
+   "order": 7,
+   "id": "ex-planche-laterale",
+   "dos": "3 × 20-45 s / côté",
+   "dose": {
+    "sets": 3,
+    "setsMax": 3,
+    "min": 20,
+    "max": 45,
+    "unit": "s",
+    "per": "côté",
+    "note": null
+   },
+   "rest": "30-45 s",
+   "restSec": 45,
+   "cons": "Épaules et hanches empilées, bassin haut"
+  }
+ ],
+ "Tennis / Padel": [
+  {
+   "order": 1,
+   "id": "ex-rotation-externe-a-90-d-abduction",
+   "dos": "3 × 10-12 / bras",
+   "dose": {
+    "sets": 3,
+    "setsMax": 3,
+    "min": 10,
+    "max": 12,
+    "unit": "reps",
+    "per": "bras",
+    "note": null
+   },
+   "rest": "30-45 s",
+   "restSec": 45,
+   "cons": "Coude à hauteur d'épaule, avant-bras pivote vers le haut"
+  },
+  {
+   "order": 2,
+   "id": "ex-extension-des-poignets",
+   "dos": "3 × 15",
+   "dose": {
+    "sets": 3,
+    "setsMax": 3,
+    "min": 15,
+    "max": 15,
+    "unit": "reps",
+    "per": null,
+    "note": null
+   },
+   "rest": "30-45 s",
+   "restSec": 45,
+   "cons": "Avant-bras posé sur la cuisse, descente lente"
+  },
+  {
+   "order": 3,
+   "id": "ex-rotation-de-buste-a-l-elastique-woodchop",
+   "dos": "3 × 12 / côté",
+   "dose": {
+    "sets": 3,
+    "setsMax": 3,
+    "min": 12,
+    "max": 12,
+    "unit": "reps",
+    "per": "côté",
+    "note": null
+   },
+   "rest": "90 s",
+   "restSec": 90,
+   "cons": "Pivoter sur le pied arrière, bras presque tendus"
+  },
+  {
+   "order": 4,
+   "id": "ex-fente-laterale",
+   "dos": "3 × 10 / côté",
+   "dose": {
+    "sets": 3,
+    "setsMax": 3,
+    "min": 10,
+    "max": 10,
+    "unit": "reps",
+    "per": "côté",
+    "note": null
+   },
+   "rest": "90 s",
+   "restSec": 90,
+   "cons": "Hanches en arrière, jambe opposée tendue"
+  },
+  {
+   "order": 5,
+   "id": "ex-face-pull-a-l-elastique",
+   "dos": "3 × 15",
+   "dose": {
+    "sets": 3,
+    "setsMax": 3,
+    "min": 15,
+    "max": 15,
+    "unit": "reps",
+    "per": null,
+    "note": null
+   },
+   "rest": "30-45 s",
+   "restSec": 45,
+   "cons": "Tirer vers le visage, coudes hauts, rotation externe"
+  },
+  {
+   "order": 6,
+   "id": "ex-pallof-press-anti-rotation",
+   "dos": "3 × 10 / côté",
+   "dose": {
+    "sets": 3,
+    "setsMax": 3,
+    "min": 10,
+    "max": 10,
+    "unit": "reps",
+    "per": "côté",
+    "note": null
+   },
+   "rest": "30-45 s",
+   "restSec": 45,
+   "cons": "Tendre les bras devant soi sans laisser tourner le buste"
+  },
+  {
+   "order": 7,
+   "id": "ex-sauts-lateraux-skater-jumps",
+   "dos": "3 × 8-10 / côté",
+   "dose": {
+    "sets": 3,
+    "setsMax": 3,
+    "min": 8,
+    "max": 10,
+    "unit": "reps",
+    "per": "côté",
+    "note": null
+   },
+   "rest": "2 min",
+   "restSec": 120,
+   "cons": "Réception sur une jambe, genou dans l'axe"
+  }
+ ],
+ "Escalade": [
+  {
+   "order": 1,
+   "id": "ex-tractions-pronation",
+   "dos": "4 × 3-10",
+   "dose": {
+    "sets": 4,
+    "setsMax": 4,
+    "min": 3,
+    "max": 10,
+    "unit": "reps",
+    "per": null,
+    "note": null
+   },
+   "rest": "90 s",
+   "restSec": 90,
+   "cons": "Départ bras tendus, menton au-dessus de la barre"
+  },
+  {
+   "order": 2,
+   "id": "ex-pompes-classiques",
+   "dos": "3 × 8-15",
+   "dose": {
+    "sets": 3,
+    "setsMax": 3,
+    "min": 8,
+    "max": 15,
+    "unit": "reps",
+    "per": null,
+    "note": null
+   },
+   "rest": "90 s",
+   "restSec": 90,
+   "cons": "Corps gainé, coudes à 45° du buste"
+  },
+  {
+   "order": 3,
+   "id": "ex-extension-des-doigts-a-l-elastique",
+   "dos": "3 × 20",
+   "dose": {
+    "sets": 3,
+    "setsMax": 3,
+    "min": 20,
+    "max": 20,
+    "unit": "reps",
+    "per": null,
+    "note": null
+   },
+   "rest": "30-45 s",
+   "restSec": 45,
+   "cons": "Petit élastique autour des doigts, ouvrir la main"
+  },
+  {
+   "order": 4,
+   "id": "ex-rotation-externe-d-epaule-a-l-elastique",
+   "dos": "3 × 12-15 / bras",
+   "dose": {
+    "sets": 3,
+    "setsMax": 3,
+    "min": 12,
+    "max": 15,
+    "unit": "reps",
+    "per": "bras",
+    "note": null
+   },
+   "rest": "30-45 s",
+   "restSec": 45,
+   "cons": "Coude collé au corps à 90°, mouvement lent"
+  },
+  {
+   "order": 5,
+   "id": "ex-developpe-militaire-halteres",
+   "dos": "3-4 × 8-10",
+   "dose": {
+    "sets": 3,
+    "setsMax": 4,
+    "min": 8,
+    "max": 10,
+    "unit": "reps",
+    "per": null,
+    "note": null
+   },
+   "rest": "90 s",
+   "restSec": 90,
+   "cons": "Debout, abdos gainés, sans cambrer"
+  },
+  {
+   "order": 6,
+   "id": "ex-releve-de-jambes-suspendu",
+   "dos": "3 × 6-10",
+   "dose": {
+    "sets": 3,
+    "setsMax": 3,
+    "min": 6,
+    "max": 10,
+    "unit": "reps",
+    "per": null,
+    "note": null
+   },
+   "rest": "90 s",
+   "restSec": 90,
+   "cons": "Jambes tendues à l'horizontale, descente lente"
+  },
+  {
+   "order": 7,
+   "id": "ex-extension-des-poignets",
+   "dos": "3 × 15",
+   "dose": {
+    "sets": 3,
+    "setsMax": 3,
+    "min": 15,
+    "max": 15,
+    "unit": "reps",
+    "per": null,
+    "note": null
+   },
+   "rest": "30-45 s",
+   "restSec": 45,
+   "cons": "Avant-bras posé sur la cuisse, descente lente"
+  }
+ ],
+ "Reprise / Débutant": [
+  {
+   "order": 1,
+   "id": "ex-squat-au-poids-du-corps",
+   "dos": "3 × 15-20",
+   "dose": {
+    "sets": 3,
+    "setsMax": 3,
+    "min": 15,
+    "max": 20,
+    "unit": "reps",
+    "per": null,
+    "note": null
+   },
+   "rest": "90 s",
+   "restSec": 90,
+   "cons": "Genoux dans l'axe des pieds, talons au sol"
+  },
+  {
+   "order": 2,
+   "id": "ex-pompes-sur-les-genoux",
+   "dos": "3 × 10-15",
+   "dose": {
+    "sets": 3,
+    "setsMax": 3,
+    "min": 10,
+    "max": 15,
+    "unit": "reps",
+    "per": null,
+    "note": null
+   },
+   "rest": "90 s",
+   "restSec": 90,
+   "cons": "Alignement genoux-bassin-épaules"
+  },
+  {
+   "order": 3,
+   "id": "ex-pont-fessier",
+   "dos": "3 × 15",
+   "dose": {
+    "sets": 3,
+    "setsMax": 3,
+    "min": 15,
+    "max": 15,
+    "unit": "reps",
+    "per": null,
+    "note": null
+   },
+   "rest": "90 s",
+   "restSec": 90,
+   "cons": "Pousser dans les talons, serrer les fessiers en haut"
+  },
+  {
+   "order": 4,
+   "id": "ex-rowing-assis-a-l-elastique",
+   "dos": "3 × 12-15",
+   "dose": {
+    "sets": 3,
+    "setsMax": 3,
+    "min": 12,
+    "max": 15,
+    "unit": "reps",
+    "per": null,
+    "note": null
+   },
+   "rest": "90 s",
+   "restSec": 90,
+   "cons": "Élastique autour des pieds, coudes le long du corps"
+  },
+  {
+   "order": 5,
+   "id": "ex-fente-arriere",
+   "dos": "3 × 10-12 / jambe",
+   "dose": {
+    "sets": 3,
+    "setsMax": 3,
+    "min": 10,
+    "max": 12,
+    "unit": "reps",
+    "per": "jambe",
+    "note": null
+   },
+   "rest": "90 s",
+   "restSec": 90,
+   "cons": "Reculer, buste légèrement incliné vers l'avant"
+  },
+  {
+   "order": 6,
+   "id": "ex-planche-sur-les-avant-bras",
+   "dos": "3 × 30-60 s",
+   "dose": {
+    "sets": 3,
+    "setsMax": 3,
+    "min": 30,
+    "max": 60,
+    "unit": "s",
+    "per": null,
+    "note": null
+   },
+   "rest": "30-45 s",
+   "restSec": 45,
+   "cons": "Corps aligné tête-bassin-talons, fessiers serrés, ne pas creuser le dos"
+  },
+  {
+   "order": 7,
+   "id": "ex-bird-dog",
+   "dos": "3 × 8-10 / côté",
+   "dose": {
+    "sets": 3,
+    "setsMax": 3,
+    "min": 8,
+    "max": 10,
+    "unit": "reps",
+    "per": "côté",
+    "note": null
+   },
+   "rest": "30-45 s",
+   "restSec": 45,
+   "cons": "Dos plat, allonger sans rotation du bassin"
+  }
+ ],
+ "Perte de poids": [
+  {
+   "order": 1,
+   "id": "ex-squat-goblet",
+   "dos": "3-4 × 8-12",
+   "dose": {
+    "sets": 3,
+    "setsMax": 4,
+    "min": 8,
+    "max": 12,
+    "unit": "reps",
+    "per": null,
+    "note": null
+   },
+   "rest": "90 s",
+   "restSec": 90,
+   "cons": "Haltère contre la poitrine, buste droit"
+  },
+  {
+   "order": 2,
+   "id": "ex-pompes-classiques",
+   "dos": "3 × 8-15",
+   "dose": {
+    "sets": 3,
+    "setsMax": 3,
+    "min": 8,
+    "max": 15,
+    "unit": "reps",
+    "per": null,
+    "note": null
+   },
+   "rest": "90 s",
+   "restSec": 90,
+   "cons": "Corps gainé, coudes à 45° du buste"
+  },
+  {
+   "order": 3,
+   "id": "ex-swing-kettlebell",
+   "dos": "4 × 12-15",
+   "dose": {
+    "sets": 4,
+    "setsMax": 4,
+    "min": 12,
+    "max": 15,
+    "unit": "reps",
+    "per": null,
+    "note": null
+   },
+   "rest": "2 min",
+   "restSec": 120,
+   "cons": "Charnière de hanche explosive, bras relâchés"
+  },
+  {
+   "order": 4,
+   "id": "ex-fente-marchee",
+   "dos": "3 × 20 pas",
+   "dose": {
+    "sets": 3,
+    "setsMax": 3,
+    "min": 20,
+    "max": 20,
+    "unit": "pas",
+    "per": null,
+    "note": null
+   },
+   "rest": "90 s",
+   "restSec": 90,
+   "cons": "Enchaîner sans reposer le pied arrière"
+  },
+  {
+   "order": 5,
+   "id": "ex-rowing-buste-penche-deux-halteres",
+   "dos": "3-4 × 8-12",
+   "dose": {
+    "sets": 3,
+    "setsMax": 4,
+    "min": 8,
+    "max": 12,
+    "unit": "reps",
+    "per": null,
+    "note": null
+   },
+   "rest": "90 s",
+   "restSec": 90,
+   "cons": "Buste à 45°, dos plat, serrer les omoplates"
+  },
+  {
+   "order": 6,
+   "id": "ex-mountain-climbers",
+   "dos": "3 × 30 s",
+   "dose": {
+    "sets": 3,
+    "setsMax": 3,
+    "min": 30,
+    "max": 30,
+    "unit": "s",
+    "per": null,
+    "note": null
+   },
+   "rest": "30-45 s",
+   "restSec": 45,
+   "cons": "Épaules au-dessus des mains, bassin bas"
+  },
+  {
+   "order": 7,
+   "id": "ex-burpees",
+   "dos": "3 × 8-12",
+   "dose": {
+    "sets": 3,
+    "setsMax": 3,
+    "min": 8,
+    "max": 12,
+    "unit": "reps",
+    "per": null,
+    "note": null
+   },
+   "rest": "2 min",
+   "restSec": 120,
+   "cons": "Pompe complète puis saut, rythme régulier"
+  }
+ ],
+ "Tonification": [
+  {
+   "order": 1,
+   "id": "ex-squat-goblet",
+   "dos": "3-4 × 8-12",
+   "dose": {
+    "sets": 3,
+    "setsMax": 4,
+    "min": 8,
+    "max": 12,
+    "unit": "reps",
+    "per": null,
+    "note": null
+   },
+   "rest": "90 s",
+   "restSec": 90,
+   "cons": "Haltère contre la poitrine, buste droit"
+  },
+  {
+   "order": 2,
+   "id": "ex-developpe-couche-halteres",
+   "dos": "3-4 × 8-12",
+   "dose": {
+    "sets": 3,
+    "setsMax": 4,
+    "min": 8,
+    "max": 12,
+    "unit": "reps",
+    "per": null,
+    "note": null
+   },
+   "rest": "90 s",
+   "restSec": 90,
+   "cons": "Omoplates serrées, pieds au sol"
+  },
+  {
+   "order": 3,
+   "id": "ex-rowing-haltere-un-bras",
+   "dos": "3 × 8-12 / bras",
+   "dose": {
+    "sets": 3,
+    "setsMax": 3,
+    "min": 8,
+    "max": 12,
+    "unit": "reps",
+    "per": "bras",
+    "note": null
+   },
+   "rest": "90 s",
+   "restSec": 90,
+   "cons": "Main et genou sur le banc, coude vers la hanche"
+  },
+  {
+   "order": 4,
+   "id": "ex-fente-arriere-avec-halteres",
+   "dos": "3-4 × 8-10 / jambe",
+   "dose": {
+    "sets": 3,
+    "setsMax": 4,
+    "min": 8,
+    "max": 10,
+    "unit": "reps",
+    "per": "jambe",
+    "note": null
+   },
+   "rest": "90 s",
+   "restSec": 90,
+   "cons": "Haltères le long du corps, pousser dans le talon avant"
+  },
+  {
+   "order": 5,
+   "id": "ex-developpe-militaire-halteres",
+   "dos": "3-4 × 8-10",
+   "dose": {
+    "sets": 3,
+    "setsMax": 4,
+    "min": 8,
+    "max": 10,
+    "unit": "reps",
+    "per": null,
+    "note": null
+   },
+   "rest": "90 s",
+   "restSec": 90,
+   "cons": "Debout, abdos gainés, sans cambrer"
+  },
+  {
+   "order": 6,
+   "id": "ex-hip-thrust-leste",
+   "dos": "3-4 × 8-12",
+   "dose": {
+    "sets": 3,
+    "setsMax": 4,
+    "min": 8,
+    "max": 12,
+    "unit": "reps",
+    "per": null,
+    "note": null
+   },
+   "rest": "90 s",
+   "restSec": 90,
+   "cons": "Haltère posé sur le pli des hanches"
+  },
+  {
+   "order": 7,
+   "id": "ex-planche-sur-les-avant-bras",
+   "dos": "3 × 30-60 s",
+   "dose": {
+    "sets": 3,
+    "setsMax": 3,
+    "min": 30,
+    "max": 60,
+    "unit": "s",
+    "per": null,
+    "note": null
+   },
+   "rest": "30-45 s",
+   "restSec": 45,
+   "cons": "Corps aligné tête-bassin-talons, fessiers serrés, ne pas creuser le dos"
+  }
+ ],
+ "Dos & posture": [
+  {
+   "order": 1,
+   "id": "ex-bird-dog",
+   "dos": "3 × 8-10 / côté",
+   "dose": {
+    "sets": 3,
+    "setsMax": 3,
+    "min": 8,
+    "max": 10,
+    "unit": "reps",
+    "per": "côté",
+    "note": null
+   },
+   "rest": "30-45 s",
+   "restSec": 45,
+   "cons": "Dos plat, allonger sans rotation du bassin"
+  },
+  {
+   "order": 2,
+   "id": "ex-curl-up-de-mcgill",
+   "dos": "3 × 6-8 tenues de 8-10 s",
+   "dose": {
+    "sets": 3,
+    "setsMax": 3,
+    "min": 6,
+    "max": 8,
+    "unit": "reps",
+    "per": null,
+    "note": "tenues de 8-10 s"
+   },
+   "rest": "30-45 s",
+   "restSec": 45,
+   "cons": "Une jambe fléchie, mains sous les lombaires, décoller à peine la tête et les épaules"
+  },
+  {
+   "order": 3,
+   "id": "ex-planche-laterale",
+   "dos": "3 × 20-45 s / côté",
+   "dose": {
+    "sets": 3,
+    "setsMax": 3,
+    "min": 20,
+    "max": 45,
+    "unit": "s",
+    "per": "côté",
+    "note": null
+   },
+   "rest": "30-45 s",
+   "restSec": 45,
+   "cons": "Épaules et hanches empilées, bassin haut"
+  },
+  {
+   "order": 4,
+   "id": "ex-pont-fessier",
+   "dos": "3 × 15",
+   "dose": {
+    "sets": 3,
+    "setsMax": 3,
+    "min": 15,
+    "max": 15,
+    "unit": "reps",
+    "per": null,
+    "note": null
+   },
+   "rest": "90 s",
+   "restSec": 90,
+   "cons": "Pousser dans les talons, serrer les fessiers en haut"
+  },
+  {
+   "order": 5,
+   "id": "ex-rowing-assis-a-l-elastique",
+   "dos": "3 × 12-15",
+   "dose": {
+    "sets": 3,
+    "setsMax": 3,
+    "min": 12,
+    "max": 15,
+    "unit": "reps",
+    "per": null,
+    "note": null
+   },
+   "rest": "90 s",
+   "restSec": 90,
+   "cons": "Élastique autour des pieds, coudes le long du corps"
+  },
+  {
+   "order": 6,
+   "id": "ex-face-pull-a-l-elastique",
+   "dos": "3 × 15",
+   "dose": {
+    "sets": 3,
+    "setsMax": 3,
+    "min": 15,
+    "max": 15,
+    "unit": "reps",
+    "per": null,
+    "note": null
+   },
+   "rest": "30-45 s",
+   "restSec": 45,
+   "cons": "Tirer vers le visage, coudes hauts, rotation externe"
+  },
+  {
+   "order": 7,
+   "id": "ex-dead-bug",
+   "dos": "3 × 8-10 / côté",
+   "dose": {
+    "sets": 3,
+    "setsMax": 3,
+    "min": 8,
+    "max": 10,
+    "unit": "reps",
+    "per": "côté",
+    "note": null
+   },
+   "rest": "30-45 s",
+   "restSec": 45,
+   "cons": "Lombaires plaquées au sol, allonger bras et jambe opposés"
+  }
+ ],
+ "Seniors & équilibre": [
+  {
+   "order": 1,
+   "id": "ex-assis-debout-de-chaise",
+   "dos": "3 × 10-15",
+   "dose": {
+    "sets": 3,
+    "setsMax": 3,
+    "min": 10,
+    "max": 15,
+    "unit": "reps",
+    "per": null,
+    "note": null
+   },
+   "rest": "90 s",
+   "restSec": 90,
+   "cons": "Se lever sans les mains, se rasseoir lentement"
+  },
+  {
+   "order": 2,
+   "id": "ex-pompes-contre-le-mur",
+   "dos": "3 × 12-15",
+   "dose": {
+    "sets": 3,
+    "setsMax": 3,
+    "min": 12,
+    "max": 15,
+    "unit": "reps",
+    "per": null,
+    "note": null
+   },
+   "rest": "90 s",
+   "restSec": 90,
+   "cons": "Corps gainé, poitrine vers le mur, coudes à 45°"
+  },
+  {
+   "order": 3,
+   "id": "ex-rowing-assis-a-l-elastique",
+   "dos": "3 × 12-15",
+   "dose": {
+    "sets": 3,
+    "setsMax": 3,
+    "min": 12,
+    "max": 15,
+    "unit": "reps",
+    "per": null,
+    "note": null
+   },
+   "rest": "90 s",
+   "restSec": 90,
+   "cons": "Élastique autour des pieds, coudes le long du corps"
+  },
+  {
+   "order": 4,
+   "id": "ex-step-up",
+   "dos": "3 × 10-12 / jambe",
+   "dose": {
+    "sets": 3,
+    "setsMax": 3,
+    "min": 10,
+    "max": 12,
+    "unit": "reps",
+    "per": "jambe",
+    "note": null
+   },
+   "rest": "90 s",
+   "restSec": 90,
+   "cons": "Monter sans pousser avec la jambe au sol"
+  },
+  {
+   "order": 5,
+   "id": "ex-marche-laterale-avec-elastique-monster-walk",
+   "dos": "3 × 10-15 pas / côté",
+   "dose": {
+    "sets": 3,
+    "setsMax": 3,
+    "min": 10,
+    "max": 15,
+    "unit": "pas",
+    "per": "côté",
+    "note": null
+   },
+   "rest": "30-45 s",
+   "restSec": 45,
+   "cons": "Demi-squat, pieds parallèles, tension constante"
+  },
+  {
+   "order": 6,
+   "id": "ex-mollets-debout",
+   "dos": "3 × 15-20",
+   "dose": {
+    "sets": 3,
+    "setsMax": 3,
+    "min": 15,
+    "max": 20,
+    "unit": "reps",
+    "per": null,
+    "note": null
+   },
+   "rest": "90 s",
+   "restSec": 90,
+   "cons": "Amplitude complète, pause en haut"
+  },
+  {
+   "order": 7,
+   "id": "ex-equilibre-sur-une-jambe",
+   "dos": "3 × 30-45 s / jambe",
+   "dose": {
+    "sets": 3,
+    "setsMax": 3,
+    "min": 30,
+    "max": 45,
+    "unit": "s",
+    "per": "jambe",
+    "note": null
+   },
+   "rest": "30-45 s",
+   "restSec": 45,
+   "cons": "Yeux fermés ou sur coussin pour progresser"
+  }
+ ]
+}

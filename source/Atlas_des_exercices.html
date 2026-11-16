@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Atlas des exercices</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Atlas : fiche technique de salle, grille de cartes, une figure homme et une femme par carte */
+  --bg:#eef1ef; --surface:#ffffff; --ink:#17201c; --muted:#56625c; --line:#d9dfdb; --accent:#0f6b5e;
+  --display:"Barlow Condensed","Arial Narrow",system-ui,sans-serif; --body:"Barlow",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --m1:#2f6690; --m2:#1d4462; --mh:#163044; --f1:#b0476e; --f2:#7a2c4a; --fh:#4a1830;
+  --prop:#2e3431; --propsoft:#c8ccc9; --band:#e0962a; --ball:#9cc3d9; --floor:#9aa39e; --shadow:rgba(0,0,0,.10); --mat:#e4e2db; --figbg:#f7f8f7;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#111513; --surface:#191e1c; --ink:#e6ebe8; --muted:#9aa6a0; --line:#2a312e; --accent:#5cc2ae;
+  --m1:#6ea7d4; --m2:#47789f; --mh:#223f55; --f1:#e07ca0; --f2:#a94f73; --fh:#4f1a30;
+  --prop:#d5dad7; --propsoft:#46504b; --band:#e9a640; --ball:#5d8ea7; --floor:#5e6863; --shadow:rgba(0,0,0,.35); --mat:#262c29; --figbg:#151a18; color-scheme:dark;}}
+:root[data-theme="dark"]{
+  --bg:#111513; --surface:#191e1c; --ink:#e6ebe8; --muted:#9aa6a0; --line:#2a312e; --accent:#5cc2ae;
+  --m1:#6ea7d4; --m2:#47789f; --mh:#223f55; --f1:#e07ca0; --f2:#a94f73; --fh:#4f1a30;
+  --prop:#d5dad7; --propsoft:#46504b; --band:#e9a640; --ball:#5d8ea7; --floor:#5e6863; --shadow:rgba(0,0,0,.35); --mat:#262c29; --figbg:#151a18; color-scheme:dark;}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font:400 15px/1.45 var(--body)}
+.wrap{max-width:1280px;margin:0 auto;padding:20px 16px 48px}
+h1{font:700 34px/1.05 var(--display);letter-spacing:.01em;margin:0 0 4px;text-wrap:balance}
+.lede{color:var(--muted);margin:0 0 16px;max-width:70ch}
+.bar{position:sticky;top:0;z-index:5;background:var(--bg);padding:10px 0 12px;border-bottom:1px solid var(--line);display:grid;gap:10px}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+input[type=search],select{font:inherit;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:8px 10px;min-height:38px}
+input[type=search]{flex:1 1 220px;min-width:180px}
+select{flex:0 1 220px}
+button{font:500 14px var(--body);color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:6px 12px;cursor:pointer;min-height:34px}
+button[aria-pressed=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.seg button{border:0;border-radius:0;min-height:32px}
+label.ck{display:inline-flex;gap:6px;align-items:center;color:var(--muted);font-size:14px}
+#count{font:600 18px var(--display);margin-left:auto;font-variant-numeric:tabular-nums}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:14px;margin-top:16px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:10px;scroll-margin-top:150px;transition:box-shadow .3s}
+.card.hl{box-shadow:0 0 0 3px var(--accent)}
+.card h2{font:600 21px/1.1 var(--display);margin:0 0 6px;text-wrap:balance}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-size:12.5px;padding:2px 8px;border-radius:999px;background:var(--bg);color:var(--muted);border:1px solid var(--line)}
+.tag.cat{color:var(--ink);font-weight:600}
+.figs{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+body[data-sex=M] .fig.f, body[data-sex=F] .fig.m{display:none}
+body[data-sex=M] .figs, body[data-sex=F] .figs{grid-template-columns:1fr}
+.fig{margin:0;background:var(--figbg);border-radius:8px;overflow:hidden;position:relative}
+.fig svg{display:block;width:100%;aspect-ratio:260/240;height:auto}
+.fig figcaption{position:absolute;top:6px;left:8px;font:600 11px var(--body);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.meta{display:flex;flex-wrap:wrap;gap:6px 12px;margin:0;font-size:13px;color:var(--muted)}
+.meta span+span::before{content:"·";margin-right:12px}
+dl{display:grid;grid-template-columns:86px 1fr;gap:4px 10px;margin:0;font-size:14px}
+dt{color:var(--muted);font-size:13px}
+dd{margin:0}
+.num{font-variant-numeric:tabular-nums}
+.prio{display:flex;flex-wrap:wrap;gap:4px}
+.prio span{font-size:12.5px;padding:1px 7px;border-radius:6px;background:color-mix(in srgb,var(--accent) 14%,transparent);color:var(--ink)}
+#empty{color:var(--muted);padding:30px 0}
+.foot{color:var(--muted);font-size:13px;margin-top:28px;max-width:80ch}
+@media (max-width:420px){.grid{grid-template-columns:1fr} h1{font-size:28px} #count{margin-left:0}}
+</style></head>
+<body><div class="wrap">
+<h1>Atlas des exercices</h1>
+<p class="lede">Les 217 exercices de la base, chacun dessiné en version homme et en version femme, de la position de départ à la position d'arrivée.</p>
+<div class="bar">
+  <div class="row">
+    <input id="q" type="search" placeholder="Chercher un exercice ou un muscle" aria-label="Chercher un exercice ou un muscle">
+    <select id="eq" aria-label="Équipement"><option value="">Tout le matériel</option></select>
+    <select id="sp" aria-label="Sport ou objectif"><option value="">Tous sports et objectifs</option></select>
+    <label class="ck"><input id="withc" type="checkbox"> inclure les complémentaires</label>
+  </div>
+  <div class="row">
+    <div id="cats" class="row" role="group" aria-label="Catégorie"></div>
+    <span id="count"></span>
+  </div>
+  <div class="row">
+    <div id="sex" class="seg" role="group" aria-label="Silhouettes affichées"><button type="button" data-v="both">Homme et femme</button><button type="button" data-v="M">Homme</button><button type="button" data-v="F">Femme</button></div>
+    <button id="play" type="button">Pause</button>
+    <select id="speed" aria-label="Vitesse"><option value="0.6">Lent</option><option value="1">Normal</option><option value="1.5">Rapide</option></select>
+    <button id="reset" type="button">Effacer les filtres</button>
+  </div>
+</div>
+<p id="empty" hidden>Aucun exercice ne correspond. Retire un filtre ou change la recherche.</p>
+<main id="grid" class="grid"></main>
+<p class="foot">Dessins schématiques : ils montrent le trajet du mouvement, pas les détails de technique (prise, rotation des poignets, alignement fin). Les rotations du buste et les mouvements vers l'avant sont simplifiés en deux dimensions. Fie-toi d'abord à la consigne clé, et en cas de doute à un professionnel.</p>
+</div>
+<script>/* Moteur de silhouettes : squelette 2D, IK à deux segments, homme / femme, matériel */
+const FL = 225;
+const RAD = Math.PI / 180;
+const dir = a => [Math.sin(a * RAD), -Math.cos(a * RAD)];
+const add = (p, v, s = 1) => [p[0] + v[0] * s, p[1] + v[1] * s];
+const sub = (a, b) => [a[0] - b[0], a[1] - b[1]];
+const len = v => Math.hypot(v[0], v[1]);
+const angOf = v => ((Math.atan2(v[0], -v[1]) / RAD) + 360) % 360;
+const lerp = (a, b, u) => a + (b - a) * u;
+const lerpAng = (a, b, u) => { let d = ((b - a) % 360 + 540) % 360 - 180; return a + d * u; };
+
+const SEX = {
+  M: { k: 1.0, SW: 46, HW: 30, HR: 10.5, w: { TH: 14, SH: 10, UA: 9.5, FA: 8 }, hand: 4, foot: 7 },
+  F: { k: 0.95, SW: 38, HW: 35, HR: 10, w: { TH: 14, SH: 9.5, UA: 8, FA: 7 }, hand: 3.6, foot: 6.5 },
+};
+const LEN = { T: 52, SHF: 0.87, NK: 7, UA: 29, FA: 26, TH: 44, SH: 42, FT: 15 };
+const SEGS = ["aUA", "aFA", "bUA", "bFA", "aTH", "aSH", "bTH", "bSH"];
+const DEF_ANG = { T: 0, aUA: 180, aFA: 180, bUA: 180, bFA: 180, aTH: 180, aSH: 180, bTH: 180, bSH: 180 };
+
+function ik(base, tgt, l1, l2, s) {
+  const v = sub(tgt, base);
+  let d = len(v);
+  const phi = angOf(v);
+  const dmax = l1 + l2 - 0.01, dmin = Math.abs(l1 - l2) + 0.01;
+  if (d >= dmax) return add(base, dir(phi), l1);
+  if (d < dmin) d = dmin;
+  const c = (l1 * l1 + d * d - l2 * l2) / (2 * l1 * d);
+  const a = Math.acos(Math.max(-1, Math.min(1, c))) / RAD;
+  return add(base, dir(phi + s * a), l1);
+}
+
+/* Résout une pose : angles absolus (0 = haut, 90 = droite), ancre, cibles IK */
+function solve(kp, view, sexKey, rootGiven) {
+  const sx = SEX[sexKey], k = sx.k;
+  const g = n => (kp[n] !== undefined ? kp[n] : DEF_ANG[n]);
+  const sc = n => (kp[n + "s"] !== undefined ? kp[n + "s"] : 1);
+  const T = g("T"), u = dir(T), v = dir(T + 90);
+  const J = {};
+  J.P = [0, 0];
+  const Tl = LEN.T * k * sc("T");
+  J.N = add(J.P, u, Tl);
+  const S = add(J.P, u, Tl * LEN.SHF + (kp.shE || 0));
+  if (view === "s") {
+    J.aS = S; J.bS = add(S, v, -2.5); J.aHp = [0, 0]; J.bHp = add([0, 0], v, -2);
+  } else {
+    J.aS = add(S, v, -sx.SW / 2); J.bS = add(S, v, sx.SW / 2);
+    J.aHp = add(J.P, v, -(sx.HW / 2 - 5)); J.bHp = add(J.P, v, sx.HW / 2 - 5);
+  }
+  const hd = kp.Hd !== undefined ? kp.Hd : T;
+  J.hd = hd;
+  J.Hd = add(add(J.N, dir(hd), LEN.NK * k + sx.HR), dir(hd + 90), kp.Hx || 0);
+  for (const sd of ["a", "b"]) {
+    J[sd + "E"] = add(J[sd + "S"], dir(g(sd + "UA")), LEN.UA * k * sc(sd + "UA"));
+    J[sd + "W"] = add(J[sd + "E"], dir(g(sd + "FA")), LEN.FA * k * sc(sd + "FA"));
+    J[sd + "K"] = add(J[sd + "Hp"], dir(g(sd + "TH")), LEN.TH * k * sc(sd + "TH"));
+    J[sd + "A"] = add(J[sd + "K"], dir(g(sd + "SH")), LEN.SH * k * sc(sd + "SH"));
+  }
+  let delta = [0, 0];
+  if (rootGiven) delta = rootGiven;
+  else if (kp.an) { const [n, x, y] = kp.an; delta = sub([x, y], J[n]); }
+  for (const key in J) if (Array.isArray(J[key])) J[key] = add(J[key], delta);
+  // IK
+  const dS = view === "s" ? { a: 1, b: 1 } : { a: 1, b: -1 };
+  const dL = view === "s" ? { a: -1, b: -1 } : { a: 1, b: -1 };
+  for (const sd of ["a", "b"]) {
+    const wt = kp[sd + "Wt"];
+    if (wt) {
+      const s = wt[2] !== undefined ? wt[2] : dS[sd];
+      J[sd + "E"] = ik(J[sd + "S"], wt, LEN.UA * k * sc(sd + "UA"), LEN.FA * k * sc(sd + "FA"), s);
+      J[sd + "W"] = add(J[sd + "E"], dir(angOf(sub(wt, J[sd + "E"]))), LEN.FA * k * sc(sd + "FA"));
+    }
+    const at = kp[sd + "At"];
+    if (at) {
+      const s = at[2] !== undefined ? at[2] : dL[sd];
+      J[sd + "K"] = ik(J[sd + "Hp"], at, LEN.TH * k * sc(sd + "TH"), LEN.SH * k * sc(sd + "SH"), s);
+      J[sd + "A"] = add(J[sd + "K"], dir(angOf(sub(at, J[sd + "K"]))), LEN.SH * k * sc(sd + "SH"));
+    }
+  }
+  // feet, hands
+  for (const sd of ["a", "b"]) {
+    const shA = angOf(sub(J[sd + "A"], J[sd + "K"]));
+    let f = kp[sd + "FT"];
+    const A = J[sd + "A"];
+    if (typeof f !== "number") {
+      if (view !== "s") f = shA;
+      else if (f === "t") {
+        const dy = FL - 1.5 - A[1];
+        f = dy <= 0 ? 90 : dy >= LEN.FT * k ? 180 : Math.acos(-dy / (LEN.FT * k)) / RAD;
+      } else if (A[1] >= FL - 9 && !kp.top) f = 90;
+      else f = shA - 90;
+    }
+    J[sd + "ft"] = f;
+    const faA = angOf(sub(J[sd + "W"], J[sd + "E"]));
+    J[sd + "ha"] = kp[sd + "HA"] !== undefined ? kp[sd + "HA"] : faA;
+    J[sd + "H"] = add(J[sd + "W"], dir(J[sd + "ha"]), 3);
+  }
+  J.T = T; J.u = u; J.v = v; J.Tl = Tl;
+  return J;
+}
+
+/* Convertit une pose clé en angles + racine pour l'interpolation */
+function keyState(kp, view, sexKey) {
+  const J = solve(kp, view, sexKey);
+  const st = { root: J.P, ang: {}, sc: {}, kp };
+  st.ang.T = J.T; st.ang.Hd = J.hd;
+  st.ang.aUA = angOf(sub(J.aE, J.aS)); st.ang.aFA = angOf(sub(J.aW, J.aE));
+  st.ang.bUA = angOf(sub(J.bE, J.bS)); st.ang.bFA = angOf(sub(J.bW, J.bE));
+  st.ang.aTH = angOf(sub(J.aK, J.aHp)); st.ang.aSH = angOf(sub(J.aA, J.aK));
+  st.ang.bTH = angOf(sub(J.bK, J.bHp)); st.ang.bSH = angOf(sub(J.bA, J.bK));
+  st.ang.aFT = J.aft; st.ang.bFT = J.bft; st.ang.aHA = J.aha; st.ang.bHA = J.bha;
+  for (const n of [...SEGS, "T"]) st.sc[n + "s"] = kp[n + "s"] !== undefined ? kp[n + "s"] : 1;
+  return st;
+}
+
+function frameJoints(A, B, u, view, sexKey) {
+  const kp = {};
+  for (const n in A.ang) kp[n] = lerpAng(A.ang[n], B.ang[n], u);
+  for (const n in A.sc) kp[n] = lerp(A.sc[n], B.sc[n], u);
+  // valeurs numériques libres (épaules, tête, paramètres de matériel)
+  for (const n of ["shE", "Hx", "br", "ry", "fs", "aDB", "aDBs"]) {
+    const a = A.kp[n], b = B.kp[n];
+    if (a !== undefined || b !== undefined) kp[n] = lerp(a ?? b ?? 0, b ?? a ?? 0, u);
+  }
+  for (const t of ["aWt", "bWt", "aAt", "bAt"]) {
+    if (A.kp[t] && B.kp[t]) {
+      const s = A.kp[t][2];
+      kp[t] = [lerp(A.kp[t][0], B.kp[t][0], u), lerp(A.kp[t][1], B.kp[t][1], u)];
+      if (s !== undefined) kp[t][2] = s;
+    }
+  }
+  kp.top = A.kp.top;
+  // pieds et mains : angles déjà résolus et interpolés
+  const J = solve(kp, view, sexKey, [lerp(A.root[0], B.root[0], u), lerp(A.root[1], B.root[1], u)]);
+  if (!(A.kp.aAt && B.kp.aAt) || true) J.aft = kp.aFT;
+  J.bft = kp.bFT;
+  J.aha = kp.aHA; J.bha = kp.bHA;
+  for (const sd of ["a", "b"]) J[sd + "H"] = add(J[sd + "W"], dir(J[sd + "ha"]), 3);
+  J.kp = kp;
+  return J;
+}
+
+/* ---------- Dessin ---------- */
+function catmull(pts) {
+  const n = pts.length; let d = "";
+  for (let i = 0; i < n; i++) {
+    const p0 = pts[(i - 1 + n) % n], p1 = pts[i], p2 = pts[(i + 1) % n], p3 = pts[(i + 2) % n];
+    if (i === 0) d += `M${p1[0].toFixed(1)},${p1[1].toFixed(1)}`;
+    const c1 = [p1[0] + (p2[0] - p0[0]) / 6, p1[1] + (p2[1] - p0[1]) / 6];
+    const c2 = [p2[0] - (p3[0] - p1[0]) / 6, p2[1] - (p3[1] - p1[1]) / 6];
+    d += `C${c1[0].toFixed(1)},${c1[1].toFixed(1)} ${c2[0].toFixed(1)},${c2[1].toFixed(1)} ${p2[0].toFixed(1)},${p2[1].toFixed(1)}`;
+  }
+  return d + "Z";
+}
+const TORSO = {
+  sM: [[-0.08, -10], [0.15, -11], [0.45, -8.5], [0.7, -10], [0.9, -9], [1.0, -5], [1.0, 5], [0.88, 10], [0.7, 12], [0.45, 9.5], [0.2, 10], [-0.05, 9]],
+  sF: [[-0.08, -12.5], [0.12, -12], [0.42, -7.5], [0.7, -8.5], [0.9, -8], [1.0, -4.5], [1.0, 4.5], [0.85, 8], [0.7, 12.5], [0.58, 10], [0.42, 7], [0.2, 9], [-0.05, 9]],
+  fM: [[1.0, -8], [0.93, -24], [0.75, -21], [0.45, -16], [0.15, -16.5], [-0.08, -17]],
+  fF: [[1.0, -7], [0.93, -20], [0.72, -17], [0.45, -13.5], [0.15, -18], [-0.08, -18.5]],
+};
+function torsoPath(J, view, sexKey) {
+  const k = SEX[sexKey].k, L = J.Tl;
+  let pts;
+  if (view === "s") pts = TORSO["s" + sexKey];
+  else { const h = TORSO["f" + sexKey]; pts = [...h, ...h.slice().reverse().map(([a, b]) => [a, -b])]; }
+  const shE = (J.kp && J.kp.shE) || 0;
+  return catmull(pts.map(([s, o]) => add(add(J.P, J.u, s * L + (s > 0.8 ? shE * (s - 0.8) / 0.2 : 0)), J.v, o * k * (view === "s" ? 1 : 1))));
+}
+const seg = (a, b, w, c) => `<line x1="${a[0].toFixed(1)}" y1="${a[1].toFixed(1)}" x2="${b[0].toFixed(1)}" y2="${b[1].toFixed(1)}" stroke="${c}" stroke-width="${w}" stroke-linecap="round"/>`;
+
+function limbSVG(J, sd, part, sx, c) {
+  if (part === "arm") {
+    return seg(J[sd + "S"], J[sd + "E"], sx.w.UA, c) + seg(J[sd + "E"], J[sd + "W"], sx.w.FA, c) +
+      `<circle cx="${J[sd + "H"][0].toFixed(1)}" cy="${J[sd + "H"][1].toFixed(1)}" r="${sx.hand}" fill="${c}"/>`;
+  }
+  const A = J[sd + "A"], f = J[sd + "ft"];
+  let foot;
+  if (J.view === "s") foot = seg(add(A, dir(f), -3), add(A, dir(f), 13 * sx.k), sx.foot, c);
+  else foot = seg(A, add(A, dir(f), 6), sx.foot + 1.5, c);
+  return seg(J[sd + "Hp"], J[sd + "K"], sx.w.TH, c) + seg(J[sd + "K"], A, sx.w.SH, c) + foot;
+}
+
+function headSVG(J, view, sexKey, c, hair) {
+  const sx = SEX[sexKey], H = J.Hd, r = sx.HR, hd = J.hd;
+  let s = `<circle cx="${H[0].toFixed(1)}" cy="${H[1].toFixed(1)}" r="${r}" fill="${c}"/>`;
+  const arc = (a1, a2, rr, w) => {
+    const p1 = add(H, dir(a1), rr), p2 = add(H, dir(a2), rr);
+    const large = ((a2 - a1 + 360) % 360) > 180 ? 1 : 0;
+    return `<path d="M${p1[0].toFixed(1)},${p1[1].toFixed(1)} A${rr},${rr} 0 ${large} 1 ${p2[0].toFixed(1)},${p2[1].toFixed(1)}" fill="none" stroke="${hair}" stroke-width="${w}" stroke-linecap="round"/>`;
+  };
+  if (view === "s") {
+    s += arc(hd - 115, hd + 30, r - 1.8, 4.2);
+    const nose = add(H, dir(hd + 90), r - 0.5);
+    s += `<circle cx="${nose[0].toFixed(1)}" cy="${nose[1].toFixed(1)}" r="2.2" fill="${c}"/>`;
+    if (sexKey === "F") {
+      const t = add(H, dir(hd - 105), r + 3.5);
+      s += `<ellipse cx="${t[0].toFixed(1)}" cy="${t[1].toFixed(1)}" rx="4" ry="7" transform="rotate(${(hd - 105 + 180).toFixed(0)} ${t[0].toFixed(1)} ${t[1].toFixed(1)})" fill="${hair}"/>`;
+    }
+  } else {
+    s += sexKey === "F" ? arc(hd - 115, hd + 115, r - 1.6, 4.5) : arc(hd - 70, hd + 70, r - 1.8, 4.2);
+  }
+  return s;
+}
+
+/* ---------- Matériel ---------- */
+const INK = "var(--prop)", BAND = "var(--band)", SOFT = "var(--propsoft)";
+function pt(J, p) { return typeof p === "string" ? J[p] : p; }
+function dumbbell(c, ang, size = 1) {
+  const a = dir(ang), b = dir(ang + 90);
+  const e1 = add(c, a, -8 * size), e2 = add(c, a, 8 * size);
+  const plate = e => { const p1 = add(e, b, -5 * size), p2 = add(e, b, 5 * size); return seg(p1, p2, 5 * size, INK); };
+  return seg(e1, e2, 2.6, INK) + plate(e1) + plate(e2);
+}
+function propSVG(pr, J, view) {
+  const kp = J.kp || {};
+  switch (pr.t) {
+    case "bench": {
+      const { x1, x2, y } = pr;
+      return `<rect x="${x1}" y="${y}" width="${x2 - x1}" height="7" rx="2" fill="${SOFT}" stroke="${INK}" stroke-width="1.2"/>` +
+        seg([x1 + 6, y + 7], [x1 + 6, FL], 3, INK) + seg([x2 - 6, y + 7], [x2 - 6, FL], 3, INK);
+    }
+    case "incl": {
+      const [a, b] = pr.back; const [x1, x2, y] = pr.seat;
+      return `<path d="M${a[0]},${a[1]} L${b[0]},${b[1]}" stroke="${SOFT}" stroke-width="8" stroke-linecap="round"/>` +
+        `<rect x="${x1}" y="${y}" width="${x2 - x1}" height="7" rx="2" fill="${SOFT}" stroke="${INK}" stroke-width="1.2"/>` +
+        seg([(x1 + x2) / 2, y + 7], [(x1 + x2) / 2, FL], 3, INK) + seg([x1 - 8, FL], [x2 + 8, FL], 3, INK);
+    }
+    case "box": return `<rect x="${pr.x1}" y="${pr.y}" width="${pr.x2 - pr.x1}" height="${FL - pr.y}" rx="2" fill="${SOFT}" stroke="${INK}" stroke-width="1.2"/>`;
+    case "chair": {
+      const { x1, x2, y } = pr, bx = pr.back === "r" ? x2 - 2 : x1 + 2;
+      return `<rect x="${x1}" y="${y}" width="${x2 - x1}" height="5" rx="1.5" fill="${SOFT}" stroke="${INK}" stroke-width="1.2"/>` +
+        seg([x1 + 3, y + 5], [x1 + 3, FL], 2.6, INK) + seg([x2 - 3, y + 5], [x2 - 3, FL], 2.6, INK) +
+        (pr.back ? seg([bx, y], [bx, y - 45], 3, INK) : "");
+    }
+    case "post": return seg([pr.x, pr.y1], [pr.x, pr.y2 ?? FL], 4, INK);
+    case "wall": return `<rect x="${pr.x - (pr.side === "r" ? 0 : 6)}" y="0" width="6" height="${FL}" fill="${SOFT}"/>`;
+    case "bar": return seg([pr.x1, pr.y], [pr.x2, pr.y], 3.2, INK) + seg([pr.x1, pr.y - 6], [pr.x1, pr.y + 3], 3, INK) + seg([pr.x2, pr.y - 6], [pr.x2, pr.y + 3], 3, INK);
+    case "table": return `<rect x="${pr.x1}" y="${pr.y}" width="${pr.x2 - pr.x1}" height="6" fill="${SOFT}" stroke="${INK}" stroke-width="1.2"/>` +
+      seg([pr.x1 + 5, pr.y + 6], [pr.x1 + 5, FL], 3, INK) + seg([pr.x2 - 5, pr.y + 6], [pr.x2 - 5, FL], 3, INK);
+    case "block": return `<rect x="${pr.x1}" y="${pr.y}" width="${pr.x2 - pr.x1}" height="${FL - pr.y}" rx="4" fill="${SOFT}" stroke="${INK}" stroke-width="1.2"/>`;
+    case "ball": {
+      const r = kp.br !== undefined ? kp.br : pr.r;
+      let c;
+      if (pr.at) { const p = J[pr.at]; c = [p[0] + (pr.dx || 0), pr.floor ? FL - r : p[1] + (pr.dy || 0)]; }
+      else c = [pr.x, pr.y ?? FL - r];
+      return `<circle cx="${c[0].toFixed(1)}" cy="${c[1].toFixed(1)}" r="${r}" fill="var(--ball)" stroke="${INK}" stroke-width="1.2" opacity="0.92"/>`;
+    }
+    case "db": if (pr.endon) return (pr.h || "a").split("").map(sd => `<circle cx="${J[sd + "H"][0].toFixed(1)}" cy="${J[sd + "H"][1].toFixed(1)}" r="6.5" fill="none" stroke="${INK}" stroke-width="3.5"/>`).join("");
+      return (pr.h || "a").split("").map(sd => {
+      const fa = J[sd + "ha"];
+      return dumbbell(J[sd + "H"], (pr.ang !== undefined ? pr.ang : fa + 90), pr.size || 1);
+    }).join("");
+    case "db2": {
+      const c = pr.at ? add(J[pr.at], pr.off || [0, 0]) : [(J.aH[0] + J.bH[0]) / 2, (J.aH[1] + J.bH[1]) / 2];
+      return dumbbell(c, pr.ang !== undefined ? pr.ang : 0, 1.05);
+    }
+    case "kb": {
+      let h = pr.h === "ab" ? [(J.aH[0] + J.bH[0]) / 2, (J.aH[1] + J.bH[1]) / 2] : J[(pr.h || "a") + "H"];
+      let d = pr.mode === "fa" ? dir(J[(pr.h === "ab" ? "a" : pr.h || "a") + "ha"]) : pr.mode === "up" ? dir(0) : dir(180);
+      const c = add(h, d, 10);
+      return seg(h, add(h, d, 4), 3, INK) + `<circle cx="${c[0].toFixed(1)}" cy="${c[1].toFixed(1)}" r="7.5" fill="${INK}"/>`;
+    }
+    case "band": {
+      const tos = Array.isArray(pr.to) && typeof pr.to[0] === "string" ? pr.to : [pr.to];
+      const f = pt(J, pr.from);
+      return tos.map(t => { const p = pt(J, t); return seg(f, p, 2.3, BAND); }).join("") +
+        (typeof pr.from !== "string" ? `<circle cx="${f[0]}" cy="${f[1]}" r="3" fill="${INK}"/>` : "");
+    }
+    case "loop": {
+      if (view === "s") { const p = J[pr.j || "aK"]; return `<ellipse cx="${p[0].toFixed(1)}" cy="${p[1].toFixed(1)}" rx="3" ry="8" fill="none" stroke="${BAND}" stroke-width="2.5"/>`; }
+      const a = J["a" + (pr.j || "K")], b = J["b" + (pr.j || "K")];
+      return seg(a, b, 2.5, BAND);
+    }
+    case "arcband": {
+      const a = J.aH, b = J.bH, top = add(J.aS, J.v, -14);
+      const c1 = add(top, J.u, 10), c2 = add(top, J.u, -10);
+      const f = x => x.toFixed(1);
+      return `<path d="M${f(a[0])},${f(a[1])} Q${f(c1[0])},${f(c1[1])} ${f(top[0])},${f(top[1])} Q${f(c2[0])},${f(c2[1])} ${f(b[0])},${f(b[1])}" fill="none" stroke="${BAND}" stroke-width="2.3"/>`;
+    }
+    case "strap": return (pr.to || ["aH"]).map(t => { const p = J[t]; return seg(pr.top, p, 2, INK) + seg(add(p, [-4, 0]), add(p, [4, 0]), 3.5, INK); }).join("") + `<circle cx="${pr.top[0]}" cy="${pr.top[1]}" r="3" fill="${INK}"/>`;
+    case "wheel": { const p = J[pr.at || "aH"]; return seg([p[0] - 10, FL - 8], [p[0] + 10, FL - 8], 2.5, INK) + `<circle cx="${p[0].toFixed(1)}" cy="${FL - 8}" r="8" fill="none" stroke="${INK}" stroke-width="3"/>`; }
+    case "towel": { const p = J[pr.at || "aA"]; return `<rect x="${(p[0] - 8).toFixed(1)}" y="${FL - 3}" width="18" height="3" rx="1" fill="${BAND}"/>`; }
+    case "rope": {
+      const a = J.aH, b = J.bH, cy = kp.ry !== undefined ? kp.ry : FL + 15;
+      return `<path d="M${a[0].toFixed(1)},${a[1].toFixed(1)} Q${((a[0] + b[0]) / 2).toFixed(1)},${cy.toFixed(1)} ${b[0].toFixed(1)},${b[1].toFixed(1)}" fill="none" stroke="${INK}" stroke-width="1.8"/>`;
+    }
+    case "mat": return `<rect x="${pr.x1}" y="${pr.y1}" width="${pr.x2 - pr.x1}" height="${pr.y2 - pr.y1}" rx="8" fill="var(--mat)"/>`;
+    case "fingers": {
+      const p = J[pr.at || "aH"], base = J[(pr.at || "aH")[0] + "ha"], sp = kp.fs !== undefined ? kp.fs : 10;
+      let s = "";
+      for (let i = -2; i <= 2; i++) s += seg(p, add(p, dir(base + i * sp), 10), 2.4, INK);
+      return s + `<circle cx="${add(p, dir(base), 5)[0].toFixed(1)}" cy="${add(p, dir(base), 5)[1].toFixed(1)}" r="${(4 + sp * 0.12).toFixed(1)}" fill="none" stroke="${BAND}" stroke-width="2"/>`;
+    }
+    case "hammer": {
+      const p = J[(pr.h || "a") + "H"], a = kp.aDB !== undefined ? kp.aDB : 0, s = kp.aDBs !== undefined ? kp.aDBs : 1;
+      const e = add(p, dir(a), 16 * s);
+      return seg(p, e, 2.6, INK) + seg(add(e, dir(a + 90), -5), add(e, dir(a + 90), 5), 5, INK);
+    }
+    case "line": return seg(pr.a, pr.b, pr.w || 2, INK);
+    default: return "";
+  }
+}
+
+/* ---------- Figure complète ---------- */
+function figureSVG(spec, J, sexKey) {
+  const sx = SEX[sexKey], view = spec.v;
+  J.view = view;
+  const C = sexKey === "M" ? ["var(--m1)", "var(--m2)", "var(--mh)"] : ["var(--f1)", "var(--f2)", "var(--fh)"];
+  const props = spec.pr || [];
+  const back = props.filter(p => !p.front && !["db", "db2", "kb", "hammer", "fingers", "rope", "band", "strap", "loop", "arcband", "wheel", "towel"].includes(p.t) || p.back);
+  const front = props.filter(p => !back.includes(p));
+  let s = "";
+  if (!spec.top) {
+    s += `<line x1="-300" y1="${FL}" x2="600" y2="${FL}" stroke="var(--floor)" stroke-width="1.5"/>`;
+    s += `<ellipse cx="${J.P[0].toFixed(1)}" cy="${FL + 1.5}" rx="42" ry="2.6" fill="var(--shadow)"/>`;
+  }
+  s += back.map(p => propSVG(p, J, view)).join("");
+  const farFirst = front.filter(p => p.far).map(p => propSVG(p, J, view)).join("");
+  const nearProps = front.filter(p => !p.far).map(p => propSVG(p, J, view)).join("");
+  if (view === "s") {
+    s += limbSVG(J, "b", "leg", sx, C[1]) + limbSVG(J, "b", "arm", sx, C[1]) + farFirst;
+    s += `<path d="${torsoPath(J, view, sexKey)}" fill="${C[0]}"/>`;
+    s += seg(J.N, add(J.N, dir(J.hd), 8), 7, C[0]);
+    s += headSVG(J, view, sexKey, C[0], C[2]);
+    s += limbSVG(J, "a", "leg", sx, C[0]) + limbSVG(J, "a", "arm", sx, C[0]) + nearProps;
+  } else {
+    const L = spec.lc || C[0], Lb = spec.lcb || C[0];
+    if (!spec.noLegs) s += limbSVG(J, "a", "leg", sx, C[0]) + limbSVG(J, "b", "leg", sx, C[0]);
+    s += farFirst;
+    s += `<path d="${torsoPath(J, view, sexKey)}" fill="${C[0]}"/>`;
+    s += seg(J.N, add(J.N, dir(J.hd), 8), 8, C[0]);
+    if (spec.headUnder) s += headSVG(J, view, sexKey, C[0], C[2]);
+    s += limbSVG(J, "a", "arm", sx, spec.armDark === "a" ? C[1] : C[0]) + limbSVG(J, "b", "arm", sx, spec.armDark === "b" ? C[1] : C[0]);
+    if (!spec.headUnder) s += headSVG(J, view, sexKey, C[0], C[2]);
+    s += nearProps;
+  }
+  return s;
+}
+
+/* ---------- Animation ---------- */
+function buildTimeline(spec) {
+  const n = spec.k.length;
+  let seq;
+  if (n === 1) seq = [0];
+  else if (spec.mode === "loop" || spec.mode === "cut") seq = [...Array(n).keys()];
+  else seq = [...Array(n).keys(), ...[...Array(n - 2).keys()].map(i => n - 2 - i)];
+  const tr = 1.05 * (spec.t || 1), hold = spec.hold ?? 0.45;
+  const segs = [];
+  for (let i = 0; i < seq.length; i++) {
+    const a = seq[i], b = seq[(i + 1) % seq.length];
+    const d = spec.d && spec.d[i] !== undefined ? spec.d[i] : tr;
+    const cut = spec.mode === "cut" && i === seq.length - 1;
+    segs.push({ a, b, hold, d: cut ? 0.001 : d });
+  }
+  const total = segs.reduce((s, x) => s + x.hold + x.d, 0);
+  return { segs, total };
+}
+const ease = u => 0.5 - 0.5 * Math.cos(Math.PI * u);
+function stateAt(tl, t) {
+  if (tl.segs.length === 1 && tl.segs[0].a === tl.segs[0].b) return { a: 0, b: 0, u: 0 };
+  let x = t % tl.total;
+  for (const s of tl.segs) {
+    if (x < s.hold) return { a: s.a, b: s.a, u: 0 };
+    x -= s.hold;
+    if (x < s.d) return { a: s.a, b: s.b, u: ease(x / s.d) };
+    x -= s.d;
+  }
+  return { a: 0, b: 0, u: 0 };
+}
+
+function makeFigure(spec) {
+  const cache = {};
+  for (const sx of ["M", "F"]) cache[sx] = spec.k.map(kp => keyState(Object.assign({ top: spec.top }, kp), spec.v, sx));
+  const tl = buildTimeline(spec);
+  return {
+    tl,
+    draw(sexKey, t) {
+      const st = stateAt(tl, t);
+      const ks = cache[sexKey];
+      const J = frameJoints(ks[st.a], ks[st.b], st.u, spec.v, sexKey);
+      return figureSVG(spec, J, sexKey);
+    },
+    joints(sexKey, t) {
+      const st = stateAt(tl, t);
+      const ks = cache[sexKey];
+      return frameJoints(ks[st.a], ks[st.b], st.u, spec.v, sexKey);
+    },
+    drawKey(sexKey, i) {
+      const ks = cache[sexKey];
+      const J = frameJoints(ks[i], ks[i], 0, spec.v, sexKey);
+      return figureSVG(spec, J, sexKey);
+    },
+  };
+}
+
+/* Cadrage automatique : boîte englobante sur toute l'animation, homme et femme */
+function autoVB(spec, fig) {
+  let x1 = 1e9, y1 = 1e9, x2 = -1e9, y2 = -1e9;
+  const take = (p) => { if (!p || !isFinite(p[0])) return; x1 = Math.min(x1, p[0]); x2 = Math.max(x2, p[0]); y1 = Math.min(y1, p[1]); y2 = Math.max(y2, p[1]); };
+  const N = 24;
+  for (const sx of ["M", "F"]) for (let i = 0; i <= N; i++) {
+    const t = fig.tl.total * i / N;
+    const J = fig.joints(sx, t);
+    for (const k of ["P","N","Hd","aS","bS","aE","bE","aW","bW","aH","bH","aK","bK","aA","bA"]) take(J[k]);
+    take(add(J.Hd, [0, -13])); take(add(J.Hd, [-13, 0])); take(add(J.Hd, [13, 0]));
+    for (const sd of ["a","b"]) { take(add(J[sd+"A"], dir(J[sd+"ft"]), 14)); take(add(J[sd+"A"], dir(J[sd+"ft"]), -4)); }
+  }
+  for (const p of spec.pr || []) {
+    if (p.x1 !== undefined) { take([p.x1, p.y ?? p.y1 ?? FL]); take([p.x2, p.y ?? p.y1 ?? FL]); }
+    if (p.top) take(p.top);
+    if (p.x !== undefined && p.t === "wall") { take([p.x, y1]); }
+    if (p.t === "post") { take([p.x, p.y1]); }
+    if (Array.isArray(p.from)) take(p.from);
+    if (p.back) { take(p.back[0]); take(p.back[1]); }
+    if (p.t === "ball" && p.x !== undefined) { take([p.x - p.r, FL - 2 * p.r]); take([p.x + p.r, FL]); }
+    if (p.t === "ball" && p.at) for (const sx of ["M", "F"]) for (let i = 0; i <= N; i++) { const J = fig.joints(sx, fig.tl.total * i / N); const c = J[p.at]; const cx = c[0] + (p.dx || 0); take([cx - p.r - 2, c[1]]); take([cx + p.r + 2, c[1]]); }
+  }
+  if (!spec.top) y2 = Math.max(y2, FL + 4);
+  const m = 12; x1 -= m; x2 += m; y1 -= m; y2 += (spec.top ? m : 6);
+  let w = Math.max(x2 - x1, 120), h = Math.max(y2 - y1, 110);
+  const R = 260 / 240;
+  if (w / h > R) { const nh = w / R; y1 -= (nh - h) * (spec.top ? 0.5 : 1); h = nh; } else { const nw = h * R; x1 -= (nw - w) / 2; w = nw; }
+  return [x1, y1, w, h].map(v => +v.toFixed(1));
+}
+
+/* Poses : angles absolus en degrés (0 = haut, 90 = avant/droite, 180 = bas, 270 = arrière/gauche)
+   v:'s' profil (regard vers la droite), v:'f' face, top:1 vue de dessus */
+const X = 130, AF = 220;
+const P = (...o) => Object.assign({}, ...o);
+const POSES = {};
+const E = (name, spec) => { POSES[name] = spec; };
+
+/* ---- bases ---- */
+const ST = o => P({ T: 0, aUA: 184, aFA: 184, bUA: 178, bFA: 178, an: ["P", X, 135], aAt: [X + 2, AF], bAt: [X - 2, AF] }, o);
+const SQ = o => P({ T: 35, aUA: 90, aFA: 90, bUA: 92, bFA: 92, an: ["P", 100, 178], aAt: [X, AF], bAt: [X - 2, AF] }, o);
+const FS = o => P({ T: 0, aUA: 190, aFA: 187, bUA: 170, bFA: 173, an: ["P", X, 135], aAt: [X - 12, AF], bAt: [X + 12, AF] }, o);
+const SU = o => P({ T: 270, Hd: 270, an: ["P", 140, 212], aUA: 90, aFA: 90, bUA: 92, bFA: 92, aTH: 90, aSH: 90, bTH: 90, bSH: 90 }, o);
+const SUK = o => SU(P({ aAt: [188, AF], bAt: [185, AF] }, o));
+const PR = o => P({ T: 90, Hd: 92, an: ["P", 115, 212], aUA: 90, aFA: 90, bUA: 92, bFA: 92, aTH: 270, aSH: 270, bTH: 270, bSH: 270, aFT: 235, bFT: 235 }, o);
+const QD = o => P({ T: 84, Hd: 90, an: ["P", 125, 174], aWt: [172, 218], bWt: [169, 218], aTH: 180, aSH: 270, bTH: 180, bSH: 270, aFT: 268, bFT: 268 }, o);
+const HP = o => P({ T: 70, Hd: 76, aUA: 180, aFA: 180, bUA: 180, bFA: 180, aTH: 250, aSH: 250, bTH: 250, bSH: 250, aFT: "t", bFT: "t", an: ["bW", 174, 218] }, o);
+const PU0 = o => P({ T: 70, Hd: 76, aTH: 250, aSH: 250, bTH: 250, bSH: 250, aFT: "t", bFT: "t", an: ["aA", 50, 208], aWt: [174, 218], bWt: [171, 218] }, o);
+const PU1 = o => PU0(P({ T: 82, Hd: 86, aTH: 262, aSH: 262, bTH: 262, bSH: 262 }, o));
+const FP = o => P({ T: 80, Hd: 84, aUA: 180, aFA: 90, bUA: 180, bFA: 90, aTH: 260, aSH: 260, bTH: 260, bSH: 260, aFT: "t", bFT: "t", an: ["aE", 178, 218] }, o);
+const HANG = o => P({ T: 0, aTH: 183, aSH: 192, bTH: 178, bSH: 188, an: ["P", X, 128], aWt: [X, 27], bWt: [X, 27] }, o);
+const BAR = { t: "bar", x1: 70, x2: 190, y: 24 };
+const DB = { t: "db", h: "ab" }, DBA = { t: "db", h: "a" };
+const MAT = { t: "mat", x1: 60, x2: 200, y1: 10, y2: 230 };
+const SIDE = o => P({ T: 76, aUA: 0, aFA: 0, bUA: 180, bFA: 92, aTH: 256, aSH: 256, bTH: 256, bSH: 256, an: ["bE", 196, 218] }, o);
+const SIDEL = o => P({ T: 270, Hd: 265, an: ["P", 125, 208], aUA: 270, aFA: 270, bUA: 95, bFA: 150, aTH: 90, aSH: 90, bTH: 90, bSH: 90, }, o);
+
+const TOPP = (o) => P({ T: 0, an: ["P", X, 140], aTH: 182, aSH: 182, bTH: 178, bSH: 178 }, o);
+const MATP = { t: "mat", x1: 60, x2: 200, y1: 20, y2: 238 };
+
+/* ===================== ABDOS ===================== */
+E("Planche sur les avant-bras", { v: "s", k: [FP()] });
+E("Planche latérale", { v: "f", k: [SIDE()] });
+E("Planche latérale avec élévation de jambe", { v: "f", k: [SIDE(), SIDE({ aTH: 288, aSH: 288 })] });
+E("Planche bras tendus avec touches d'épaules", { v: "s", k: [PU0(), PU0({ aWt: [168, 172, 1] })] });
+E("Planche dynamique coudes-mains", { v: "s", k: [PU0({ T: 81, Hd: 85, aTH: 261, aSH: 261, bTH: 261, bSH: 261, aWt: [204, 218, 1], bWt: [200, 218, 1] }), PU0()] });
+E("Planche avec levée bras-jambe opposés", { v: "s", k: [HP(), HP({ aUA: 75, aFA: 75, bTH: 262, bSH: 262 })] });
+E("Dead bug", { v: "s", k: [SU({ aUA: 0, aFA: 0, bUA: 2, bFA: 2, aTH: 0, aSH: 90, bTH: 2, bSH: 92 }), SU({ aUA: 285, aFA: 285, bUA: 2, bFA: 2, aTH: 0, aSH: 90, bTH: 75, bSH: 78 })] });
+E("Hollow hold (gainage creux)", { v: "s", k: [SU({ T: 286, Hd: 284, aUA: 285, aFA: 285, bUA: 287, bFA: 287, aTH: 72, aSH: 74, bTH: 74, bSH: 76, an: ["P", 140, 206] })] });
+E("Hollow rock", { v: "s", k: [SU({ T: 292, Hd: 288, aUA: 292, aFA: 292, bUA: 294, bFA: 294, aTH: 80, aSH: 82, bTH: 82, bSH: 84, an: ["P", 145, 212] }),
+  SU({ T: 276, Hd: 276, aUA: 276, aFA: 276, bUA: 278, bFA: 278, aTH: 62, aSH: 64, bTH: 64, bSH: 66, an: ["P", 132, 210] })] });
+E("Crunch", { v: "s", k: [SUK({ aUA: 60, aFA: 75, bUA: 62, bFA: 77 }), SUK({ T: 302, Hd: 300, aUA: 105, aFA: 100, bUA: 107, bFA: 102 })] });
+E("Crunch inversé", { v: "s", k: [SU({ aTH: 0, aSH: 90, bTH: 2, bSH: 92 }), SU({ an: ["P", 140, 205], aTH: 325, aSH: 45, bTH: 327, bSH: 47 })] });
+E("Relevé de jambes allongé", { v: "s", k: [SU({ aTH: 84, aSH: 84, bTH: 86, bSH: 86 }), SU({ aTH: 2, aSH: 2, bTH: 4, bSH: 4 })] });
+E("Battements de jambes (ciseaux)", { v: "s", t: 0.6, k: [SU({ T: 282, Hd: 280, aTH: 68, aSH: 68, bTH: 88, bSH: 88 }), SU({ T: 282, Hd: 280, aTH: 88, aSH: 88, bTH: 68, bSH: 68 })] });
+E("Crunch bicyclette", { v: "s", k: [SU({ T: 298, Hd: 296, aUA: 30, aFA: 250, bUA: 32, bFA: 252, aTH: 335, aSH: 65, bTH: 76, bSH: 76 }), SU({ T: 298, Hd: 296, aUA: 30, aFA: 250, bUA: 32, bFA: 252, aTH: 76, aSH: 76, bTH: 335, bSH: 65 })] });
+E("Sit-up", { v: "s", k: [SUK({ aUA: 40, aFA: 75, bUA: 42, bFA: 77 }), SUK({ T: 15, Hd: 25, aUA: 110, aFA: 100, bUA: 112, bFA: 102 })] });
+E("V-up (portefeuille)", { v: "s", k: [SU({ aUA: 270, aFA: 270, bUA: 270, bFA: 270, aTH: 88, aSH: 88, bTH: 88, bSH: 88, an: ["P", 140, 213] }),
+  SU({ T: 325, Hd: 335, aUA: 40, aFA: 40, bUA: 42, bFA: 42, aTH: 32, aSH: 32, bTH: 34, bSH: 34, an: ["P", 132, 210] })] });
+const RT = (side, o) => P({ T: side < 0 ? -8 : 8, an: ["P", X, 198], aTH: 10, aTHs: 0.5, aSH: 185, aSHs: 0.55, bTH: 350, bTHs: 0.5, bSH: 175, bSHs: 0.55, aWt: [X + side * 38, 196, 1], bWt: [X + side * 33, 193, -1] }, o);
+E("Russian twist", { v: "f", k: [RT(-1), RT(1)] });
+E("Russian twist lesté", { v: "f", k: [RT(-1), RT(1)], pr: [{ t: "db2", ang: 90 }] });
+E("Mountain climbers", { v: "s", t: 0.55, hold: 0.1, k: [HP({ aTH: 150, aSH: 245, aFT: 180 }), HP({ bTH: 150, bSH: 245, bFT: 180 })] });
+E("Mountain climbers croisés", { v: "s", t: 0.6, hold: 0.1, k: [HP({ aTH: 140, aSH: 235, aFT: 180, T: 72 }), HP({ bTH: 140, bSH: 235, bFT: 180, T: 72 })] });
+E("Essuie-glaces au sol", { v: "f", top: 1, k: [P({ T: 0, an: ["P", X, 120], aUA: 270, aFA: 270, bUA: 90, bFA: 90, aTH: 180, aTHs: 0.25, aSH: 180, aSHs: 0.25, bTH: 180, bTHs: 0.25, bSH: 180, bSHs: 0.25 }),
+  P({ T: 0, an: ["P", X, 120], aUA: 270, aFA: 270, bUA: 90, bFA: 90, aTH: 128, aTHs: 0.9, aSH: 128, aSHs: 0.9, bTH: 120, bTHs: 0.9, bSH: 120, bSHs: 0.9 })], pr: [MAT] });
+E("Rotation thoracique en planche latérale", { v: "f", k: [SIDE({ T: 66, bFA: 180, an: ["bW", 196, 218], aUA: 0, aFA: 0 }), SIDE({ T: 66, bFA: 180, an: ["bW", 196, 218], aUA: 205, aFA: 215 })] });
+E("Marche de l'ours statique (bear hold)", { v: "s", k: [QD({ an: ["P", 125, 166], T: 82, aTH: 170, aSH: 255, bTH: 170, bSH: 255, aFT: "t", bFT: "t" })] });
+E("L-sit (sol ou deux chaises)", { v: "s", k: [P({ T: 0, shE: -9, aUA: 176, aFA: 178, bUA: 176, bFA: 178, an: ["aW", 126, 218], aTH: 90, aSH: 90, bTH: 90, bSH: 90 })] });
+const PAL = o => FS(P({ aAt: [X - 18, AF], bAt: [X + 18, AF] }, o));
+E("Pallof press (anti-rotation)", { v: "f", k: [PAL({ aWt: [X - 2, 108, 1], bWt: [X + 2, 108, -1] }), PAL({ aUA: 175, aUAs: 0.35, aFA: 172, aFAs: 0.3, bUA: 185, bUAs: 0.35, bFA: 188, bFAs: 0.3 })],
+  pr: [{ t: "post", x: 18, y1: 90 }, { t: "band", from: [18, 108], to: ["aH", "bH"] }] });
+const WC = (x, y, T, o) => FS(P({ T, aAt: [X - 22, AF], bAt: [X + 22, AF], aWt: [x, y, 1], bWt: [x + 6, y + 2, -1] }, o));
+E("Rotation de buste à l'élastique (woodchop)", { v: "f", k: [WC(78, 52, -8), WC(178, 178, 10, { an: ["P", X, 142] })], pr: [{ t: "post", x: 14, y1: 30 }, { t: "band", from: [14, 34], to: ["aH", "bH"] }] });
+E("Bûcheron avec haltère", { v: "f", k: [WC(88, 178, -10, { an: ["P", X, 142] }), WC(176, 48, 8)], pr: [{ t: "db2", ang: 30 }] });
+const WALK = (s, o) => P({ T: 2, an: ["P", X, 137], aUA: 180 - 12 * s, aFA: 182 - 20 * s, bUA: 180 + 12 * s, bFA: 182, aAt: [X + 20 * s, AF], bAt: [X - 20 * s, AF - 2] }, o);
+E("Portage unilatéral (suitcase carry)", { v: "s", k: [WALK(1, { aUA: 180, aFA: 180 }), WALK(-1, { aUA: 180, aFA: 180 })], pr: [DBA] });
+E("Planche avec tirage d'haltère (renegade row)", { v: "s", k: [HP({ T: 72 }), HP({ T: 72, aUA: 295, aFA: 185 })], pr: [DB] });
+E("Planche pieds sur swiss ball", { v: "s", k: [HP({ T: 88, Hd: 90, aTH: 268, aSH: 268, bTH: 268, bSH: 268, aFT: 200, bFT: 200 })], pr: [{ t: "ball", at: "aA", dx: 12, floor: true, r: 26 }] });
+E("Pike sur swiss ball", { v: "s", k: [HP({ T: 88, Hd: 90, aTH: 268, aSH: 268, bTH: 268, bSH: 268, aFT: 200, bFT: 200 }), HP({ T: 150, Hd: 160, aTH: 234, aSH: 234, bTH: 234, bSH: 234, aFT: 160, bFT: 160 })],
+  pr: [{ t: "ball", at: "aA", dx: 8, floor: true, r: 26 }] });
+const STIR = (dx, o) => P({ T: 60, Hd: 66, aUA: 180 + dx, aFA: 88, bUA: 180 + dx, bFA: 88, aTH: 240, aSH: 240, bTH: 240, bSH: 240, aFT: "t", bFT: "t", an: ["aA", 48, 210] }, o);
+E("Stir the pot (planche avant-bras sur ballon)", { v: "s", k: [STIR(8), STIR(-10)], pr: [{ t: "ball", at: "aE", dx: 14, floor: true, r: 26 }] });
+const CB = (T, o) => P({ T, Hd: T + 10, an: ["P", 142, 168], aAt: [196, AF], bAt: [193, AF], aUA: T + 25, aFA: T - 95, bUA: T + 27, bFA: T - 93 }, o);
+E("Crunch sur swiss ball", { v: "s", k: [CB(258), CB(300)], pr: [{ t: "ball", x: 128, r: 28 }] });
+const RO = (th, T, ua) => P({ T, Hd: T + 5, an: ["aK", 92, 216], aTH: th, aSH: 270, bTH: th, bSH: 270, aFT: 270, bFT: 270, aUA: ua, aFA: 90, bUA: ua + 2, bFA: 92 });
+E("Rollout au swiss ball", { v: "s", k: [RO(160, 38, 165), RO(122, 72, 105)], pr: [{ t: "ball", at: "aE", dx: 12, floor: true, r: 25 }] });
+const WH = (th, T, x) => P({ T, Hd: T + 5, an: ["aK", 92, 216], aTH: th, aSH: 270, bTH: th, bSH: 270, aFT: 270, bFT: 270, aWt: [x, 212], bWt: [x - 2, 212] });
+E("Roulette abdominale (ab wheel)", { v: "s", k: [WH(165, 40, 128), WH(118, 78, 205)], pr: [{ t: "wheel", at: "aH" }] });
+E("Relevé de genoux suspendu", { v: "s", k: [HANG(), HANG({ T: 352, aTH: 78, aSH: 178, bTH: 80, bSH: 180 })], pr: [BAR] });
+E("Relevé de jambes suspendu", { v: "s", k: [HANG(), HANG({ T: 348, aTH: 86, aSH: 86, bTH: 88, bSH: 88 })], pr: [BAR] });
+E("Planche pieds dans les sangles", { v: "s", k: [HP({ T: 86, Hd: 90, aTH: 266, aSH: 266, bTH: 266, bSH: 266, aFT: 200, bFT: 200 })], pr: [{ t: "strap", top: [70, 4], to: ["aA"] }] });
+const DF = (T) => P({ T, Hd: 270, an: ["aS", 82, 180], aUA: 275, aFA: 185, bUA: 275, bFA: 185, aTH: T - 180, aSH: T - 180, bTH: T - 178, bSH: T - 178 });
+E("Dragon flag", { v: "s", k: [DF(222), DF(256)], pr: [{ t: "bench", x1: 50, x2: 200, y: 186 }] });
+
+/* ===================== BAS DU CORPS ===================== */
+E("Squat au poids du corps", { v: "s", k: [ST(), SQ()] });
+const GOB = [ST({ aUA: 170, aFA: 20, bUA: 172, bFA: 22 }), SQ({ aUA: 160, aFA: 30, bUA: 162, bFA: 32 })];
+E("Squat goblet", { v: "s", k: GOB, pr: [{ t: "db2", ang: 0 }] });
+E("Squat goblet excentrique (descente 4 s)", { v: "s", k: GOB, d: [2.8, 0.9], pr: [{ t: "db2", ang: 0 }] });
+E("Squat avec élastique", { v: "s", k: [ST({ aUA: 165, aFA: 340, bUA: 167, bFA: 342 }), SQ({ aUA: 150, aFA: 330, bUA: 152, bFA: 332 })], pr: [{ t: "band", from: "aA", to: "aH" }] });
+E("Squat sumo avec haltère", { v: "f", k: [FS({ an: ["P", X, 140], aAt: [94, AF], bAt: [166, AF], aWt: [126, 182], bWt: [134, 182] }), FS({ an: ["P", X, 172], aAt: [94, AF], bAt: [166, AF], aWt: [126, 190], bWt: [134, 190] })], pr: [{ t: "db2", ang: 0 }] });
+E("Squat sauté", { v: "s", k: [SQ({ aUA: 235, aFA: 232, bUA: 237, bFA: 234 }), ST({ an: ["P", X, 112], aAt: [X + 2, 198], bAt: [X - 2, 198], aFT: 165, bFT: 165, aUA: 20, aFA: 15, bUA: 22, bFA: 17 })] });
+const BUL = (T, py, o) => P({ T, Hd: T, an: ["P", 116, py], aAt: [150, AF], bAt: [60, 181], bFT: 248 }, o);
+const BENCHL = { t: "bench", x1: 28, x2: 86, y: 186 };
+E("Squat bulgare", { v: "s", k: [BUL(4, 140), BUL(14, 178, { an: ["P", 110, 178] })], pr: [BENCHL] });
+E("Squat bulgare lesté", { v: "s", k: [BUL(4, 140), BUL(14, 178, { an: ["P", 110, 178] })], pr: [BENCHL, DB] });
+E("Squat sur une jambe vers une chaise", { v: "s", k: [P({ T: 0, an: ["P", 125, 135], aAt: [135, AF], bTH: 130, bSH: 160, aUA: 92, aFA: 92, bUA: 94, bFA: 94 }), P({ T: 28, an: ["P", 98, 170], aAt: [135, AF], bTH: 88, bSH: 92, aUA: 86, aFA: 86, bUA: 88, bFA: 88 })], pr: [{ t: "chair", x1: 70, x2: 112, y: 180, back: "l" }] });
+E("Pistol squat", { v: "s", k: [P({ T: 0, an: ["P", 130, 135], aAt: [132, AF], bTH: 150, bSH: 170, aUA: 92, aFA: 92, bUA: 94, bFA: 94 }), P({ T: 42, Hd: 30, an: ["P", 108, 198], aAt: [132, AF], bTH: 84, bSH: 86, aUA: 82, aFA: 82, bUA: 84, bFA: 84 })] });
+const WALL = (x, side) => ({ t: "wall", x, side });
+E("Chaise contre le mur", { v: "s", k: [P({ T: 0, an: ["P", 80, 178], aAt: [124, AF], bAt: [122, AF] })], pr: [WALL(68)] });
+E("Chaise sur une jambe", { v: "s", k: [P({ T: 0, an: ["P", 80, 178], aAt: [124, AF], bTH: 90, bSH: 90 })], pr: [WALL(68)] });
+E("Spanish squat (isométrie avec élastique)", { v: "s", k: [P({ T: 28, Hd: 20, an: ["P", 90, 178], aAt: [133, AF], bAt: [131, AF], aUA: 92, aFA: 92, bUA: 94, bFA: 94 })], pr: [{ t: "post", x: 236, y1: 150 }, { t: "band", from: [236, 178], to: "aK" }] });
+E("Sissy squat", { v: "s", k: [ST({ aUA: 92, aFA: 92, bUA: 94, bFA: 94 }), P({ an: ["aA", 130, 211], aSH: 218, aTH: 140, bSH: 218, bTH: 140, T: 322, Hd: 340, aFT: "t", bFT: "t", aUA: 75, aFA: 75, bUA: 77, bFA: 77 })] });
+const KN = (th, T, o) => P({ an: ["aK", 120, 217], aTH: th, bTH: th, aSH: 270, bSH: 270, aFT: 270, bFT: 270, T, Hd: T, aUA: 150, aFA: 30, bUA: 152, bFA: 32 }, o);
+E("Reverse nordic", { v: "s", k: [KN(180, 0), KN(150, 330)] });
+E("Extension de jambe à l'élastique", { v: "s", k: [P({ T: 0, an: ["P", 112, 176], aTH: 90, aSH: 185, bTH: 90, bSH: 180, aUA: 175, aFA: 150, bUA: 177, bFA: 150 }), P({ T: 0, an: ["P", 112, 176], aTH: 88, aSH: 92, bTH: 90, bSH: 180, aUA: 175, aFA: 150, bUA: 177, bFA: 150 })],
+  pr: [{ t: "chair", x1: 90, x2: 134, y: 184, back: "l" }, { t: "band", from: [126, 222], to: "aA" }] });
+E("Fente avant", { v: "s", k: [P({ T: 0, an: ["P", 112, 135], aAt: [114, AF], bAt: [108, AF] }), P({ T: 0, an: ["P", 137, 178], aAt: [178, AF], bAt: [108, 214], bFT: "t" })] });
+const FA0 = P({ T: 0, an: ["P", 132, 135], aAt: [140, AF], bAt: [128, AF] });
+const FA1 = P({ T: 2, an: ["P", 110, 178], aAt: [140, AF], bAt: [62, 214], bFT: "t" });
+E("Fente arrière", { v: "s", k: [FA0, FA1] });
+E("Fente arrière avec haltères", { v: "s", k: [FA0, FA1], pr: [DB] });
+E("Fente arrière avec montée de genou", { v: "s", k: [P(FA1, { T: 8 }), P(FA0, { bAt: undefined, bTH: 88, bSH: 182, aUA: 200, aFA: 120, bUA: 150, bFA: 60 })] });
+const LA = P({ T: 0, an: ["P", 128, 178], aAt: [168, AF], bAt: [86, 214], bFT: "t" });
+const LB = P({ T: 0, an: ["P", 128, 178], bAt: [168, AF], aAt: [86, 214], aFT: "t" });
+const LMID = P({ T: 0, an: ["P", 128, 137], aAt: [130, AF], bAt: [126, AF] });
+E("Fente marchée", { v: "s", mode: "loop", k: [LA, LMID, LB, LMID] });
+const LAT = (px, py, o) => FS(P({ an: ["P", px, py], aAt: [88, AF], bAt: [172, AF], aWt: [px - 6, py - 35], bWt: [px + 6, py - 35] }, o));
+E("Fente latérale", { v: "f", k: [LAT(130, 142), LAT(100, 170, { T: -6 })] });
+E("Fente latérale avec haltère", { v: "f", k: [LAT(130, 142), LAT(100, 170, { T: -6 })], pr: [{ t: "db2", ang: 0 }] });
+E("Fente croisée (curtsy)", { v: "f", k: [FS({ aWt: [126, 140], bWt: [134, 140] }), FS({ an: ["P", 124, 168], aAt: [118, AF], bAt: [104, 208, -1], bFT: 200, aWt: [120, 170], bWt: [128, 170] })] });
+const AIR = P({ T: 0, an: ["P", 128, 118], aAt: [142, 200], bAt: [112, 202], aFT: 160, bFT: 170, aUA: 30, aFA: 40, bUA: 220, bFA: 200 });
+E("Fente sautée", { v: "s", mode: "loop", t: 0.7, k: [LA, AIR, LB, P(AIR, { aAt: [112, 202], bAt: [142, 200], aFT: 170, bFT: 160, aUA: 220, aFA: 200, bUA: 30, bFA: 40 })] });
+const BOX = { t: "box", x1: 140, x2: 206, y: 186 };
+const SU0 = P({ T: 8, an: ["P", 112, 140], aAt: [160, 181], bAt: [108, AF] });
+const SU1 = P({ T: 0, an: ["P", 160, 96], aAt: [162, 181], bAt: [152, 172] });
+E("Step-up", { v: "s", k: [SU0, SU1], pr: [BOX] });
+E("Step-up lesté", { v: "s", k: [SU0, SU1], pr: [BOX, DB] });
+E("Step-down excentrique", { v: "s", k: [P({ T: 0, an: ["P", 118, 107], aAt: [118, 191], bAt: [132, 186], aUA: 160, aFA: 160 }), P({ T: 20, an: ["P", 112, 148], aAt: [118, 191], bAt: [162, AF], aUA: 110, aFA: 100, bUA: 112, bFA: 102 })], pr: [{ t: "box", x1: 70, x2: 150, y: 196 }] });
+const BR0 = SUK(), BR1 = SUK({ an: ["P", 140, 186], T: 240, Hd: 262 });
+E("Pont fessier", { v: "s", k: [BR0, BR1] });
+E("Pont fessier une jambe", { v: "s", k: [SUK({ bAt: undefined, bTH: 40, bSH: 40 }), SUK({ an: ["P", 140, 186], T: 240, Hd: 262, bAt: undefined, bTH: 60, bSH: 60 })] });
+E("Pont fessier avec élastique aux genoux", { v: "s", k: [BR0, BR1], pr: [{ t: "loop", j: "aK" }] });
+const HT = (T, o) => P({ an: ["aS", 90, 180], T, Hd: T + 15, aAt: [182, AF], bAt: [179, AF], aUA: 135, aFA: 100, bUA: 137, bFA: 102 }, o);
+const BENCHHT = { t: "bench", x1: 36, x2: 92, y: 186 };
+E("Hip thrust", { v: "s", k: [HT(318, { aUA: 250, aFA: 262, bUA: 252, bFA: 264 }), HT(270, { Hd: 300, aUA: 252, aFA: 262, bUA: 254, bFA: 264 })], pr: [BENCHHT] });
+E("Hip thrust lesté", { v: "s", k: [HT(318, { aWt: [123, 199], bWt: [121, 199] }), HT(270, { Hd: 300, aWt: [138, 166], bWt: [136, 166] })], pr: [BENCHHT, { t: "db2", at: "P", off: [2, -15], ang: 90 }] });
+E("Hip thrust une jambe", { v: "s", k: [HT(318, { bAt: undefined, bTH: 20, bSH: 110, aUA: 250, aFA: 262 }), HT(270, { Hd: 300, bAt: undefined, bTH: 10, bSH: 100, aUA: 252, aFA: 262, bUA: 254, bFA: 264 })], pr: [BENCHHT] });
+const RDL1 = P({ T: 72, Hd: 78, an: ["P", 104, 140], aAt: [X, AF], bAt: [X - 2, AF], aUA: 182, aFA: 182, bUA: 182, bFA: 182 });
+E("Soulevé de terre roumain", { v: "s", k: [ST({ aUA: 182, aFA: 182 }), RDL1], pr: [{ t: "db", h: "ab", endon: 1 }] });
+const SL1 = P({ T: 86, Hd: 90, an: ["P", 122, 140], aAt: [X, AF], bTH: 268, bSH: 268, bFT: 200, aUA: 182, aFA: 182, bUA: 182, bFA: 182 });
+E("Soulevé de terre roumain une jambe", { v: "s", k: [ST(), SL1], pr: [{ t: "db", h: "a", endon: 1 }] });
+E("Soulevé de terre une jambe au poids du corps", { v: "s", k: [ST(), P(SL1, { aUA: 150, aFA: 150, bUA: 152, bFA: 152 })] });
+E("Good morning à l'élastique", { v: "s", k: [ST({ aUA: 165, aFA: 340, bUA: 167, bFA: 342 }), P(RDL1, { T: 76, Hd: 80, aUA: 241, aFA: 56, bUA: 243, bFA: 58 })], pr: [{ t: "band", from: "aA", to: "aH" }] });
+E("Soulevé de terre kettlebell", { v: "s", k: [P({ T: 48, Hd: 62, an: ["P", 102, 168], aAt: [X, AF], bAt: [X - 2, AF], aWt: [128, 194], bWt: [126, 194] }), ST({ aWt: [134, 150], bWt: [132, 150] })], pr: [{ t: "kb", h: "ab" }] });
+E("Swing kettlebell", { v: "s", k: [P({ T: 64, Hd: 72, an: ["P", 104, 150], aAt: [X, AF], bAt: [X - 2, AF], aWt: [114, 182], bWt: [112, 182] }), ST({ aUA: 92, aFA: 92, bUA: 92, bFA: 92 })], pr: [{ t: "kb", h: "ab", mode: "fa" }] });
+E("Nordic hamstring curl", { v: "s", d: [2.4, 1.0], k: [KN(180, 0, { an: ["aK", 118, 217], aUA: 160, aFA: 150 }), KN(232, 52, { an: ["aK", 118, 217], Hd: 60, aUA: 120, aFA: 110, bUA: 122, bFA: 112 })], pr: [{ t: "block", x1: 50, x2: 82, y: 200 }] });
+const LCG = (T, py, x, o) => P({ T, Hd: T + 8, an: ["P", 140, py], aAt: [x, AF], bAt: [x - 3, AF], aUA: 92, aFA: 92, bUA: 94, bFA: 94 }, o);
+E("Leg curl glissé (serviette ou chaussettes)", { v: "s", k: [LCG(255, 196, 218), LCG(242, 184, 180)], pr: [{ t: "towel", at: "aA" }] });
+E("Leg curl au swiss ball", { v: "s", k: [LCG(252, 190, 222, { aAt: [222, 180], bAt: [219, 180] }), LCG(238, 178, 185, { aAt: [185, 178], bAt: [182, 178] })], pr: [{ t: "ball", at: "aA", dx: 6, floor: true, r: 22 }] });
+E("Leg curl à l'élastique", { v: "s", k: [PR(), PR({ aSH: 20, aFT: 300 })], pr: [{ t: "post", x: 16, y1: 200 }, { t: "band", from: [16, 212], to: "aA" }] });
+E("Leg curl en suspension", { v: "s", k: [LCG(250, 196, 210, { aAt: [210, 176], bAt: [207, 176] }), LCG(240, 182, 172, { aAt: [172, 168], bAt: [169, 168] })], pr: [{ t: "strap", top: [236, 4], to: ["aA"] }] });
+const COP = (T, o) => P({ T, Hd: T, an: ["bE", 196, 218], aUA: 15, aFA: 15, bUA: 180, bFA: 92, aAt: [52, 181], bTH: 250, bSH: 258 }, o);
+E("Copenhagen plank", { v: "f", k: [COP(84), COP(72)], pr: [{ t: "bench", x1: 18, x2: 74, y: 186 }] });
+E("Adduction de hanche à l'élastique", { v: "f", k: [FS({ aAt: undefined, aTH: 204, aSH: 204, bAt: [X + 8, AF], aUA: 200, aFA: 120, bUA: 160, bFA: 240 }), FS({ aAt: undefined, aTH: 174, aSH: 174, bAt: [X + 8, AF], aUA: 200, aFA: 120, bUA: 160, bFA: 240 })],
+  pr: [{ t: "post", x: 14, y1: 196 }, { t: "band", from: [14, 210], to: "aA" }] });
+E("Serrage de ballon entre les genoux", { v: "s", k: [SUK({ br: 9.5 }), SUK({ br: 7.5 })], pr: [{ t: "ball", at: "aK", dx: 0, dy: 2, r: 9, front: 1 }] });
+const CL = (th) => SIDEL({ aTH: 125, aTHs: 0.7, aSH: 265, aSHs: 0.6, bTH: th, bTHs: 0.7, bSH: 265, bSHs: 0.6 });
+E("Clamshell avec élastique", { v: "f", headUnder: 1, k: [CL(125), CL(62)], pr: [{ t: "loop", j: "K" }] });
+const MW = (px, ax, bx) => FS({ an: ["P", px, 152], aAt: [ax, AF], bAt: [bx, AF], aUA: 175, aFA: 120, bUA: 185, bFA: 240 });
+E("Marche latérale avec élastique (monster walk)", { v: "f", k: [MW(132, 112, 152), MW(118, 86, 148)], pr: [{ t: "loop", j: "K" }, { t: "loop", j: "A" }] });
+E("Pas chassés latéraux en squat", { v: "f", t: 0.7, k: [MW(124, 102, 146), MW(110, 78, 140)] });
+E("Abduction de hanche couché sur le côté", { v: "f", headUnder: 1, k: [SIDEL(), SIDEL({ bTH: 58, bSH: 58 })] });
+const FH = (th, s) => TOPP({ an: ["P", X, 150], aUA: 180, aUAs: 0.18, aFA: 180, aFAs: 0.18, bUA: 180, bUAs: 0.18, bFA: 180, bFAs: 0.18, aTH: th, aTHs: s, aSH: 180, aSHs: 0.95, bTH: 180, bTHs: 0.18, bSH: 180, bSHs: 0.95 });
+E("Fire hydrant", { v: "f", top: 1, k: [FH(180, 0.18), FH(268, 0.9)], pr: [MATP] });
+E("Donkey kick", { v: "s", k: [QD(), QD({ aTH: 272, aSH: 2, aFT: 272 })] });
+const KBS = o => ST(P({ T: 8, aWt: [190, 104], bWt: [188, 104] }, o));
+E("Kickback fessier à l'élastique", { v: "s", k: [KBS(), KBS({ aAt: undefined, aTH: 205, aSH: 212 })], pr: [WALL(194, "r"), { t: "band", from: [186, 216], to: "aA" }] });
+E("Flexion de hanche à l'élastique", { v: "s", k: [ST({ aUA: 200, aFA: 110, bUA: 202, bFA: 112 }), ST({ aAt: undefined, aTH: 92, aSH: 180, aUA: 200, aFA: 110, bUA: 202, bFA: 112 })], pr: [{ t: "post", x: 30, y1: 200 }, { t: "band", from: [30, 214], to: "aA" }] });
+const CALF1 = { an: ["P", X, 123], aAt: [X + 2, 208], bAt: [X - 2, 208], aFT: "t", bFT: "t" };
+E("Mollets debout", { v: "s", k: [ST(), ST(CALF1)] });
+E("Mollets lestés", { v: "s", k: [ST(), ST(CALF1)], pr: [{ t: "db", h: "ab", endon: 1 }] });
+E("Mollets une jambe sur marche (excentrique)", { v: "s", d: [0.8, 2.4], k: [P({ T: 0, an: ["aA", 134.5, 183], aFT: 150, bTH: 190, bSH: 250, bFT: 200 }), P({ T: 0, an: ["aA", 128, 201], aFT: 70, bTH: 190, bSH: 250, bFT: 200 })], pr: [{ t: "box", x1: 133, x2: 210, y: 196 }] });
+E("Mollets assis genoux fléchis", { v: "s", k: [P({ T: 0, an: ["P", 100, 178], aAt: [144, AF], bAt: [141, AF], aUA: 170, aFA: 100, bUA: 172, bFA: 102 }), P({ T: 0, an: ["P", 100, 178], aAt: [144, 207], bAt: [141, 207], aFT: "t", bFT: "t", aUA: 170, aFA: 100, bUA: 172, bFA: 102 })],
+  pr: [{ t: "bench", x1: 58, x2: 118, y: 186 }, { t: "db2", at: "aK", off: [0, -9], ang: 90 }] });
+E("Relevés de pointes de pied", { v: "s", k: [ST({ T: 356, an: ["P", 124, 135], aAt: [134, AF], bAt: [132, AF] }), ST({ T: 356, an: ["P", 124, 135], aAt: [134, AF], bAt: [132, AF], aFT: 52, bFT: 52 })], pr: [WALL(108)] });
+const INV = f => P({ T: 0, an: ["P", X, 168], aTH: 180, aTHs: 0.25, aSH: 180, bTH: 180, bTHs: 0.25, bSH: 180, aFT: f, bFT: 180, aUA: 186, aFA: 168, bUA: 174, bFA: 192 });
+E("Inversion-éversion de cheville à l'élastique", { v: "f", vb: [10, 110, 190, 175], k: [INV(140), INV(222)], pr: [{ t: "chair", x1: 100, x2: 160, y: 180 }, { t: "post", x: 14, y1: 205 }, { t: "band", from: [14, 216], to: "aA" }] });
+E("Équilibre sur une jambe", { v: "s", t: 1.8, k: [ST({ bAt: undefined, bTH: 115, bSH: 178, aUA: 160, aFA: 150, bUA: 200, bFA: 200 }), ST({ T: 3, an: ["P", X + 1, 135], bAt: undefined, bTH: 118, bSH: 180, aUA: 164, aFA: 154, bUA: 196, bFA: 196 })] });
+E("Sautillements (pogo jumps)", { v: "s", t: 0.35, hold: 0.04, k: [ST({ an: ["P", X, 124], aAt: [X + 2, 209], bAt: [X - 2, 209], aFT: "t", bFT: "t", aUA: 200, aFA: 120, bUA: 202, bFA: 122 }), ST({ an: ["P", X, 109], aAt: [X + 2, 194], bAt: [X - 2, 194], aFT: 165, bFT: 165, aUA: 200, aFA: 120, bUA: 202, bFA: 122 })] });
+const KU = (sd) => sd === "a" ? P({ T: 0, an: ["P", X, 128], aTH: 85, aSH: 180, aFT: 150, bAt: [X - 2, 214], bFT: "t", aUA: 215, aFA: 120, bUA: 140, bFA: 50 }) :
+  P({ T: 0, an: ["P", X, 128], bTH: 85, bSH: 180, bFT: 150, aAt: [X - 2, 214], aFT: "t", bUA: 215, bFA: 120, aUA: 140, aFA: 50 });
+E("Montées de genoux", { v: "s", t: 0.42, hold: 0.04, k: [KU("a"), KU("b")] });
+E("Saut en longueur sans élan", { v: "s", mode: "cut", k: [P({ T: 45, Hd: 40, an: ["P", 92, 168], aAt: [108, AF], bAt: [106, AF], aUA: 250, aFA: 250, bUA: 252, bFA: 252 }),
+  P({ T: 30, an: ["P", 158, 110], aTH: 115, aSH: 195, bTH: 118, bSH: 198, aUA: 60, aFA: 60, bUA: 62, bFA: 62 }),
+  P({ T: 38, an: ["P", 200, 172], aAt: [230, AF], bAt: [228, AF], aUA: 80, aFA: 80, bUA: 82, bFA: 82 })] });
+E("Saut sur banc (box jump)", { v: "s", mode: "cut", k: [P({ T: 40, an: ["P", 96, 170], aAt: [116, AF], bAt: [114, AF], aUA: 240, aFA: 240, bUA: 242, bFA: 242 }),
+  P({ T: 18, an: ["P", 150, 112], aTH: 110, aSH: 195, bTH: 112, bSH: 197, aUA: 40, aFA: 40, bUA: 42, bFA: 42 }),
+  P({ T: 30, an: ["P", 176, 144], aAt: [198, 181], bAt: [196, 181], aUA: 80, aFA: 80, bUA: 82, bFA: 82 })], pr: [{ t: "box", x1: 166, x2: 232, y: 186 }] });
+E("Sauts latéraux (skater jumps)", { v: "f", t: 0.75, k: [P({ T: -8, an: ["P", 96, 166], aAt: [92, AF], bAt: [70, 206, 1], bFT: 200, aUA: 150, aFA: 140, bUA: 215, bFA: 230 }), P({ T: 8, an: ["P", 164, 166], bAt: [168, AF], aAt: [190, 206, -1], aFT: 160, aUA: 145, aFA: 130, bUA: 210, bFA: 220 })] });
+E("Saut une jambe avec réception stabilisée", { v: "s", k: [P({ T: 30, an: ["P", 110, 170], aAt: [128, AF], bTH: 205, bSH: 255, bFT: 200, aUA: 215, aFA: 215, bUA: 140, bFA: 140 }), P({ T: 5, an: ["P", 128, 110], aAt: [132, 196], aFT: 160, bTH: 190, bSH: 235, bFT: 200, aUA: 20, aFA: 20, bUA: 22, bFA: 22 })] });
+E("Drop jump (saut en contrebas)", { v: "s", mode: "cut", k: [P({ T: 0, an: ["P", 78, 100], aAt: [80, 181], bAt: [78, 181] }),
+  P({ T: 35, an: ["P", 122, 172], aAt: [145, AF], bAt: [143, AF], aUA: 230, aFA: 230, bUA: 232, bFA: 232 }),
+  P({ T: 5, an: ["P", 150, 100], aAt: [152, 190], bAt: [150, 190], aFT: 165, bFT: 165, aUA: 15, aFA: 15, bUA: 17, bFA: 17 })], pr: [{ t: "box", x1: 40, x2: 100, y: 186 }] });
+E("Squat assisté aux sangles", { v: "s", k: [ST({ aWt: [178, 112], bWt: [176, 112] }), SQ({ T: 14, an: ["P", 92, 184], aWt: [176, 142], bWt: [174, 142] })], pr: [{ t: "strap", top: [240, 4], to: ["aH"] }] });
+E("Fente arrière pied dans la sangle", { v: "s", k: [P({ T: 5, an: ["P", 118, 140], aAt: [148, AF], bAt: [72, 196], bFT: 250 }), P({ T: 10, an: ["P", 112, 180], aAt: [148, AF], bAt: [52, 200], bFT: 250 })], pr: [{ t: "strap", top: [62, 4], to: ["bA"] }] });
+E("Squat au mur avec swiss ball", { v: "s", k: [ST({ an: ["P", 110, 138], aAt: [140, AF], bAt: [138, AF] }), SQ({ T: 2, Hd: 0, an: ["P", 104, 180], aAt: [150, AF], bAt: [148, AF] })], pr: [WALL(56), { t: "ball", at: "P", dx: -26, dy: -26, r: 20 }] });
+
+/* ===================== HAUT DU CORPS ===================== */
+E("Pompes classiques", { v: "s", k: [PU0(), PU1()] });
+E("Pompes diamant", { v: "s", k: [PU0({ aWt: [164, 218], bWt: [162, 218] }), PU1({ aWt: [164, 218], bWt: [162, 218] })] });
+E("Pompes avec élastique", { v: "s", k: [PU0(), PU1()], pr: [{ t: "arcband" }] });
+E("Pompes scapulaires (push-up plus)", { v: "s", t: 0.8, k: [PU0({ shE: -2 }), PU0({ T: 67, Hd: 73, aTH: 247, aSH: 247, bTH: 247, bSH: 247, shE: 2 })] });
+const KNP = (th, T) => P({ an: ["aK", 95, 217], aTH: th, bTH: th, aSH: 300, bSH: 300, T, Hd: T + 6, aWt: [172, 218], bWt: [169, 218] });
+E("Pompes sur les genoux", { v: "s", k: [KNP(235, 55), KNP(253, 73)] });
+const INC = (T, o) => P({ an: ["aA", 40, 212], aFT: "t", bFT: "t", T, Hd: T + 6, aTH: T + 180, aSH: T + 180, bTH: T + 180, bSH: T + 180, aWt: [182, 184], bWt: [180, 184] }, o);
+E("Pompes mains surélevées", { v: "s", k: [INC(58), INC(66)], pr: [{ t: "bench", x1: 160, x2: 228, y: 186 }] });
+const DEC = (T) => P({ an: ["aA", 48, 174], aFT: 160, bFT: 160, T, Hd: T, aTH: T + 180, aSH: T + 180, bTH: T + 180, bSH: T + 180, aWt: [180, 218], bWt: [178, 218] });
+E("Pompes pieds surélevés", { v: "s", k: [DEC(84), DEC(96)], pr: [{ t: "bench", x1: 14, x2: 70, y: 186 }] });
+const HEAD = (py, o) => P({ T: 0, Ts: 0.35, an: ["P", X, py], aWt: [92, 218], bWt: [168, 218], aTH: 180, aTHs: 0.05, aSH: 180, aSHs: 0.05, bTH: 180, bTHs: 0.05, bSH: 180, bSHs: 0.05 }, o);
+E("Pompes larges", { v: "f", noLegs: 1, k: [HEAD(180), HEAD(200)] });
+E("Pompes archer", { v: "f", noLegs: 1, k: [HEAD(180, { aWt: [80, 218], bWt: [180, 218] }), HEAD(198, { an: ["P", 110, 198], T: -6, aWt: [80, 218], bWt: [180, 218] })] });
+const PIK = (px, py, T) => P({ an: ["P", px, py], T, Hd: T + 15, aWt: [156, 218], bWt: [153, 218], aAt: [62, 214], bAt: [60, 214], aFT: "t", bFT: "t" });
+E("Pompes pike", { v: "s", k: [PIK(110, 140, 125), PIK(116, 152, 138)] });
+E("Pompes claquées", { v: "s", t: 0.6, k: [PU1(), PU0({ T: 62, Hd: 68, aTH: 242, aSH: 242, bTH: 242, bSH: 242, aWt: [166, 198], bWt: [164, 198] })] });
+const SUSP = (T, hx, hy) => P({ an: ["aA", 60, 212], aFT: "t", bFT: "t", T, Hd: T + 5, aTH: T + 180, aSH: T + 180, bTH: T + 180, bSH: T + 180, aWt: [hx, hy], bWt: [hx - 2, hy] });
+E("Pompes en suspension", { v: "s", k: [SUSP(50, 205, 140), SUSP(62, 196, 152)], pr: [{ t: "strap", top: [222, 4], to: ["aH"] }] });
+E("Poirier contre le mur", { v: "s", k: [P({ T: 165, Hd: 175, an: ["aW", 135, 218], aUA: 180, aFA: 180, bUA: 180, bFA: 180, aTH: 345, aSH: 345, bTH: 347, bSH: 347, aFT: 300, bFT: 300 })], pr: [WALL(100)] });
+E("Dips sur banc", { v: "s", k: [P({ T: 0, Hd: 5, an: ["P", 100, 170], aWt: [92, 183], bWt: [90, 183], aAt: [172, AF], bAt: [170, AF], aFT: 50, bFT: 50 }), P({ T: 4, Hd: 8, an: ["P", 103, 203], aWt: [92, 183], bWt: [90, 183], aAt: [172, AF], bAt: [170, AF], aFT: 50, bFT: 50 })], pr: [{ t: "bench", x1: 36, x2: 96, y: 186 }] });
+const DCH = (py) => P({ T: 0, an: ["P", X, py], aWt: [80, 134], bWt: [180, 134], aTH: 183, aSH: 180, aSHs: 0.3, bTH: 177, bSH: 180, bSHs: 0.3 });
+E("Dips entre deux chaises", { v: "f", k: [DCH(128), DCH(156)], pr: [{ t: "post", x: 76, y1: 136 }, { t: "post", x: 184, y1: 136 }, { t: "line", a: [70, 136], b: [90, 136], w: 4 }, { t: "line", a: [170, 136], b: [190, 136], w: 4 }] });
+const BENCH = { t: "bench", x1: 55, x2: 172, y: 186 };
+const BP = (o) => P({ T: 270, Hd: 270, an: ["P", 140, 176], aAt: [190, AF], bAt: [187, AF] }, o);
+E("Développé couché haltères", { v: "s", k: [BP({ aWt: [111, 167, 1], bWt: [109, 167, 1] }), BP({ aWt: [97, 123], bWt: [95, 123] })], pr: [BENCH, DB] });
+E("Écarté couché haltères", { v: "s", k: [BP({ aWt: [97, 123], bWt: [95, 123] }), BP({ aUA: 128, aFA: 112, bUA: 130, bFA: 114 })], pr: [BENCH, DB] });
+E("Pull-over haltère", { v: "s", k: [BP({ aUA: 2, aFA: 2, bUA: 2, bFA: 2 }), BP({ aUA: 282, aFA: 282, bUA: 282, bFA: 282 })], pr: [BENCH, { t: "db2", ang: 90 }] });
+E("Barre au front avec haltères", { v: "s", k: [BP({ aUA: 345, aFA: 245, bUA: 345, bFA: 245 }), BP({ aUA: 345, aFA: 345, bUA: 345, bFA: 345 })], pr: [BENCH, DB] });
+const INCL = { t: "incl", back: [[62, 110], [122, 180]], seat: [110, 162, 186] };
+const IP = (o) => P({ T: 318, Hd: 322, an: ["P", 136, 176], aAt: [192, AF], bAt: [189, AF] }, o);
+E("Développé incliné haltères", { v: "s", k: [IP({ aWt: [128, 134, 1], bWt: [126, 134, 1] }), IP({ aWt: [114, 90], bWt: [112, 90] })], pr: [INCL, DB] });
+E("Curl incliné sur banc", { v: "s", k: [IP({ aUA: 182, aFA: 182, bUA: 182, bFA: 182 }), IP({ aUA: 182, aFA: 30, bUA: 182, bFA: 32 })], pr: [INCL, { t: "db", h: "ab", endon: 1 }] });
+E("Développé au sol haltères (floor press)", { v: "s", k: [SUK({ aWt: [115, 190, 1], bWt: [113, 190, 1] }), SUK({ aWt: [97, 160], bWt: [95, 160] })], pr: [DB] });
+E("Développé pectoraux à l'élastique", { v: "s", k: [ST({ T: 5, aAt: [140, AF], bAt: [114, AF], aWt: [142, 100], bWt: [140, 100] }), ST({ T: 5, aAt: [140, AF], bAt: [114, AF], aWt: [186, 98], bWt: [184, 98] })], pr: [{ t: "post", x: 22, y1: 82 }, { t: "band", from: [22, 100], to: ["aH"], back: 1 }] });
+const MIL = [ST({ aWt: [141, 82, 1], bWt: [139, 82, 1] }), ST({ aWt: [134, 30], bWt: [132, 30] })];
+E("Développé militaire haltères", { v: "s", k: MIL, pr: [DB] });
+E("Développé épaules à l'élastique", { v: "s", k: MIL, pr: [{ t: "band", from: "aA", to: "aH" }] });
+const SEAT = (o) => P({ T: 0, an: ["P", 108, 178], aAt: [152, AF], bAt: [149, AF] }, o);
+E("Développé épaules assis", { v: "s", k: [SEAT({ aWt: [118, 124, 1], bWt: [116, 124, 1] }), SEAT({ aWt: [112, 74], bWt: [110, 74] })], pr: [{ t: "bench", x1: 78, x2: 138, y: 186 }, { t: "line", a: [86, 186], b: [86, 116], w: 5 }, DB] });
+E("Développé Arnold", { v: "f", k: [FS({ aUA: 176, aUAs: 0.5, aFA: 8, bUA: 184, bUAs: 0.5, bFA: 352 }), FS({ aUA: 332, aFA: 352, bUA: 28, bFA: 8 })], pr: [DB] });
+E("Push press haltères", { v: "s", t: 0.8, k: [P({ T: 5, an: ["P", 122, 152], aAt: [X, AF], bAt: [X - 2, AF], aWt: [134, 97, 1], bWt: [132, 97, 1] }), ST({ aWt: [133, 30], bWt: [131, 30] })], pr: [DB] });
+const LR = [FS({ aUA: 193, aFA: 191, bUA: 167, bFA: 169 }), FS({ aUA: 273, aFA: 268, bUA: 87, bFA: 92 })];
+E("Élévations latérales haltères", { v: "f", k: LR, pr: [DB] });
+E("Élévations latérales à l'élastique", { v: "f", k: LR, pr: [{ t: "band", from: "aA", to: "aH" }, { t: "band", from: "bA", to: "bH" }] });
+E("Élévations frontales", { v: "s", k: [ST({ aUA: 182, aFA: 182, bUA: 182, bFA: 182 }), ST({ aUA: 90, aFA: 88, bUA: 92, bFA: 90 })], pr: [{ t: "db", h: "ab", endon: 1 }] });
+const ER = (fa, s) => FS({ aUA: 182, aFA: fa, aFAs: s, bUA: 172, bFA: 174 });
+E("Rotation externe d'épaule à l'élastique", { v: "f", armDark: "b", k: [ER(100, 0.75), ER(180, 0.12), ER(265, 0.75)], pr: [{ t: "post", x: 240, y1: 140 }, { t: "band", from: [240, 150], to: "aH" }] });
+E("Rotation interne d'épaule à l'élastique", { v: "f", armDark: "b", k: [ER(265, 0.75), ER(180, 0.12), ER(100, 0.75)], pr: [{ t: "post", x: 20, y1: 140 }, { t: "band", from: [20, 150], to: "aH" }] });
+const ER90 = (fa, s) => FS({ aUA: 272, aFA: fa, aFAs: s, bUA: 172, bFA: 174 });
+E("Rotation externe à 90° d'abduction", { v: "f", armDark: "b", k: [ER90(180, 1), ER90(270, 0.12), ER90(360, 1)], pr: [{ t: "post", x: 20, y1: 150 }, { t: "band", from: [20, 160], to: "aH" }] });
+const ERL = (fa, s) => SIDEL({ bUA: 92, bFA: fa, bFAs: s });
+E("Rotation externe couché sur le côté", { v: "f", headUnder: 1, k: [ERL(180, 0.75), ERL(90, 0.12), ERL(0, 0.75)], pr: [{ t: "db", h: "b" }] });
+E("Cuban press", { v: "f", k: [FS(), FS({ aUA: 268, aFA: 182, bUA: 92, bFA: 178 }), FS({ aUA: 268, aFA: 270, aFAs: 0.15, bUA: 92, bFA: 90, bFAs: 0.15 }), FS({ aUA: 268, aFA: 2, bUA: 92, bFA: 358 }), FS({ aUA: 332, aFA: 352, bUA: 28, bFA: 8 })], pr: [DB] });
+const HALO = (x1, y1, x2, y2) => FS({ aWt: [x1, y1, 1], bWt: [x2, y2, -1] });
+E("Halo kettlebell", { v: "f", mode: "loop", t: 0.7, hold: 0.05, k: [HALO(150, 58, 156, 60), HALO(124, 38, 136, 38), HALO(104, 60, 110, 58), HALO(124, 96, 136, 96)], pr: [{ t: "kb", h: "ab", mode: "up" }] });
+const CURL = [ST({ aUA: 182, aFA: 182, bUA: 180, bFA: 180 }), ST({ aUA: 184, aFA: 14, bUA: 182, bFA: 12 })];
+E("Curl biceps haltères", { v: "s", k: CURL, pr: [{ t: "db", h: "ab", endon: 1 }] });
+E("Curl marteau", { v: "s", k: CURL, pr: [DB] });
+E("Curl biceps à l'élastique", { v: "s", k: CURL, pr: [{ t: "band", from: "aA", to: "aH" }] });
+E("Extension triceps au-dessus de la tête", { v: "s", k: [ST({ aUA: 8, aFA: 222, bUA: 8, bFA: 222 }), ST({ aUA: 4, aFA: 4, bUA: 4, bFA: 4 })], pr: [{ t: "db2", ang: 0 }] });
+E("Extension triceps à l'élastique", { v: "s", k: [ST({ T: 8, aUA: 172, aFA: 28, bUA: 174, bFA: 30 }), ST({ T: 8, aUA: 172, aFA: 172, bUA: 174, bFA: 174 })], pr: [{ t: "post", x: 196, y1: 10, y2: 30 }, { t: "band", from: [196, 30], to: "aH" }] });
+const KICK = (fa) => P({ T: 72, Hd: 78, an: ["P", 106, 142], aAt: [X, AF], bAt: [104, AF], aUA: 262, aFA: fa, bWt: [150, 168] });
+E("Kickback triceps", { v: "s", k: [KICK(180), KICK(262)], pr: [DBA] });
+const WR = (ha, o) => P({ T: 8, an: ["P", 100, 178], aAt: [146, AF], bAt: [143, AF], aUA: 158, aFA: 90, aHA: ha, bUA: 170, bFA: 110 }, o);
+const STOOL = { t: "bench", x1: 66, x2: 124, y: 186 };
+E("Extension des poignets", { v: "s", vb: [70, 100, 120, 111], k: [WR(150), WR(40)], pr: [STOOL, DBA] });
+E("Flexion des poignets", { v: "s", vb: [70, 100, 120, 111], k: [WR(160), WR(60)], pr: [STOOL, DBA] });
+E("Pronation-supination avec haltère", { v: "s", vb: [70, 100, 120, 111], k: [WR(90, { aDB: 0, aDBs: 1 }), WR(90, { aDB: 0, aDBs: 0.2 }), WR(90, { aDB: 180, aDBs: 1 })], pr: [STOOL, { t: "hammer", h: "a" }] });
+E("Extension des doigts à l'élastique", { v: "f", vb: [40, 30, 150, 138], k: [FS({ aUA: 218, aFA: 340, bUA: 170, bFA: 174, fs: 3 }), FS({ aUA: 218, aFA: 340, bUA: 170, bFA: 174, fs: 18 })], pr: [{ t: "fingers", at: "aH" }] });
+E("Suspension passive à la barre", { v: "s", t: 2, k: [HANG(), HANG({ an: ["P", X + 2, 128], T: 2 })], pr: [BAR] });
+
+/* ===================== DOS ===================== */
+E("Superman", { v: "s", k: [PR(), PR({ T: 80, Hd: 76, aUA: 78, aFA: 78, bUA: 80, bFA: 80, aTH: 282, aSH: 282, bTH: 282, bSH: 282 })] });
+E("Superman alterné (nageur)", { v: "s", t: 0.8, k: [PR({ T: 84, aUA: 76, aFA: 76, bTH: 282, bSH: 282 }), PR({ T: 84, bUA: 78, bFA: 78, aTH: 282, aSH: 282 })] });
+E("Bird dog", { v: "s", k: [QD(), QD({ aWt: undefined, aUA: 90, aFA: 90, bTH: 268, bSH: 268, bFT: 250 })] });
+E("Cobra tenu au sol", { v: "s", k: [PR({ T: 77, Hd: 72, aUA: 256, aFA: 258, bUA: 258, bFA: 260 })] });
+E("Anges inversés au sol", { v: "f", top: 1, k: [TOPP({ aUA: 335, aFA: 335, bUA: 25, bFA: 25 }), TOPP({ aUA: 196, aFA: 192, bUA: 164, bFA: 168 })], pr: [MATP] });
+E("Y-T-W allongé", { v: "f", top: 1, k: [TOPP({ aUA: 325, aFA: 325, bUA: 35, bFA: 35 }), TOPP({ aUA: 270, aFA: 270, bUA: 90, bFA: 90 }), TOPP({ aUA: 235, aFA: 320, bUA: 125, bFA: 40 })], pr: [MATP] });
+E("Good morning au poids du corps", { v: "s", k: [ST({ aUA: 168, aFA: 55, bUA: 170, bFA: 57 }), P(RDL1, { T: 74, Hd: 78, aUA: 242, aFA: 129, bUA: 244, bFA: 131 })] });
+E("Planche inversée", { v: "s", k: [P({ T: 292.8, Hd: 300, an: ["aA", 205, 214], aTH: 112.8, aSH: 112.8, bTH: 112.8, bSH: 112.8, aFT: 30, bFT: 30, aWt: [82, 218], bWt: [80, 218] })] });
+const IR = (T, o) => P({ T, Hd: T, an: ["aA", 232, 214], aTH: T - 180, aSH: T - 180, bTH: T - 180, bSH: T - 180, aFT: 30, bFT: 30, aWt: [108, 114], bWt: [106, 114] }, o);
+E("Rowing inversé sous une table", { v: "s", k: [IR(290), IR(308.5)], pr: [{ t: "table", x1: 80, x2: 200, y: 110 }] });
+E("Extension lombaire sur swiss ball", { v: "s", k: [P({ T: 122, Hd: 128, an: ["P", 126, 166], aAt: [40, AF], bAt: [38, AF], aFT: "t", bFT: "t", aUA: 80, aFA: 260, bUA: 82, bFA: 262 }),
+  P({ T: 90, Hd: 86, an: ["P", 126, 166], aAt: [40, AF], bAt: [38, AF], aFT: "t", bFT: "t", aUA: 30, aFA: 210, bUA: 32, bFA: 212 })], pr: [{ t: "ball", x: 118, r: 28 }, WALL(32)] });
+const ROW1 = (ua, fa) => P({ T: 90, Hd: 95, an: ["P", 128, 138], aAt: [118, AF], bTH: 180, bSH: 270, bFT: 270, bWt: [176, 180], aUA: ua, aFA: fa });
+E("Rowing haltère un bras", { v: "s", k: [ROW1(180, 180), ROW1(286, 182)], pr: [{ t: "bench", x1: 78, x2: 206, y: 184 }, DBA] });
+const BO = (ua, fa) => P({ T: 48, Hd: 58, an: ["P", 108, 150], aAt: [X, AF], bAt: [X - 2, AF], aUA: ua, aFA: fa, bUA: ua + 2, bFA: fa + 2 });
+E("Rowing buste penché deux haltères", { v: "s", k: [BO(182, 182), BO(262, 186)], pr: [{ t: "db", h: "ab", endon: 1 }] });
+const CHS = (o) => P({ T: 45, Hd: 50, an: ["P", 112, 150], aAt: [84, AF], bAt: [82, AF], aFT: "t", bFT: "t" }, o);
+const PAD = { t: "incl", back: [[118, 164], [158, 124]], seat: [110, 146, 198] };
+E("Rowing sur banc incliné", { v: "s", k: [CHS({ aUA: 182, aFA: 182, bUA: 182, bFA: 182 }), CHS({ aUA: 282, aFA: 184, bUA: 284, bFA: 186 })], pr: [PAD, { t: "db", h: "ab", endon: 1 }] });
+E("Y sur banc incliné", { v: "s", k: [CHS({ aUA: 182, aFA: 182, bUA: 182, bFA: 182 }), CHS({ aUA: 48, aFA: 48, bUA: 50, bFA: 50 })], pr: [PAD, DB] });
+const RF = (o) => P({ T: 0, Ts: 0.45, an: ["P", X, 141], aAt: [X - 14, AF], bAt: [X + 14, AF], aUA: 183, aFA: 183, bUA: 177, bFA: 177 }, o);
+E("Oiseau haltères", { v: "f", k: [RF(), RF({ aUA: 262, aFA: 266, bUA: 98, bFA: 94 })], pr: [DB] });
+E("Oiseau sur banc incliné", { v: "f", k: [RF(), RF({ aUA: 262, aFA: 266, bUA: 98, bFA: 94 })], pr: [{ t: "box", x1: 112, x2: 148, y: 156 }, DB] });
+E("Shrugs haltères", { v: "f", k: [FS({ shE: -1 }), FS({ shE: 7 })], pr: [DB] });
+E("Soulevé de terre haltères", { v: "s", k: [P({ T: 52, Hd: 62, an: ["P", 104, 168], aAt: [X, AF], bAt: [X - 2, AF], aUA: 182, aFA: 182, bUA: 182, bFA: 182 }), ST({ aUA: 182, aFA: 182 })], pr: [{ t: "db", h: "ab", endon: 1 }] });
+const SR = (ua, fa) => P({ T: 0, Hd: 2, an: ["P", 95, 207], aTH: 90, aSH: 90, bTH: 90, bSH: 90, aFT: 2, bFT: 2, aUA: ua, aFA: fa, bUA: ua + 2, bFA: fa + 2 });
+E("Rowing assis à l'élastique", { v: "s", k: [SR(92, 92), SR(205, 88)], pr: [{ t: "band", from: "aA", to: "aH" }] });
+E("Rowing un bras à l'élastique avec rotation", { v: "s", k: [ST({ T: 6, aAt: [142, AF], bAt: [112, AF], aUA: 92, aFA: 92 }), ST({ T: -4, aAt: [142, AF], bAt: [112, AF], aUA: 215, aFA: 92 })], pr: [{ t: "post", x: 238, y1: 80 }, { t: "band", from: [238, 100], to: "aH" }] });
+E("Tirage vertical à l'élastique", { v: "f", k: [FS({ aUA: 338, aFA: 340, bUA: 22, bFA: 20 }), FS({ aUA: 228, aFA: 352, bUA: 132, bFA: 8 })], pr: [{ t: "line", a: [110, 4], b: [150, 4], w: 4 }, { t: "band", from: [130, 4], to: ["aH", "bH"] }] });
+E("Tirage bras tendus à l'élastique", { v: "s", k: [ST({ T: 18, Hd: 22, an: ["P", 122, 137], aUA: 45, aFA: 45, bUA: 47, bFA: 47 }), ST({ T: 18, Hd: 22, an: ["P", 122, 137], aUA: 182, aFA: 182, bUA: 184, bFA: 184 })], pr: [{ t: "post", x: 228, y1: 30 }, { t: "band", from: [228, 40], to: "aH" }] });
+const CRAWL = (ua, fa) => P({ T: 68, Hd: 74, an: ["P", 108, 145], aAt: [X, AF], bAt: [X - 2, AF], aUA: ua, aFA: fa, bUA: ua + 2, bFA: fa + 2 });
+E("Simulation de crawl à l'élastique", { v: "s", k: [CRAWL(96, 96), CRAWL(140, 182), CRAWL(232, 238)], pr: [{ t: "post", x: 238, y1: 150 }, { t: "band", from: [238, 168], to: "aH" }] });
+E("Face pull à l'élastique", { v: "s", k: [ST({ aUA: 86, aFA: 86, bUA: 88, bFA: 88 }), ST({ aUA: 92, aUAs: 0.3, aFA: 14, bUA: 94, bUAs: 0.3, bFA: 16 })], pr: [{ t: "post", x: 238, y1: 60 }, { t: "band", from: [238, 80], to: "aH" }] });
+E("Écartés à l'élastique (pull-apart)", { v: "f", k: [FS({ aUA: 200, aUAs: 0.3, aFA: 160, aFAs: 0.5, bUA: 160, bUAs: 0.3, bFA: 200, bFAs: 0.5 }), FS({ aUA: 270, aFA: 270, bUA: 90, bFA: 90 })], pr: [{ t: "band", from: "aH", to: "bH" }] });
+const PULL = [HANG(), HANG({ an: ["P", X, 86], T: 4, aTH: 192, aSH: 200, bTH: 188, bSH: 196 })];
+E("Tractions pronation", { v: "s", k: PULL, pr: [BAR] });
+E("Tractions supination", { v: "s", k: PULL, pr: [BAR] });
+E("Tractions assistées à l'élastique", { v: "s", k: PULL, pr: [BAR, { t: "band", from: [126, 24], to: "aK" }, { t: "band", from: [134, 24], to: "aK" }] });
+E("Tractions négatives", { v: "s", d: [2.6, 0.7], k: [PULL[1], PULL[0]], pr: [BAR] });
+E("Tractions scapulaires", { v: "s", t: 0.8, k: [HANG({ shE: 5, an: ["P", X, 131] }), HANG({ shE: -3, an: ["P", X, 123] })], pr: [BAR] });
+const SROW = (T, hx, hy, o) => P({ an: ["aA", 190, AF], aFT: 30, bFT: 30, T, Hd: T + 8, aTH: T - 180, aSH: T - 180, bTH: T - 180, bSH: T - 180, aWt: [hx, hy], bWt: [hx - 2, hy] }, o);
+const STRAP2 = { t: "strap", top: [186, 2], to: ["aH"] };
+E("Rowing en suspension", { v: "s", k: [SROW(320, 146, 84), SROW(340, 160, 84)], pr: [STRAP2] });
+E("Rowing un bras en suspension", { v: "s", k: [SROW(320, 146, 84, { bWt: undefined, bUA: 200, bFA: 200 }), SROW(338, 160, 84, { bWt: undefined, bUA: 190, bFA: 190 })], pr: [STRAP2] });
+E("Y en suspension", { v: "s", k: [SROW(320, 146, 84), SROW(335, 126, 48)], pr: [{ t: "strap", top: [150, 2], to: ["aH"] }] });
+
+/* ===================== CORPS ENTIER & AJOUTS ===================== */
+const BSTAND = ST({ an: ["P", X, 135], aAt: [X, AF], bAt: [X - 2, AF] });
+const BSQ = P({ T: 65, Hd: 70, an: ["P", 100, 190], aAt: [X, AF], bAt: [X - 2, AF], aWt: [160, 218], bWt: [157, 218] });
+const BPL = P({ T: 70, Hd: 76, an: ["P", 107, 180], aAt: [30, 212], bAt: [28, 212], aFT: "t", bFT: "t", aWt: [160, 218], bWt: [157, 218] });
+const BJUMP = ST({ an: ["P", X, 112], aAt: [X + 2, 197], bAt: [X - 2, 197], aFT: 160, bFT: 160, aUA: 15, aFA: 10, bUA: 17, bFA: 12 });
+E("Burpees", { v: "s", mode: "loop", t: 0.7, hold: 0.15, k: [BSTAND, BSQ, BPL, BSQ, BJUMP] });
+E("Burpee sans saut", { v: "s", mode: "loop", t: 0.9, k: [BSTAND, BSQ, BPL, BSQ] });
+E("Sprawl", { v: "s", mode: "loop", t: 0.7, hold: 0.15, k: [BSTAND, BSQ, P({ T: 80, Hd: 78, an: ["P", 105, 206], aAt: [25, 214], bAt: [23, 214], aFT: "t", bFT: "t", aWt: [157, 218], bWt: [154, 218] }), BSQ] });
+const BEAR = (s) => P({ T: 82, Hd: 88, an: ["P", 125, 168], aWt: [s ? 178 : 160, 218], bWt: [s ? 160 : 178, 218], aAt: [s ? 72 : 92, 214], bAt: [s ? 92 : 72, 214], aFT: "t", bFT: "t" });
+E("Marche de l'ours (bear crawl)", { v: "s", t: 0.8, k: [BEAR(1), BEAR(0)] });
+E("Chenille (inchworm)", { v: "s", k: [ST({ an: ["P", 100, 135], aAt: [102, AF], bAt: [98, AF] }),
+  P({ T: 155, Hd: 170, an: ["P", 98, 134], aAt: [102, AF], bAt: [98, AF], aWt: [132, 218], bWt: [130, 218] }),
+  P({ T: 115, Hd: 120, an: ["P", 150, 160], aAt: [102, 213], bAt: [98, 213], aFT: "t", bFT: "t", aWt: [196, 218], bWt: [194, 218] }),
+  P({ T: 72, Hd: 76, an: ["P", 182, 186], aAt: [102, 213], bAt: [98, 213], aFT: "t", bFT: "t", aWt: [226, 218], bWt: [224, 218] })] });
+E("Jumping jacks", { v: "f", t: 0.45, hold: 0.05, k: [FS({ aAt: [X - 10, AF], bAt: [X + 10, AF] }), FS({ an: ["P", X, 128], aAt: [X - 36, 214], bAt: [X + 36, 214], aUA: 325, aFA: 330, bUA: 35, bFA: 30 })] });
+E("Squat jacks", { v: "f", t: 0.55, hold: 0.05, k: [FS({ aAt: [X - 10, AF], bAt: [X + 10, AF], aWt: [123, 106], bWt: [137, 106] }), FS({ an: ["P", X, 172], aAt: [X - 40, AF], bAt: [X + 40, AF], aWt: [122, 142], bWt: [138, 142] })] });
+E("Planche jacks", { v: "f", top: 1, t: 0.5, hold: 0.05, k: [TOPP({ an: ["P", X, 130], aUA: 180, aUAs: 0.2, aFA: 180, aFAs: 0.2, bUA: 180, bUAs: 0.2, bFA: 180, bFAs: 0.2 }),
+  TOPP({ an: ["P", X, 130], aUA: 180, aUAs: 0.2, aFA: 180, aFAs: 0.2, bUA: 180, bUAs: 0.2, bFA: 180, bFAs: 0.2, aTH: 203, aSH: 203, bTH: 157, bSH: 157 })], pr: [MATP] });
+const THR = [SQ({ T: 22, aUA: 150, aFA: 350, bUA: 152, bFA: 352 }), ST({ aUA: 4, aFA: 2, bUA: 6, bFA: 4 })];
+E("Thruster haltères", { v: "s", k: THR, pr: [DB] });
+E("Squat + développé à l'élastique", { v: "s", k: THR, pr: [{ t: "band", from: "aA", to: "aH" }] });
+const LUN = P({ T: 0, an: ["P", 128, 178], aAt: [168, AF], bAt: [86, 214], bFT: "t" });
+E("Fente avec rotation de buste", { v: "s", k: [ST({ an: ["P", 112, 135], aAt: [114, AF], bAt: [86, AF], aWt: [160, 108], bWt: [158, 108] }), P(LUN, { aWt: [168, 140], bWt: [166, 140] }), P(LUN, { T: -4, aWt: [150, 178, 1], bWt: [148, 178, 1] })], pr: [{ t: "db2", ang: 90 }] });
+E("Marche du fermier (farmer walk)", { v: "s", k: [WALK(1, { aUA: 180, aFA: 180, bUA: 180, bFA: 180 }), WALK(-1, { aUA: 180, aFA: 180, bUA: 180, bFA: 180 })], pr: [{ t: "db", h: "ab", endon: 1 }] });
+E("Épaulé haltère un bras", { v: "s", k: [P({ T: 55, Hd: 64, an: ["P", 105, 150], aAt: [X, AF], bAt: [X - 2, AF], aWt: [130, 190] }), ST({ aUA: 158, aFA: 342, bUA: 182, bFA: 182 })], pr: [DBA] });
+E("Arraché haltère un bras", { v: "s", t: 0.8, k: [P({ T: 50, Hd: 60, an: ["P", 100, 170], aAt: [X, AF], bAt: [X - 2, AF], aWt: [134, 204] }), ST({ aUA: 3, aFA: 3, bUA: 182, bFA: 182 })], pr: [DBA] });
+E("Man maker", { v: "s", mode: "loop", t: 0.9, k: [
+  P({ T: 70, Hd: 76, an: ["P", 107, 180], aAt: [30, 212], bAt: [28, 212], aFT: "t", bFT: "t", aWt: [160, 212], bWt: [157, 212] }),
+  P({ T: 70, Hd: 76, an: ["P", 107, 180], aAt: [30, 212], bAt: [28, 212], aFT: "t", bFT: "t", aUA: 292, aFA: 186, bWt: [157, 212] }),
+  P({ T: 30, Hd: 20, an: ["P", 102, 176], aAt: [126, AF], bAt: [124, AF], aUA: 150, aFA: 350, bUA: 152, bFA: 352 }),
+  ST({ an: ["P", 125, 135], aAt: [127, AF], bAt: [123, AF], aUA: 3, aFA: 3, bUA: 5, bFA: 5 })], pr: [DB] });
+E("Relevé turc (Turkish get-up)", { v: "s", k: [
+  SU({ aUA: 2, aFA: 2, bUA: 100, bFA: 100, aAt: [185, AF], bTH: 88, bSH: 88 }),
+  SU({ T: 318, Hd: 330, aUA: 2, aFA: 2, bWt: [86, 218], aAt: [185, AF], bTH: 88, bSH: 88 }),
+  P({ T: 0, an: ["P", 130, 172], aAt: [166, AF], bTH: 190, bSH: 270, bFT: 270, aUA: 2, aFA: 2, bUA: 180, bFA: 180 }),
+  ST({ aUA: 2, aFA: 2 })], pr: [{ t: "kb", h: "a", mode: "up" }] });
+E("Épaulé-jeté kettlebell", { v: "s", mode: "loop", t: 0.8, k: [
+  P({ T: 60, Hd: 68, an: ["P", 104, 150], aAt: [X, AF], bAt: [X - 2, AF], aWt: [116, 180], bUA: 182, bFA: 182 }),
+  ST({ aUA: 160, aFA: 340 }),
+  P({ T: 5, an: ["P", 124, 152], aAt: [X, AF], bAt: [X - 2, AF], aUA: 160, aFA: 340 }),
+  P({ T: 5, an: ["P", 124, 150], aAt: [X, AF], bAt: [X - 2, AF], aUA: 2, aFA: 2 }),
+  ST({ aUA: 2, aFA: 2 })], pr: [{ t: "kb", h: "a", mode: "fa" }] });
+E("Assis-debout de chaise", { v: "s", k: [P({ T: 12, Hd: 10, an: ["P", 98, 174], aAt: [140, AF], bAt: [138, AF], aUA: 165, aFA: 65, bUA: 167, bFA: 67 }),
+  P({ T: 38, Hd: 30, an: ["P", 106, 170], aAt: [140, AF], bAt: [138, AF], aUA: 175, aFA: 80, bUA: 177, bFA: 82 }),
+  ST({ an: ["P", 137, 135], aAt: [140, AF], bAt: [138, AF], aUA: 165, aFA: 65, bUA: 167, bFA: 67 })], pr: [{ t: "chair", x1: 70, x2: 112, y: 180, back: "l" }] });
+const WP = (T) => P({ T, Hd: T + 2, an: ["aA", 75, AF], aTH: T + 180, aSH: T + 180, bTH: T + 180, bSH: T + 180, aFT: "t", bFT: "t", aWt: [195, 100], bWt: [193, 100] });
+E("Pompes contre le mur", { v: "s", k: [WP(30), WP(40)], pr: [WALL(197, "r")] });
+const TOE = (ax, bx, o) => P({ T: 0, an: ["P", X, 136], aAt: [ax, AF], bAt: [bx, AF], aUA: 160, aFA: 150, bUA: 200, bFA: 210 }, o);
+E("Marche talon-pointe", { v: "s", mode: "loop", t: 1.1, k: [TOE(142, 124), TOE(142, 134, { bAt: [134, 206] }), TOE(124, 142), TOE(134, 142, { aAt: [134, 206] })] });
+E("Curl-up de McGill", { v: "s", k: [SU({ bAt: [182, AF], aUA: 96, aFA: 96, bUA: 98, bFA: 98 }), SU({ T: 281, Hd: 281, bAt: [182, AF], aUA: 96, aFA: 96, bUA: 98, bFA: 98 })] });
+E("Rétraction cervicale (chin tuck)", { v: "s", vb: [78, 30, 110, 101], k: [ST({ Hx: 4, Hd: 6 }), ST({ Hx: -3, Hd: 0 })] });
+E("Glissements muraux (wall slides)", { v: "f", k: [FS({ aUA: 242, aFA: 338, bUA: 118, bFA: 22 }), FS({ aUA: 326, aFA: 338, bUA: 34, bFA: 22 })] });
+E("Corde à sauter", { v: "f", t: 0.3, hold: 0.02, k: [FS({ an: ["P", X, 126], aAt: [X - 8, 209], bAt: [X + 8, 209], aUA: 196, aFA: 236, bUA: 164, bFA: 124, ry: 300 }), FS({ an: ["P", X, 134], aAt: [X - 8, AF], bAt: [X + 8, AF], aUA: 196, aFA: 236, bUA: 164, bFA: 124, ry: -40 })], pr: [{ t: "rope" }] });
+
+const EXOS=[{"n": "Planche sur les avant-bras", "cat": "Abdos", "mat": "Aucun", "niv": "Débutant", "typ": "Gainage", "mus": "Transverse, grand droit, obliques", "dos": "3 × 30-60 s", "cons": "Corps aligné tête-bassin-talons, fessiers serrés, ne pas creuser le dos", "prio": ["Cyclisme", "Reprise / Débutant", "Tonification"], "compl": ["Course à pied", "Trail", "Natation", "Triathlon", "Football", "Tennis / Padel", "Escalade", "Dos & posture", "Seniors & équilibre"], "id": "ex-planche-sur-les-avant-bras", "i": 0}, {"n": "Planche latérale", "cat": "Abdos", "mat": "Aucun", "niv": "Débutant", "typ": "Gainage", "mus": "Obliques, carré des lombes, moyen fessier", "dos": "3 × 20-45 s / côté", "cons": "Épaules et hanches empilées, bassin haut", "prio": ["Cyclisme", "Course à pied", "Trail", "Triathlon", "Football", "Tennis / Padel", "Reprise / Débutant", "Dos & posture"], "compl": ["Natation", "Escalade", "Tonification"], "id": "ex-planche-laterale", "i": 1}, {"n": "Planche latérale avec élévation de jambe", "cat": "Abdos", "mat": "Aucun", "niv": "Avancé", "typ": "Gainage", "mus": "Obliques, moyen fessier", "dos": "3 × 15-30 s / côté", "cons": "Lever la jambe du dessus sans laisser tomber le bassin", "prio": [], "compl": ["Course à pied", "Trail", "Football", "Tennis / Padel"], "id": "ex-planche-laterale-avec-elevation-de-jambe", "i": 2}, {"n": "Planche bras tendus avec touches d'épaules", "cat": "Abdos", "mat": "Aucun", "niv": "Intermédiaire", "typ": "Gainage", "mus": "Transverse, obliques, épaules", "dos": "3 × 16-20 touches", "cons": "Pieds écartés, bassin immobile pendant la touche", "prio": ["Escalade"], "compl": ["Natation", "Tennis / Padel"], "id": "ex-planche-bras-tendus-avec-touches-d-epaules", "i": 3}, {"n": "Planche dynamique coudes-mains", "cat": "Abdos", "mat": "Aucun", "niv": "Intermédiaire", "typ": "Gainage", "mus": "Transverse, triceps, épaules", "dos": "3 × 8-12", "cons": "Monter et descendre sans rotation du bassin", "prio": [], "compl": ["Natation"], "id": "ex-planche-dynamique-coudes-mains", "i": 4}, {"n": "Planche avec levée bras-jambe opposés", "cat": "Abdos", "mat": "Aucun", "niv": "Intermédiaire", "typ": "Gainage", "mus": "Transverse, obliques, fessiers", "dos": "3 × 8-10 / côté", "cons": "Lever lentement, tenir 2 s, bassin à plat", "prio": [], "compl": ["Cyclisme", "Course à pied", "Trail", "Natation"], "id": "ex-planche-avec-levee-bras-jambe-opposes", "i": 5}, {"n": "Dead bug", "cat": "Abdos", "mat": "Aucun", "niv": "Débutant", "typ": "Stabilité / Prévention", "mus": "Transverse, grand droit", "dos": "3 × 8-10 / côté", "cons": "Lombaires plaquées au sol, allonger bras et jambe opposés", "prio": ["Cyclisme", "Course à pied", "Natation", "Triathlon", "Reprise / Débutant", "Dos & posture"], "compl": ["Trail", "Football", "Tennis / Padel", "Escalade", "Seniors & équilibre"], "id": "ex-dead-bug", "i": 6}, {"n": "Hollow hold (gainage creux)", "cat": "Abdos", "mat": "Aucun", "niv": "Intermédiaire", "typ": "Gainage", "mus": "Grand droit, transverse", "dos": "3 × 20-40 s", "cons": "Lombaires au sol, épaules et jambes décollées", "prio": ["Natation", "Triathlon", "Escalade"], "compl": [], "id": "ex-hollow-hold-gainage-creux", "i": 7}, {"n": "Hollow rock", "cat": "Abdos", "mat": "Aucun", "niv": "Avancé", "typ": "Gainage", "mus": "Grand droit, transverse", "dos": "3 × 10-15 balancements", "cons": "Garder la forme de banane, sans casser aux hanches", "prio": [], "compl": ["Natation", "Escalade"], "id": "ex-hollow-rock", "i": 8}, {"n": "Crunch", "cat": "Abdos", "mat": "Aucun", "niv": "Débutant", "typ": "Force", "mus": "Grand droit", "dos": "3 × 15-20", "cons": "Enrouler le buste, menton décollé de la poitrine", "prio": [], "compl": ["Football", "Reprise / Débutant"], "id": "ex-crunch", "i": 9}, {"n": "Crunch inversé", "cat": "Abdos", "mat": "Aucun", "niv": "Débutant", "typ": "Force", "mus": "Grand droit (portion basse)", "dos": "3 × 12-15", "cons": "Décoller le bassin sans élan", "prio": ["Tonification"], "compl": ["Football", "Escalade", "Reprise / Débutant"], "id": "ex-crunch-inverse", "i": 10}, {"n": "Relevé de jambes allongé", "cat": "Abdos", "mat": "Aucun", "niv": "Intermédiaire", "typ": "Force", "mus": "Grand droit, fléchisseurs de hanche", "dos": "3 × 10-15", "cons": "Descendre les jambes tant que les lombaires restent au sol", "prio": [], "compl": ["Natation", "Football", "Escalade"], "id": "ex-releve-de-jambes-allonge", "i": 11}, {"n": "Battements de jambes (ciseaux)", "cat": "Abdos", "mat": "Aucun", "niv": "Débutant", "typ": "Gainage", "mus": "Grand droit, fléchisseurs de hanche", "dos": "3 × 20-30 s", "cons": "Petits battements, lombaires plaquées", "prio": [], "compl": ["Natation"], "id": "ex-battements-de-jambes-ciseaux", "i": 12}, {"n": "Crunch bicyclette", "cat": "Abdos", "mat": "Aucun", "niv": "Débutant", "typ": "Force", "mus": "Obliques, grand droit", "dos": "3 × 20", "cons": "Coude vers genou opposé, mouvement lent", "prio": [], "compl": ["Cyclisme", "Tennis / Padel", "Tonification"], "id": "ex-crunch-bicyclette", "i": 13}, {"n": "Sit-up", "cat": "Abdos", "mat": "Aucun", "niv": "Débutant", "typ": "Force", "mus": "Grand droit, fléchisseurs de hanche", "dos": "3 × 12-20", "cons": "Monter en enroulant, sans tirer sur la nuque", "prio": [], "compl": [], "id": "ex-sit-up", "i": 14}, {"n": "V-up (portefeuille)", "cat": "Abdos", "mat": "Aucun", "niv": "Avancé", "typ": "Force", "mus": "Grand droit, fléchisseurs de hanche", "dos": "3 × 8-12", "cons": "Mains et pieds se rejoignent au-dessus du bassin", "prio": [], "compl": ["Natation", "Escalade"], "id": "ex-v-up-portefeuille", "i": 15}, {"n": "Russian twist", "cat": "Abdos", "mat": "Aucun", "niv": "Débutant", "typ": "Force", "mus": "Obliques", "dos": "3 × 20", "cons": "Buste incliné, rotation des épaules et non des bras", "prio": [], "compl": ["Tennis / Padel", "Tonification"], "id": "ex-russian-twist", "i": 16}, {"n": "Russian twist lesté", "cat": "Abdos", "mat": "Haltères", "niv": "Intermédiaire", "typ": "Force", "mus": "Obliques", "dos": "3 × 16-20", "cons": "Haltère tenu près du buste, dos long", "prio": [], "compl": ["Tennis / Padel"], "id": "ex-russian-twist-leste", "i": 17}, {"n": "Mountain climbers", "cat": "Abdos", "mat": "Aucun", "niv": "Débutant", "typ": "Gainage", "mus": "Grand droit, fléchisseurs de hanche, épaules", "dos": "3 × 30 s", "cons": "Épaules au-dessus des mains, bassin bas", "prio": ["Perte de poids"], "compl": ["Cyclisme", "Course à pied", "Trail", "Football"], "id": "ex-mountain-climbers", "i": 18}, {"n": "Mountain climbers croisés", "cat": "Abdos", "mat": "Aucun", "niv": "Intermédiaire", "typ": "Gainage", "mus": "Obliques, fléchisseurs de hanche", "dos": "3 × 30 s", "cons": "Genou vers coude opposé", "prio": [], "compl": ["Course à pied", "Tennis / Padel", "Perte de poids"], "id": "ex-mountain-climbers-croises", "i": 19}, {"n": "Essuie-glaces au sol", "cat": "Abdos", "mat": "Aucun", "niv": "Avancé", "typ": "Force", "mus": "Obliques", "dos": "3 × 8-10 / côté", "cons": "Épaules au sol, descendre les jambes sous contrôle", "prio": [], "compl": ["Tennis / Padel"], "id": "ex-essuie-glaces-au-sol", "i": 20}, {"n": "Rotation thoracique en planche latérale", "cat": "Abdos", "mat": "Aucun", "niv": "Intermédiaire", "typ": "Stabilité / Prévention", "mus": "Obliques, dentelé antérieur", "dos": "3 × 8-10 / côté", "cons": "Passer le bras sous le buste puis ouvrir vers le plafond", "prio": [], "compl": ["Natation", "Tennis / Padel"], "id": "ex-rotation-thoracique-en-planche-laterale", "i": 21}, {"n": "Marche de l'ours statique (bear hold)", "cat": "Abdos", "mat": "Aucun", "niv": "Intermédiaire", "typ": "Gainage", "mus": "Transverse, quadriceps, épaules", "dos": "3 × 20-40 s", "cons": "Genoux à 2 cm du sol, dos plat", "prio": [], "compl": ["Escalade"], "id": "ex-marche-de-l-ours-statique-bear-hold", "i": 22}, {"n": "L-sit (sol ou deux chaises)", "cat": "Abdos", "mat": "Aucun", "niv": "Avancé", "typ": "Gainage", "mus": "Grand droit, fléchisseurs de hanche, triceps", "dos": "4 × 10-20 s", "cons": "Épaules basses, jambes tendues à l'horizontale", "prio": [], "compl": ["Escalade"], "id": "ex-l-sit-sol-ou-deux-chaises", "i": 23}, {"n": "Pallof press (anti-rotation)", "cat": "Abdos", "mat": "Élastique", "niv": "Débutant", "typ": "Stabilité / Prévention", "mus": "Obliques, transverse", "dos": "3 × 10 / côté", "cons": "Tendre les bras devant soi sans laisser tourner le buste", "prio": ["Tennis / Padel", "Dos & posture"], "compl": ["Cyclisme", "Course à pied", "Trail", "Natation", "Football", "Escalade"], "id": "ex-pallof-press-anti-rotation", "i": 24}, {"n": "Rotation de buste à l'élastique (woodchop)", "cat": "Abdos", "mat": "Élastique", "niv": "Intermédiaire", "typ": "Force", "mus": "Obliques, fessiers", "dos": "3 × 12 / côté", "cons": "Pivoter sur le pied arrière, bras presque tendus", "prio": ["Tennis / Padel"], "compl": ["Natation"], "id": "ex-rotation-de-buste-a-l-elastique-woodchop", "i": 25}, {"n": "Bûcheron avec haltère", "cat": "Abdos", "mat": "Haltères", "niv": "Intermédiaire", "typ": "Force", "mus": "Obliques, épaules, fessiers", "dos": "3 × 10-12 / côté", "cons": "Diagonale hanche-épaule opposée, dos droit", "prio": [], "compl": ["Tennis / Padel"], "id": "ex-bucheron-avec-haltere", "i": 26}, {"n": "Portage unilatéral (suitcase carry)", "cat": "Abdos", "mat": "Haltères", "niv": "Intermédiaire", "typ": "Gainage", "mus": "Obliques, carré des lombes, préhension", "dos": "3 × 20-30 m / côté", "cons": "Marcher sans pencher le buste côté charge", "prio": ["Trail", "Dos & posture"], "compl": ["Course à pied", "Escalade"], "id": "ex-portage-unilateral-suitcase-carry", "i": 27}, {"n": "Planche avec tirage d'haltère (renegade row)", "cat": "Abdos", "mat": "Haltères", "niv": "Avancé", "typ": "Gainage", "mus": "Transverse, obliques, grand dorsal", "dos": "3 × 6-8 / bras", "cons": "Pieds larges, tirer sans rotation du bassin", "prio": [], "compl": ["Natation", "Escalade"], "id": "ex-planche-avec-tirage-d-haltere-renegade-row", "i": 28}, {"n": "Planche pieds sur swiss ball", "cat": "Abdos", "mat": "Swiss ball", "niv": "Intermédiaire", "typ": "Gainage", "mus": "Transverse, grand droit", "dos": "3 × 30-45 s", "cons": "Tibias sur le ballon, corps aligné", "prio": [], "compl": ["Cyclisme", "Natation"], "id": "ex-planche-pieds-sur-swiss-ball", "i": 29}, {"n": "Pike sur swiss ball", "cat": "Abdos", "mat": "Swiss ball", "niv": "Avancé", "typ": "Force", "mus": "Grand droit, épaules", "dos": "3 × 8-12", "cons": "Monter le bassin jambes tendues", "prio": [], "compl": ["Natation", "Escalade"], "id": "ex-pike-sur-swiss-ball", "i": 30}, {"n": "Stir the pot (planche avant-bras sur ballon)", "cat": "Abdos", "mat": "Swiss ball", "niv": "Avancé", "typ": "Gainage", "mus": "Transverse, obliques", "dos": "3 × 8 cercles / sens", "cons": "Petits cercles des avant-bras, bassin fixe", "prio": [], "compl": ["Cyclisme", "Natation"], "id": "ex-stir-the-pot-planche-avant-bras-sur-ballon", "i": 31}, {"n": "Crunch sur swiss ball", "cat": "Abdos", "mat": "Swiss ball", "niv": "Débutant", "typ": "Force", "mus": "Grand droit", "dos": "3 × 15", "cons": "Lombaires soutenues par le ballon, amplitude complète", "prio": [], "compl": ["Tennis / Padel"], "id": "ex-crunch-sur-swiss-ball", "i": 32}, {"n": "Rollout au swiss ball", "cat": "Abdos", "mat": "Swiss ball", "niv": "Intermédiaire", "typ": "Force", "mus": "Grand droit, transverse, grand dorsal", "dos": "3 × 8-12", "cons": "Avancer le ballon sans cambrer", "prio": [], "compl": ["Cyclisme", "Natation", "Escalade"], "id": "ex-rollout-au-swiss-ball", "i": 33}, {"n": "Roulette abdominale (ab wheel)", "cat": "Abdos", "mat": "Roue abdominale", "niv": "Avancé", "typ": "Force", "mus": "Grand droit, transverse, grand dorsal", "dos": "3 × 6-10", "cons": "Départ à genoux, s'arrêter avant de cambrer", "prio": [], "compl": ["Natation", "Escalade"], "id": "ex-roulette-abdominale-ab-wheel", "i": 34}, {"n": "Relevé de genoux suspendu", "cat": "Abdos", "mat": "Barre de traction", "niv": "Intermédiaire", "typ": "Force", "mus": "Grand droit, fléchisseurs de hanche", "dos": "3 × 8-12", "cons": "Monter les genoux sans balancer", "prio": [], "compl": ["Natation", "Escalade"], "id": "ex-releve-de-genoux-suspendu", "i": 35}, {"n": "Relevé de jambes suspendu", "cat": "Abdos", "mat": "Barre de traction", "niv": "Avancé", "typ": "Force", "mus": "Grand droit, fléchisseurs de hanche", "dos": "3 × 6-10", "cons": "Jambes tendues à l'horizontale, descente lente", "prio": ["Escalade"], "compl": [], "id": "ex-releve-de-jambes-suspendu", "i": 36}, {"n": "Planche pieds dans les sangles", "cat": "Abdos", "mat": "Sangles de suspension", "niv": "Avancé", "typ": "Gainage", "mus": "Transverse, grand droit, épaules", "dos": "3 × 20-40 s", "cons": "Pieds suspendus, bassin gainé", "prio": [], "compl": ["Cyclisme", "Natation", "Escalade"], "id": "ex-planche-pieds-dans-les-sangles", "i": 37}, {"n": "Dragon flag", "cat": "Abdos", "mat": "Banc / chaise", "niv": "Avancé", "typ": "Force", "mus": "Grand droit, transverse", "dos": "3 × 3-6", "cons": "Corps rigide depuis les épaules, descente très lente", "prio": [], "compl": ["Escalade"], "id": "ex-dragon-flag", "i": 38}, {"n": "Squat au poids du corps", "cat": "Bas du Corps", "mat": "Aucun", "niv": "Débutant", "typ": "Force", "mus": "Quadriceps, fessiers", "dos": "3 × 15-20", "cons": "Genoux dans l'axe des pieds, talons au sol", "prio": ["Reprise / Débutant"], "compl": ["Cyclisme", "Course à pied", "Trail", "Football", "Tennis / Padel", "Seniors & équilibre"], "id": "ex-squat-au-poids-du-corps", "i": 39}, {"n": "Squat goblet", "cat": "Bas du Corps", "mat": "Haltères", "niv": "Intermédiaire", "typ": "Force", "mus": "Quadriceps, fessiers, gainage", "dos": "3-4 × 8-12", "cons": "Haltère contre la poitrine, buste droit", "prio": ["Cyclisme", "Course à pied", "Perte de poids", "Tonification"], "compl": ["Trail", "Triathlon", "Football", "Tennis / Padel"], "id": "ex-squat-goblet", "i": 40}, {"n": "Squat avec élastique", "cat": "Bas du Corps", "mat": "Élastique", "niv": "Débutant", "typ": "Force", "mus": "Quadriceps, fessiers", "dos": "3 × 12-15", "cons": "Élastique sous les pieds et sur les épaules", "prio": ["Seniors & équilibre"], "compl": ["Cyclisme", "Course à pied", "Trail", "Football", "Tennis / Padel", "Reprise / Débutant"], "id": "ex-squat-avec-elastique", "i": 41}, {"n": "Squat sumo avec haltère", "cat": "Bas du Corps", "mat": "Haltères", "niv": "Débutant", "typ": "Force", "mus": "Adducteurs, fessiers, quadriceps", "dos": "3 × 10-15", "cons": "Pieds larges ouverts, genoux poussés vers l'extérieur", "prio": [], "compl": ["Football"], "id": "ex-squat-sumo-avec-haltere", "i": 42}, {"n": "Squat sauté", "cat": "Bas du Corps", "mat": "Aucun", "niv": "Intermédiaire", "typ": "Pliométrie / Explosivité", "mus": "Quadriceps, fessiers, mollets", "dos": "3 × 6-10", "cons": "Réception souple et silencieuse", "prio": [], "compl": ["Cyclisme", "Course à pied", "Trail", "Football", "Tennis / Padel", "Perte de poids"], "id": "ex-squat-saute", "i": 43}, {"n": "Squat bulgare", "cat": "Bas du Corps", "mat": "Banc / chaise", "niv": "Intermédiaire", "typ": "Force", "mus": "Quadriceps, fessiers", "dos": "3 × 8-12 / jambe", "cons": "Pied arrière sur le banc, poids sur la jambe avant", "prio": ["Cyclisme", "Triathlon", "Football"], "compl": ["Course à pied", "Trail", "Tennis / Padel", "Tonification"], "id": "ex-squat-bulgare", "i": 44}, {"n": "Squat bulgare lesté", "cat": "Bas du Corps", "mat": "Banc + haltères", "niv": "Avancé", "typ": "Force", "mus": "Quadriceps, fessiers", "dos": "3-4 × 6-10 / jambe", "cons": "Haltères le long du corps, descente contrôlée", "prio": ["Course à pied", "Trail"], "compl": ["Cyclisme", "Triathlon", "Football"], "id": "ex-squat-bulgare-leste", "i": 45}, {"n": "Squat sur une jambe vers une chaise", "cat": "Bas du Corps", "mat": "Banc / chaise", "niv": "Intermédiaire", "typ": "Force", "mus": "Quadriceps, fessiers", "dos": "3 × 6-10 / jambe", "cons": "S'asseoir lentement sur une jambe, se relever sans élan", "prio": [], "compl": ["Cyclisme", "Course à pied", "Trail"], "id": "ex-squat-sur-une-jambe-vers-une-chaise", "i": 46}, {"n": "Pistol squat", "cat": "Bas du Corps", "mat": "Aucun", "niv": "Avancé", "typ": "Force", "mus": "Quadriceps, fessiers", "dos": "3 × 4-8 / jambe", "cons": "Talon au sol, jambe libre tendue devant", "prio": [], "compl": ["Cyclisme", "Trail", "Escalade"], "id": "ex-pistol-squat", "i": 47}, {"n": "Chaise contre le mur", "cat": "Bas du Corps", "mat": "Aucun", "niv": "Débutant", "typ": "Gainage", "mus": "Quadriceps", "dos": "3 × 30-60 s", "cons": "Genoux et hanches à 90°, dos plaqué", "prio": ["Trail"], "compl": ["Cyclisme", "Reprise / Débutant", "Seniors & équilibre"], "id": "ex-chaise-contre-le-mur", "i": 48}, {"n": "Chaise sur une jambe", "cat": "Bas du Corps", "mat": "Aucun", "niv": "Avancé", "typ": "Gainage", "mus": "Quadriceps", "dos": "3 × 15-30 s / jambe", "cons": "Même position, une jambe tendue devant", "prio": [], "compl": ["Trail"], "id": "ex-chaise-sur-une-jambe", "i": 49}, {"n": "Spanish squat (isométrie avec élastique)", "cat": "Bas du Corps", "mat": "Élastique", "niv": "Intermédiaire", "typ": "Stabilité / Prévention", "mus": "Quadriceps, tendon rotulien", "dos": "4 × 30-45 s", "cons": "Élastique derrière les genoux, tibias verticaux", "prio": [], "compl": ["Cyclisme", "Trail"], "id": "ex-spanish-squat-isometrie-avec-elastique", "i": 50}, {"n": "Sissy squat", "cat": "Bas du Corps", "mat": "Aucun", "niv": "Avancé", "typ": "Force", "mus": "Quadriceps", "dos": "3 × 6-10", "cons": "Genoux vers l'avant, hanches en extension, se tenir si besoin", "prio": [], "compl": ["Cyclisme"], "id": "ex-sissy-squat", "i": 51}, {"n": "Reverse nordic", "cat": "Bas du Corps", "mat": "Aucun", "niv": "Avancé", "typ": "Stabilité / Prévention", "mus": "Quadriceps (excentrique)", "dos": "3 × 6-8", "cons": "À genoux, reculer le buste d'un bloc", "prio": ["Football"], "compl": ["Cyclisme"], "id": "ex-reverse-nordic", "i": 52}, {"n": "Extension de jambe à l'élastique", "cat": "Bas du Corps", "mat": "Élastique", "niv": "Débutant", "typ": "Force", "mus": "Quadriceps", "dos": "3 × 15 / jambe", "cons": "Assis, tendre le genou et tenir 1 s", "prio": [], "compl": ["Cyclisme"], "id": "ex-extension-de-jambe-a-l-elastique", "i": 53}, {"n": "Fente avant", "cat": "Bas du Corps", "mat": "Aucun", "niv": "Débutant", "typ": "Force", "mus": "Quadriceps, fessiers", "dos": "3 × 10-12 / jambe", "cons": "Grand pas, genou avant au-dessus de la cheville", "prio": [], "compl": ["Cyclisme", "Course à pied", "Trail", "Football", "Tennis / Padel"], "id": "ex-fente-avant", "i": 54}, {"n": "Fente arrière", "cat": "Bas du Corps", "mat": "Aucun", "niv": "Débutant", "typ": "Force", "mus": "Fessiers, quadriceps", "dos": "3 × 10-12 / jambe", "cons": "Reculer, buste légèrement incliné vers l'avant", "prio": ["Reprise / Débutant"], "compl": ["Cyclisme", "Course à pied", "Trail", "Football", "Tennis / Padel", "Seniors & équilibre"], "id": "ex-fente-arriere", "i": 55}, {"n": "Fente arrière avec haltères", "cat": "Bas du Corps", "mat": "Haltères", "niv": "Intermédiaire", "typ": "Force", "mus": "Fessiers, quadriceps", "dos": "3-4 × 8-10 / jambe", "cons": "Haltères le long du corps, pousser dans le talon avant", "prio": ["Cyclisme", "Course à pied", "Tonification"], "compl": ["Trail", "Triathlon", "Football", "Tennis / Padel"], "id": "ex-fente-arriere-avec-halteres", "i": 56}, {"n": "Fente marchée", "cat": "Bas du Corps", "mat": "Aucun", "niv": "Intermédiaire", "typ": "Force", "mus": "Quadriceps, fessiers", "dos": "3 × 20 pas", "cons": "Enchaîner sans reposer le pied arrière", "prio": ["Trail", "Perte de poids"], "compl": ["Cyclisme", "Course à pied", "Football"], "id": "ex-fente-marchee", "i": 57}, {"n": "Fente latérale", "cat": "Bas du Corps", "mat": "Aucun", "niv": "Débutant", "typ": "Force", "mus": "Adducteurs, fessiers, quadriceps", "dos": "3 × 10 / côté", "cons": "Hanches en arrière, jambe opposée tendue", "prio": ["Football", "Tennis / Padel", "Tonification"], "compl": [], "id": "ex-fente-laterale", "i": 58}, {"n": "Fente latérale avec haltère", "cat": "Bas du Corps", "mat": "Haltères", "niv": "Intermédiaire", "typ": "Force", "mus": "Adducteurs, fessiers, quadriceps", "dos": "3 × 8-10 / côté", "cons": "Haltère en goblet, pied d'appui à plat", "prio": [], "compl": ["Football", "Tennis / Padel"], "id": "ex-fente-laterale-avec-haltere", "i": 59}, {"n": "Fente croisée (curtsy)", "cat": "Bas du Corps", "mat": "Aucun", "niv": "Intermédiaire", "typ": "Force", "mus": "Moyen fessier, quadriceps", "dos": "3 × 10 / jambe", "cons": "Pied arrière croisé derrière, bassin de face", "prio": [], "compl": ["Tennis / Padel"], "id": "ex-fente-croisee-curtsy", "i": 60}, {"n": "Fente sautée", "cat": "Bas du Corps", "mat": "Aucun", "niv": "Avancé", "typ": "Pliométrie / Explosivité", "mus": "Quadriceps, fessiers, mollets", "dos": "3 × 8-10 / jambe", "cons": "Changer de jambe en l'air, réception amortie", "prio": [], "compl": ["Course à pied", "Trail", "Football", "Tennis / Padel", "Perte de poids"], "id": "ex-fente-sautee", "i": 61}, {"n": "Step-up", "cat": "Bas du Corps", "mat": "Banc / chaise", "niv": "Débutant", "typ": "Force", "mus": "Quadriceps, fessiers", "dos": "3 × 10-12 / jambe", "cons": "Monter sans pousser avec la jambe au sol", "prio": ["Seniors & équilibre"], "compl": ["Cyclisme", "Course à pied", "Trail", "Reprise / Débutant"], "id": "ex-step-up", "i": 62}, {"n": "Step-up lesté", "cat": "Bas du Corps", "mat": "Banc + haltères", "niv": "Intermédiaire", "typ": "Force", "mus": "Quadriceps, fessiers", "dos": "3-4 × 8-10 / jambe", "cons": "Haltères en mains, descente lente", "prio": ["Cyclisme", "Course à pied", "Trail", "Triathlon"], "compl": ["Perte de poids"], "id": "ex-step-up-leste", "i": 63}, {"n": "Step-down excentrique", "cat": "Bas du Corps", "mat": "Banc / chaise", "niv": "Intermédiaire", "typ": "Stabilité / Prévention", "mus": "Quadriceps, moyen fessier", "dos": "3 × 8-10 / jambe, descente 3-4 s", "cons": "Genou aligné sur le 2e orteil, bassin horizontal", "prio": ["Trail"], "compl": ["Cyclisme", "Course à pied"], "id": "ex-step-down-excentrique", "i": 64}, {"n": "Pont fessier", "cat": "Bas du Corps", "mat": "Aucun", "niv": "Débutant", "typ": "Force", "mus": "Fessiers, ischio-jambiers", "dos": "3 × 15", "cons": "Pousser dans les talons, serrer les fessiers en haut", "prio": ["Reprise / Débutant", "Dos & posture", "Seniors & équilibre"], "compl": ["Cyclisme", "Course à pied", "Trail", "Natation", "Football", "Tennis / Padel"], "id": "ex-pont-fessier", "i": 65}, {"n": "Pont fessier une jambe", "cat": "Bas du Corps", "mat": "Aucun", "niv": "Intermédiaire", "typ": "Force", "mus": "Fessiers, ischio-jambiers", "dos": "3 × 10-12 / jambe", "cons": "Bassin horizontal, pas de rotation", "prio": ["Cyclisme"], "compl": ["Course à pied", "Trail", "Triathlon", "Football", "Tennis / Padel", "Tonification"], "id": "ex-pont-fessier-une-jambe", "i": 66}, {"n": "Pont fessier avec élastique aux genoux", "cat": "Bas du Corps", "mat": "Élastique", "niv": "Débutant", "typ": "Force", "mus": "Fessiers, moyen fessier", "dos": "3 × 15", "cons": "Écarter les genoux contre l'élastique en montant", "prio": ["Tonification"], "compl": ["Cyclisme", "Course à pied", "Trail", "Football", "Reprise / Débutant"], "id": "ex-pont-fessier-avec-elastique-aux-genoux", "i": 67}, {"n": "Hip thrust", "cat": "Bas du Corps", "mat": "Banc / chaise", "niv": "Intermédiaire", "typ": "Force", "mus": "Grand fessier, ischio-jambiers", "dos": "3 × 10-15", "cons": "Haut du dos sur le banc, menton rentré", "prio": ["Cyclisme", "Triathlon", "Football"], "compl": ["Course à pied", "Trail", "Dos & posture"], "id": "ex-hip-thrust", "i": 68}, {"n": "Hip thrust lesté", "cat": "Bas du Corps", "mat": "Banc + haltères", "niv": "Intermédiaire", "typ": "Force", "mus": "Grand fessier, ischio-jambiers", "dos": "3-4 × 8-12", "cons": "Haltère posé sur le pli des hanches", "prio": ["Course à pied", "Tonification"], "compl": ["Cyclisme", "Triathlon", "Football"], "id": "ex-hip-thrust-leste", "i": 69}, {"n": "Hip thrust une jambe", "cat": "Bas du Corps", "mat": "Banc / chaise", "niv": "Avancé", "typ": "Force", "mus": "Grand fessier", "dos": "3 × 8-10 / jambe", "cons": "Extension complète sans cambrer", "prio": [], "compl": ["Course à pied", "Trail", "Football"], "id": "ex-hip-thrust-une-jambe", "i": 70}, {"n": "Soulevé de terre roumain", "cat": "Bas du Corps", "mat": "Haltères", "niv": "Intermédiaire", "typ": "Force", "mus": "Ischio-jambiers, fessiers, lombaires", "dos": "3-4 × 8-12", "cons": "Dos plat, hanches en arrière, haltères près des jambes", "prio": ["Cyclisme", "Triathlon", "Tonification"], "compl": ["Course à pied", "Trail", "Football", "Tennis / Padel", "Dos & posture"], "id": "ex-souleve-de-terre-roumain", "i": 71}, {"n": "Soulevé de terre roumain une jambe", "cat": "Bas du Corps", "mat": "Haltères", "niv": "Avancé", "typ": "Force", "mus": "Ischio-jambiers, fessiers, stabilisateurs", "dos": "3 × 8-10 / jambe", "cons": "Bassin parallèle au sol, jambe arrière dans l'axe", "prio": ["Cyclisme", "Course à pied", "Trail", "Football"], "compl": ["Triathlon", "Tennis / Padel"], "id": "ex-souleve-de-terre-roumain-une-jambe", "i": 72}, {"n": "Soulevé de terre une jambe au poids du corps", "cat": "Bas du Corps", "mat": "Aucun", "niv": "Intermédiaire", "typ": "Stabilité / Prévention", "mus": "Ischio-jambiers, fessiers, équilibre", "dos": "3 × 8-10 / jambe", "cons": "Basculer d'un bloc buste-jambe arrière", "prio": ["Seniors & équilibre"], "compl": ["Cyclisme", "Course à pied", "Trail", "Football", "Tennis / Padel"], "id": "ex-souleve-de-terre-une-jambe-au-poids-du-corps", "i": 73}, {"n": "Good morning à l'élastique", "cat": "Bas du Corps", "mat": "Élastique", "niv": "Intermédiaire", "typ": "Force", "mus": "Ischio-jambiers, fessiers, lombaires", "dos": "3 × 12-15", "cons": "Élastique sous les pieds et derrière la nuque, dos plat", "prio": [], "compl": ["Cyclisme", "Course à pied"], "id": "ex-good-morning-a-l-elastique", "i": 74}, {"n": "Soulevé de terre kettlebell", "cat": "Bas du Corps", "mat": "Kettlebell", "niv": "Débutant", "typ": "Force", "mus": "Fessiers, ischio-jambiers, lombaires", "dos": "3 × 8-12", "cons": "Charge entre les pieds, pousser le sol", "prio": [], "compl": ["Cyclisme", "Course à pied", "Perte de poids"], "id": "ex-souleve-de-terre-kettlebell", "i": 75}, {"n": "Swing kettlebell", "cat": "Bas du Corps", "mat": "Kettlebell", "niv": "Intermédiaire", "typ": "Pliométrie / Explosivité", "mus": "Fessiers, ischio-jambiers, lombaires", "dos": "4 × 12-15", "cons": "Charnière de hanche explosive, bras relâchés", "prio": ["Perte de poids"], "compl": ["Cyclisme", "Course à pied", "Football"], "id": "ex-swing-kettlebell", "i": 76}, {"n": "Nordic hamstring curl", "cat": "Bas du Corps", "mat": "Aucun", "niv": "Avancé", "typ": "Stabilité / Prévention", "mus": "Ischio-jambiers (excentrique)", "dos": "3 × 4-8, descente lente", "cons": "Pieds bloqués, corps d'un bloc des genoux aux épaules", "prio": ["Course à pied", "Football"], "compl": ["Trail", "Triathlon", "Tennis / Padel"], "id": "ex-nordic-hamstring-curl", "i": 77}, {"n": "Leg curl glissé (serviette ou chaussettes)", "cat": "Bas du Corps", "mat": "Aucun", "niv": "Intermédiaire", "typ": "Force", "mus": "Ischio-jambiers, fessiers", "dos": "3 × 8-12", "cons": "Bassin haut pendant tout le mouvement", "prio": [], "compl": ["Cyclisme", "Course à pied", "Trail", "Football"], "id": "ex-leg-curl-glisse-serviette-ou-chaussettes", "i": 78}, {"n": "Leg curl au swiss ball", "cat": "Bas du Corps", "mat": "Swiss ball", "niv": "Intermédiaire", "typ": "Force", "mus": "Ischio-jambiers, fessiers", "dos": "3 × 10-12", "cons": "Ramener le ballon sans laisser tomber les hanches", "prio": [], "compl": ["Cyclisme", "Course à pied", "Trail", "Football"], "id": "ex-leg-curl-au-swiss-ball", "i": 79}, {"n": "Leg curl à l'élastique", "cat": "Bas du Corps", "mat": "Élastique", "niv": "Débutant", "typ": "Force", "mus": "Ischio-jambiers", "dos": "3 × 15 / jambe", "cons": "Allongé sur le ventre, retour freiné", "prio": [], "compl": ["Cyclisme", "Course à pied", "Football"], "id": "ex-leg-curl-a-l-elastique", "i": 80}, {"n": "Leg curl en suspension", "cat": "Bas du Corps", "mat": "Sangles de suspension", "niv": "Intermédiaire", "typ": "Force", "mus": "Ischio-jambiers, fessiers", "dos": "3 × 10-12", "cons": "Talons dans les sangles, bassin haut", "prio": [], "compl": ["Cyclisme", "Course à pied", "Football"], "id": "ex-leg-curl-en-suspension", "i": 81}, {"n": "Copenhagen plank", "cat": "Bas du Corps", "mat": "Banc / chaise", "niv": "Avancé", "typ": "Stabilité / Prévention", "mus": "Adducteurs, obliques", "dos": "3 × 15-30 s / côté", "cons": "Jambe du dessus sur le banc, corps aligné", "prio": ["Football"], "compl": ["Tennis / Padel"], "id": "ex-copenhagen-plank", "i": 82}, {"n": "Adduction de hanche à l'élastique", "cat": "Bas du Corps", "mat": "Élastique", "niv": "Débutant", "typ": "Force", "mus": "Adducteurs", "dos": "3 × 15 / jambe", "cons": "Debout, ramener la jambe vers l'intérieur sans pencher", "prio": ["Football"], "compl": [], "id": "ex-adduction-de-hanche-a-l-elastique", "i": 83}, {"n": "Serrage de ballon entre les genoux", "cat": "Bas du Corps", "mat": "Aucun", "niv": "Débutant", "typ": "Stabilité / Prévention", "mus": "Adducteurs (isométrie)", "dos": "5 × 10 s", "cons": "Allongé genoux fléchis, serrer progressivement", "prio": [], "compl": ["Football"], "id": "ex-serrage-de-ballon-entre-les-genoux", "i": 84}, {"n": "Clamshell avec élastique", "cat": "Bas du Corps", "mat": "Élastique", "niv": "Débutant", "typ": "Stabilité / Prévention", "mus": "Moyen fessier, rotateurs de hanche", "dos": "3 × 15 / côté", "cons": "Pieds joints, bassin immobile", "prio": [], "compl": ["Cyclisme", "Course à pied", "Trail", "Football", "Tennis / Padel", "Reprise / Débutant", "Dos & posture"], "id": "ex-clamshell-avec-elastique", "i": 85}, {"n": "Marche latérale avec élastique (monster walk)", "cat": "Bas du Corps", "mat": "Élastique", "niv": "Débutant", "typ": "Stabilité / Prévention", "mus": "Moyen fessier", "dos": "3 × 10-15 pas / côté", "cons": "Demi-squat, pieds parallèles, tension constante", "prio": ["Course à pied", "Triathlon", "Reprise / Débutant", "Seniors & équilibre"], "compl": ["Cyclisme", "Trail", "Football", "Tennis / Padel"], "id": "ex-marche-laterale-avec-elastique-monster-walk", "i": 86}, {"n": "Abduction de hanche couché sur le côté", "cat": "Bas du Corps", "mat": "Aucun", "niv": "Débutant", "typ": "Force", "mus": "Moyen fessier", "dos": "3 × 15 / côté", "cons": "Jambe légèrement en arrière, pointe vers le bas", "prio": [], "compl": ["Cyclisme", "Course à pied", "Trail", "Seniors & équilibre"], "id": "ex-abduction-de-hanche-couche-sur-le-cote", "i": 87}, {"n": "Fire hydrant", "cat": "Bas du Corps", "mat": "Aucun", "niv": "Débutant", "typ": "Force", "mus": "Moyen et petit fessier", "dos": "3 × 12-15 / côté", "cons": "À quatre pattes, lever le genou sur le côté", "prio": [], "compl": ["Course à pied", "Trail"], "id": "ex-fire-hydrant", "i": 88}, {"n": "Donkey kick", "cat": "Bas du Corps", "mat": "Aucun", "niv": "Débutant", "typ": "Force", "mus": "Grand fessier", "dos": "3 × 15 / jambe", "cons": "Pousser le talon vers le plafond sans cambrer", "prio": [], "compl": ["Cyclisme", "Course à pied"], "id": "ex-donkey-kick", "i": 89}, {"n": "Kickback fessier à l'élastique", "cat": "Bas du Corps", "mat": "Élastique", "niv": "Débutant", "typ": "Force", "mus": "Grand fessier", "dos": "3 × 15 / jambe", "cons": "Extension de hanche contrôlée, buste fixe", "prio": [], "compl": ["Cyclisme", "Course à pied", "Football", "Tonification"], "id": "ex-kickback-fessier-a-l-elastique", "i": 90}, {"n": "Flexion de hanche à l'élastique", "cat": "Bas du Corps", "mat": "Élastique", "niv": "Intermédiaire", "typ": "Force", "mus": "Psoas-iliaque, droit fémoral", "dos": "3 × 10-12 / jambe", "cons": "Debout, monter le genou à hauteur de hanche", "prio": [], "compl": ["Cyclisme", "Course à pied", "Trail", "Football"], "id": "ex-flexion-de-hanche-a-l-elastique", "i": 91}, {"n": "Mollets debout", "cat": "Bas du Corps", "mat": "Aucun", "niv": "Débutant", "typ": "Force", "mus": "Triceps sural", "dos": "3 × 15-20", "cons": "Amplitude complète, pause en haut", "prio": ["Tennis / Padel", "Reprise / Débutant", "Seniors & équilibre"], "compl": ["Cyclisme", "Course à pied", "Trail", "Football", "Tonification"], "id": "ex-mollets-debout", "i": 92}, {"n": "Mollets une jambe sur marche (excentrique)", "cat": "Bas du Corps", "mat": "Banc / chaise", "niv": "Intermédiaire", "typ": "Stabilité / Prévention", "mus": "Triceps sural, tendon d'Achille", "dos": "3 × 12-15 / jambe, descente 3 s", "cons": "Monter à deux pieds, descendre sur un seul", "prio": ["Course à pied", "Trail", "Triathlon", "Football"], "compl": ["Tennis / Padel"], "id": "ex-mollets-une-jambe-sur-marche-excentrique", "i": 93}, {"n": "Mollets lestés", "cat": "Bas du Corps", "mat": "Haltères", "niv": "Intermédiaire", "typ": "Force", "mus": "Triceps sural", "dos": "3-4 × 10-15", "cons": "Haltères en mains, genoux tendus", "prio": ["Course à pied"], "compl": ["Trail", "Triathlon"], "id": "ex-mollets-lestes", "i": 94}, {"n": "Mollets assis genoux fléchis", "cat": "Bas du Corps", "mat": "Banc + haltères", "niv": "Intermédiaire", "typ": "Force", "mus": "Soléaire", "dos": "3 × 12-15", "cons": "Haltères posés sur les genoux", "prio": ["Course à pied"], "compl": ["Cyclisme", "Trail", "Triathlon"], "id": "ex-mollets-assis-genoux-flechis", "i": 95}, {"n": "Relevés de pointes de pied", "cat": "Bas du Corps", "mat": "Aucun", "niv": "Débutant", "typ": "Stabilité / Prévention", "mus": "Tibial antérieur", "dos": "3 × 15-20", "cons": "Dos au mur, talons au sol, lever les pointes", "prio": ["Seniors & équilibre"], "compl": ["Course à pied", "Trail"], "id": "ex-releves-de-pointes-de-pied", "i": 96}, {"n": "Inversion-éversion de cheville à l'élastique", "cat": "Bas du Corps", "mat": "Élastique", "niv": "Débutant", "typ": "Stabilité / Prévention", "mus": "Fibulaires, tibial postérieur", "dos": "3 × 15 / sens", "cons": "Mouvement lent, seule la cheville bouge", "prio": ["Trail", "Football"], "compl": ["Tennis / Padel"], "id": "ex-inversion-eversion-de-cheville-a-l-elastique", "i": 97}, {"n": "Équilibre sur une jambe", "cat": "Bas du Corps", "mat": "Aucun", "niv": "Débutant", "typ": "Stabilité / Prévention", "mus": "Stabilisateurs de cheville et de hanche", "dos": "3 × 30-45 s / jambe", "cons": "Yeux fermés ou sur coussin pour progresser", "prio": ["Trail", "Football", "Seniors & équilibre"], "compl": ["Course à pied", "Tennis / Padel"], "id": "ex-equilibre-sur-une-jambe", "i": 98}, {"n": "Sautillements (pogo jumps)", "cat": "Bas du Corps", "mat": "Aucun", "niv": "Intermédiaire", "typ": "Pliométrie / Explosivité", "mus": "Mollets, raideur de cheville", "dos": "3 × 20 contacts", "cons": "Genoux presque tendus, contact au sol bref", "prio": ["Course à pied", "Triathlon"], "compl": ["Trail", "Football", "Tennis / Padel"], "id": "ex-sautillements-pogo-jumps", "i": 99}, {"n": "Montées de genoux", "cat": "Bas du Corps", "mat": "Aucun", "niv": "Débutant", "typ": "Pliométrie / Explosivité", "mus": "Fléchisseurs de hanche, mollets", "dos": "3 × 20-30 s", "cons": "Buste droit, appuis sur l'avant-pied", "prio": [], "compl": ["Course à pied", "Trail", "Football", "Perte de poids"], "id": "ex-montees-de-genoux", "i": 100}, {"n": "Saut en longueur sans élan", "cat": "Bas du Corps", "mat": "Aucun", "niv": "Intermédiaire", "typ": "Pliométrie / Explosivité", "mus": "Fessiers, quadriceps", "dos": "4 × 5", "cons": "Balancer les bras, réception stabilisée 2 s", "prio": [], "compl": ["Football", "Perte de poids"], "id": "ex-saut-en-longueur-sans-elan", "i": 101}, {"n": "Saut sur banc (box jump)", "cat": "Bas du Corps", "mat": "Banc / chaise", "niv": "Intermédiaire", "typ": "Pliométrie / Explosivité", "mus": "Fessiers, quadriceps, mollets", "dos": "4 × 5", "cons": "Support stable, redescendre en marchant", "prio": ["Course à pied", "Football"], "compl": ["Triathlon", "Tennis / Padel"], "id": "ex-saut-sur-banc-box-jump", "i": 102}, {"n": "Sauts latéraux (skater jumps)", "cat": "Bas du Corps", "mat": "Aucun", "niv": "Intermédiaire", "typ": "Pliométrie / Explosivité", "mus": "Moyen fessier, quadriceps, adducteurs", "dos": "3 × 8-10 / côté", "cons": "Réception sur une jambe, genou dans l'axe", "prio": ["Trail", "Football", "Tennis / Padel"], "compl": ["Perte de poids"], "id": "ex-sauts-lateraux-skater-jumps", "i": 103}, {"n": "Saut une jambe avec réception stabilisée", "cat": "Bas du Corps", "mat": "Aucun", "niv": "Intermédiaire", "typ": "Stabilité / Prévention", "mus": "Quadriceps, fessiers, stabilisateurs", "dos": "3 × 6 / jambe", "cons": "Tenir la réception 2-3 s sans vaciller", "prio": ["Trail", "Football"], "compl": ["Course à pied", "Tennis / Padel"], "id": "ex-saut-une-jambe-avec-reception-stabilisee", "i": 104}, {"n": "Drop jump (saut en contrebas)", "cat": "Bas du Corps", "mat": "Banc / chaise", "niv": "Avancé", "typ": "Pliométrie / Explosivité", "mus": "Mollets, quadriceps (réactivité)", "dos": "3 × 5", "cons": "Se laisser tomber, rebondir le plus vite possible", "prio": [], "compl": ["Course à pied", "Football"], "id": "ex-drop-jump-saut-en-contrebas", "i": 105}, {"n": "Squat assisté aux sangles", "cat": "Bas du Corps", "mat": "Sangles de suspension", "niv": "Débutant", "typ": "Force", "mus": "Quadriceps, fessiers", "dos": "3 × 12-15", "cons": "S'aider des sangles pour descendre plus bas", "prio": [], "compl": ["Cyclisme"], "id": "ex-squat-assiste-aux-sangles", "i": 106}, {"n": "Fente arrière pied dans la sangle", "cat": "Bas du Corps", "mat": "Sangles de suspension", "niv": "Avancé", "typ": "Force", "mus": "Quadriceps, fessiers, stabilisateurs", "dos": "3 × 8-10 / jambe", "cons": "Pied arrière suspendu, bassin de face", "prio": [], "compl": ["Course à pied", "Trail"], "id": "ex-fente-arriere-pied-dans-la-sangle", "i": 107}, {"n": "Squat au mur avec swiss ball", "cat": "Bas du Corps", "mat": "Swiss ball", "niv": "Débutant", "typ": "Force", "mus": "Quadriceps, fessiers", "dos": "3 × 15", "cons": "Ballon entre le dos et le mur", "prio": [], "compl": ["Cyclisme"], "id": "ex-squat-au-mur-avec-swiss-ball", "i": 108}, {"n": "Pompes classiques", "cat": "Haut du Corps", "mat": "Aucun", "niv": "Débutant", "typ": "Force", "mus": "Pectoraux, triceps, deltoïdes antérieurs", "dos": "3 × 8-15", "cons": "Corps gainé, coudes à 45° du buste", "prio": ["Escalade", "Perte de poids"], "compl": ["Cyclisme", "Natation", "Tennis / Padel", "Tonification"], "id": "ex-pompes-classiques", "i": 109}, {"n": "Pompes sur les genoux", "cat": "Haut du Corps", "mat": "Aucun", "niv": "Débutant", "typ": "Force", "mus": "Pectoraux, triceps", "dos": "3 × 10-15", "cons": "Alignement genoux-bassin-épaules", "prio": ["Reprise / Débutant"], "compl": ["Cyclisme", "Natation", "Tennis / Padel"], "id": "ex-pompes-sur-les-genoux", "i": 110}, {"n": "Pompes mains surélevées", "cat": "Haut du Corps", "mat": "Banc / chaise", "niv": "Débutant", "typ": "Force", "mus": "Pectoraux (bas), triceps", "dos": "3 × 10-15", "cons": "Mains sur le banc, poitrine vers le bord", "prio": [], "compl": ["Cyclisme", "Natation", "Tennis / Padel", "Seniors & équilibre"], "id": "ex-pompes-mains-surelevees", "i": 111}, {"n": "Pompes pieds surélevés", "cat": "Haut du Corps", "mat": "Banc / chaise", "niv": "Intermédiaire", "typ": "Force", "mus": "Pectoraux (haut), deltoïdes", "dos": "3 × 8-12", "cons": "Pieds sur le banc, bassin gainé", "prio": [], "compl": ["Natation", "Escalade"], "id": "ex-pompes-pieds-sureleves", "i": 112}, {"n": "Pompes diamant", "cat": "Haut du Corps", "mat": "Aucun", "niv": "Intermédiaire", "typ": "Force", "mus": "Triceps, pectoraux", "dos": "3 × 6-12", "cons": "Mains jointes sous le sternum", "prio": [], "compl": ["Natation", "Escalade"], "id": "ex-pompes-diamant", "i": 113}, {"n": "Pompes larges", "cat": "Haut du Corps", "mat": "Aucun", "niv": "Débutant", "typ": "Force", "mus": "Pectoraux", "dos": "3 × 8-15", "cons": "Mains plus larges que les épaules", "prio": [], "compl": [], "id": "ex-pompes-larges", "i": 114}, {"n": "Pompes archer", "cat": "Haut du Corps", "mat": "Aucun", "niv": "Avancé", "typ": "Force", "mus": "Pectoraux, triceps (unilatéral)", "dos": "3 × 4-6 / côté", "cons": "Charger un bras, l'autre reste tendu", "prio": [], "compl": ["Escalade"], "id": "ex-pompes-archer", "i": 115}, {"n": "Pompes pike", "cat": "Haut du Corps", "mat": "Aucun", "niv": "Intermédiaire", "typ": "Force", "mus": "Deltoïdes, triceps", "dos": "3 × 6-10", "cons": "Bassin haut, tête entre les mains", "prio": [], "compl": ["Natation", "Escalade"], "id": "ex-pompes-pike", "i": 116}, {"n": "Pompes claquées", "cat": "Haut du Corps", "mat": "Aucun", "niv": "Avancé", "typ": "Pliométrie / Explosivité", "mus": "Pectoraux, triceps (explosivité)", "dos": "4 × 5-6", "cons": "Pousser fort, réception coudes fléchis", "prio": [], "compl": ["Tennis / Padel"], "id": "ex-pompes-claquees", "i": 117}, {"n": "Pompes avec élastique", "cat": "Haut du Corps", "mat": "Élastique", "niv": "Intermédiaire", "typ": "Force", "mus": "Pectoraux, triceps", "dos": "3 × 8-12", "cons": "Élastique dans le dos tenu sous les mains", "prio": [], "compl": ["Natation"], "id": "ex-pompes-avec-elastique", "i": 118}, {"n": "Pompes en suspension", "cat": "Haut du Corps", "mat": "Sangles de suspension", "niv": "Avancé", "typ": "Force", "mus": "Pectoraux, triceps, gainage", "dos": "3 × 6-10", "cons": "Mains dans les sangles, épaules stables", "prio": [], "compl": ["Natation", "Escalade"], "id": "ex-pompes-en-suspension", "i": 119}, {"n": "Pompes scapulaires (push-up plus)", "cat": "Haut du Corps", "mat": "Aucun", "niv": "Débutant", "typ": "Stabilité / Prévention", "mus": "Dentelé antérieur", "dos": "3 × 12-15", "cons": "Bras tendus, écarter puis rapprocher les omoplates", "prio": ["Natation", "Tennis / Padel", "Escalade"], "compl": ["Triathlon"], "id": "ex-pompes-scapulaires-push-up-plus", "i": 120}, {"n": "Poirier contre le mur", "cat": "Haut du Corps", "mat": "Aucun", "niv": "Avancé", "typ": "Gainage", "mus": "Deltoïdes, trapèzes, gainage", "dos": "4 × 15-30 s", "cons": "Ventre face au mur, côtes rentrées", "prio": [], "compl": ["Escalade"], "id": "ex-poirier-contre-le-mur", "i": 121}, {"n": "Dips sur banc", "cat": "Haut du Corps", "mat": "Banc / chaise", "niv": "Débutant", "typ": "Force", "mus": "Triceps, deltoïdes antérieurs", "dos": "3 × 10-15", "cons": "Épaules basses, ne pas descendre sous 90°", "prio": ["Escalade"], "compl": ["Natation", "Tonification"], "id": "ex-dips-sur-banc", "i": 122}, {"n": "Dips entre deux chaises", "cat": "Haut du Corps", "mat": "Aucun", "niv": "Avancé", "typ": "Force", "mus": "Triceps, pectoraux", "dos": "3 × 6-10", "cons": "Chaises stables, buste légèrement penché", "prio": [], "compl": ["Escalade"], "id": "ex-dips-entre-deux-chaises", "i": 123}, {"n": "Développé couché haltères", "cat": "Haut du Corps", "mat": "Banc + haltères", "niv": "Intermédiaire", "typ": "Force", "mus": "Pectoraux, triceps, deltoïdes antérieurs", "dos": "3-4 × 8-12", "cons": "Omoplates serrées, pieds au sol", "prio": ["Tonification"], "compl": ["Natation"], "id": "ex-developpe-couche-halteres", "i": 124}, {"n": "Développé incliné haltères", "cat": "Haut du Corps", "mat": "Banc + haltères", "niv": "Intermédiaire", "typ": "Force", "mus": "Pectoraux (haut), deltoïdes", "dos": "3-4 × 8-12", "cons": "Banc à 30°, trajectoire verticale", "prio": [], "compl": ["Tonification"], "id": "ex-developpe-incline-halteres", "i": 125}, {"n": "Développé au sol haltères (floor press)", "cat": "Haut du Corps", "mat": "Haltères", "niv": "Débutant", "typ": "Force", "mus": "Pectoraux, triceps", "dos": "3 × 10-12", "cons": "Coudes posés au sol entre chaque répétition", "prio": [], "compl": ["Natation"], "id": "ex-developpe-au-sol-halteres-floor-press", "i": 126}, {"n": "Écarté couché haltères", "cat": "Haut du Corps", "mat": "Banc + haltères", "niv": "Intermédiaire", "typ": "Force", "mus": "Pectoraux", "dos": "3 × 10-12", "cons": "Coudes légèrement fléchis, étirement contrôlé", "prio": [], "compl": [], "id": "ex-ecarte-couche-halteres", "i": 127}, {"n": "Pull-over haltère", "cat": "Haut du Corps", "mat": "Banc + haltères", "niv": "Intermédiaire", "typ": "Force", "mus": "Grand dorsal, pectoraux, dentelé", "dos": "3 × 10-12", "cons": "Bras quasi tendus, côtes basses", "prio": ["Natation"], "compl": ["Triathlon", "Escalade"], "id": "ex-pull-over-haltere", "i": 128}, {"n": "Développé pectoraux à l'élastique", "cat": "Haut du Corps", "mat": "Élastique", "niv": "Débutant", "typ": "Force", "mus": "Pectoraux, triceps", "dos": "3 × 12-15", "cons": "Élastique ancré derrière soi, pousser devant", "prio": [], "compl": ["Natation", "Tennis / Padel"], "id": "ex-developpe-pectoraux-a-l-elastique", "i": 129}, {"n": "Développé militaire haltères", "cat": "Haut du Corps", "mat": "Haltères", "niv": "Intermédiaire", "typ": "Force", "mus": "Deltoïdes, triceps", "dos": "3-4 × 8-10", "cons": "Debout, abdos gainés, sans cambrer", "prio": ["Escalade", "Tonification"], "compl": ["Natation", "Tennis / Padel", "Perte de poids"], "id": "ex-developpe-militaire-halteres", "i": 130}, {"n": "Développé épaules assis", "cat": "Haut du Corps", "mat": "Banc + haltères", "niv": "Débutant", "typ": "Force", "mus": "Deltoïdes, triceps", "dos": "3 × 10-12", "cons": "Dos calé, coudes sous les poignets", "prio": [], "compl": ["Natation"], "id": "ex-developpe-epaules-assis", "i": 131}, {"n": "Développé épaules à l'élastique", "cat": "Haut du Corps", "mat": "Élastique", "niv": "Débutant", "typ": "Force", "mus": "Deltoïdes, triceps", "dos": "3 × 12-15", "cons": "Élastique sous les pieds, poussée verticale", "prio": ["Reprise / Débutant", "Seniors & équilibre"], "compl": ["Natation", "Tennis / Padel"], "id": "ex-developpe-epaules-a-l-elastique", "i": 132}, {"n": "Développé Arnold", "cat": "Haut du Corps", "mat": "Haltères", "niv": "Intermédiaire", "typ": "Force", "mus": "Deltoïdes (3 faisceaux)", "dos": "3 × 8-12", "cons": "Rotation des poignets pendant la poussée", "prio": [], "compl": [], "id": "ex-developpe-arnold", "i": 133}, {"n": "Push press haltères", "cat": "Haut du Corps", "mat": "Haltères", "niv": "Avancé", "typ": "Pliométrie / Explosivité", "mus": "Deltoïdes, triceps, jambes", "dos": "4 × 5-6", "cons": "Impulsion des jambes puis poussée des bras", "prio": [], "compl": [], "id": "ex-push-press-halteres", "i": 134}, {"n": "Élévations latérales haltères", "cat": "Haut du Corps", "mat": "Haltères", "niv": "Débutant", "typ": "Force", "mus": "Deltoïde moyen", "dos": "3 × 12-15", "cons": "Coudes légèrement fléchis, monter à l'horizontale", "prio": ["Tonification"], "compl": ["Natation"], "id": "ex-elevations-laterales-halteres", "i": 135}, {"n": "Élévations latérales à l'élastique", "cat": "Haut du Corps", "mat": "Élastique", "niv": "Débutant", "typ": "Force", "mus": "Deltoïde moyen", "dos": "3 × 15", "cons": "Élastique sous le pied, descente freinée", "prio": [], "compl": ["Natation", "Reprise / Débutant"], "id": "ex-elevations-laterales-a-l-elastique", "i": 136}, {"n": "Élévations frontales", "cat": "Haut du Corps", "mat": "Haltères", "niv": "Débutant", "typ": "Force", "mus": "Deltoïde antérieur", "dos": "3 × 12", "cons": "Monter à hauteur d'yeux sans élan", "prio": [], "compl": ["Natation", "Tonification"], "id": "ex-elevations-frontales", "i": 137}, {"n": "Rotation externe d'épaule à l'élastique", "cat": "Haut du Corps", "mat": "Élastique", "niv": "Débutant", "typ": "Stabilité / Prévention", "mus": "Coiffe des rotateurs (infra-épineux, petit rond)", "dos": "3 × 12-15 / bras", "cons": "Coude collé au corps à 90°, mouvement lent", "prio": ["Natation", "Triathlon", "Tennis / Padel", "Escalade"], "compl": ["Reprise / Débutant", "Seniors & équilibre"], "id": "ex-rotation-externe-d-epaule-a-l-elastique", "i": 138}, {"n": "Rotation externe à 90° d'abduction", "cat": "Haut du Corps", "mat": "Élastique", "niv": "Intermédiaire", "typ": "Stabilité / Prévention", "mus": "Coiffe des rotateurs", "dos": "3 × 10-12 / bras", "cons": "Coude à hauteur d'épaule, avant-bras pivote vers le haut", "prio": ["Natation", "Tennis / Padel"], "compl": ["Triathlon"], "id": "ex-rotation-externe-a-90-d-abduction", "i": 139}, {"n": "Rotation interne d'épaule à l'élastique", "cat": "Haut du Corps", "mat": "Élastique", "niv": "Débutant", "typ": "Stabilité / Prévention", "mus": "Sub-scapulaire", "dos": "3 × 12-15 / bras", "cons": "Coude au corps, ramener la main vers le ventre", "prio": ["Tennis / Padel"], "compl": ["Natation"], "id": "ex-rotation-interne-d-epaule-a-l-elastique", "i": 140}, {"n": "Rotation externe couché sur le côté", "cat": "Haut du Corps", "mat": "Haltères", "niv": "Débutant", "typ": "Stabilité / Prévention", "mus": "Coiffe des rotateurs", "dos": "3 × 12-15 / bras", "cons": "Haltère léger (1-3 kg), serviette sous le coude", "prio": [], "compl": ["Natation", "Tennis / Padel", "Escalade"], "id": "ex-rotation-externe-couche-sur-le-cote", "i": 141}, {"n": "Cuban press", "cat": "Haut du Corps", "mat": "Haltères", "niv": "Intermédiaire", "typ": "Stabilité / Prévention", "mus": "Coiffe des rotateurs, deltoïdes", "dos": "3 × 8-10", "cons": "Charge légère : tirage, rotation, développé", "prio": [], "compl": ["Natation", "Tennis / Padel"], "id": "ex-cuban-press", "i": 142}, {"n": "Halo kettlebell", "cat": "Haut du Corps", "mat": "Kettlebell", "niv": "Intermédiaire", "typ": "Stabilité / Prévention", "mus": "Deltoïdes, trapèzes, gainage", "dos": "3 × 8 / sens", "cons": "Tourner la charge autour de la tête, côtes basses", "prio": [], "compl": ["Natation"], "id": "ex-halo-kettlebell", "i": 143}, {"n": "Curl biceps haltères", "cat": "Haut du Corps", "mat": "Haltères", "niv": "Débutant", "typ": "Force", "mus": "Biceps", "dos": "3 × 10-12", "cons": "Coudes fixes le long du corps", "prio": ["Tonification"], "compl": ["Escalade"], "id": "ex-curl-biceps-halteres", "i": 144}, {"n": "Curl marteau", "cat": "Haut du Corps", "mat": "Haltères", "niv": "Débutant", "typ": "Force", "mus": "Brachial, brachio-radial", "dos": "3 × 10-12", "cons": "Prise neutre, pouces vers le haut", "prio": [], "compl": ["Tennis / Padel", "Escalade", "Tonification"], "id": "ex-curl-marteau", "i": 145}, {"n": "Curl biceps à l'élastique", "cat": "Haut du Corps", "mat": "Élastique", "niv": "Débutant", "typ": "Force", "mus": "Biceps", "dos": "3 × 15", "cons": "Élastique sous les pieds, retour freiné", "prio": [], "compl": ["Escalade", "Reprise / Débutant", "Seniors & équilibre"], "id": "ex-curl-biceps-a-l-elastique", "i": 146}, {"n": "Curl incliné sur banc", "cat": "Haut du Corps", "mat": "Banc + haltères", "niv": "Intermédiaire", "typ": "Force", "mus": "Biceps (long chef)", "dos": "3 × 10-12", "cons": "Banc à 45°, bras à la verticale", "prio": [], "compl": ["Escalade"], "id": "ex-curl-incline-sur-banc", "i": 147}, {"n": "Extension triceps au-dessus de la tête", "cat": "Haut du Corps", "mat": "Haltères", "niv": "Débutant", "typ": "Force", "mus": "Triceps (long chef)", "dos": "3 × 10-12", "cons": "Coudes serrés pointés vers le plafond", "prio": ["Natation", "Tennis / Padel", "Tonification"], "compl": ["Triathlon"], "id": "ex-extension-triceps-au-dessus-de-la-tete", "i": 148}, {"n": "Extension triceps à l'élastique", "cat": "Haut du Corps", "mat": "Élastique", "niv": "Débutant", "typ": "Force", "mus": "Triceps", "dos": "3 × 15", "cons": "Élastique ancré en hauteur, coudes au corps", "prio": [], "compl": ["Natation", "Reprise / Débutant"], "id": "ex-extension-triceps-a-l-elastique", "i": 149}, {"n": "Barre au front avec haltères", "cat": "Haut du Corps", "mat": "Banc + haltères", "niv": "Intermédiaire", "typ": "Force", "mus": "Triceps", "dos": "3 × 10-12", "cons": "Allongé, seuls les avant-bras bougent", "prio": [], "compl": [], "id": "ex-barre-au-front-avec-halteres", "i": 150}, {"n": "Kickback triceps", "cat": "Haut du Corps", "mat": "Haltères", "niv": "Débutant", "typ": "Force", "mus": "Triceps", "dos": "3 × 12-15", "cons": "Buste penché, bras parallèle au sol", "prio": [], "compl": ["Natation"], "id": "ex-kickback-triceps", "i": 151}, {"n": "Extension des poignets", "cat": "Haut du Corps", "mat": "Haltères", "niv": "Débutant", "typ": "Stabilité / Prévention", "mus": "Extenseurs de l'avant-bras", "dos": "3 × 15", "cons": "Avant-bras posé sur la cuisse, descente lente", "prio": ["Tennis / Padel", "Escalade"], "compl": [], "id": "ex-extension-des-poignets", "i": 152}, {"n": "Flexion des poignets", "cat": "Haut du Corps", "mat": "Haltères", "niv": "Débutant", "typ": "Force", "mus": "Fléchisseurs de l'avant-bras", "dos": "3 × 15", "cons": "Avant-bras posé, paume vers le haut", "prio": ["Tennis / Padel"], "compl": ["Escalade"], "id": "ex-flexion-des-poignets", "i": 153}, {"n": "Pronation-supination avec haltère", "cat": "Haut du Corps", "mat": "Haltères", "niv": "Débutant", "typ": "Stabilité / Prévention", "mus": "Rond pronateur, supinateur", "dos": "3 × 12 / sens", "cons": "Haltère tenu par une extrémité, coude à 90°", "prio": ["Tennis / Padel"], "compl": ["Escalade"], "id": "ex-pronation-supination-avec-haltere", "i": 154}, {"n": "Extension des doigts à l'élastique", "cat": "Haut du Corps", "mat": "Élastique", "niv": "Débutant", "typ": "Stabilité / Prévention", "mus": "Extenseurs des doigts", "dos": "3 × 20", "cons": "Petit élastique autour des doigts, ouvrir la main", "prio": ["Escalade"], "compl": ["Tennis / Padel"], "id": "ex-extension-des-doigts-a-l-elastique", "i": 155}, {"n": "Suspension passive à la barre", "cat": "Haut du Corps", "mat": "Barre de traction", "niv": "Débutant", "typ": "Gainage", "mus": "Préhension, épaules", "dos": "3 × 20-40 s", "cons": "Épaules engagées, corps immobile", "prio": ["Escalade"], "compl": [], "id": "ex-suspension-passive-a-la-barre", "i": 156}, {"n": "Superman", "cat": "Dos", "mat": "Aucun", "niv": "Débutant", "typ": "Force", "mus": "Érecteurs du rachis, fessiers", "dos": "3 × 12-15", "cons": "Décoller buste et jambes, regard au sol", "prio": ["Cyclisme", "Reprise / Débutant"], "compl": ["Course à pied", "Trail", "Natation", "Triathlon"], "id": "ex-superman", "i": 157}, {"n": "Superman alterné (nageur)", "cat": "Dos", "mat": "Aucun", "niv": "Débutant", "typ": "Force", "mus": "Érecteurs du rachis, fessiers", "dos": "3 × 10 / côté", "cons": "Bras et jambe opposés, tenir 2 s", "prio": ["Natation", "Dos & posture"], "compl": ["Cyclisme", "Course à pied", "Triathlon"], "id": "ex-superman-alterne-nageur", "i": 158}, {"n": "Bird dog", "cat": "Dos", "mat": "Aucun", "niv": "Débutant", "typ": "Stabilité / Prévention", "mus": "Multifides, lombaires, fessiers", "dos": "3 × 8-10 / côté", "cons": "Dos plat, allonger sans rotation du bassin", "prio": ["Cyclisme", "Reprise / Débutant", "Dos & posture"], "compl": ["Course à pied", "Trail", "Natation", "Triathlon", "Football", "Tennis / Padel", "Escalade", "Seniors & équilibre"], "id": "ex-bird-dog", "i": 159}, {"n": "Cobra tenu au sol", "cat": "Dos", "mat": "Aucun", "niv": "Débutant", "typ": "Stabilité / Prévention", "mus": "Érecteurs du rachis, trapèzes inférieurs", "dos": "3 × 20-30 s", "cons": "Poitrine décollée, omoplates serrées vers le bas", "prio": [], "compl": ["Cyclisme", "Natation", "Dos & posture"], "id": "ex-cobra-tenu-au-sol", "i": 160}, {"n": "Anges inversés au sol", "cat": "Dos", "mat": "Aucun", "niv": "Débutant", "typ": "Stabilité / Prévention", "mus": "Trapèzes, rhomboïdes, deltoïdes postérieurs", "dos": "3 × 10", "cons": "À plat ventre, bras décollés du sol tout le long", "prio": [], "compl": ["Cyclisme", "Natation", "Dos & posture"], "id": "ex-anges-inverses-au-sol", "i": 161}, {"n": "Y-T-W allongé", "cat": "Dos", "mat": "Aucun", "niv": "Débutant", "typ": "Stabilité / Prévention", "mus": "Trapèzes inférieurs et moyens, rhomboïdes", "dos": "2-3 × 8 par lettre", "cons": "Pouces vers le haut, sans hausser les épaules", "prio": ["Natation", "Escalade", "Dos & posture"], "compl": ["Cyclisme", "Triathlon", "Tennis / Padel"], "id": "ex-y-t-w-allonge", "i": 162}, {"n": "Good morning au poids du corps", "cat": "Dos", "mat": "Aucun", "niv": "Débutant", "typ": "Force", "mus": "Lombaires, ischio-jambiers", "dos": "3 × 15", "cons": "Mains derrière la tête, dos plat", "prio": [], "compl": ["Cyclisme", "Course à pied", "Dos & posture"], "id": "ex-good-morning-au-poids-du-corps", "i": 163}, {"n": "Planche inversée", "cat": "Dos", "mat": "Aucun", "niv": "Intermédiaire", "typ": "Gainage", "mus": "Chaîne postérieure, épaules", "dos": "3 × 20-40 s", "cons": "Mains sous les épaules, bassin haut", "prio": [], "compl": ["Cyclisme", "Natation"], "id": "ex-planche-inversee", "i": 164}, {"n": "Rowing inversé sous une table", "cat": "Dos", "mat": "Aucun", "niv": "Intermédiaire", "typ": "Force", "mus": "Grand dorsal, rhomboïdes, biceps", "dos": "3 × 8-12", "cons": "Table solide, corps gainé, poitrine vers le bord", "prio": [], "compl": ["Natation", "Escalade"], "id": "ex-rowing-inverse-sous-une-table", "i": 165}, {"n": "Extension lombaire sur swiss ball", "cat": "Dos", "mat": "Swiss ball", "niv": "Intermédiaire", "typ": "Force", "mus": "Érecteurs du rachis, fessiers", "dos": "3 × 12-15", "cons": "Bassin sur le ballon, pieds calés au mur", "prio": [], "compl": ["Cyclisme", "Natation"], "id": "ex-extension-lombaire-sur-swiss-ball", "i": 166}, {"n": "Rowing haltère un bras", "cat": "Dos", "mat": "Banc + haltères", "niv": "Débutant", "typ": "Force", "mus": "Grand dorsal, rhomboïdes, biceps", "dos": "3 × 8-12 / bras", "cons": "Main et genou sur le banc, coude vers la hanche", "prio": ["Cyclisme", "Triathlon", "Tonification"], "compl": ["Natation", "Tennis / Padel", "Escalade", "Dos & posture"], "id": "ex-rowing-haltere-un-bras", "i": 167}, {"n": "Rowing buste penché deux haltères", "cat": "Dos", "mat": "Haltères", "niv": "Intermédiaire", "typ": "Force", "mus": "Grand dorsal, rhomboïdes, lombaires", "dos": "3-4 × 8-12", "cons": "Buste à 45°, dos plat, serrer les omoplates", "prio": ["Perte de poids"], "compl": ["Cyclisme", "Natation", "Tonification"], "id": "ex-rowing-buste-penche-deux-halteres", "i": 168}, {"n": "Rowing sur banc incliné", "cat": "Dos", "mat": "Banc + haltères", "niv": "Débutant", "typ": "Force", "mus": "Rhomboïdes, trapèzes moyens, grand dorsal", "dos": "3 × 10-12", "cons": "Poitrine en appui sur le banc, zéro élan", "prio": [], "compl": ["Cyclisme", "Natation", "Escalade", "Dos & posture"], "id": "ex-rowing-sur-banc-incline", "i": 169}, {"n": "Oiseau haltères", "cat": "Dos", "mat": "Haltères", "niv": "Débutant", "typ": "Force", "mus": "Deltoïdes postérieurs, rhomboïdes", "dos": "3 × 12-15", "cons": "Buste penché, bras écartés sur les côtés", "prio": [], "compl": ["Cyclisme", "Natation", "Tennis / Padel", "Tonification", "Dos & posture"], "id": "ex-oiseau-halteres", "i": 170}, {"n": "Oiseau sur banc incliné", "cat": "Dos", "mat": "Banc + haltères", "niv": "Intermédiaire", "typ": "Force", "mus": "Deltoïdes postérieurs, trapèzes moyens", "dos": "3 × 12-15", "cons": "Poitrine sur le banc, charge légère", "prio": [], "compl": ["Natation", "Tennis / Padel"], "id": "ex-oiseau-sur-banc-incline", "i": 171}, {"n": "Y sur banc incliné", "cat": "Dos", "mat": "Banc + haltères", "niv": "Intermédiaire", "typ": "Stabilité / Prévention", "mus": "Trapèzes inférieurs", "dos": "3 × 10-12", "cons": "Bras en Y, pouces vers le haut, 1-3 kg", "prio": [], "compl": ["Natation", "Tennis / Padel", "Escalade"], "id": "ex-y-sur-banc-incline", "i": 172}, {"n": "Shrugs haltères", "cat": "Dos", "mat": "Haltères", "niv": "Débutant", "typ": "Force", "mus": "Trapèzes supérieurs", "dos": "3 × 12-15", "cons": "Hausser les épaules à la verticale, sans rouler", "prio": [], "compl": [], "id": "ex-shrugs-halteres", "i": 173}, {"n": "Soulevé de terre haltères", "cat": "Dos", "mat": "Haltères", "niv": "Intermédiaire", "typ": "Force", "mus": "Lombaires, fessiers, ischio-jambiers, trapèzes", "dos": "3-4 × 6-10", "cons": "Haltères le long des tibias, dos plat", "prio": [], "compl": ["Cyclisme"], "id": "ex-souleve-de-terre-halteres", "i": 174}, {"n": "Rowing assis à l'élastique", "cat": "Dos", "mat": "Élastique", "niv": "Débutant", "typ": "Force", "mus": "Grand dorsal, rhomboïdes", "dos": "3 × 12-15", "cons": "Élastique autour des pieds, coudes le long du corps", "prio": ["Reprise / Débutant", "Dos & posture", "Seniors & équilibre"], "compl": ["Cyclisme", "Natation", "Tennis / Padel", "Escalade"], "id": "ex-rowing-assis-a-l-elastique", "i": 175}, {"n": "Rowing un bras à l'élastique avec rotation", "cat": "Dos", "mat": "Élastique", "niv": "Intermédiaire", "typ": "Force", "mus": "Grand dorsal, obliques", "dos": "3 × 10-12 / bras", "cons": "Debout, tirer en tournant légèrement le buste", "prio": ["Tennis / Padel"], "compl": [], "id": "ex-rowing-un-bras-a-l-elastique-avec-rotation", "i": 176}, {"n": "Tirage vertical à l'élastique", "cat": "Dos", "mat": "Élastique", "niv": "Débutant", "typ": "Force", "mus": "Grand dorsal", "dos": "3 × 12-15", "cons": "Élastique ancré en hauteur, coudes vers les hanches", "prio": [], "compl": ["Natation", "Escalade", "Reprise / Débutant", "Dos & posture"], "id": "ex-tirage-vertical-a-l-elastique", "i": 177}, {"n": "Tirage bras tendus à l'élastique", "cat": "Dos", "mat": "Élastique", "niv": "Débutant", "typ": "Force", "mus": "Grand dorsal, triceps (long chef)", "dos": "3 × 12-15", "cons": "Bras tendus, amener les mains aux cuisses", "prio": ["Natation", "Triathlon"], "compl": [], "id": "ex-tirage-bras-tendus-a-l-elastique", "i": 178}, {"n": "Simulation de crawl à l'élastique", "cat": "Dos", "mat": "Élastique", "niv": "Intermédiaire", "typ": "Force", "mus": "Grand dorsal, triceps, pectoraux", "dos": "3 × 15-20", "cons": "Buste penché, coude haut, pousser jusqu'à la cuisse", "prio": ["Natation"], "compl": ["Triathlon"], "id": "ex-simulation-de-crawl-a-l-elastique", "i": 179}, {"n": "Face pull à l'élastique", "cat": "Dos", "mat": "Élastique", "niv": "Débutant", "typ": "Stabilité / Prévention", "mus": "Deltoïdes postérieurs, trapèzes moyens, coiffe", "dos": "3 × 15", "cons": "Tirer vers le visage, coudes hauts, rotation externe", "prio": ["Cyclisme", "Natation", "Triathlon", "Tennis / Padel", "Escalade", "Dos & posture"], "compl": ["Reprise / Débutant", "Seniors & équilibre"], "id": "ex-face-pull-a-l-elastique", "i": 180}, {"n": "Écartés à l'élastique (pull-apart)", "cat": "Dos", "mat": "Élastique", "niv": "Débutant", "typ": "Stabilité / Prévention", "mus": "Rhomboïdes, deltoïdes postérieurs", "dos": "3 × 15-20", "cons": "Bras tendus devant, écarter jusqu'à la poitrine", "prio": ["Dos & posture"], "compl": ["Cyclisme", "Natation", "Tennis / Padel", "Escalade"], "id": "ex-ecartes-a-l-elastique-pull-apart", "i": 181}, {"n": "Tractions pronation", "cat": "Dos", "mat": "Barre de traction", "niv": "Avancé", "typ": "Force", "mus": "Grand dorsal, biceps, trapèzes inférieurs", "dos": "4 × 3-10", "cons": "Départ bras tendus, menton au-dessus de la barre", "prio": ["Escalade"], "compl": ["Natation"], "id": "ex-tractions-pronation", "i": 182}, {"n": "Tractions supination", "cat": "Dos", "mat": "Barre de traction", "niv": "Intermédiaire", "typ": "Force", "mus": "Grand dorsal, biceps", "dos": "4 × 3-10", "cons": "Paumes vers soi, poitrine vers la barre", "prio": ["Natation"], "compl": ["Triathlon", "Escalade"], "id": "ex-tractions-supination", "i": 183}, {"n": "Tractions assistées à l'élastique", "cat": "Dos", "mat": "Barre de traction", "niv": "Intermédiaire", "typ": "Force", "mus": "Grand dorsal, biceps", "dos": "3 × 6-10", "cons": "Élastique sous le pied ou le genou", "prio": ["Natation"], "compl": ["Triathlon", "Escalade"], "id": "ex-tractions-assistees-a-l-elastique", "i": 184}, {"n": "Tractions négatives", "cat": "Dos", "mat": "Barre de traction", "niv": "Intermédiaire", "typ": "Force", "mus": "Grand dorsal, biceps (excentrique)", "dos": "4 × 3-5, descente 5 s", "cons": "Monter en sautant, freiner la descente", "prio": [], "compl": ["Natation", "Escalade"], "id": "ex-tractions-negatives", "i": 185}, {"n": "Tractions scapulaires", "cat": "Dos", "mat": "Barre de traction", "niv": "Intermédiaire", "typ": "Stabilité / Prévention", "mus": "Trapèzes inférieurs, dentelé", "dos": "3 × 8-10", "cons": "Bras tendus, abaisser les omoplates", "prio": ["Escalade"], "compl": ["Natation"], "id": "ex-tractions-scapulaires", "i": 186}, {"n": "Rowing en suspension", "cat": "Dos", "mat": "Sangles de suspension", "niv": "Intermédiaire", "typ": "Force", "mus": "Grand dorsal, rhomboïdes, biceps", "dos": "3 × 8-12", "cons": "Corps gainé, plus on s'incline plus c'est dur", "prio": ["Natation"], "compl": ["Cyclisme", "Triathlon", "Escalade"], "id": "ex-rowing-en-suspension", "i": 187}, {"n": "Rowing un bras en suspension", "cat": "Dos", "mat": "Sangles de suspension", "niv": "Avancé", "typ": "Force", "mus": "Grand dorsal, obliques", "dos": "3 × 6-8 / bras", "cons": "Épaules de face, pas de rotation", "prio": [], "compl": ["Escalade"], "id": "ex-rowing-un-bras-en-suspension", "i": 188}, {"n": "Y en suspension", "cat": "Dos", "mat": "Sangles de suspension", "niv": "Intermédiaire", "typ": "Stabilité / Prévention", "mus": "Trapèzes inférieurs, deltoïdes postérieurs", "dos": "3 × 8-12", "cons": "Bras tendus en Y, corps peu incliné", "prio": [], "compl": ["Natation", "Tennis / Padel", "Escalade"], "id": "ex-y-en-suspension", "i": 189}, {"n": "Burpees", "cat": "Corps Entier", "mat": "Aucun", "niv": "Intermédiaire", "typ": "Pliométrie / Explosivité", "mus": "Jambes, pectoraux, gainage", "dos": "3 × 8-12", "cons": "Pompe complète puis saut, rythme régulier", "prio": ["Perte de poids"], "compl": ["Football"], "id": "ex-burpees", "i": 190}, {"n": "Sprawl", "cat": "Corps Entier", "mat": "Aucun", "niv": "Intermédiaire", "typ": "Pliométrie / Explosivité", "mus": "Jambes, gainage, épaules", "dos": "3 × 10", "cons": "Jeter les jambes en arrière, hanches au sol, remonter", "prio": [], "compl": ["Perte de poids"], "id": "ex-sprawl", "i": 191}, {"n": "Marche de l'ours (bear crawl)", "cat": "Corps Entier", "mat": "Aucun", "niv": "Intermédiaire", "typ": "Gainage", "mus": "Épaules, quadriceps, gainage", "dos": "3 × 10-15 m", "cons": "Genoux près du sol, dos plat, bras-jambe opposés", "prio": [], "compl": ["Escalade", "Perte de poids"], "id": "ex-marche-de-l-ours-bear-crawl", "i": 192}, {"n": "Chenille (inchworm)", "cat": "Corps Entier", "mat": "Aucun", "niv": "Débutant", "typ": "Stabilité / Prévention", "mus": "Ischio-jambiers, épaules, gainage", "dos": "3 × 6-8", "cons": "Marcher sur les mains jusqu'à la planche puis revenir", "prio": [], "compl": ["Course à pied", "Natation", "Football", "Tennis / Padel"], "id": "ex-chenille-inchworm", "i": 193}, {"n": "Jumping jacks", "cat": "Corps Entier", "mat": "Aucun", "niv": "Débutant", "typ": "Pliométrie / Explosivité", "mus": "Mollets, épaules", "dos": "3 × 30 s", "cons": "Appuis sur l'avant-pied, rythme soutenu", "prio": ["Perte de poids"], "compl": ["Course à pied", "Football"], "id": "ex-jumping-jacks", "i": 194}, {"n": "Thruster haltères", "cat": "Corps Entier", "mat": "Haltères", "niv": "Intermédiaire", "typ": "Force", "mus": "Quadriceps, fessiers, deltoïdes", "dos": "3-4 × 8-10", "cons": "Squat puis développé dans la continuité", "prio": ["Perte de poids"], "compl": [], "id": "ex-thruster-halteres", "i": 195}, {"n": "Fente avec rotation de buste", "cat": "Corps Entier", "mat": "Haltères", "niv": "Intermédiaire", "typ": "Force", "mus": "Quadriceps, fessiers, obliques", "dos": "3 × 8-10 / côté", "cons": "Tourner le buste du côté de la jambe avant", "prio": [], "compl": ["Tennis / Padel", "Perte de poids"], "id": "ex-fente-avec-rotation-de-buste", "i": 196}, {"n": "Marche du fermier (farmer walk)", "cat": "Corps Entier", "mat": "Haltères", "niv": "Débutant", "typ": "Gainage", "mus": "Préhension, trapèzes, gainage", "dos": "4 × 20-30 m", "cons": "Épaules basses, petits pas, buste droit", "prio": ["Perte de poids", "Seniors & équilibre"], "compl": ["Trail", "Escalade", "Dos & posture"], "id": "ex-marche-du-fermier-farmer-walk", "i": 197}, {"n": "Épaulé haltère un bras", "cat": "Corps Entier", "mat": "Haltères", "niv": "Avancé", "typ": "Pliométrie / Explosivité", "mus": "Fessiers, trapèzes, deltoïdes", "dos": "4 × 5 / bras", "cons": "Extension de hanche explosive, coude sous la charge", "prio": [], "compl": [], "id": "ex-epaule-haltere-un-bras", "i": 198}, {"n": "Arraché haltère un bras", "cat": "Corps Entier", "mat": "Haltères", "niv": "Avancé", "typ": "Pliométrie / Explosivité", "mus": "Chaîne postérieure, deltoïdes", "dos": "4 × 4-5 / bras", "cons": "Du sol au-dessus de la tête en un temps", "prio": [], "compl": [], "id": "ex-arrache-haltere-un-bras", "i": 199}, {"n": "Man maker", "cat": "Corps Entier", "mat": "Haltères", "niv": "Avancé", "typ": "Force", "mus": "Corps entier", "dos": "3 × 5-8", "cons": "Pompe, tirage droit, tirage gauche, épaulé, développé", "prio": [], "compl": ["Perte de poids"], "id": "ex-man-maker", "i": 200}, {"n": "Squat + développé à l'élastique", "cat": "Corps Entier", "mat": "Élastique", "niv": "Débutant", "typ": "Force", "mus": "Quadriceps, fessiers, deltoïdes", "dos": "3 × 12-15", "cons": "Élastique sous les pieds, pousser en se relevant", "prio": [], "compl": ["Natation", "Perte de poids"], "id": "ex-squat-developpe-a-l-elastique", "i": 201}, {"n": "Relevé turc (Turkish get-up)", "cat": "Corps Entier", "mat": "Kettlebell", "niv": "Avancé", "typ": "Stabilité / Prévention", "mus": "Épaules, gainage, hanches", "dos": "3 × 3 / côté", "cons": "Bras verrouillé, regard sur la charge", "prio": [], "compl": ["Natation", "Escalade"], "id": "ex-releve-turc-turkish-get-up", "i": 202}, {"n": "Épaulé-jeté kettlebell", "cat": "Corps Entier", "mat": "Kettlebell", "niv": "Avancé", "typ": "Pliométrie / Explosivité", "mus": "Chaîne postérieure, deltoïdes", "dos": "4 × 5-6 / bras", "cons": "Impulsion des hanches, réception coude au corps", "prio": [], "compl": [], "id": "ex-epaule-jete-kettlebell", "i": 203}, {"n": "Assis-debout de chaise", "cat": "Bas du Corps", "mat": "Banc / chaise", "niv": "Débutant", "typ": "Force", "mus": "Quadriceps, fessiers", "dos": "3 × 10-15", "cons": "Se lever sans les mains, se rasseoir lentement", "prio": ["Reprise / Débutant", "Seniors & équilibre"], "compl": ["Course à pied", "Trail"], "id": "ex-assis-debout-de-chaise", "i": 204}, {"n": "Pompes contre le mur", "cat": "Haut du Corps", "mat": "Aucun", "niv": "Débutant", "typ": "Force", "mus": "Pectoraux, triceps", "dos": "3 × 12-15", "cons": "Corps gainé, poitrine vers le mur, coudes à 45°", "prio": ["Reprise / Débutant", "Seniors & équilibre"], "compl": ["Natation", "Escalade"], "id": "ex-pompes-contre-le-mur", "i": 205}, {"n": "Marche talon-pointe", "cat": "Bas du Corps", "mat": "Aucun", "niv": "Débutant", "typ": "Stabilité / Prévention", "mus": "Stabilisateurs de cheville et de hanche", "dos": "3 × 10-15 pas", "cons": "Talon collé aux orteils du pied arrière, regard devant", "prio": ["Seniors & équilibre"], "compl": ["Trail"], "id": "ex-marche-talon-pointe", "i": 206}, {"n": "Curl-up de McGill", "cat": "Abdos", "mat": "Aucun", "niv": "Débutant", "typ": "Stabilité / Prévention", "mus": "Grand droit, transverse", "dos": "3 × 6-8 tenues de 8-10 s", "cons": "Une jambe fléchie, mains sous les lombaires, décoller à peine la tête et les épaules", "prio": ["Dos & posture"], "compl": ["Cyclisme", "Course à pied"], "id": "ex-curl-up-de-mcgill", "i": 207}, {"n": "Rétraction cervicale (chin tuck)", "cat": "Dos", "mat": "Aucun", "niv": "Débutant", "typ": "Stabilité / Prévention", "mus": "Fléchisseurs profonds du cou", "dos": "3 × 10 tenues de 5 s", "cons": "Rentrer le menton à l'horizontale, sans baisser la tête", "prio": ["Dos & posture"], "compl": ["Cyclisme", "Escalade"], "id": "ex-retraction-cervicale-chin-tuck", "i": 208}, {"n": "Glissements muraux (wall slides)", "cat": "Dos", "mat": "Aucun", "niv": "Débutant", "typ": "Stabilité / Prévention", "mus": "Trapèzes inférieurs, dentelé antérieur", "dos": "3 × 10-12", "cons": "Dos et avant-bras au mur, monter les bras sans décoller les lombaires", "prio": ["Dos & posture"], "compl": ["Cyclisme", "Natation", "Tennis / Padel", "Escalade"], "id": "ex-glissements-muraux-wall-slides", "i": 209}, {"n": "Squat jacks", "cat": "Corps Entier", "mat": "Aucun", "niv": "Débutant", "typ": "Pliométrie / Explosivité", "mus": "Quadriceps, fessiers, mollets", "dos": "3 × 30 s", "cons": "Sauter pieds écartés en squat, puis pieds joints", "prio": ["Perte de poids"], "compl": ["Course à pied", "Football"], "id": "ex-squat-jacks", "i": 210}, {"n": "Burpee sans saut", "cat": "Corps Entier", "mat": "Aucun", "niv": "Débutant", "typ": "Force", "mus": "Jambes, pectoraux, gainage", "dos": "3 × 8-10", "cons": "Reculer les pieds un par un, se relever sans sauter", "prio": ["Perte de poids"], "compl": ["Football"], "id": "ex-burpee-sans-saut", "i": 211}, {"n": "Planche jacks", "cat": "Abdos", "mat": "Aucun", "niv": "Intermédiaire", "typ": "Gainage", "mus": "Transverse, épaules, adducteurs", "dos": "3 × 30 s", "cons": "Écarter et rapprocher les pieds en sautant, bassin stable", "prio": ["Perte de poids"], "compl": ["Course à pied", "Football"], "id": "ex-planche-jacks", "i": 212}, {"n": "Pas chassés latéraux en squat", "cat": "Bas du Corps", "mat": "Aucun", "niv": "Débutant", "typ": "Force", "mus": "Moyen fessier, quadriceps", "dos": "3 × 20 pas", "cons": "Rester bas, pieds jamais joints", "prio": ["Perte de poids"], "compl": ["Football", "Tennis / Padel"], "id": "ex-pas-chasses-lateraux-en-squat", "i": 213}, {"n": "Squat goblet excentrique (descente 4 s)", "cat": "Bas du Corps", "mat": "Haltères", "niv": "Intermédiaire", "typ": "Force", "mus": "Quadriceps, fessiers", "dos": "3 × 6-8", "cons": "Descendre en 4 s, remonter normalement", "prio": ["Trail"], "compl": ["Cyclisme", "Course à pied"], "id": "ex-squat-goblet-excentrique-descente-4-s", "i": 214}, {"n": "Corde à sauter", "cat": "Corps Entier", "mat": "Corde à sauter", "niv": "Débutant", "typ": "Pliométrie / Explosivité", "mus": "Mollets, épaules", "dos": "5 × 1 min", "cons": "Petits rebonds sur l'avant-pied, coudes près du corps", "prio": ["Perte de poids"], "compl": ["Course à pied", "Trail", "Football", "Tennis / Padel"], "id": "ex-corde-a-sauter", "i": 215}, {"n": "Fente arrière avec montée de genou", "cat": "Bas du Corps", "mat": "Aucun", "niv": "Intermédiaire", "typ": "Force", "mus": "Fessiers, quadriceps, équilibre", "dos": "3 × 10 / jambe", "cons": "Remonter en amenant le genou à hauteur de hanche, tenir 1 s", "prio": ["Perte de poids"], "compl": ["Course à pied", "Trail", "Football"], "id": "ex-fente-arriere-avec-montee-de-genou", "i": 216}];
+const GROUPS=[{"label": "Sports", "items": ["Cyclisme", "Course à pied", "Trail", "Natation", "Triathlon", "Football", "Tennis / Padel", "Escalade"]}, {"label": "Remise en forme", "items": ["Reprise / Débutant", "Perte de poids", "Tonification", "Dos & posture", "Seniors & équilibre"]}];
+
+/* Atlas : filtres, cartes, animation des cartes visibles */
+(function () {
+  const $ = s => document.querySelector(s);
+  const grid = $("#grid");
+  const state = { q: "", cat: "Tous", eq: "", sp: "", sex: "both", playing: !matchMedia("(prefers-reduced-motion: reduce)").matches, speed: 1 };
+  try { const s = JSON.parse(localStorage.getItem("atlas-prefs") || "{}"); if (s.sex) state.sex = s.sex; if (s.speed) state.speed = s.speed; } catch (e) {}
+  const save = () => { try { localStorage.setItem("atlas-prefs", JSON.stringify({ sex: state.sex, speed: state.speed })); } catch (e) {} };
+  const VIEW = { s: "Profil", f: "Face", t: "Vue de dessus" };
+  const norm = s => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+  const cards = [];
+
+  for (const e of EXOS) {
+    const spec = POSES[e.n];
+    const fig = makeFigure(spec);
+    const vb = (spec.vb || autoVB(spec, fig)).join(" ");
+    const view = spec.top ? "t" : spec.v;
+    const el = document.createElement("article");
+    el.className = "card"; el.id = e.id;
+    const still = spec.k.length === 1;
+    el.innerHTML = `
+      <header><h2>${e.n}</h2>
+        <div class="tags"><span class="tag cat" data-c="${e.cat}">${e.cat}</span><span class="tag">${e.niv}</span><span class="tag eq">${e.mat === "Aucun" ? "Sans matériel" : e.mat}</span></div></header>
+      <div class="figs">
+        <figure class="fig m"><svg viewBox="${vb}" role="img" aria-label="${e.n}, version homme"></svg><figcaption>Homme</figcaption></figure>
+        <figure class="fig f"><svg viewBox="${vb}" role="img" aria-label="${e.n}, version femme"></svg><figcaption>Femme</figcaption></figure>
+      </div>
+      <p class="meta"><span>${VIEW[view]}</span>${still ? "<span>Position tenue</span>" : ""}<span>${e.typ}</span></p>
+      <dl>
+        <dt>Dosage</dt><dd class="num">${e.dos}</dd>
+        <dt>Consigne</dt><dd>${e.cons}</dd>
+        <dt>Muscles</dt><dd>${e.mus}</dd>
+        ${e.prio.length ? `<dt>Prioritaire</dt><dd class="prio">${e.prio.map(p => `<span>${p}</span>`).join("")}</dd>` : ""}
+      </dl>`;
+    const svgs = el.querySelectorAll("svg");
+    const c = { e, el, fig, svgM: svgs[0], svgF: svgs[1], visible: false, still, hay: norm([e.n, e.mus, e.cat, e.mat, ...e.prio, ...e.compl].join(" ")) };
+    c.svgM.innerHTML = fig.draw("M", 0); c.svgF.innerHTML = fig.draw("F", 0);
+    cards.push(c); grid.appendChild(el);
+  }
+
+  // filtres
+  const eqSel = $("#eq"), spSel = $("#sp");
+  [...new Set(EXOS.map(e => e.mat))].sort((a, b) => a === "Aucun" ? -1 : b === "Aucun" ? 1 : a.localeCompare(b, "fr")).forEach(m => eqSel.add(new Option(m === "Aucun" ? "Sans matériel" : m, m)));
+  for (const g of GROUPS) { const og = document.createElement("optgroup"); og.label = g.label; g.items.forEach(i => og.appendChild(new Option(i, i))); spSel.appendChild(og); }
+  const cats = ["Tous", "Abdos", "Bas du Corps", "Haut du Corps", "Dos", "Corps Entier"];
+  const chipBox = $("#cats");
+  cats.forEach(k => { const b = document.createElement("button"); b.type = "button"; b.textContent = k; b.className = "chip"; b.setAttribute("aria-pressed", k === state.cat); b.onclick = () => { state.cat = k; chipBox.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x === b)); apply(); }; chipBox.appendChild(b); });
+  $("#q").addEventListener("input", ev => { state.q = norm(ev.target.value.trim()); apply(); });
+  eqSel.onchange = () => { state.eq = eqSel.value; apply(); };
+  spSel.onchange = () => { state.sp = spSel.value; apply(); };
+  document.querySelectorAll("#sex button").forEach(b => { b.setAttribute("aria-pressed", b.dataset.v === state.sex); b.onclick = () => { state.sex = b.dataset.v; document.querySelectorAll("#sex button").forEach(x => x.setAttribute("aria-pressed", x === b)); document.body.dataset.sex = state.sex; save(); }; });
+  document.body.dataset.sex = state.sex;
+  const playBtn = $("#play");
+  const setPlay = v => { state.playing = v; playBtn.textContent = v ? "Pause" : "Lecture"; playBtn.setAttribute("aria-pressed", !v); };
+  playBtn.onclick = () => setPlay(!state.playing); setPlay(state.playing);
+  const spd = $("#speed"); spd.value = state.speed; spd.onchange = () => { state.speed = +spd.value; save(); };
+  $("#reset").onclick = () => { state.q = ""; $("#q").value = ""; state.eq = ""; eqSel.value = ""; state.sp = ""; spSel.value = ""; state.cat = "Tous"; chipBox.querySelectorAll("button").forEach((x, i) => x.setAttribute("aria-pressed", i === 0)); apply(); };
+
+  function apply() {
+    let n = 0;
+    for (const c of cards) {
+      const e = c.e;
+      let ok = (state.cat === "Tous" || e.cat === state.cat) && (!state.eq || e.mat === state.eq) && (!state.q || state.q.split(/\s+/).every(w => c.hay.includes(w)));
+      if (ok && state.sp) ok = e.prio.includes(state.sp) || ($("#withc").checked && e.compl.includes(state.sp));
+      c.el.hidden = !ok; if (ok) n++;
+    }
+    $("#count").textContent = `${n} exercice${n > 1 ? "s" : ""}`;
+    $("#empty").hidden = n > 0;
+  }
+  $("#withc").onchange = apply;
+  apply();
+
+  // animation des cartes visibles
+  const io = new IntersectionObserver(es => es.forEach(en => { const c = cards.find(x => x.el === en.target); if (c) c.visible = en.isIntersecting; }), { rootMargin: "100px" });
+  cards.forEach(c => io.observe(c.el));
+  let t = 0, last = performance.now(), acc = 0;
+  function loop(now) {
+    const dt = Math.min(0.1, (now - last) / 1000); last = now;
+    if (state.playing) { t += dt * state.speed; acc += dt; }
+    if (acc >= 1 / 30) {
+      acc = 0;
+      for (const c of cards) {
+        if (!c.visible || c.el.hidden || c.still) continue;
+        const tt = t + (c.e.i % 7) * 0.13;
+        if (state.sex !== "F") c.svgM.innerHTML = c.fig.draw("M", tt);
+        if (state.sex !== "M") c.svgF.innerHTML = c.fig.draw("F", tt);
+      }
+    }
+    requestAnimationFrame(loop);
+  }
+  requestAnimationFrame(loop);
+
+  function goHash() {
+    const id = location.hash.slice(1); if (!id) return;
+    const el = document.getElementById(id); if (!el) return;
+    if (el.hidden) { $("#reset").click(); }
+    el.scrollIntoView({ block: "start" }); el.classList.add("hl"); setTimeout(() => el.classList.remove("hl"), 2400);
+  }
+  addEventListener("hashchange", goHash); setTimeout(goHash, 60);
+})();
+</script>
+</body></html>

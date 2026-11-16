@@ -1,0 +1,41 @@
+name: Déploiement GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Régénérer et contrôler les données
+        run: |
+          pip install openpyxl
+          python3 scripts/build_data.py
+          python3 scripts/extract_atlas.py
+          git diff --exit-code app/data app/js/figures.js || (echo "Les fichiers générés ne correspondent pas aux sources : relance les scripts et committe." && exit 1)
+      - name: Version du cache hors ligne
+        run: sed -i "s/__BUILD__/${GITHUB_SHA::8}/" app/sw.js
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: app
+      - id: deployment
+        uses: actions/deploy-pages@v4

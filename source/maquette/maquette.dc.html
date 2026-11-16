@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    sub { font-size: 0.62em; }
+  </style>
+</helmet>
+
+<div style="min-height:100vh;background:#E8E8E3;font-family:Archivo,system-ui,sans-serif;color:#17170F;padding:56px 56px 80px;">
+
+  <!-- page header -->
+  <div style="max-width:1340px;margin:0 auto 52px;">
+    <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:#8C8C80;">Concept · App cyclisme amateur</div>
+    <h1 style="font-size:46px;font-weight:700;letter-spacing:-0.025em;line-height:1.0;margin:14px 0 0;">Piloter l'entraînement par les kJ</h1>
+    <p style="font-size:17px;line-height:1.5;color:#5F5F55;max-width:640px;margin:14px 0 0;font-weight:400;">Direction retenue : la variante éditoriale « séance d'abord ». Le flux complet — accueil du jour, vue semaine, et check-in hebdo de 60 s qui débouche sur le quadrant de décision. Barre du bas en Liquid Glass.</p>
+  </div>
+
+  <!-- SECTION 01 : Accueil -->
+  <div style="max-width:1340px;margin:0 auto;">
+    <div style="display:flex;align-items:baseline;gap:14px;padding-bottom:8px;border-bottom:1px solid rgba(20,20,10,0.14);margin-bottom:34px;">
+      <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#17170F;">01 — Accueil</div>
+      <div style="font-size:14px;color:#7A7A6E;">« Ta séance du jour » + bouton ajuster</div>
+    </div>
+
+    <div style="display:flex;gap:46px;flex-wrap:wrap;align-items:flex-start;">
+      <div style="flex-shrink:0;width:402px;">
+        <x-import component="IOSDevice" from="./ios-frame.jsx" hint-size="402px,874px">
+          <div style="height:100%;display:flex;flex-direction:column;background:#FBFBF8;padding:60px 20px 0;font-family:Archivo,system-ui,sans-serif;color:#17170F;">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;">
+              <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#9A9A8F;">Mer. 13 juin · Sem. 24</div>
+              <div style="display:flex;align-items:center;gap:6px;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;color:#5F5F55;"><span style="width:7px;height:7px;border-radius:50%;background:#CFE93B;"></span>Frais</div>
+            </div>
+
+            <div style="flex:1;background:#fff;border-radius:28px;border:1px solid rgba(20,20,10,0.07);box-shadow:0 26px 54px -30px rgba(20,20,12,0.34);padding:24px 22px 22px;display:flex;flex-direction:column;">
+              <div style="display:flex;align-items:center;justify-content:space-between;">
+                <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10.5px;letter-spacing:0.14em;text-transform:uppercase;color:#9A9A8F;">Séance du jour</div>
+                <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;background:#CFE93B;color:#17170F;padding:4px 9px;border-radius:999px;font-weight:500;">Clé</div>
+              </div>
+              <h2 style="font-size:33px;line-height:0.98;font-weight:700;letter-spacing:-0.025em;margin:11px 0 0;">VO<sub>2</sub>max<br>HI&nbsp;haut</h2>
+
+              <div style="display:flex;gap:0;margin-top:18px;border-top:1px solid rgba(20,20,10,0.08);border-bottom:1px solid rgba(20,20,10,0.08);">
+                <div style="flex:1;padding:12px 0;border-right:1px solid rgba(20,20,10,0.08);">
+                  <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:9.5px;letter-spacing:0.1em;text-transform:uppercase;color:#9A9A8F;">Durée</div>
+                  <div style="font-size:19px;font-weight:600;letter-spacing:-0.01em;margin-top:3px;">1 h 10</div>
+                </div>
+                <div style="flex:1;padding:12px 0 12px 14px;border-right:1px solid rgba(20,20,10,0.08);">
+                  <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:9.5px;letter-spacing:0.1em;text-transform:uppercase;color:#9A9A8F;">kJ visés</div>
+                  <div style="font-size:19px;font-weight:600;letter-spacing:-0.01em;margin-top:3px;">720</div>
+                </div>
+                <div style="flex:1;padding:12px 0 12px 14px;">
+                  <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:9.5px;letter-spacing:0.1em;text-transform:uppercase;color:#9A9A8F;">Bloc</div>
+                  <div style="font-size:19px;font-weight:600;letter-spacing:-0.01em;margin-top:3px;">5 × 4′</div>
+                </div>
+              </div>
+
+              <div style="display:flex;align-items:flex-end;gap:4px;height:50px;margin-top:18px;">
+                <div style="flex:0.7;height:18px;background:#E4E4DE;border-radius:3px 3px 0 0;"></div>
+                <div style="flex:0.7;height:24px;background:#E4E4DE;border-radius:3px 3px 0 0;"></div>
+                <div style="flex:0.7;height:29px;background:#E4E4DE;border-radius:3px 3px 0 0;"></div>
+                <div style="flex:0.4;"></div>
+                <div style="flex:1;height:48px;background:#CFE93B;border-radius:3px 3px 0 0;"></div>
+                <div style="flex:0.5;height:13px;background:#EBEBE4;border-radius:3px 3px 0 0;"></div>
+                <div style="flex:1;height:48px;background:#CFE93B;border-radius:3px 3px 0 0;"></div>
+                <div style="flex:0.5;height:13px;background:#EBEBE4;border-radius:3px 3px 0 0;"></div>
+                <div style="flex:1;height:48px;background:#CFE93B;border-radius:3px 3px 0 0;"></div>
+                <div style="flex:0.5;height:13px;background:#EBEBE4;border-radius:3px 3px 0 0;"></div>
+                <div style="flex:1;height:48px;background:#CFE93B;border-radius:3px 3px 0 0;"></div>
+                <div style="flex:0.5;height:13px;background:#EBEBE4;border-radius:3px 3px 0 0;"></div>
+                <div style="flex:1;height:48px;background:#CFE93B;border-radius:3px 3px 0 0;"></div>
+                <div style="flex:0.4;"></div>
+                <div style="flex:0.7;height:22px;background:#E4E4DE;border-radius:3px 3px 0 0;"></div>
+                <div style="flex:0.7;height:16px;background:#E4E4DE;border-radius:3px 3px 0 0;"></div>
+              </div>
+              <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:9.5px;letter-spacing:0.06em;color:#A6A69B;margin-top:7px;">Échauff. 15′ · 320–335 W · récup 4′ · calme 10′</div>
+
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(20,20,10,0.08);border:1px solid rgba(20,20,10,0.08);border-radius:14px;overflow:hidden;margin-top:18px;">
+                <div style="background:#fff;padding:11px 12px;">
+                  <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:#9A9A8F;">Puissance</div>
+                  <div style="font-size:14px;font-weight:600;margin-top:3px;letter-spacing:-0.01em;">320–335 W · Z6</div>
+                </div>
+                <div style="background:#fff;padding:11px 12px;">
+                  <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:#9A9A8F;">FC &amp; cinétique</div>
+                  <div style="font-size:14px;font-weight:600;margin-top:3px;letter-spacing:-0.01em;">175→182 · décroche 3e</div>
+                </div>
+                <div style="background:#fff;padding:11px 12px;">
+                  <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:#9A9A8F;">RPE attendu</div>
+                  <div style="font-size:14px;font-weight:600;margin-top:3px;letter-spacing:-0.01em;">8–9 / 10 en fin</div>
+                </div>
+                <div style="background:#fff;padding:11px 12px;">
+                  <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:#9A9A8F;">Ressenti</div>
+                  <div style="font-size:14px;font-weight:600;margin-top:3px;letter-spacing:-0.01em;">s'ouvre après l'éch.</div>
+                </div>
+              </div>
+
+              <div style="margin-top:auto;padding-top:16px;">
+                <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:9.5px;letter-spacing:0.12em;text-transform:uppercase;color:#9A9A8F;">Pourquoi aujourd'hui</div>
+                <div style="font-size:13px;line-height:1.4;color:#3E3E36;margin-top:5px;">FC réveil 48 · stress bas. Tu es frais — la semaine monte, on place la séance clé maintenant.</div>
+              </div>
+            </div>
+
+            <div style="padding:16px 0 0;">
+              <button style="width:100%;border:none;background:#CFE93B;color:#17170F;font-family:Archivo,sans-serif;font-size:16px;font-weight:600;letter-spacing:-0.01em;padding:15px;border-radius:16px;cursor:pointer;">Ajuster la séance</button>
+              <div style="display:flex;gap:7px;margin-top:9px;">
+                <div style="flex:1;text-align:center;font-size:12px;color:#5F5F55;border:1px solid rgba(20,20,10,0.12);border-radius:10px;padding:8px 0;">Fatigué</div>
+                <div style="flex:1;text-align:center;font-size:12px;color:#5F5F55;border:1px solid rgba(20,20,10,0.12);border-radius:10px;padding:8px 0;">Stressé</div>
+                <div style="flex:1;text-align:center;font-size:12px;color:#5F5F55;border:1px solid rgba(20,20,10,0.12);border-radius:10px;padding:8px 0;">Pas le temps</div>
+              </div>
+            </div>
+
+            <!-- Liquid Glass tab bar -->
+            <div style="padding:12px 8px 26px;">
+              <div style="position:relative;display:flex;align-items:center;justify-content:space-around;height:56px;border-radius:28px;overflow:hidden;box-shadow:0 12px 30px -10px rgba(20,20,12,0.28),0 2px 6px rgba(0,0,0,0.05);">
+                <div style="position:absolute;inset:0;backdrop-filter:blur(18px) saturate(180%);-webkit-backdrop-filter:blur(18px) saturate(180%);background:rgba(251,251,248,0.55);"></div>
+                <div style="position:absolute;inset:0;border-radius:28px;box-shadow:inset 1.5px 1.5px 1px rgba(255,255,255,0.9),inset -1px -1px 1px rgba(255,255,255,0.55);border:0.5px solid rgba(20,20,10,0.07);pointer-events:none;"></div>
+                <div style="position:relative;z-index:1;display:flex;align-items:center;gap:7px;padding:9px 16px;border-radius:999px;background:#CFE93B;box-shadow:0 1px 3px rgba(20,20,12,0.18);">
+                  <span style="width:6px;height:6px;border-radius:50%;background:#17170F;"></span>
+                  <span style="font-size:13px;font-weight:600;color:#17170F;letter-spacing:-0.01em;">Aujourd'hui</span>
+                </div>
+                <span style="position:relative;z-index:1;font-size:13px;color:#6E6E64;font-weight:500;">Semaine</span>
+                <span style="position:relative;z-index:1;font-size:13px;color:#6E6E64;font-weight:500;">Profil</span>
+              </div>
+            </div>
+          </div>
+        </x-import>
+      </div>
+
+      <div style="flex:1;min-width:280px;max-width:430px;padding-top:6px;">
+        <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#8C8C80;">Le système</div>
+        <h3 style="font-size:23px;font-weight:600;letter-spacing:-0.015em;line-height:1.2;margin:10px 0 0;">Une seule carte, pas de mur de données</h3>
+        <p style="font-size:15px;line-height:1.6;color:#5F5F55;margin:14px 0 0;">Le matin, la séance du jour occupe l'écran : cible, durée, kJ visés, profil d'intervalle, et les 4 repères d'exécution (puissance, FC &amp; cinétique, RPE, ressenti). Le « pourquoi » justifie le choix en une ligne. L'utilisateur exécute et ressent — l'app décide.</p>
+        <div style="height:1px;background:rgba(20,20,10,0.12);margin:24px 0;"></div>
+        <div style="display:flex;flex-direction:column;gap:13px;">
+          <div style="font-size:14px;color:#3E3E36;line-height:1.5;"><strong style="font-weight:600;">Type —</strong> Archivo (grotesque éditorial) + JetBrains Mono pour les micro-labels techniques.</div>
+          <div style="font-size:14px;color:#3E3E36;line-height:1.5;"><strong style="font-weight:600;">Lime —</strong> réservé aux séances clés et à l'action, jamais en aplat décoratif.</div>
+          <div style="font-size:14px;color:#3E3E36;line-height:1.5;"><strong style="font-weight:600;">Barre du bas —</strong> Liquid Glass : flou + teinte translucide + reflet, onglet actif en pastille lime.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 02 : Vue semaine -->
+  <div style="max-width:1340px;margin:64px auto 0;">
+    <div style="display:flex;align-items:baseline;gap:14px;padding-bottom:8px;border-bottom:1px solid rgba(20,20,10,0.14);margin-bottom:34px;">
+      <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#17170F;">02 — Vue semaine</div>
+      <div style="font-size:14px;color:#7A7A6E;">kJ en gros + calendrier microcycle</div>
+    </div>
+
+    <div style="display:flex;gap:46px;flex-wrap:wrap;align-items:flex-start;">
+      <div style="flex-shrink:0;width:402px;">
+        <x-import component="IOSDevice" from="./ios-frame.jsx" hint-size="402px,874px">
+          <div style="height:100%;display:flex;flex-direction:column;background:#FBFBF8;padding:60px 22px 0;font-family:Archivo,system-ui,sans-serif;color:#17170F;">
+            <div style="display:flex;align-items:baseline;justify-content:space-between;">
+              <div style="font-size:22px;font-weight:700;letter-spacing:-0.015em;">Semaine 24</div>
+              <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;color:#9A9A8F;">10 – 16 juin</div>
+            </div>
+
+            <div style="margin-top:22px;">
+              <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10.5px;letter-spacing:0.14em;text-transform:uppercase;color:#9A9A8F;">Charge externe · réalisée</div>
+              <div style="display:flex;align-items:flex-end;gap:10px;margin-top:5px;">
+                <div style="font-size:68px;line-height:0.82;font-weight:700;letter-spacing:-0.045em;white-space:nowrap;">4&thinsp;280</div>
+                <div style="font-size:15px;color:#7A7A6E;padding-bottom:8px;white-space:nowrap;">/ 5 500 kJ</div>
+              </div>
+              <div style="height:7px;border-radius:999px;background:#EBEBE4;margin-top:14px;overflow:hidden;">
+                <div style="width:78%;height:100%;background:#CFE93B;border-radius:999px;"></div>
+              </div>
+              <div style="display:flex;justify-content:space-between;margin-top:7px;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;color:#A6A69B;">
+                <span>78 % du plan</span><span>+9 % vs sem. 23</span>
+              </div>
+            </div>
+
+            <div style="margin-top:22px;">
+              <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#9A9A8F;margin-bottom:10px;">8 dernières semaines</div>
+              <div style="display:flex;align-items:flex-end;gap:6px;height:54px;">
+                <div style="flex:1;height:30px;background:#E4E4DE;border-radius:3px 3px 0 0;"></div>
+                <div style="flex:1;height:24px;background:#E4E4DE;border-radius:3px 3px 0 0;"></div>
+                <div style="flex:1;height:40px;background:#E4E4DE;border-radius:3px 3px 0 0;"></div>
+                <div style="flex:1;height:46px;background:#E4E4DE;border-radius:3px 3px 0 0;"></div>
+                <div style="flex:1;height:22px;background:#E4E4DE;border-radius:3px 3px 0 0;"></div>
+                <div style="flex:1;height:38px;background:#E4E4DE;border-radius:3px 3px 0 0;"></div>
+                <div style="flex:1;height:34px;background:#E4E4DE;border-radius:3px 3px 0 0;"></div>
+                <div style="flex:1;height:42px;background:#CFE93B;border-radius:3px 3px 0 0;"></div>
+              </div>
+            </div>
+
+            <div style="margin-top:24px;flex:1;">
+              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+                <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#9A9A8F;">Microcycle · semaine contrainte</div>
+                <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:9.5px;color:#B7B7AC;white-space:nowrap;">↕ glisser</div>
+              </div>
+
+              <div style="display:flex;gap:6px;align-items:flex-end;">
+                <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:8px;">
+                  <div style="width:100%;height:120px;display:flex;align-items:flex-end;"><div style="width:100%;height:16px;border:1.5px dashed #CFCFC4;border-radius:5px;"></div></div>
+                  <div style="font-size:12px;color:#A6A69B;font-weight:500;">L</div>
+                </div>
+                <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:8px;">
+                  <div style="width:100%;height:120px;display:flex;align-items:flex-end;"><div style="width:100%;height:40px;background:#E4E4DE;border-radius:5px;"></div></div>
+                  <div style="font-size:12px;color:#7A7A6E;font-weight:500;">M</div>
+                </div>
+                <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:8px;">
+                  <div style="width:100%;height:120px;display:flex;align-items:flex-end;"><div style="width:100%;height:92px;background:#CFE93B;border-radius:5px;box-shadow:0 0 0 2px #17170F;"></div></div>
+                  <div style="font-size:12px;color:#17170F;font-weight:700;">M</div>
+                </div>
+                <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:8px;">
+                  <div style="width:100%;height:120px;display:flex;align-items:flex-end;"><div style="width:100%;height:34px;background:#E4E4DE;border-radius:5px;"></div></div>
+                  <div style="font-size:12px;color:#7A7A6E;font-weight:500;">J</div>
+                </div>
+                <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:8px;">
+                  <div style="width:100%;height:120px;display:flex;align-items:flex-end;"><div style="width:100%;height:62px;background:#17170F;border-radius:5px;"></div></div>
+                  <div style="font-size:12px;color:#7A7A6E;font-weight:500;">V</div>
+                </div>
+                <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:8px;">
+                  <div style="width:100%;height:120px;display:flex;align-items:flex-end;"><div style="width:100%;height:78px;background:#E4E4DE;border-radius:5px;"></div></div>
+                  <div style="font-size:12px;color:#7A7A6E;font-weight:500;">S</div>
+                </div>
+                <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:8px;">
+                  <div style="width:100%;height:120px;display:flex;align-items:flex-end;"><div style="width:100%;height:104px;background:#17170F;border-radius:5px;"></div></div>
+                  <div style="font-size:12px;color:#7A7A6E;font-weight:500;">D</div>
+                </div>
+              </div>
+
+              <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:16px;">
+                <div style="display:flex;align-items:center;gap:6px;"><span style="width:9px;height:9px;border-radius:2px;background:#CFE93B;"></span><span style="font-size:11px;color:#7A7A6E;">Clé</span></div>
+                <div style="display:flex;align-items:center;gap:6px;"><span style="width:9px;height:9px;border-radius:2px;background:#17170F;"></span><span style="font-size:11px;color:#7A7A6E;">Modéré</span></div>
+                <div style="display:flex;align-items:center;gap:6px;"><span style="width:9px;height:9px;border-radius:2px;background:#E4E4DE;"></span><span style="font-size:11px;color:#7A7A6E;">Facile / BI</span></div>
+                <div style="display:flex;align-items:center;gap:6px;"><span style="width:9px;height:9px;border-radius:2px;border:1.5px dashed #CFCFC4;"></span><span style="font-size:11px;color:#7A7A6E;">Repos</span></div>
+              </div>
+            </div>
+
+            <!-- Liquid Glass tab bar -->
+            <div style="padding:12px 8px 26px;">
+              <div style="position:relative;display:flex;align-items:center;justify-content:space-around;height:56px;border-radius:28px;overflow:hidden;box-shadow:0 12px 30px -10px rgba(20,20,12,0.28),0 2px 6px rgba(0,0,0,0.05);">
+                <div style="position:absolute;inset:0;backdrop-filter:blur(18px) saturate(180%);-webkit-backdrop-filter:blur(18px) saturate(180%);background:rgba(251,251,248,0.55);"></div>
+                <div style="position:absolute;inset:0;border-radius:28px;box-shadow:inset 1.5px 1.5px 1px rgba(255,255,255,0.9),inset -1px -1px 1px rgba(255,255,255,0.55);border:0.5px solid rgba(20,20,10,0.07);pointer-events:none;"></div>
+                <span style="position:relative;z-index:1;font-size:13px;color:#6E6E64;font-weight:500;">Aujourd'hui</span>
+                <div style="position:relative;z-index:1;display:flex;align-items:center;gap:7px;padding:9px 16px;border-radius:999px;background:#CFE93B;box-shadow:0 1px 3px rgba(20,20,12,0.18);">
+                  <span style="width:6px;height:6px;border-radius:50%;background:#17170F;"></span>
+                  <span style="font-size:13px;font-weight:600;color:#17170F;letter-spacing:-0.01em;">Semaine</span>
+                </div>
+                <span style="position:relative;z-index:1;font-size:13px;color:#6E6E64;font-weight:500;">Profil</span>
+              </div>
+            </div>
+          </div>
+        </x-import>
+      </div>
+
+      <div style="flex:1;min-width:280px;max-width:430px;padding-top:6px;">
+        <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#8C8C80;">Lecture</div>
+        <h3 style="font-size:23px;font-weight:600;letter-spacing:-0.015em;line-height:1.2;margin:10px 0 0;">Le kJ comme métrique nord</h3>
+        <p style="font-size:15px;line-height:1.6;color:#5F5F55;margin:14px 0 0;">Le chiffre de la semaine est mis en gros et comparé aux 8 dernières — la métrique que la méthode désigne comme unique si l'on ne devait en garder qu'une. Le microcycle place la séance clé sur un jour frais et garde les barres de récup courtes.</p>
+        <div style="height:1px;background:rgba(20,20,10,0.12);margin:24px 0;"></div>
+        <div style="font-size:14px;color:#3E3E36;line-height:1.5;"><strong style="font-weight:600;">Le calendrier est éditable —</strong> chaque jour se glisse pour replacer la séance selon la vraie semaine de l'utilisateur.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 03 : Check-in hebdo + quadrant -->
+  <div style="max-width:1340px;margin:64px auto 0;">
+    <div style="display:flex;align-items:baseline;gap:14px;padding-bottom:8px;border-bottom:1px solid rgba(20,20,10,0.14);margin-bottom:34px;">
+      <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#17170F;">03 — Check-in hebdo</div>
+      <div style="font-size:14px;color:#7A7A6E;">60 secondes → quadrant de décision</div>
+    </div>
+
+    <div style="display:flex;gap:46px;flex-wrap:wrap;align-items:flex-start;">
+
+      <!-- 03a : Check-in sliders -->
+      <div style="flex-shrink:0;display:flex;flex-direction:column;gap:18px;width:402px;">
+        <div>
+          <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#8C8C80;">Étape 1</div>
+          <div style="font-size:18px;font-weight:600;letter-spacing:-0.01em;margin-top:3px;">Check-in · charge interne</div>
+        </div>
+
+        <x-import component="IOSDevice" from="./ios-frame.jsx" hint-size="402px,874px">
+          <div style="height:100%;display:flex;flex-direction:column;background:#FBFBF8;padding:60px 22px 0;font-family:Archivo,system-ui,sans-serif;color:#17170F;">
+            <div>
+              <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#9A9A8F;">Check-in · Semaine 24</div>
+              <h2 style="font-size:30px;line-height:1.04;font-weight:700;letter-spacing:-0.025em;margin:9px 0 0;">60 secondes,<br>et c'est tout.</h2>
+            </div>
+
+            <!-- external auto-imported -->
+            <div style="margin-top:20px;background:#F2F2EC;border-radius:16px;padding:13px 15px;display:flex;align-items:center;justify-content:space-between;">
+              <div>
+                <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:#9A9A8F;">Externe · auto-importé</div>
+                <div style="font-size:14px;font-weight:600;margin-top:4px;letter-spacing:-0.01em;">4 280 kJ · 6 h 40 · 3 séances</div>
+              </div>
+              <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:9.5px;color:#A6A69B;text-align:right;">via<br>intervals.icu</div>
+            </div>
+
+            <!-- internal sliders -->
+            <div style="margin-top:20px;display:flex;flex-direction:column;gap:18px;">
+              <div>
+                <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:9px;"><span style="font-size:14px;font-weight:500;">Humeur</span><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;color:#6E6E64;white-space:nowrap;">4 / 5</span></div>
+                <div style="position:relative;height:5px;border-radius:999px;background:#EBEBE4;"><div style="position:absolute;left:0;top:0;height:100%;width:75%;background:#CFE93B;border-radius:999px;"></div><div style="position:absolute;left:75%;top:50%;transform:translate(-50%,-50%);width:18px;height:18px;border-radius:50%;background:#17170F;border:3px solid #FBFBF8;box-shadow:0 1px 4px rgba(20,20,12,0.3);"></div></div>
+              </div>
+              <div>
+                <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:9px;"><span style="font-size:14px;font-weight:500;">Motivation</span><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;color:#6E6E64;white-space:nowrap;">4 / 5</span></div>
+                <div style="position:relative;height:5px;border-radius:999px;background:#EBEBE4;"><div style="position:absolute;left:0;top:0;height:100%;width:75%;background:#CFE93B;border-radius:999px;"></div><div style="position:absolute;left:75%;top:50%;transform:translate(-50%,-50%);width:18px;height:18px;border-radius:50%;background:#17170F;border:3px solid #FBFBF8;box-shadow:0 1px 4px rgba(20,20,12,0.3);"></div></div>
+              </div>
+              <div>
+                <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:9px;"><span style="font-size:14px;font-weight:500;">Stress</span><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;color:#6E6E64;white-space:nowrap;">2 / 5</span></div>
+                <div style="position:relative;height:5px;border-radius:999px;background:#EBEBE4;"><div style="position:absolute;left:0;top:0;height:100%;width:25%;background:#CFE93B;border-radius:999px;"></div><div style="position:absolute;left:25%;top:50%;transform:translate(-50%,-50%);width:18px;height:18px;border-radius:50%;background:#17170F;border:3px solid #FBFBF8;box-shadow:0 1px 4px rgba(20,20,12,0.3);"></div></div>
+              </div>
+              <div>
+                <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:9px;"><span style="font-size:14px;font-weight:500;">Fatigue</span><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;color:#6E6E64;white-space:nowrap;">2 / 5</span></div>
+                <div style="position:relative;height:5px;border-radius:999px;background:#EBEBE4;"><div style="position:absolute;left:0;top:0;height:100%;width:25%;background:#CFE93B;border-radius:999px;"></div><div style="position:absolute;left:25%;top:50%;transform:translate(-50%,-50%);width:18px;height:18px;border-radius:50%;background:#17170F;border:3px solid #FBFBF8;box-shadow:0 1px 4px rgba(20,20,12,0.3);"></div></div>
+              </div>
+            </div>
+
+            <!-- FC réveil auto + free text -->
+            <div style="margin-top:18px;display:flex;gap:10px;">
+              <div style="flex:1;border:1px solid rgba(20,20,10,0.1);border-radius:14px;padding:11px 13px;">
+                <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:#9A9A8F;">FC réveil</div>
+                <div style="font-size:18px;font-weight:600;margin-top:3px;letter-spacing:-0.01em;">48 <span style="font-size:12px;color:#9A9A8F;font-weight:400;">bpm</span></div>
+              </div>
+              <div style="flex:1.6;border:1px solid rgba(20,20,10,0.1);border-radius:14px;padding:11px 13px;">
+                <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:#9A9A8F;">Ressenti global</div>
+                <div style="font-size:13px;color:#B7B7AC;margin-top:4px;font-style:italic;">Jambes qui reviennent…</div>
+              </div>
+            </div>
+
+            <!-- Liquid Glass CTA -->
+            <div style="margin-top:auto;padding:14px 0 30px;">
+              <button style="position:relative;width:100%;height:54px;border:none;border-radius:18px;overflow:hidden;cursor:pointer;background:transparent;">
+                <div style="position:absolute;inset:0;backdrop-filter:blur(14px) saturate(200%);-webkit-backdrop-filter:blur(14px) saturate(200%);background:rgba(207,233,59,0.72);"></div>
+                <div style="position:absolute;inset:0;border-radius:18px;box-shadow:inset 1.5px 1.5px 1px rgba(255,255,255,0.7),inset -1px -1px 1px rgba(255,255,255,0.35);border:0.5px solid rgba(20,20,10,0.1);pointer-events:none;"></div>
+                <span style="position:relative;z-index:1;font-family:Archivo,sans-serif;font-size:16px;font-weight:600;color:#17170F;letter-spacing:-0.01em;">Voir ma décision →</span>
+              </button>
+            </div>
+          </div>
+        </x-import>
+      </div>
+
+      <!-- 03b : Quadrant -->
+      <div style="flex-shrink:0;display:flex;flex-direction:column;gap:18px;width:402px;">
+        <div>
+          <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#8C8C80;">Étape 2</div>
+          <div style="font-size:18px;font-weight:600;letter-spacing:-0.01em;margin-top:3px;">Quadrant de décision</div>
+        </div>
+
+        <x-import component="IOSDevice" from="./ios-frame.jsx" hint-size="402px,874px">
+          <div style="height:100%;display:flex;flex-direction:column;background:#FBFBF8;padding:60px 22px 0;font-family:Archivo,system-ui,sans-serif;color:#17170F;">
+            <div>
+              <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#9A9A8F;">Externe × interne · Sem. 24</div>
+              <h2 style="font-size:28px;line-height:1.04;font-weight:700;letter-spacing:-0.025em;margin:9px 0 0;">Où tu en es</h2>
+            </div>
+
+            <!-- quadrant -->
+            <div style="margin-top:18px;">
+              <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:9px;letter-spacing:0.08em;text-transform:uppercase;color:#A6A69B;margin-bottom:7px;">↑ Charge interne (fatigue, FC, stress)</div>
+              <div style="position:relative;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:1px;background:rgba(20,20,10,0.1);border:1px solid rgba(20,20,10,0.1);border-radius:16px;overflow:hidden;">
+                <div style="background:#fff;padding:13px 13px;min-height:96px;">
+                  <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:8.5px;letter-spacing:0.06em;text-transform:uppercase;color:#B7B7AC;">peu de kJ · interne ↑</div>
+                  <div style="font-size:15px;font-weight:600;margin-top:6px;letter-spacing:-0.01em;color:#9A9A8F;">Maladaptation</div>
+                </div>
+                <div style="background:#fff;padding:13px 13px;min-height:96px;">
+                  <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:8.5px;letter-spacing:0.06em;text-transform:uppercase;color:#B7B7AC;">kJ ↑ · interne ↑</div>
+                  <div style="font-size:15px;font-weight:600;margin-top:6px;letter-spacing:-0.01em;color:#9A9A8F;">Décharge</div>
+                </div>
+                <div style="background:#fff;padding:13px 13px;min-height:96px;">
+                  <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:8.5px;letter-spacing:0.06em;text-transform:uppercase;color:#B7B7AC;">kJ bas · interne vert</div>
+                  <div style="font-size:15px;font-weight:600;margin-top:6px;letter-spacing:-0.01em;color:#9A9A8F;">Augmenter</div>
+                </div>
+                <div style="background:#CFE93B;padding:13px 13px;min-height:96px;position:relative;">
+                  <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:8.5px;letter-spacing:0.06em;text-transform:uppercase;color:#5E6B14;">kJ ↑ · interne stable</div>
+                  <div style="font-size:15px;font-weight:700;margin-top:6px;letter-spacing:-0.01em;color:#17170F;">Adaptation ✓</div>
+                  <div style="position:absolute;right:26px;bottom:24px;width:16px;height:16px;border-radius:50%;background:#17170F;border:3px solid #CFE93B;box-shadow:0 2px 6px rgba(20,20,12,0.4);"></div>
+                </div>
+              </div>
+              <div style="display:flex;justify-content:space-between;margin-top:7px;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:9px;letter-spacing:0.06em;text-transform:uppercase;color:#A6A69B;">
+                <span>← charge externe basse</span><span>élevée →</span>
+              </div>
+            </div>
+
+            <!-- reco -->
+            <div style="margin-top:20px;border:1.5px solid #CFE93B;border-radius:16px;padding:15px 16px;">
+              <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:9.5px;letter-spacing:0.12em;text-transform:uppercase;color:#8B9A1E;">Recommandation</div>
+              <div style="font-size:16px;line-height:1.35;font-weight:500;letter-spacing:-0.01em;margin-top:6px;">Externe en hausse, interne stable — tu t'adaptes. On garde le cap.</div>
+              <div style="font-size:13px;line-height:1.4;color:#3E3E36;margin-top:8px;">Semaine 25 : <strong style="font-weight:600;">+15 min sur les BI</strong>, watts inchangés. La durée monte avant la puissance.</div>
+            </div>
+
+            <!-- smoothing caption -->
+            <div style="margin-top:14px;display:flex;gap:8px;align-items:flex-start;">
+              <span style="width:6px;height:6px;border-radius:50%;background:#CFCFC4;margin-top:6px;flex-shrink:0;"></span>
+              <div style="font-size:12px;line-height:1.45;color:#8C8C80;">Lissé sur 7 jours : une mauvaise nuit gonfle la FC réveil sans déclencher d'alarme.</div>
+            </div>
+
+            <!-- Liquid Glass CTA -->
+            <div style="margin-top:auto;padding:14px 0 30px;">
+              <button style="position:relative;width:100%;height:54px;border:none;border-radius:18px;overflow:hidden;cursor:pointer;background:transparent;">
+                <div style="position:absolute;inset:0;backdrop-filter:blur(14px) saturate(200%);-webkit-backdrop-filter:blur(14px) saturate(200%);background:rgba(207,233,59,0.72);"></div>
+                <div style="position:absolute;inset:0;border-radius:18px;box-shadow:inset 1.5px 1.5px 1px rgba(255,255,255,0.7),inset -1px -1px 1px rgba(255,255,255,0.35);border:0.5px solid rgba(20,20,10,0.1);pointer-events:none;"></div>
+                <span style="position:relative;z-index:1;font-family:Archivo,sans-serif;font-size:16px;font-weight:600;color:#17170F;letter-spacing:-0.01em;">Appliquer au plan de la semaine</span>
+              </button>
+            </div>
+          </div>
+        </x-import>
+      </div>
+
+      <!-- notes -->
+      <div style="flex:1;min-width:260px;max-width:380px;padding-top:6px;">
+        <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#8C8C80;">La boucle</div>
+        <h3 style="font-size:23px;font-weight:600;letter-spacing:-0.015em;line-height:1.2;margin:10px 0 0;">Comparer externe et interne</h3>
+        <p style="font-size:15px;line-height:1.6;color:#5F5F55;margin:14px 0 0;">L'utilisateur ne saisit que l'interne (4 sliders + un ressenti libre) ; l'externe est importé. Le quadrant croise les deux et tranche en une phrase. Charge interne fixe pour charge externe croissante = progression.</p>
+        <div style="height:1px;background:rgba(20,20,10,0.12);margin:24px 0;"></div>
+        <div style="display:flex;flex-direction:column;gap:13px;">
+          <div style="font-size:14px;color:#3E3E36;line-height:1.5;"><strong style="font-weight:600;">Règle d'or —</strong> augmenter la durée avant la puissance. La reco la code partout.</div>
+          <div style="font-size:14px;color:#3E3E36;line-height:1.5;"><strong style="font-weight:600;">Garde-fou —</strong> lissage sur 7 jours, jamais d'alarme sur un point isolé.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SECTION 04 : Onboarding -->
+  <div style="max-width:1340px;margin:64px auto 0;">
+    <div style="display:flex;align-items:baseline;gap:14px;padding-bottom:8px;border-bottom:1px solid rgba(20,20,10,0.14);margin-bottom:34px;">
+      <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#17170F;">04 — Onboarding</div>
+      <div style="font-size:14px;color:#7A7A6E;">Une décision par écran · détecte le profil, calibre les zones</div>
+    </div>
+
+    <div style="display:flex;gap:46px;flex-wrap:wrap;align-items:flex-start;">
+
+      <!-- Bienvenue -->
+      <div style="flex-shrink:0;display:flex;flex-direction:column;gap:18px;width:402px;">
+        <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#8C8C80;">Bienvenue</div>
+        <x-import component="IOSDevice" from="./ios-frame.jsx" hint-size="402px,874px">
+          <div style="height:100%;display:flex;flex-direction:column;background:#FBFBF8;padding:64px 26px 0;font-family:Archivo,system-ui,sans-serif;color:#17170F;">
+            <div style="display:flex;align-items:center;gap:7px;">
+              <span style="font-size:22px;font-weight:700;letter-spacing:-0.02em;">Nord</span>
+              <span style="width:8px;height:8px;border-radius:50%;background:#CFE93B;"></span>
+            </div>
+            <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:8px;">
+              <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#9A9A8F;margin-bottom:16px;">Le principe</div>
+              <h2 style="font-size:33px;line-height:1.1;font-weight:600;letter-spacing:-0.025em;margin:0;">On n'améliore<br>que ce qu'on<br>mesure.</h2>
+              <p style="font-size:16px;line-height:1.5;color:#5F5F55;margin:18px 0 0;max-width:300px;">Ton entraînement piloté par les kJ — pas par un plan figé. La progression vient de la régularité, pas du forçage.</p>
+            </div>
+            <div style="padding:14px 0 30px;">
+              <button style="position:relative;width:100%;height:54px;border:none;border-radius:18px;overflow:hidden;cursor:pointer;background:transparent;">
+                <div style="position:absolute;inset:0;backdrop-filter:blur(14px) saturate(200%);-webkit-backdrop-filter:blur(14px) saturate(200%);background:rgba(207,233,59,0.72);"></div>
+                <div style="position:absolute;inset:0;border-radius:18px;box-shadow:inset 1.5px 1.5px 1px rgba(255,255,255,0.7),inset -1px -1px 1px rgba(255,255,255,0.35);border:0.5px solid rgba(20,20,10,0.1);pointer-events:none;"></div>
+                <span style="position:relative;z-index:1;font-family:Archivo,sans-serif;font-size:16px;font-weight:600;color:#17170F;letter-spacing:-0.01em;">Commencer</span>
+              </button>
+              <div style="text-align:center;margin-top:14px;font-size:13px;color:#7A7A6E;">J'ai déjà un compte</div>
+            </div>
+          </div>
+        </x-import>
+      </div>
+
+      <!-- 01 Niveau -->
+      <div style="flex-shrink:0;display:flex;flex-direction:column;gap:18px;width:402px;">
+        <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#8C8C80;">01 · Niveau</div>
+        <x-import component="IOSDevice" from="./ios-frame.jsx" hint-size="402px,874px">
+          <div style="height:100%;display:flex;flex-direction:column;background:#FBFBF8;padding:60px 24px 0;font-family:Archivo,system-ui,sans-serif;color:#17170F;">
+            <div style="display:flex;align-items:center;justify-content:space-between;">
+              <div style="position:relative;width:38px;height:38px;border-radius:50%;overflow:hidden;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px -5px rgba(20,20,12,0.22);">
+                <div style="position:absolute;inset:0;backdrop-filter:blur(14px) saturate(180%);-webkit-backdrop-filter:blur(14px) saturate(180%);background:rgba(251,251,248,0.6);"></div>
+                <div style="position:absolute;inset:0;border-radius:50%;box-shadow:inset 1.5px 1.5px 1px rgba(255,255,255,0.9);border:0.5px solid rgba(20,20,10,0.08);pointer-events:none;"></div>
+                <svg width="9" height="16" viewBox="0 0 9 16" fill="none" style="position:relative;z-index:1;"><path d="M7.5 1L1.5 8l6 7" stroke="#3E3E36" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.12em;color:#9A9A8F;white-space:nowrap;">01 / 05</div>
+            </div>
+            <div style="display:flex;gap:5px;margin-top:14px;">
+              <div style="flex:1;height:3px;border-radius:999px;background:#CFE93B;"></div>
+              <div style="flex:1;height:3px;border-radius:999px;background:#E4E4DE;"></div>
+              <div style="flex:1;height:3px;border-radius:999px;background:#E4E4DE;"></div>
+              <div style="flex:1;height:3px;border-radius:999px;background:#E4E4DE;"></div>
+              <div style="flex:1;height:3px;border-radius:999px;background:#E4E4DE;"></div>
+            </div>
+
+            <h2 style="font-size:26px;line-height:1.1;font-weight:700;letter-spacing:-0.02em;margin:28px 0 0;">Tu roules combien,<br>en ce moment ?</h2>
+
+            <div style="display:flex;flex-direction:column;gap:10px;margin-top:22px;">
+              <div style="display:flex;align-items:center;justify-content:space-between;border:1px solid rgba(20,20,10,0.12);background:#fff;border-radius:16px;padding:15px 17px;">
+                <div><div style="font-size:16px;font-weight:600;letter-spacing:-0.01em;">Moins de 4 h / sem</div><div style="font-size:12.5px;color:#8C8C80;margin-top:2px;">Je débute ou je reprends</div></div>
+                <div style="width:20px;height:20px;border-radius:50%;border:1.5px solid rgba(20,20,10,0.2);flex-shrink:0;"></div>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;border:1.5px solid #17170F;background:#CFE93B;border-radius:16px;padding:15px 17px;">
+                <div><div style="font-size:16px;font-weight:600;letter-spacing:-0.01em;color:#17170F;">4 – 7 h / sem</div><div style="font-size:12.5px;color:#5E6B14;margin-top:2px;">Je roule régulièrement, je stagne</div></div>
+                <div style="width:20px;height:20px;border-radius:50%;background:#17170F;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><span style="color:#CFE93B;font-size:12px;font-weight:700;line-height:1;">✓</span></div>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;border:1px solid rgba(20,20,10,0.12);background:#fff;border-radius:16px;padding:15px 17px;">
+                <div><div style="font-size:16px;font-weight:600;letter-spacing:-0.01em;">7 – 10 h / sem</div><div style="font-size:12.5px;color:#8C8C80;margin-top:2px;">Je vise une progression nette</div></div>
+                <div style="width:20px;height:20px;border-radius:50%;border:1.5px solid rgba(20,20,10,0.2);flex-shrink:0;"></div>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;border:1px solid rgba(20,20,10,0.12);background:#fff;border-radius:16px;padding:15px 17px;">
+                <div><div style="font-size:16px;font-weight:600;letter-spacing:-0.01em;">10 h+ / sem</div><div style="font-size:12.5px;color:#8C8C80;margin-top:2px;">Blocs structurés, 650 h+/an</div></div>
+                <div style="width:20px;height:20px;border-radius:50%;border:1.5px solid rgba(20,20,10,0.2);flex-shrink:0;"></div>
+              </div>
+            </div>
+
+            <div style="margin-top:auto;padding:14px 0 30px;">
+              <button style="position:relative;width:100%;height:54px;border:none;border-radius:18px;overflow:hidden;cursor:pointer;background:transparent;">
+                <div style="position:absolute;inset:0;backdrop-filter:blur(14px) saturate(200%);-webkit-backdrop-filter:blur(14px) saturate(200%);background:rgba(207,233,59,0.72);"></div>
+                <div style="position:absolute;inset:0;border-radius:18px;box-shadow:inset 1.5px 1.5px 1px rgba(255,255,255,0.7),inset -1px -1px 1px rgba(255,255,255,0.35);border:0.5px solid rgba(20,20,10,0.1);pointer-events:none;"></div>
+                <span style="position:relative;z-index:1;font-family:Archivo,sans-serif;font-size:16px;font-weight:600;color:#17170F;letter-spacing:-0.01em;">Continuer</span>
+              </button>
+            </div>
+          </div>
+        </x-import>
+      </div>
+
+      <!-- 02 Capteur -->
+      <div style="flex-shrink:0;display:flex;flex-direction:column;gap:18px;width:402px;">
+        <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#8C8C80;">02 · Capteur</div>
+        <x-import component="IOSDevice" from="./ios-frame.jsx" hint-size="402px,874px">
+          <div style="height:100%;display:flex;flex-direction:column;background:#FBFBF8;padding:60px 24px 0;font-family:Archivo,system-ui,sans-serif;color:#17170F;">
+            <div style="display:flex;align-items:center;justify-content:space-between;">
+              <div style="position:relative;width:38px;height:38px;border-radius:50%;overflow:hidden;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px -5px rgba(20,20,12,0.22);">
+                <div style="position:absolute;inset:0;backdrop-filter:blur(14px) saturate(180%);-webkit-backdrop-filter:blur(14px) saturate(180%);background:rgba(251,251,248,0.6);"></div>
+                <div style="position:absolute;inset:0;border-radius:50%;box-shadow:inset 1.5px 1.5px 1px rgba(255,255,255,0.9);border:0.5px solid rgba(20,20,10,0.08);pointer-events:none;"></div>
+                <svg width="9" height="16" viewBox="0 0 9 16" fill="none" style="position:relative;z-index:1;"><path d="M7.5 1L1.5 8l6 7" stroke="#3E3E36" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.12em;color:#9A9A8F;white-space:nowrap;">02 / 05</div>
+            </div>
+            <div style="display:flex;gap:5px;margin-top:14px;">
+              <div style="flex:1;height:3px;border-radius:999px;background:#CFE93B;"></div>
+              <div style="flex:1;height:3px;border-radius:999px;background:#CFE93B;"></div>
+              <div style="flex:1;height:3px;border-radius:999px;background:#E4E4DE;"></div>
+              <div style="flex:1;height:3px;border-radius:999px;background:#E4E4DE;"></div>
+              <div style="flex:1;height:3px;border-radius:999px;background:#E4E4DE;"></div>
+            </div>
+
+            <h2 style="font-size:26px;line-height:1.1;font-weight:700;letter-spacing:-0.02em;margin:28px 0 0;">Tu as un capteur<br>de puissance ?</h2>
+
+            <div style="display:flex;gap:12px;margin-top:24px;">
+              <div style="flex:1;border:1.5px solid #17170F;background:#CFE93B;border-radius:18px;padding:20px 16px;min-height:148px;display:flex;flex-direction:column;justify-content:space-between;">
+                <div style="width:22px;height:22px;border-radius:50%;background:#17170F;display:flex;align-items:center;justify-content:center;"><span style="color:#CFE93B;font-size:13px;font-weight:700;line-height:1;">✓</span></div>
+                <div><div style="font-size:18px;font-weight:700;letter-spacing:-0.015em;">Oui</div><div style="font-size:12.5px;color:#5E6B14;margin-top:3px;line-height:1.35;">Sur le vélo ou le home-trainer</div></div>
+              </div>
+              <div style="flex:1;border:1px solid rgba(20,20,10,0.12);background:#fff;border-radius:18px;padding:20px 16px;min-height:148px;display:flex;flex-direction:column;justify-content:space-between;">
+                <div style="width:22px;height:22px;border-radius:50%;border:1.5px solid rgba(20,20,10,0.2);"></div>
+                <div><div style="font-size:18px;font-weight:700;letter-spacing:-0.015em;">Pas encore</div><div style="font-size:12.5px;color:#8C8C80;margin-top:3px;line-height:1.35;">Je pilote au volume</div></div>
+              </div>
+            </div>
+
+            <div style="margin-top:18px;display:flex;gap:8px;align-items:flex-start;">
+              <span style="width:6px;height:6px;border-radius:50%;background:#CFCFC4;margin-top:6px;flex-shrink:0;"></span>
+              <div style="font-size:12.5px;line-height:1.45;color:#8C8C80;">Sans capteur, Nord pilote au volume et au ressenti. Tu pourras en ajouter un plus tard, rien n'est bloqué.</div>
+            </div>
+
+            <div style="margin-top:auto;padding:14px 0 30px;">
+              <button style="position:relative;width:100%;height:54px;border:none;border-radius:18px;overflow:hidden;cursor:pointer;background:transparent;">
+                <div style="position:absolute;inset:0;backdrop-filter:blur(14px) saturate(200%);-webkit-backdrop-filter:blur(14px) saturate(200%);background:rgba(207,233,59,0.72);"></div>
+                <div style="position:absolute;inset:0;border-radius:18px;box-shadow:inset 1.5px 1.5px 1px rgba(255,255,255,0.7),inset -1px -1px 1px rgba(255,255,255,0.35);border:0.5px solid rgba(20,20,10,0.1);pointer-events:none;"></div>
+                <span style="position:relative;z-index:1;font-family:Archivo,sans-serif;font-size:16px;font-weight:600;color:#17170F;letter-spacing:-0.01em;">Continuer</span>
+              </button>
+            </div>
+          </div>
+        </x-import>
+      </div>
+
+      <!-- 03 Agenda -->
+      <div style="flex-shrink:0;display:flex;flex-direction:column;gap:18px;width:402px;">
+        <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#8C8C80;">03 · Agenda</div>
+        <x-import component="IOSDevice" from="./ios-frame.jsx" hint-size="402px,874px">
+          <div style="height:100%;display:flex;flex-direction:column;background:#FBFBF8;padding:60px 24px 0;font-family:Archivo,system-ui,sans-serif;color:#17170F;">
+            <div style="display:flex;align-items:center;justify-content:space-between;">
+              <div style="position:relative;width:38px;height:38px;border-radius:50%;overflow:hidden;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px -5px rgba(20,20,12,0.22);">
+                <div style="position:absolute;inset:0;backdrop-filter:blur(14px) saturate(180%);-webkit-backdrop-filter:blur(14px) saturate(180%);background:rgba(251,251,248,0.6);"></div>
+                <div style="position:absolute;inset:0;border-radius:50%;box-shadow:inset 1.5px 1.5px 1px rgba(255,255,255,0.9);border:0.5px solid rgba(20,20,10,0.08);pointer-events:none;"></div>
+                <svg width="9" height="16" viewBox="0 0 9 16" fill="none" style="position:relative;z-index:1;"><path d="M7.5 1L1.5 8l6 7" stroke="#3E3E36" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.12em;color:#9A9A8F;white-space:nowrap;">03 / 05</div>
+            </div>
+            <div style="display:flex;gap:5px;margin-top:14px;">
+              <div style="flex:1;height:3px;border-radius:999px;background:#CFE93B;"></div>
+              <div style="flex:1;height:3px;border-radius:999px;background:#CFE93B;"></div>
+              <div style="flex:1;height:3px;border-radius:999px;background:#CFE93B;"></div>
+              <div style="flex:1;height:3px;border-radius:999px;background:#E4E4DE;"></div>
+              <div style="flex:1;height:3px;border-radius:999px;background:#E4E4DE;"></div>
+            </div>
+
+            <h2 style="font-size:26px;line-height:1.1;font-weight:700;letter-spacing:-0.02em;margin:28px 0 0;">Ta semaine,<br>elle ressemble à quoi ?</h2>
+            <p style="font-size:13.5px;color:#8C8C80;line-height:1.45;margin:10px 0 0;">Ça décide la forme de ton microcycle.</p>
+
+            <div style="display:flex;flex-direction:column;gap:10px;margin-top:20px;">
+              <div style="display:flex;align-items:center;justify-content:space-between;border:1.5px solid #17170F;background:#CFE93B;border-radius:16px;padding:15px 17px;">
+                <div><div style="font-size:16px;font-weight:600;letter-spacing:-0.01em;color:#17170F;">Semaine bloquée, week-end libre</div><div style="font-size:12.5px;color:#5E6B14;margin-top:2px;">30–60 min en home-trainer, gros week-ends</div></div>
+                <div style="width:20px;height:20px;border-radius:50%;background:#17170F;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-left:10px;"><span style="color:#CFE93B;font-size:12px;font-weight:700;line-height:1;">✓</span></div>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;border:1px solid rgba(20,20,10,0.12);background:#fff;border-radius:16px;padding:15px 17px;">
+                <div><div style="font-size:16px;font-weight:600;letter-spacing:-0.01em;">Disponible en semaine</div><div style="font-size:12.5px;color:#8C8C80;margin-top:2px;">Blocs structurés [3:1] / [4:1]</div></div>
+                <div style="width:20px;height:20px;border-radius:50%;border:1.5px solid rgba(20,20,10,0.2);flex-shrink:0;margin-left:10px;"></div>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;border:1px solid rgba(20,20,10,0.12);background:#fff;border-radius:16px;padding:15px 17px;">
+                <div><div style="font-size:16px;font-weight:600;letter-spacing:-0.01em;">Très variable</div><div style="font-size:12.5px;color:#8C8C80;margin-top:2px;">On s'adapte au jour le jour</div></div>
+                <div style="width:20px;height:20px;border-radius:50%;border:1.5px solid rgba(20,20,10,0.2);flex-shrink:0;margin-left:10px;"></div>
+              </div>
+            </div>
+
+            <div style="margin-top:auto;padding:14px 0 30px;">
+              <button style="position:relative;width:100%;height:54px;border:none;border-radius:18px;overflow:hidden;cursor:pointer;background:transparent;">
+                <div style="position:absolute;inset:0;backdrop-filter:blur(14px) saturate(200%);-webkit-backdrop-filter:blur(14px) saturate(200%);background:rgba(207,233,59,0.72);"></div>
+                <div style="position:absolute;inset:0;border-radius:18px;box-shadow:inset 1.5px 1.5px 1px rgba(255,255,255,0.7),inset -1px -1px 1px rgba(255,255,255,0.35);border:0.5px solid rgba(20,20,10,0.1);pointer-events:none;"></div>
+                <span style="position:relative;z-index:1;font-family:Archivo,sans-serif;font-size:16px;font-weight:600;color:#17170F;letter-spacing:-0.01em;">Continuer</span>
+              </button>
+            </div>
+          </div>
+        </x-import>
+      </div>
+
+      <!-- 04 Objectif -->
+      <div style="flex-shrink:0;display:flex;flex-direction:column;gap:18px;width:402px;">
+        <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#8C8C80;">04 · Objectif</div>
+        <x-import component="IOSDevice" from="./ios-frame.jsx" hint-size="402px,874px">
+          <div style="height:100%;display:flex;flex-direction:column;background:#FBFBF8;padding:60px 24px 0;font-family:Archivo,system-ui,sans-serif;color:#17170F;">
+            <div style="display:flex;align-items:center;justify-content:space-between;">
+              <div style="position:relative;width:38px;height:38px;border-radius:50%;overflow:hidden;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px -5px rgba(20,20,12,0.22);">
+                <div style="position:absolute;inset:0;backdrop-filter:blur(14px) saturate(180%);-webkit-backdrop-filter:blur(14px) saturate(180%);background:rgba(251,251,248,0.6);"></div>
+                <div style="position:absolute;inset:0;border-radius:50%;box-shadow:inset 1.5px 1.5px 1px rgba(255,255,255,0.9);border:0.5px solid rgba(20,20,10,0.08);pointer-events:none;"></div>
+                <svg width="9" height="16" viewBox="0 0 9 16" fill="none" style="position:relative;z-index:1;"><path d="M7.5 1L1.5 8l6 7" stroke="#3E3E36" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.12em;color:#9A9A8F;white-space:nowrap;">04 / 05</div>
+            </div>
+            <div style="display:flex;gap:5px;margin-top:14px;">
+              <div style="flex:1;height:3px;border-radius:999px;background:#CFE93B;"></div>
+              <div style="flex:1;height:3px;border-radius:999px;background:#CFE93B;"></div>
+              <div style="flex:1;height:3px;border-radius:999px;background:#CFE93B;"></div>
+              <div style="flex:1;height:3px;border-radius:999px;background:#CFE93B;"></div>
+              <div style="flex:1;height:3px;border-radius:999px;background:#E4E4DE;"></div>
+            </div>
+
+            <h2 style="font-size:26px;line-height:1.1;font-weight:700;letter-spacing:-0.02em;margin:28px 0 0;">Ton objectif<br>cette saison ?</h2>
+
+            <div style="display:flex;flex-direction:column;gap:10px;margin-top:22px;">
+              <div style="border:1.5px solid #17170F;background:#CFE93B;border-radius:16px;padding:15px 17px;">
+                <div style="display:flex;align-items:center;justify-content:space-between;">
+                  <div style="font-size:16px;font-weight:600;letter-spacing:-0.01em;color:#17170F;">Gran Fondo / Medio</div>
+                  <div style="width:20px;height:20px;border-radius:50%;background:#17170F;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><span style="color:#CFE93B;font-size:12px;font-weight:700;line-height:1;">✓</span></div>
+                </div>
+                <div style="margin-top:13px;display:flex;align-items:center;justify-content:space-between;background:#FBFBF8;border-radius:12px;padding:11px 13px;">
+                  <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:#9A9A8F;">Prochaine échéance</span>
+                  <span style="font-size:14px;font-weight:600;letter-spacing:-0.01em;">14 sept. 2026</span>
+                </div>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;border:1px solid rgba(20,20,10,0.12);background:#fff;border-radius:16px;padding:15px 17px;">
+                <div><div style="font-size:16px;font-weight:600;letter-spacing:-0.01em;">Progresser, sans dossard</div><div style="font-size:12.5px;color:#8C8C80;margin-top:2px;">Gagner des watts à l'année</div></div>
+                <div style="width:20px;height:20px;border-radius:50%;border:1.5px solid rgba(20,20,10,0.2);flex-shrink:0;margin-left:10px;"></div>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;border:1px solid rgba(20,20,10,0.12);background:#fff;border-radius:16px;padding:15px 17px;">
+                <div><div style="font-size:16px;font-weight:600;letter-spacing:-0.01em;">Rester en forme</div><div style="font-size:12.5px;color:#8C8C80;margin-top:2px;">Régularité, plaisir</div></div>
+                <div style="width:20px;height:20px;border-radius:50%;border:1.5px solid rgba(20,20,10,0.2);flex-shrink:0;margin-left:10px;"></div>
+              </div>
+            </div>
+
+            <div style="margin-top:auto;padding:14px 0 30px;">
+              <button style="position:relative;width:100%;height:54px;border:none;border-radius:18px;overflow:hidden;cursor:pointer;background:transparent;">
+                <div style="position:absolute;inset:0;backdrop-filter:blur(14px) saturate(200%);-webkit-backdrop-filter:blur(14px) saturate(200%);background:rgba(207,233,59,0.72);"></div>
+                <div style="position:absolute;inset:0;border-radius:18px;box-shadow:inset 1.5px 1.5px 1px rgba(255,255,255,0.7),inset -1px -1px 1px rgba(255,255,255,0.35);border:0.5px solid rgba(20,20,10,0.1);pointer-events:none;"></div>
+                <span style="position:relative;z-index:1;font-family:Archivo,sans-serif;font-size:16px;font-weight:600;color:#17170F;letter-spacing:-0.01em;">Continuer</span>
+              </button>
+            </div>
+          </div>
+        </x-import>
+      </div>
+
+      <!-- 05 Connexions -->
+      <div style="flex-shrink:0;display:flex;flex-direction:column;gap:18px;width:402px;">
+        <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#8C8C80;">05 · Connexions</div>
+        <x-import component="IOSDevice" from="./ios-frame.jsx" hint-size="402px,874px">
+          <div style="height:100%;display:flex;flex-direction:column;background:#FBFBF8;padding:60px 24px 0;font-family:Archivo,system-ui,sans-serif;color:#17170F;">
+            <div style="display:flex;align-items:center;justify-content:space-between;">
+              <div style="position:relative;width:38px;height:38px;border-radius:50%;overflow:hidden;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px -5px rgba(20,20,12,0.22);">
+                <div style="position:absolute;inset:0;backdrop-filter:blur(14px) saturate(180%);-webkit-backdrop-filter:blur(14px) saturate(180%);background:rgba(251,251,248,0.6);"></div>
+                <div style="position:absolute;inset:0;border-radius:50%;box-shadow:inset 1.5px 1.5px 1px rgba(255,255,255,0.9);border:0.5px solid rgba(20,20,10,0.08);pointer-events:none;"></div>
+                <svg width="9" height="16" viewBox="0 0 9 16" fill="none" style="position:relative;z-index:1;"><path d="M7.5 1L1.5 8l6 7" stroke="#3E3E36" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.12em;color:#9A9A8F;white-space:nowrap;">05 / 05</div>
+            </div>
+            <div style="display:flex;gap:5px;margin-top:14px;">
+              <div style="flex:1;height:3px;border-radius:999px;background:#CFE93B;"></div>
+              <div style="flex:1;height:3px;border-radius:999px;background:#CFE93B;"></div>
+              <div style="flex:1;height:3px;border-radius:999px;background:#CFE93B;"></div>
+              <div style="flex:1;height:3px;border-radius:999px;background:#CFE93B;"></div>
+              <div style="flex:1;height:3px;border-radius:999px;background:#CFE93B;"></div>
+            </div>
+
+            <h2 style="font-size:26px;line-height:1.1;font-weight:700;letter-spacing:-0.02em;margin:28px 0 0;">Connecte<br>tes données</h2>
+            <p style="font-size:13.5px;color:#8C8C80;line-height:1.45;margin:10px 0 0;">Pour importer le kJ et la FC, et calculer tes zones.</p>
+
+            <div style="display:flex;flex-direction:column;gap:10px;margin-top:22px;">
+              <div style="display:flex;align-items:center;justify-content:space-between;border:1px solid rgba(20,20,10,0.1);background:#fff;border-radius:16px;padding:14px 16px;">
+                <div><div style="display:flex;align-items:center;gap:8px;"><span style="font-size:16px;font-weight:600;letter-spacing:-0.01em;">intervals.icu</span><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:8.5px;letter-spacing:0.06em;text-transform:uppercase;background:#EBF0CE;color:#6E7A1E;padding:2px 6px;border-radius:5px;">Recommandé</span></div><div style="font-size:12px;color:#8C8C80;margin-top:3px;">Planif, zones, kJ</div></div>
+                <div style="display:flex;align-items:center;gap:6px;background:#CFE93B;border-radius:999px;padding:7px 13px;flex-shrink:0;"><span style="color:#17170F;font-size:12px;font-weight:600;">Connecté</span><span style="color:#17170F;font-size:11px;font-weight:700;">✓</span></div>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;border:1px solid rgba(20,20,10,0.1);background:#fff;border-radius:16px;padding:14px 16px;">
+                <div><div style="font-size:16px;font-weight:600;letter-spacing:-0.01em;">Strava</div><div style="font-size:12px;color:#8C8C80;margin-top:3px;">Sorties, records, segments</div></div>
+                <div style="border:1.5px solid #17170F;border-radius:999px;padding:7px 15px;flex-shrink:0;"><span style="color:#17170F;font-size:12px;font-weight:600;">Connecter</span></div>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;border:1px solid rgba(20,20,10,0.1);background:#fff;border-radius:16px;padding:14px 16px;">
+                <div><div style="font-size:16px;font-weight:600;letter-spacing:-0.01em;">Garmin · Wahoo</div><div style="font-size:12px;color:#8C8C80;margin-top:3px;">FC &amp; puissance en direct</div></div>
+                <div style="border:1.5px solid #17170F;border-radius:999px;padding:7px 15px;flex-shrink:0;"><span style="color:#17170F;font-size:12px;font-weight:600;">Connecter</span></div>
+              </div>
+            </div>
+
+            <div style="margin-top:16px;display:flex;gap:8px;align-items:flex-start;">
+              <span style="width:6px;height:6px;border-radius:50%;background:#CFCFC4;margin-top:6px;flex-shrink:0;"></span>
+              <div style="font-size:12px;line-height:1.45;color:#8C8C80;">Données de santé : consentement explicite, exportables et supprimables à tout moment (RGPD).</div>
+            </div>
+
+            <div style="margin-top:auto;padding:14px 0 30px;">
+              <button style="position:relative;width:100%;height:54px;border:none;border-radius:18px;overflow:hidden;cursor:pointer;background:transparent;">
+                <div style="position:absolute;inset:0;backdrop-filter:blur(14px) saturate(200%);-webkit-backdrop-filter:blur(14px) saturate(200%);background:rgba(207,233,59,0.72);"></div>
+                <div style="position:absolute;inset:0;border-radius:18px;box-shadow:inset 1.5px 1.5px 1px rgba(255,255,255,0.7),inset -1px -1px 1px rgba(255,255,255,0.35);border:0.5px solid rgba(20,20,10,0.1);pointer-events:none;"></div>
+                <span style="position:relative;z-index:1;font-family:Archivo,sans-serif;font-size:16px;font-weight:600;color:#17170F;letter-spacing:-0.01em;">Calculer mes zones</span>
+              </button>
+            </div>
+          </div>
+        </x-import>
+      </div>
+
+      <!-- Calibration -->
+      <div style="flex-shrink:0;display:flex;flex-direction:column;gap:18px;width:402px;">
+        <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#8C8C80;">Calibration</div>
+        <x-import component="IOSDevice" from="./ios-frame.jsx" hint-size="402px,874px">
+          <div style="height:100%;display:flex;flex-direction:column;background:#FBFBF8;padding:60px 24px 0;font-family:Archivo,system-ui,sans-serif;color:#17170F;">
+            <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#9A9A8F;">Ton profil est prêt</div>
+            <div style="margin-top:14px;">
+              <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10.5px;letter-spacing:0.12em;text-transform:uppercase;color:#9A9A8F;">Puissance critique</div>
+              <div style="display:flex;align-items:flex-end;gap:9px;margin-top:5px;">
+                <div style="font-size:64px;line-height:0.82;font-weight:700;letter-spacing:-0.04em;white-space:nowrap;">282</div>
+                <div style="font-size:16px;color:#7A7A6E;padding-bottom:8px;white-space:nowrap;">W · 4,0 W/kg</div>
+              </div>
+              <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;color:#A6A69B;margin-top:8px;line-height:1.4;">Estimée depuis tes records 5 &amp; 20 min · fallback FTP = CP20 × 0,95</div>
+            </div>
+
+            <div style="margin-top:20px;border:1px solid rgba(20,20,10,0.1);border-radius:16px;overflow:hidden;">
+              <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 15px;border-bottom:1px solid rgba(20,20,10,0.07);"><span style="font-size:14px;font-weight:500;white-space:nowrap;">Z2 · Endurance (BI)</span><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px;color:#3E3E36;white-space:nowrap;">155–210 W</span></div>
+              <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 15px;border-bottom:1px solid rgba(20,20,10,0.07);"><span style="font-size:14px;font-weight:500;white-space:nowrap;">Z3 · Tempo (MI)</span><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px;color:#3E3E36;white-space:nowrap;">210–250 W</span></div>
+              <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 15px;border-bottom:1px solid rgba(20,20,10,0.07);"><span style="font-size:14px;font-weight:500;white-space:nowrap;">Z4 · Seuil</span><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px;color:#3E3E36;white-space:nowrap;">250–282 W</span></div>
+              <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 15px;background:#F6FAE2;"><span style="font-size:14px;font-weight:600;white-space:nowrap;">Z5–Z6 · VO<sub>2</sub> / HI</span><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px;font-weight:500;color:#17170F;white-space:nowrap;">282–400 W</span></div>
+            </div>
+
+            <div style="margin-top:16px;display:flex;flex-wrap:wrap;gap:7px;">
+              <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:0.04em;border:1px solid rgba(20,20,10,0.12);border-radius:999px;padding:5px 11px;color:#5F5F55;white-space:nowrap;">Capteur ✓</span>
+              <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:0.04em;border:1px solid rgba(20,20,10,0.12);border-radius:999px;padding:5px 11px;color:#5F5F55;white-space:nowrap;">Semaine contrainte</span>
+              <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:0.04em;border:1px solid rgba(20,20,10,0.12);border-radius:999px;padding:5px 11px;color:#5F5F55;white-space:nowrap;">Gran Fondo · sept.</span>
+            </div>
+
+            <div style="margin-top:auto;padding:14px 0 30px;">
+              <button style="position:relative;width:100%;height:54px;border:none;border-radius:18px;overflow:hidden;cursor:pointer;background:transparent;">
+                <div style="position:absolute;inset:0;backdrop-filter:blur(14px) saturate(200%);-webkit-backdrop-filter:blur(14px) saturate(200%);background:rgba(207,233,59,0.72);"></div>
+                <div style="position:absolute;inset:0;border-radius:18px;box-shadow:inset 1.5px 1.5px 1px rgba(255,255,255,0.7),inset -1px -1px 1px rgba(255,255,255,0.35);border:0.5px solid rgba(20,20,10,0.1);pointer-events:none;"></div>
+                <span style="position:relative;z-index:1;font-family:Archivo,sans-serif;font-size:16px;font-weight:600;color:#17170F;letter-spacing:-0.01em;">Entrer dans Nord →</span>
+              </button>
+            </div>
+          </div>
+        </x-import>
+      </div>
+
+      <!-- notes -->
+      <div style="flex:1;min-width:260px;max-width:380px;padding-top:6px;">
+        <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#8C8C80;">L'intention</div>
+        <h3 style="font-size:23px;font-weight:600;letter-spacing:-0.015em;line-height:1.2;margin:10px 0 0;">Segmenter par la vie, pas par les watts</h3>
+        <p style="font-size:15px;line-height:1.6;color:#5F5F55;margin:14px 0 0;">L'onboarding cale le profil sur la contrainte d'emploi du temps — c'est elle qui décide la forme du microcycle. Volume très bas + débutant ? Nord bascule en mode allégé (volume &amp; régularité, sans capteur).</p>
+        <div style="height:1px;background:rgba(20,20,10,0.12);margin:24px 0;"></div>
+        <div style="display:flex;flex-direction:column;gap:13px;">
+          <div style="font-size:14px;color:#3E3E36;line-height:1.5;"><strong style="font-weight:600;">Sans capteur —</strong> jamais bloquant : pilotage volume/ressenti, capteur ajoutable plus tard.</div>
+          <div style="font-size:14px;color:#3E3E36;line-height:1.5;"><strong style="font-weight:600;">Zones —</strong> puissance critique via les records, fallback FTP = CP20 × 0,95.</div>
+          <div style="font-size:14px;color:#3E3E36;line-height:1.5;"><strong style="font-weight:600;">RGPD —</strong> données de santé, consentement explicite, export &amp; suppression à tout moment.</div>
+        </div>
+        <div style="margin-top:22px;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;color:#A6A69B;line-height:1.5;">« Nord » est un nom de travail — à valider.</div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>

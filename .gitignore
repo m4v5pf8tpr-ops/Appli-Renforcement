@@ -1,0 +1,9 @@
+# Sauvegardes personnelles exportées depuis l'app : ne jamais les committer
+renfo-sauvegarde-*.json
+*.local.json
+exports/
+
+# Divers
+.DS_Store
+__pycache__/
+node_modules/
