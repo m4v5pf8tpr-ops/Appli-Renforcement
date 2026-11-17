@@ -14,7 +14,9 @@ Ce dépôt est **public**. Il ne contient **aucune donnée personnelle** :
 
 ## Installer sur l'iPhone
 
-1. Ouvrir l'adresse GitHub Pages du dépôt dans **Safari**.
+Adresse de l'app : https://m4v5pf8tpr-ops.github.io/Appli-Renforcement/
+
+1. Ouvrir cette adresse dans **Safari**.
 2. Bouton Partager → **Sur l'écran d'accueil**.
 3. Lancer l'app depuis l'icône (et non depuis Safari : les deux ont des stockages séparés).
 
